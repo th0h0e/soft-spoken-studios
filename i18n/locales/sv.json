@@ -1,0 +1,114 @@
+{
+  "navigation": {
+    "home": "Hem",
+    "about": "Om oss",
+    "work": "Arbete",
+    "blog": "Blogg",
+    "gallery": "Galleri",
+    "contact": "Kontakt"
+  },
+  "global": {
+    "site_name": "Soft Spoken Studios",
+    "tagline": "Kreativ Kommunikationsbyrå",
+    "description": "En kreativ byrå till er tjänst, specialiserad på att berätta historier genom copywriting och video.",
+    "read_more": "Läs mer",
+    "learn_more": "Lär dig mer",
+    "get_in_touch": "Kontakta oss",
+    "send_message": "Skicka meddelande",
+    "close": "Stäng",
+    "submit": "Skicka",
+    "loading": "Laddar...",
+    "success": "Framgång!",
+    "error": "Fel",
+    "soon": "Kommer snart",
+    "available": "Tillgänglig för nya projekt",
+    "unavailable": "Arbetar för närvarande med andra projekt"
+  },
+  "contact": {
+    "title": "Låt oss arbeta tillsammans",
+    "subtitle": "Har ni ett projekt i åtanke? Vi skulle gärna höra om det.",
+    "form": {
+      "name": "Namn",
+      "email": "E-post",
+      "phone": "Telefon",
+      "message": "Meddelande",
+      "placeholder": {
+        "name": "Ditt namn",
+        "email": "din@email.se",
+        "phone": "Ditt telefonnummer",
+        "message": "Berätta om ert projekt...\n\nGlöm inte att inkludera er e-postadress eller telefonnummer så att vi kan återkomma till er."
+      },
+      "validation": {
+        "required": "Detta fält är obligatoriskt",
+        "email": "Vänligen ange en giltig e-postadress",
+        "contact_info": "Vänligen inkludera er e-postadress eller telefonnummer i meddelandet"
+      },
+      "success": "Meddelandet skickades framgångsrikt! Vi återkommer till er snart.",
+      "error": "Kunde inte skicka meddelandet. Försök igen."
+    },
+    "info": {
+      "email": "E-post",
+      "phone": "Telefon",
+      "address": "Adress"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Vi kan skriva ert tal och fånga er promenad",
+      "subtitle": "På Soft Spoken Studios tror vi att den kraftfullaste kommunikationen kommer från förståelse snarare än överväldigande."
+    },
+    "services": {
+      "title": "Vad vi gör",
+      "copywriting": {
+        "title": "Copywriting",
+        "description": "Ord som spelar roll. Vi skapar texter som talar direkt till er målgrupp utan onödigt brus. Varje ord väljs med syfte."
+      },
+      "video": {
+        "title": "Video",
+        "description": "Historier som rör. Vi skapar videor som fångar autentiska ögonblick och kommunicerar ert budskap med tydlighet och genomslag."
+      }
+    },
+    "philosophy": {
+      "title": "Vår approach",
+      "description": "I en värld av högljudd, ytlig kommunikation tror vi på kraften i att vara mjukt talad. När ni väljer era ord noggrant är intrycket mycket större. Det kanske inte genererar de högsta siffrorna, men den verkliga påverkan—den sorts som inte kan mätas av analytics—är mycket, mycket djupare."
+    }
+  },
+  "about": {
+    "title": "Om Soft Spoken",
+    "languages": "Språk",
+    "skills": {
+      "title": "Färdigheter & Expertis",
+      "creative": "Kreativa Färdigheter",
+      "technical": "Tekniska Färdigheter"
+    },
+    "experience": {
+      "title": "Uppdrag & Erfarenhet",
+      "director": "Direktör SSS",
+      "senior_copywriter": "Senior Copywriter",
+      "communication_strategist": "Kommunikationsstrateg på Tenue de Nimes"
+    },
+    "philosophy": {
+      "title": "Fokus & Filosofi",
+      "description": "Jag tror att fantastiskt kreativt arbete kommer från att förstå människor och deras historier. Min approach kombinerar strategiskt tänkande med äkta nyfikenhet på mänskligt beteende och kulturella trender.",
+      "quote": "Kreativitet är intelligens som har kul, men strategi är kreativitet med syfte."
+    },
+    "education": {
+      "title": "Utbildningsresa"
+    }
+  },
+  "work": {
+    "title": "Vårt Arbete",
+    "subtitle": "Ett urval av projekt vi är stolta över"
+  },
+  "blog": {
+    "title": "Blogg",
+    "subtitle": "Tankar om kreativitet, kommunikation och berättande",
+    "read_time": "min läsning",
+    "recent_insights": "Senaste Insikter",
+    "all_articles": "Alla Artiklar"
+  },
+  "gallery": {
+    "title": "Galleri",
+    "subtitle": "Visuella berättelser och fångade ögonblick"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "Over ons",
+    "work": "Werk",
+    "blog": "Blog",
+    "gallery": "Galerij",
+    "contact": "Contact"
+  },
+  "global": {
+    "site_name": "Soft Spoken Studios",
+    "tagline": "Creatief Communicatie Bureau",
+    "description": "Een creatief bureau tot uw dienst, gespecialiseerd in het vertellen van verhalen door copywriting en video.",
+    "read_more": "Lees meer",
+    "learn_more": "Meer informatie",
+    "get_in_touch": "Neem contact op",
+    "send_message": "Verstuur bericht",
+    "close": "Sluiten",
+    "submit": "Versturen",
+    "loading": "Laden...",
+    "success": "Gelukt!",
+    "error": "Fout",
+    "soon": "Binnenkort beschikbaar",
+    "available": "Beschikbaar voor nieuwe projecten",
+    "unavailable": "Momenteel bezig met andere projecten"
+  },
+  "contact": {
+    "title": "Laten we samenwerken",
+    "subtitle": "Heeft u een project in gedachten? We horen graag van u.",
+    "form": {
+      "name": "Naam",
+      "email": "E-mail",
+      "phone": "Telefoon",
+      "message": "Bericht",
+      "placeholder": {
+        "name": "Uw naam",
+        "email": "uw@email.nl",
+        "phone": "Uw telefoonnummer",
+        "message": "Vertel ons over uw project...\n\nVergeet niet uw e-mailadres of telefoonnummer toe te voegen zodat we contact met u kunnen opnemen."
+      },
+      "validation": {
+        "required": "Dit veld is verplicht",
+        "email": "Voer een geldig e-mailadres in",
+        "contact_info": "Voeg uw e-mailadres of telefoonnummer toe aan het bericht"
+      },
+      "success": "Bericht succesvol verzonden! We nemen binnenkort contact met u op.",
+      "error": "Kon bericht niet verzenden. Probeer het opnieuw."
+    },
+    "info": {
+      "email": "E-mail",
+      "phone": "Telefoon",
+      "address": "Adres"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Wij kunnen uw verhaal schrijven en uw wandeling vastleggen",
+      "subtitle": "Bij Soft Spoken Studios geloven we dat de krachtigste communicatie voortkomt uit begrip in plaats van overweldiging."
+    },
+    "services": {
+      "title": "Wat we doen",
+      "copywriting": {
+        "title": "Copywriting",
+        "description": "Woorden die ertoe doen. We maken teksten die rechtstreeks tot uw doelgroep spreken zonder onnodige ruis. Elk woord wordt doelgericht gekozen."
+      },
+      "video": {
+        "title": "Video",
+        "description": "Verhalen die bewegen. We maken video's die authentieke momenten vastleggen en uw boodschap helder en met impact overbrengen."
+      }
+    },
+    "philosophy": {
+      "title": "Onze aanpak",
+      "description": "In een wereld van luide, oppervlakkige communicatie geloven wij in de kracht van zachtgesproken zijn. Als je je woorden zorgvuldig kiest, is de indruk veel groter. Het genereert misschien niet de hoogste cijfers, maar de werkelijke impact—het soort dat niet gemeten kan worden door analytics—is veel, veel dieper."
+    }
+  },
+  "about": {
+    "title": "Over Soft Spoken",
+    "languages": "Talen",
+    "skills": {
+      "title": "Vaardigheden & Expertise",
+      "creative": "Creatieve Vaardigheden",
+      "technical": "Technische Vaardigheden"
+    },
+    "experience": {
+      "title": "Opdrachten & Ervaring",
+      "director": "Directeur SSS",
+      "senior_copywriter": "Senior Copywriter",
+      "communication_strategist": "Communicatiestrateeg bij Tenue de Nimes"
+    },
+    "philosophy": {
+      "title": "Focus & Filosofie",
+      "description": "Ik geloof dat geweldig creatief werk voortkomt uit het begrijpen van mensen en hun verhalen. Mijn aanpak combineert strategisch denken met oprechte nieuwsgierigheid naar menselijk gedrag en culturele trends.",
+      "quote": "Creativiteit is intelligentie die plezier heeft, maar strategie is creativiteit met een doel."
+    },
+    "education": {
+      "title": "Educatieve Reis"
+    }
+  },
+  "work": {
+    "title": "Ons Werk",
+    "subtitle": "Een selectie van projecten waar we trots op zijn"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Gedachten over creativiteit, communicatie en verhalen vertellen",
+    "read_time": "min lezen",
+    "recent_insights": "Recente Inzichten",
+    "all_articles": "Alle Artikelen"
+  },
+  "gallery": {
+    "title": "Galerij",
+    "subtitle": "Visuele verhalen en vastgelegde momenten"
+  }
+}

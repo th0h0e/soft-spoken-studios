@@ -1,0 +1,114 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "work": "Work",
+    "blog": "Blog",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "global": {
+    "site_name": "Soft Spoken Studios",
+    "tagline": "Creative Communication Agency",
+    "description": "An at your service creative agency, specializing in telling stories through copywriting and video.",
+    "read_more": "Read more",
+    "learn_more": "Learn more",
+    "get_in_touch": "Get in touch",
+    "send_message": "Send message",
+    "close": "Close",
+    "submit": "Submit",
+    "loading": "Loading...",
+    "success": "Success!",
+    "error": "Error",
+    "soon": "Coming soon",
+    "available": "Available for new projects",
+    "unavailable": "Currently working on other projects"
+  },
+  "contact": {
+    "title": "Let's work together",
+    "subtitle": "Have a project in mind? We'd love to hear about it.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "placeholder": {
+        "name": "Your name",
+        "email": "your@email.com",
+        "phone": "Your phone number",
+        "message": "Tell us about your project...\n\nPlease include your email or phone number so we can get back to you."
+      },
+      "validation": {
+        "required": "This field is required",
+        "email": "Please enter a valid email address",
+        "contact_info": "Please include your email or phone number in the message"
+      },
+      "success": "Message sent successfully! We'll get back to you soon.",
+      "error": "Failed to send message. Please try again."
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "We can write your talk, and capture your walk",
+      "subtitle": "At Soft Spoken Studios, we believe that the most powerful communication comes from understanding rather than overwhelming."
+    },
+    "services": {
+      "title": "What we do",
+      "copywriting": {
+        "title": "Copywriting",
+        "description": "Words that matter. We craft copy that speaks directly to your audience without unnecessary noise. Every word is chosen with purpose."
+      },
+      "video": {
+        "title": "Video",
+        "description": "Stories that move. We create videos that capture authentic moments and communicate your message with clarity and impact."
+      }
+    },
+    "philosophy": {
+      "title": "Our approach",
+      "description": "In a world of loud, shallow communication, we believe in the power of being soft spoken. When you choose your words carefully, the impression is much greater. It might not generate the highest numbers, but the true impact—the kind that can't be measured by analytics—is much, much deeper."
+    }
+  },
+  "about": {
+    "title": "About Soft Spoken",
+    "languages": "Languages",
+    "skills": {
+      "title": "Skills & Expertise",
+      "creative": "Creative Skills",
+      "technical": "Technical Skills"
+    },
+    "experience": {
+      "title": "Engagements & Experience",
+      "director": "Director SSS",
+      "senior_copywriter": "Senior Copywriter",
+      "communication_strategist": "Communication Strategist at Tenue de Nimes"
+    },
+    "philosophy": {
+      "title": "Focus & Philosophy",
+      "description": "I believe that great creative work comes from understanding people and their stories. My approach combines strategic thinking with genuine curiosity about human behavior and cultural trends.",
+      "quote": "Creativity is intelligence having fun, but strategy is creativity having purpose."
+    },
+    "education": {
+      "title": "Educational Journey"
+    }
+  },
+  "work": {
+    "title": "Our Work",
+    "subtitle": "A selection of projects we're proud of"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Thoughts on creativity, communication, and storytelling",
+    "read_time": "min read",
+    "recent_insights": "Recent Insights",
+    "all_articles": "All Articles"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Visual stories and moments captured"
+  }
+}
