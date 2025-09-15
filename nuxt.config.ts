@@ -115,6 +115,11 @@ export default defineNuxtConfig({
     },
     strategy: 'prefix',
     defaultLocale: 'en',
+    messages: {
+      en: require('./i18n/locales/en.json'),
+      nl: require('./i18n/locales/nl.json'),
+      sv: require('./i18n/locales/sv.json')
+    }
   },
 
   // Route Rules for Nuxt Studio
