@@ -1,6 +1,7 @@
 ---
 title: Capturing Brand Essence Through Photography
-description: How visual storytelling through photography can transform a brand's narrative and create authentic connections with your audience.
+description: How visual storytelling through photography can transform a brand's
+  narrative and create authentic connections with your audience.
 date: November 28, 2024
 image: https://images.unsplash.com/photo-1452849561042-74ec533f2dee?w=800&h=600&fit=crop&crop=center
 readingTime: "4"
@@ -12,12 +13,14 @@ categories:
   - Photography
   - Behind the Scenes
 featured: false
-excerpt: How visual storytelling through photography can transform a brand's narrative. Tips and techniques for creating authentic, compelling imagery that resonates with your target audience.
+excerpt: How visual storytelling through photography can transform a brand's
+  narrative. Tips and techniques for creating authentic, compelling imagery that
+  resonates with your target audience.
 ---
 
 A photograph can capture more than a moment – it can capture the essence of a brand. In corporate storytelling, every image is an opportunity to communicate values, personality, and purpose without saying a word.
 
-![Professional photographer capturing brand moments](https://images.unsplash.com/photo-1554048612-b6ebafaeb7b8?w=800&h=400&fit=crop&crop=center)
+![Professional photographer capturing brand moments](https://images.unsplash.com/photo-1554048612-b6ebafaeb7b8?w=800\&h=400\&fit=crop\&crop=center)
 
 ## Beyond Stock Photography
 
