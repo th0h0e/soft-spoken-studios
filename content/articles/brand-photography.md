@@ -20,7 +20,7 @@ excerpt: How visual storytelling through photography can transform a brand's
 
 A photograph can capture more than a moment – it can capture the essence of a brand. In corporate storytelling, every image is an opportunity to communicate values, personality, and purpose without saying a word.
 
-![Professional photographer capturing brand moments](/Gallery/download.jpg)
+![Professional photographer.](/Gallery/download.jpg)
 
 ## Beyond Stock Photography
 
