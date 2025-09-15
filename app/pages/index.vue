@@ -112,20 +112,10 @@
 
         <!-- Right Column -->
         <div class="lg:col-span-3 lg:sticky lg:top-4 space-y-8">
-          
-          <SideCard>
-            <template #title>Recent Insights</template>
-            <template #content>Exploring how successful campaigns balance analytical insights with compelling narratives to create meaningful connections with audiences. A deep dive into the methodology behind effective creative strategy.</template>
-          </SideCard>
-          
-          <SideCard>
-            <template #title>Current Focus</template>
-            <template #content>Working with local businesses to develop authentic brand voices that resonate without overwhelming. Every project begins with understanding the story that needs to be told.</template>
-          </SideCard>
-          
-          <SideCard>
-            <template #title>Our Philosophy</template>
-            <template #content>In a world of loud marketing, we choose measured words and thoughtful visuals. Quality over quantity, depth over reach. Sometimes the quietest voice carries the most weight.</template>
+
+          <SideCard v-for="article in recentArticles" :key="article._id">
+            <template #title>{{ article.title }}</template>
+            <template #content>{{ article.description || article.excerpt }}</template>
           </SideCard>
         </div>
       </div>
@@ -134,5 +124,24 @@
 </template>
 
 <script setup>
-// No sidebar logic needed here anymore - moved to default layout
+// Get current locale for i18n content
+const { locale } = useI18n()
+
+// Fetch the latest 3 articles for the side cards - locale-specific
+const { data: recentArticles } = await useAsyncData(`recent-articles-${locale.value}`, async () => {
+  const collectionName = `articles_${locale.value}`
+  try {
+    const articles = await queryCollection(collectionName).all()
+    return articles
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .slice(0, 3)
+  } catch (error) {
+    // Fallback to legacy collection if locale-specific doesn't exist
+    console.warn(`Collection ${collectionName} not found, falling back to 'articles'`)
+    const articles = await queryCollection('articles').all()
+    return articles
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .slice(0, 3)
+  }
+})
 </script>

@@ -7,10 +7,7 @@
     "gallery": "Galleri",
     "contact": "Kontakt"
   },
-  "global": {
-    "site_name": "Soft Spoken Studios",
-    "tagline": "Kreativ Kommunikationsbyrå",
-    "description": "En kreativ byrå till er tjänst, specialiserad på att berätta historier genom copywriting och video.",
+  "common": {
     "read_more": "Läs mer",
     "learn_more": "Lär dig mer",
     "get_in_touch": "Kontakta oss",
@@ -20,9 +17,7 @@
     "loading": "Laddar...",
     "success": "Framgång!",
     "error": "Fel",
-    "soon": "Kommer snart",
-    "available": "Tillgänglig för nya projekt",
-    "unavailable": "Arbetar för närvarande med andra projekt"
+    "soon": "Kommer snart"
   },
   "contact": {
     "title": "Låt oss arbeta tillsammans",

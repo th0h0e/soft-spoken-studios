@@ -60,8 +60,11 @@
       </UiSidebarContent>
       
       <UiSidebarFooter>
-        <div class="px-4 py-2 text-sm text-muted-foreground">
-          We can write your talk, and capture your walk
+        <div class="px-4 py-2 space-y-2">
+          <LanguageSelector />
+          <div class="text-sm text-muted-foreground">
+            We can write your talk, and capture your walk
+          </div>
         </div>
       </UiSidebarFooter>
     </UiSidebar>
@@ -143,14 +146,18 @@
         
         <!-- Footer -->
         <div class="px-4 py-2 border-t bg-card relative">
+          <div class="space-y-2 mb-3">
+            <LanguageSelector />
+          </div>
+
           <div class="text-sm text-muted-foreground mb-2">
             We can write your talk, and capture your walk
           </div>
           <div class="text-sm font-medium">
             14:30
           </div>
-          
-          <UiToggle 
+
+          <UiToggle
             size="xs"
             :pressed="colorMode.preference === 'dark'"
             @click="colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark'"

@@ -4,14 +4,10 @@ description: How visual storytelling through photography can transform a brand's
   narrative and create authentic connections with your audience.
 date: November 28, 2024
 image: https://images.unsplash.com/photo-1452849561042-74ec533f2dee?w=800&h=600&fit=crop&crop=center
-readingTime: "4"
 tags:
   - Photography
   - Visual Storytelling
   - Brand Identity
-categories:
-  - Photography
-  - Behind the Scenes
 featured: false
 excerpt: How visual storytelling through photography can transform a brand's
   narrative. Tips and techniques for creating authentic, compelling imagery that

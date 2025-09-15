@@ -2,27 +2,35 @@ import { defineCollection, z } from '@nuxt/content'
 
 const articleSchema = z.object({
   title: z.string(),
-  description: z.string(),
-  date: z.string(),
+  description: z.string().editor({ input: 'textarea' }),
+  date: z.date().editor({ input: 'date' }),
   image: z.string().optional().editor({ input: 'media' }),
   readingTime: z.string().optional(),
   tags: z.array(z.string()).default([]),
   featured: z.boolean().default(false),
-  excerpt: z.string().optional(),
+  excerpt: z.string().optional().editor({ input: 'textarea' }),
+  // Rich content fields for Studio
+  summary: z.string().optional().editor({ input: 'textarea' }),
+  content: z.string().optional().editor({ input: 'markdown' }),
 })
 
 const portfolioSchema = z.object({
   title: z.string(),
-  description: z.string(),
-  date: z.string(),
+  description: z.string().editor({ input: 'textarea' }),
+  date: z.date().editor({ input: 'date' }),
   image: z.string().optional().editor({ input: 'media' }),
   client: z.string().optional(),
   services: z.array(z.string()).default([]),
   technologies: z.array(z.string()).default([]),
   featured: z.boolean().default(false),
-  excerpt: z.string().optional(),
+  excerpt: z.string().optional().editor({ input: 'textarea' }),
   projectUrl: z.string().url().optional(),
   githubUrl: z.string().url().optional(),
+  // Rich content fields for Studio
+  overview: z.string().optional().editor({ input: 'markdown' }),
+  challenges: z.string().optional().editor({ input: 'markdown' }),
+  solution: z.string().optional().editor({ input: 'markdown' }),
+  results: z.string().optional().editor({ input: 'markdown' }),
 })
 
 const aboutSchema = z.object({
@@ -66,6 +74,85 @@ const aboutSchema = z.object({
 })
 
 export const collections = {
+  // English content
+  articles_en: defineCollection({
+    type: 'page',
+    source: {
+      include: 'en/articles/**/*.md',
+      prefix: '/articles',
+    },
+    schema: articleSchema,
+  }),
+  portfolio_en: defineCollection({
+    type: 'page',
+    source: {
+      include: 'en/portfolio/**/*.md',
+      prefix: '/portfolio',
+    },
+    schema: portfolioSchema,
+  }),
+  about_en: defineCollection({
+    type: 'page',
+    source: {
+      include: 'en/about/**/*.md',
+      prefix: '/about',
+    },
+    schema: aboutSchema,
+  }),
+
+  // Dutch content
+  articles_nl: defineCollection({
+    type: 'page',
+    source: {
+      include: 'nl/articles/**/*.md',
+      prefix: '/articles',
+    },
+    schema: articleSchema,
+  }),
+  portfolio_nl: defineCollection({
+    type: 'page',
+    source: {
+      include: 'nl/portfolio/**/*.md',
+      prefix: '/portfolio',
+    },
+    schema: portfolioSchema,
+  }),
+  about_nl: defineCollection({
+    type: 'page',
+    source: {
+      include: 'nl/about/**/*.md',
+      prefix: '/about',
+    },
+    schema: aboutSchema,
+  }),
+
+  // Swedish content
+  articles_sv: defineCollection({
+    type: 'page',
+    source: {
+      include: 'sv/articles/**/*.md',
+      prefix: '/articles',
+    },
+    schema: articleSchema,
+  }),
+  portfolio_sv: defineCollection({
+    type: 'page',
+    source: {
+      include: 'sv/portfolio/**/*.md',
+      prefix: '/portfolio',
+    },
+    schema: portfolioSchema,
+  }),
+  about_sv: defineCollection({
+    type: 'page',
+    source: {
+      include: 'sv/about/**/*.md',
+      prefix: '/about',
+    },
+    schema: aboutSchema,
+  }),
+
+  // Legacy collections for backward compatibility
   articles: defineCollection({
     type: 'page',
     source: {

@@ -98,13 +98,14 @@ const { data: page } = await useAsyncData(path.value, async () =>
 ```
 content/
 ├── articles/           # Blog posts
-└── portfolio/          # Portfolio projects
+├── portfolio/          # Portfolio projects
+└── about/             # About page sections
 ```
 
 ### Adding Content
 1. Create `.md` file in appropriate folder
 2. Add frontmatter with required fields
-3. Automatic routing: `/articles/filename` or `/portfolio/filename`
+3. Automatic routing: `/articles/filename`, `/portfolio/filename`, or `/about/filename`
 
 ### Required Dependencies
 - `@nuxt/content` - Content management

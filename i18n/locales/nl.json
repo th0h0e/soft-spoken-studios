@@ -7,10 +7,7 @@
     "gallery": "Galerij",
     "contact": "Contact"
   },
-  "global": {
-    "site_name": "Soft Spoken Studios",
-    "tagline": "Creatief Communicatie Bureau",
-    "description": "Een creatief bureau tot uw dienst, gespecialiseerd in het vertellen van verhalen door copywriting en video.",
+  "common": {
     "read_more": "Lees meer",
     "learn_more": "Meer informatie",
     "get_in_touch": "Neem contact op",
@@ -20,9 +17,7 @@
     "loading": "Laden...",
     "success": "Gelukt!",
     "error": "Fout",
-    "soon": "Binnenkort beschikbaar",
-    "available": "Beschikbaar voor nieuwe projecten",
-    "unavailable": "Momenteel bezig met andere projecten"
+    "soon": "Binnenkort beschikbaar"
   },
   "contact": {
     "title": "Laten we samenwerken",

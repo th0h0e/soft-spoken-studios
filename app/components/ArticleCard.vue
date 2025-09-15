@@ -10,7 +10,7 @@
         <NuxtImg
           :src="article.image"
           :alt="`${article.title} article image`"
-          class="w-full h-48 md:h-32 object-cover rounded-md transition-transform duration-200 group-hover:scale-105"
+          class="w-full h-48 md:h-32 object-cover rounded-md"
           width="200"
           height="128"
         />
@@ -18,18 +18,6 @@
 
       <!-- Content Section -->
       <div class="flex-1 space-y-3">
-        <!-- Categories -->
-        <div class="flex flex-wrap gap-2">
-          <UiBadge
-            v-for="category in article.categories"
-            :key="category"
-            variant="secondary"
-            class="text-xs"
-          >
-            {{ category }}
-          </UiBadge>
-        </div>
-
         <!-- Title -->
         <h3 class="text-lg font-semibold line-clamp-2 mb-2 group-hover:text-primary transition-colors">
           {{ article.title }}
@@ -38,10 +26,6 @@
         <!-- Meta Information -->
         <div class="flex items-center gap-3 text-sm text-muted-foreground">
           <span>{{ formatDate(article.date) }}</span>
-          <span v-if="article.readingTime" class="flex items-center gap-1">
-            <Icon name="lucide:clock" class="w-3 h-3" />
-            {{ article.readingTime }} min read
-          </span>
         </div>
 
         <!-- Description/Excerpt -->
@@ -49,24 +33,6 @@
           {{ article.description || article.excerpt }}
         </p>
 
-        <!-- Tags (show first 3) -->
-        <div v-if="article.tags?.length" class="flex flex-wrap gap-1">
-          <UiBadge
-            v-for="tag in article.tags.slice(0, 3)"
-            :key="tag"
-            variant="outline"
-            class="text-xs"
-          >
-            {{ tag }}
-          </UiBadge>
-          <UiBadge
-            v-if="article.tags.length > 3"
-            variant="outline"
-            class="text-xs"
-          >
-            +{{ article.tags.length - 3 }}
-          </UiBadge>
-        </div>
       </div>
     </UiCard>
   </NuxtLink>

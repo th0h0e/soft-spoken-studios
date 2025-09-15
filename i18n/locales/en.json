@@ -7,10 +7,7 @@
     "gallery": "Gallery",
     "contact": "Contact"
   },
-  "global": {
-    "site_name": "Soft Spoken Studios",
-    "tagline": "Creative Communication Agency",
-    "description": "An at your service creative agency, specializing in telling stories through copywriting and video.",
+  "common": {
     "read_more": "Read more",
     "learn_more": "Learn more",
     "get_in_touch": "Get in touch",
@@ -20,9 +17,7 @@
     "loading": "Loading...",
     "success": "Success!",
     "error": "Error",
-    "soon": "Coming soon",
-    "available": "Available for new projects",
-    "unavailable": "Currently working on other projects"
+    "soon": "Coming soon"
   },
   "contact": {
     "title": "Let's work together",

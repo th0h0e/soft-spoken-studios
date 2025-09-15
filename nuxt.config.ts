@@ -84,7 +84,15 @@ export default defineNuxtConfig({
     preview: {
       api: 'https://api.nuxt.studio',
       dev: true,
+      // Explicit git information for Studio integration
+      gitInfo: {
+        name: 'soft-spoken-studios',
+        owner: 'th0h0e',
+        url: 'https://github.com/th0h0e/soft-spoken-studios'
+      }
     },
+    // Enable Studio editor integration
+    editor: true,
     markdown: {
       remarkPlugins: [],
       rehypePlugins: []
@@ -115,11 +123,6 @@ export default defineNuxtConfig({
     },
     strategy: 'prefix',
     defaultLocale: 'en',
-    messages: {
-      en: require('./i18n/locales/en.json'),
-      nl: require('./i18n/locales/nl.json'),
-      sv: require('./i18n/locales/sv.json')
-    }
   },
 
   // Route Rules for Nuxt Studio
