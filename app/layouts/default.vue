@@ -175,19 +175,7 @@
 const colorMode = useColorMode()
 const hideSidebar = ref(false)
 
-// Detect mobile devices
-const isMobile = ref(false)
-
-onMounted(() => {
-  const checkMobile = () => {
-    isMobile.value = window.innerWidth < 768 // md breakpoint
-  }
-  
-  checkMobile()
-  window.addEventListener('resize', checkMobile)
-  
-  onBeforeUnmount(() => {
-    window.removeEventListener('resize', checkMobile)
-  })
-})
+// Use VueUse's built-in breakpoints (already available in your project)
+const { width } = useWindowSize()
+const isMobile = computed(() => width.value < 768) // md breakpoint
 </script>
