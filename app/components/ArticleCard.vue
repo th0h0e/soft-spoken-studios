@@ -6,10 +6,10 @@
   >
     <UiCard class="flex flex-col md:flex-row md:items-start p-6 hover:shadow-md transition-all duration-200 group-hover:border-primary/20">
       <!-- Image Section (if available) -->
-      <div v-if="article.image" class="md:w-48 md:flex-shrink-0 mb-4 md:mb-0 md:mr-6">
+      <div v-if="article.heroImage || article.image" class="md:w-48 md:flex-shrink-0 mb-4 md:mb-0 md:mr-6">
         <NuxtImg
-          :src="article.image"
-          :alt="`${article.title} article image`"
+          :src="article.heroImage || article.image"
+          :alt="article.heroImageDescription || `${article.title} article image`"
           class="w-full h-48 md:h-32 object-cover rounded-md"
           width="200"
           height="128"
@@ -28,9 +28,9 @@
           <span>{{ formatDate(article.date) }}</span>
         </div>
 
-        <!-- Description/Excerpt -->
+        <!-- Preview Text -->
         <p class="text-muted-foreground text-sm line-clamp-3 leading-relaxed">
-          {{ article.description || article.excerpt }}
+          {{ article.preview || article.description || article.excerpt }}
         </p>
 
       </div>

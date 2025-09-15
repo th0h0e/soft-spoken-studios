@@ -49,6 +49,7 @@
     "motion-v": "^1.7.1",
     "nodemailer": "^7.0.6",
     "nuxt": "^4.1.1",
+    "nuxt-zod-i18n": "^1.12.1",
     "reka-ui": "^2.5.0",
     "tailwind-merge": "^3.3.1",
     "tailwind-variants": "^3.1.1",

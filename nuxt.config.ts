@@ -14,13 +14,14 @@ export default defineNuxtConfig({
     "@nuxt/scripts",
     "@nuxt/test-utils",
     "@nuxtjs/color-mode",
+    'nuxt-zod-i18n',
     "@nuxtjs/i18n",
     "motion-v/nuxt",
     "@vueuse/nuxt",
     "@nuxt/icon",
     "@yuta-inoue-ph/nuxt-vcalendar",
     "@vee-validate/nuxt",
-    "vue-sonner/nuxt"
+    "vue-sonner/nuxt",
   ],
 
   imports: {
@@ -131,14 +132,51 @@ export default defineNuxtConfig({
     '/': { prerender: false },
   },
 
+  // Experimental features following reference project
+  experimental: {
+    viewTransition: true,
+  },
+
+  // Hooks configuration following reference project
+  hooks: {
+    'nitro:config': (config) => {
+      // Custom configuration for content handling
+      if (config.handlers) {
+        config.handlers = config.handlers || []
+      }
+    },
+  },
+
   // Nitro configuration for Studio compatibility
   nitro: {
     experimental: {
       websocket: true,
     },
+    prerender: {
+      autoSubfolderIndex: false,
+      crawlLinks: true,
+      routes: ['/en', '/nl', '/sv'],
+    },
   },
 
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      fs: {
+        cachedChecks: false,
+      },
+    },
+    optimizeDeps: {
+      force: true,
+    },
+    build: {
+      cache: false,
+    },
+  },
+
+  // Disable Nuxt caching for development
+  ssr: false,
+  devServer: {
+    loadingTemplate: false,
   },
 });

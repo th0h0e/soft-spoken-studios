@@ -2,7 +2,7 @@ export default defineAppConfig({
   // Site Identity
   site: {
     name: 'Soft Spoken Studios',
-    tagline: 'Creative Communication Agency',
+    tagline: 'We can write your talk, and capture your walk',
     description: 'An at your service creative agency, specializing in telling stories through copywriting and video.',
     url: 'https://softspokenstudios.com',
     language: 'en'

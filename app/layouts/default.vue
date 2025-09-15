@@ -15,42 +15,13 @@
         <UiSidebarGroup>
           <UiSidebarGroupContent>
             <UiSidebarMenu>
-              <UiSidebarMenuItem>
+              <UiSidebarMenuItem
+                v-for="item in navigation"
+                :key="item.name"
+              >
                 <UiSidebarMenuButton as-child>
-                  <NuxtLink to="/">
-                    <span>Home</span>
-                  </NuxtLink>
-                </UiSidebarMenuButton>
-              </UiSidebarMenuItem>
-              
-              <UiSidebarMenuItem>
-                <UiSidebarMenuButton as-child>
-                  <NuxtLink to="/about">
-                    <span>About</span>
-                  </NuxtLink>
-                </UiSidebarMenuButton>
-              </UiSidebarMenuItem>
-              
-              <UiSidebarMenuItem>
-                <UiSidebarMenuButton as-child>
-                  <NuxtLink to="/work">
-                    <span>Work</span>
-                  </NuxtLink>
-                </UiSidebarMenuButton>
-              </UiSidebarMenuItem>
-              
-              <UiSidebarMenuItem>
-                <UiSidebarMenuButton as-child>
-                  <NuxtLink to="/blog">
-                    <span>Blog</span>
-                  </NuxtLink>
-                </UiSidebarMenuButton>
-              </UiSidebarMenuItem>
-              
-              <UiSidebarMenuItem>
-                <UiSidebarMenuButton as-child>
-                  <NuxtLink to="/gallery">
-                    <span>Gallery</span>
+                  <NuxtLink :to="localePath(item.to)">
+                    <span>{{ item.name }}</span>
                   </NuxtLink>
                 </UiSidebarMenuButton>
               </UiSidebarMenuItem>
@@ -112,33 +83,13 @@
           </UiButton>
           
           <div class="space-y-0 pr-10">
-            <div class="flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors">
-              <NuxtLink to="/" class="flex items-center gap-2 w-full">
-                <span>Home</span>
-              </NuxtLink>
-            </div>
-            
-            <div class="flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors">
-              <NuxtLink to="/about" class="flex items-center gap-2 w-full">
-                <span>About</span>
-              </NuxtLink>
-            </div>
-            
-            <div class="flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors">
-              <NuxtLink to="/work" class="flex items-center gap-2 w-full">
-                <span>Work</span>
-              </NuxtLink>
-            </div>
-            
-            <div class="flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors">
-              <NuxtLink to="/blog" class="flex items-center gap-2 w-full">
-                <span>Blog</span>
-              </NuxtLink>
-            </div>
-            
-            <div class="flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors">
-              <NuxtLink to="/gallery" class="flex items-center gap-2 w-full">
-                <span>Gallery</span>
+            <div
+              v-for="item in navigation"
+              :key="item.name"
+              class="flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors"
+            >
+              <NuxtLink :to="localePath(item.to)" class="flex items-center gap-2 w-full">
+                <span>{{ item.name }}</span>
               </NuxtLink>
             </div>
           </div>
@@ -181,6 +132,10 @@
 <script setup>
 const colorMode = useColorMode()
 const hideSidebar = ref(false)
+const localePath = useLocalePath()
+
+// Get navigation items from utility
+const navigation = getNavigation('home') as Record<string, Navigation>
 
 // Use VueUse's built-in breakpoints (already available in your project)
 const { width } = useWindowSize()

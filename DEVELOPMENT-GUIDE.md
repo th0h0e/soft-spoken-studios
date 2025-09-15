@@ -29,9 +29,10 @@ npm run typecheck
 ### What is Editable in Nuxt Studio
 
 **✅ Content Files** (Managed through Studio):
-- `/content/articles/*.md` - Blog posts and articles
-- `/content/portfolio/*.md` - Portfolio projects
-- `/content/about/*.md` - About page sections (Skills, Experience, Philosophy, Education)
+- `/content/{locale}/articles/*.md` - Blog posts and articles per language
+- `/content/{locale}/portfolio/*.md` - Portfolio projects per language
+- `/content/{locale}/about/*.md` - About page sections per language
+- `/content/{locale}/*.md` - Main page content per language
 
 **❌ NOT Editable in Studio** (Code files):
 - `/i18n/locales/*.json` - Translation files
@@ -40,26 +41,37 @@ npm run typecheck
 
 ### Content Structure
 
-#### Articles Collection
-Located: `/content/articles/`
+**🚨 CRITICAL: Language-First Directory Structure**
+
+All content **MUST** be organized by language first, then by content type. This structure is required for proper i18n routing integration.
+
+#### Content Collections
+
+**Main Pages** (Located: `/content/{locale}/`)
+Each language directory contains:
+- `index.md` - Home page content
+- `about.md` - About page content
+- `work.md` - Work/Portfolio listing page
+- `blog.md` - Blog listing page
+- `gallery.md` - Gallery page content
+
+**Articles Collection** (Located: `/content/{locale}/articles/`)
+Schema includes:
+- `title`, `preview`, `date`
+- `heroImage`, `heroImageDescription`
+- `contentImage`, `contentImageDescription`
+- `paragraphOne`, `paragraphTwo`
+- `sources[]` (optional), `tags[]` (optional)
+- `featured` (boolean, optional)
+
+**Portfolio Collection** (Located: `/content/{locale}/portfolio/`)
 Schema includes:
 - `title`, `description`, `date`
-- `image` (optional URL)
-- `tags[]`, `categories[]`
-- `featured` (boolean)
-- `excerpt` (optional)
+- `image` (optional), `client` (optional)
+- `featured` (boolean, optional)
 
-#### Portfolio Collection
-Located: `/content/portfolio/`
-Schema includes:
-- `title`, `description`, `date`
-- `client`, `services[]`, `technologies[]`
-- `projectUrl`, `githubUrl` (optional)
-- `featured` (boolean)
-
-#### About Sections Collection
-Located: `/content/about/`
-Four main sections:
+**About Sections Collection** (Located: `/content/{locale}/about/`)
+Four main sections per language:
 1. **Skills** (`skills.md`) - Expertise areas with icons
 2. **Experience** (`experience.md`) - Work history and client projects
 3. **Philosophy** (`philosophy.md`) - Values and principles
@@ -71,6 +83,50 @@ Four main sections:
 2. **Edit Content**: Navigate to content collections and edit directly
 3. **Live Preview**: See changes in real-time before publishing
 4. **Publish**: Changes sync back to your GitHub repository
+
+---
+
+## 🆕 Nuxt i18n v10 New Features
+
+### Content-Driven Routing vs Custom Page Routes
+
+**Our Project Uses**: Content-driven routing with catch-all `[...slug].vue` pattern
+- ✅ No need for `definePageMeta()` route customization
+- ✅ Routes automatically generated from content structure
+- ✅ All routing handled through content collections
+
+**Alternative Approach** (not used in this project):
+If using traditional Vue pages, v10 now supports custom routes via `definePageMeta()`:
+```vue
+<script setup>
+definePageMeta({
+  i18n: {
+    paths: {
+      en: '/about-us',
+      nl: '/over-ons',
+      sv: '/om-oss',
+    }
+  }
+})
+</script>
+```
+
+### Nitro-Side Language Detection (Active)
+
+Language detection now happens server-side for better performance:
+- ✅ Improves prerendering compatibility
+- ✅ Earlier request lifecycle redirection
+- ⚙️ Can be disabled with `experimental.nitroContextDetection: false` if needed
+
+### Experimental Features Available
+
+**Strict SEO Mode** (`experimental.strictSeo: true`):
+- Automatic i18n head tag management
+- Disabled alternate tags for unsupported locales
+- Global canonical query parameter configuration
+- No need for manual `useLocaleHead()` calls
+
+**Note**: We use standard SEO mode for maximum compatibility.
 
 ---
 
@@ -137,6 +193,73 @@ Four main sections:
 - English: `/en/about`
 - Dutch: `/nl/about`
 - Swedish: `/sv/about`
+
+---
+
+## 🔌 Nuxt i18n API Extensions
+
+### NuxtApp Context Extensions
+
+The i18n module extends the Nuxt runtime app context with global APIs:
+
+#### `$i18n` Global Instance
+Available on NuxtApp context - provides access to Vue I18n Composer or VueI18n instance:
+
+```typescript
+export default defineNuxtPlugin(nuxtApp => {
+  // Access global i18n instance
+  nuxtApp.$i18n.onBeforeLanguageSwitch = (oldLocale, newLocale, isInitialSetup, nuxtApp) => {
+    console.log('onBeforeLanguageSwitch', oldLocale, newLocale, isInitialSetup)
+  }
+})
+```
+
+**Note**: Since we use `legacy: false` (Composition API), `$i18n` is a global Composer instance.
+
+#### Available Context Methods
+- `$routeBaseName()` - Get route base name without locale suffix
+- `$switchLocalePath()` - Generate path for locale switching
+- `$localePath()` - Generate localized path
+- `$localeRoute()` - Generate localized route object
+- `$localeHead()` - Generate localized head metadata
+
+### Nuxt Hooks Extensions
+
+#### `i18n:registerModule` Hook
+For module authors to register additional translation resources:
+
+```typescript
+import { createResolver, defineNuxtModule } from '@nuxt/kit'
+
+export default defineNuxtModule({
+  async setup(options, nuxt) {
+    const { resolve } = createResolver(import.meta.url)
+
+    nuxt.hook('i18n:registerModule', register => {
+      register({
+        // langDir path needs to be resolved
+        langDir: resolve('./lang'),
+        locales: [
+          {
+            code: 'en',
+            file: 'en.json',
+          },
+          {
+            code: 'nl',
+            file: 'nl.json',
+          },
+          {
+            code: 'sv',
+            file: 'sv.json',
+          },
+        ]
+      })
+    })
+  }
+})
+```
+
+**Usage in Our Project**: We don't currently use module registration, but this hook is available for extending translations from custom modules.
 
 ---
 
@@ -222,10 +345,18 @@ npm i -D @iconify-json/[collection-name]
 │   ├── layouts/          # Page layouts
 │   ├── pages/            # Route pages
 │   └── assets/           # Static assets
-├── content/              # Studio-editable content
-│   ├── articles/         # Blog posts
-│   ├── portfolio/        # Project showcases
-│   └── about/           # About page sections
+├── content/              # Studio-editable content (LANGUAGE-FIRST)
+│   ├── en/              # English content
+│   │   ├── articles/    # English blog posts
+│   │   ├── portfolio/   # English project showcases
+│   │   ├── about/       # English about sections
+│   │   ├── index.md     # English home page
+│   │   ├── about.md     # English about page
+│   │   ├── work.md      # English work page
+│   │   ├── blog.md      # English blog page
+│   │   └── gallery.md   # English gallery page
+│   ├── nl/              # Dutch content (same structure)
+│   └── sv/              # Swedish content (same structure)
 ├── i18n/
 │   └── locales/         # Translation files
 ├── plugins/             # Nuxt plugins
@@ -254,12 +385,14 @@ i18n: {
 }
 ```
 
-**✅ DO** keep it simple like Canvas-main:
+**✅ DO** keep it simple like our project:
 ```typescript
-// CORRECT - Clean configuration
+// CORRECT - Our clean configuration
 i18n: {
   locales: [
-    { code: 'en', name: 'English', language: 'en-US' }  // ✅ DO
+    { code: 'en', name: 'English', language: 'en-US' },
+    { code: 'nl', name: 'Nederlands', language: 'nl-NL' },
+    { code: 'sv', name: 'Svenska', language: 'sv-SE' }
   ],
   strategy: 'prefix',
   defaultLocale: 'en'
@@ -295,19 +428,20 @@ i18n: {
 - ❌ `plugins/*.ts`
 
 **✅ DO** only edit content files in Studio:
-- ✅ `/content/articles/*.md`
-- ✅ `/content/portfolio/*.md`
-- ✅ `/content/about/*.md`
+- ✅ `/content/{locale}/articles/*.md`
+- ✅ `/content/{locale}/portfolio/*.md`
+- ✅ `/content/{locale}/about/*.md`
+- ✅ `/content/{locale}/*.md` (main pages)
 
 ### Schema Definition Mistakes
 
 **❌ DON'T** create content without defining schema first:
 ```typescript
-// WRONG - No schema validation
+// WRONG - No schema validation (old pattern)
 export const collections = {
   articles: defineCollection({
     type: 'page',
-    source: { include: 'articles/**/*.md' }
+    source: { include: 'articles/**/*.md' }  // ❌ Wrong structure!
     // ❌ Missing schema!
   })
 }
@@ -315,18 +449,34 @@ export const collections = {
 
 **✅ DO** always define proper schemas:
 ```typescript
-// CORRECT - Proper schema validation
-const articleSchema = z.object({
-  title: z.string(),
-  description: z.string(),
-  // ... proper validation
+// CORRECT - Our actual article schema
+const commonArticleSchema = z.object({
+  title: z.string().nonempty(),
+  preview: z.string().nonempty(),
+  date: z.string().nonempty(),
+  heroImage: z.string().nonempty(),
+  heroImageDescription: z.string().nonempty(),
+  contentImage: z.string().nonempty(),
+  contentImageDescription: z.string().nonempty(),
+  paragraphOne: z.string().nonempty(),
+  paragraphTwo: z.string().nonempty(),
+  sources: z.array(z.object({
+    title: z.string().nonempty(),
+    url: z.string().url(),
+    description: z.string().optional()
+  })).optional(),
+  tags: z.array(z.string().nonempty()).optional(),
+  featured: z.boolean().optional(),
 })
 
 export const collections = {
-  articles: defineCollection({
+  articles_en: defineCollection({
     type: 'page',
-    source: { include: 'articles/**/*.md' },
-    schema: articleSchema  // ✅ Schema validation
+    source: {
+      include: 'en/articles/*.md',
+      prefix: '/en/articles',
+    },
+    schema: commonArticleSchema
   })
 }
 ```
@@ -348,25 +498,58 @@ export const collections = {
 - Verify Studio integration works
 - Check that build succeeds
 
-### File Organization Mistakes
+### File Organization Requirements
 
-**❌ DON'T** put content in wrong directories:
+**🚨 CRITICAL: Use Language-First Structure**
+
+This project **REQUIRES** a language-first directory structure to properly integrate with i18n routing. This is **NOT OPTIONAL**.
+
+**✅ REQUIRED structure:**
 ```
-// WRONG structure
 /content/
-  /en/articles/  // ❌ Language-first (old pattern)
-  /nl/articles/
-  /sv/articles/
+  /en/              # English content
+    /articles/      # English articles
+    /portfolio/     # English portfolio
+    /about/         # English about sections
+    index.md        # English home page
+    about.md        # English about page
+    work.md         # English work page
+    blog.md         # English blog page
+    gallery.md      # English gallery page
+  /nl/              # Dutch content (same structure)
+    /articles/      # Dutch articles
+    /portfolio/     # Dutch portfolio
+    /about/         # Dutch about sections
+    index.md        # Dutch home page
+    about.md        # Dutch about page
+    work.md         # Dutch work page
+    blog.md         # Dutch blog page
+    gallery.md      # Dutch gallery page
+  /sv/              # Swedish content (same structure)
+    /articles/      # Swedish articles
+    /portfolio/     # Swedish portfolio
+    /about/         # Swedish about sections
+    index.md        # Swedish home page
+    about.md        # Swedish about page
+    work.md         # Swedish work page
+    blog.md         # Swedish blog page
+    gallery.md      # Swedish gallery page
 ```
 
-**✅ DO** use content-type-first structure:
+**❌ NEVER use content-type-first structure:**
 ```
-// CORRECT structure
+// WRONG - This breaks i18n routing
 /content/
-  /articles/  // ✅ Content-type-first (Studio-friendly)
-  /portfolio/
-  /about/
+  /articles/      # ❌ Content-type-first breaks localization
+  /portfolio/     # ❌ Cannot route to /en/articles/
+  /about/         # ❌ Causes routing conflicts
 ```
+
+**Why Language-First is Required:**
+- Matches i18n URL structure (`/en/articles/`, `/nl/articles/`)
+- Enables proper locale-specific content management
+- Required by content.config.ts collections configuration
+- Prevents routing conflicts with Nuxt i18n module
 
 ---
 
@@ -395,6 +578,10 @@ export const collections = {
 ```bash
 # In browser console
 console.log($nuxt.$i18n.messages)
+# Or access available locales
+console.log($nuxt.$i18n.availableLocales)
+# Or current locale
+console.log($nuxt.$i18n.locale.value)
 ```
 
 ### Verify Content Schema
@@ -431,4 +618,4 @@ npm run dev
 
 ---
 
-*Last updated: Based on Canvas-main patterns and extensive testing*
+*Last updated: Based on Soft Spoken Studios project architecture and Nuxt i18n v10*
