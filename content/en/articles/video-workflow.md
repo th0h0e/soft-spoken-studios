@@ -1,7 +1,7 @@
 ---
 title: From Concept to Screen - Video Production Workflow
 description: A behind-the-scenes look at how I approach video projects, from initial client brief to final delivery and creative decisions.
-date: October 15, 2024
+date: 2024-10-15
 image: https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=600&fit=crop&crop=center
 tags:
   - Video Production

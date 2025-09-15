@@ -5,13 +5,15 @@ description: Comprehensive brand identity design including logo, color palette,
 date: 2024-12-10
 client: TechFlow Solutions
 services:
-  - Brand Identity
+  - Brand Strategy
   - Logo Design
+  - Visual Identity
   - Brand Guidelines
 technologies:
   - Adobe Illustrator
+  - Adobe Photoshop
   - Figma
-  - Adobe InDesign
+  - InDesign
 featured: true
 excerpt: A complete brand identity transformation that helped position a tech
   startup as a leader in their industry.

@@ -1,7 +1,7 @@
 ---
 title: Finding Your Creative Voice in a Noisy World
 description: Reflections on the creative journey, challenges faced, and lessons learned. How to develop your unique voice while staying authentic.
-date: September 30, 2024
+date: 2024-09-30
 image: https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&crop=center
 tags:
   - Creative Process

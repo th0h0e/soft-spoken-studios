@@ -2,7 +2,7 @@
 title: Capturing Brand Essence Through Photography
 description: How visual storytelling through photography can transform a brand's
   narrative and create authentic connections with your audience.
-date: November 28, 2024
+date: 2024-11-28
 image: https://images.unsplash.com/photo-1452849561042-74ec533f2dee?w=800&h=600&fit=crop&crop=center
 tags:
   - Photography

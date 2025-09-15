@@ -1,12 +1,12 @@
 ---
-title: "Website Copy Redesign for SaaS Platform"
-description: "Complete website copy overhaul that transformed a complex technical product into clear, compelling messaging that converts visitors into customers."
-date: "2024-10-20"
-client: "DataSync Pro"
-services: ["Copywriting", "Content Strategy", "UX Writing"]
-technologies: ["Figma", "Google Docs", "Hotjar"]
+title: Website Copy Redesign for SaaS Platform
+description: Complete website copy overhaul that transformed a complex technical product into clear, compelling messaging that converts visitors into customers.
+date: 2024-10-20
+client: DataSync Pro
+services:
+technologies:
 featured: false
-excerpt: "Strategic copy redesign that increased conversion rates by 85% through clear, benefit-focused messaging."
+excerpt: Strategic copy redesign that increased conversion rates by 85% through clear, benefit-focused messaging.
 ---
 
 # Website Copy Redesign for SaaS Platform

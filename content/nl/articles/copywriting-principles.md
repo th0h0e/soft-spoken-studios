@@ -3,7 +3,7 @@ title: Words That Work - Timeless Copywriting Principles
 description: Timeless copywriting principles that transcend trends and
   platforms. Learn the foundational elements that make copy compelling and
   memorable.
-date: November 12, 2024
+date: 2024-11-12
 image: https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=600&fit=crop&crop=center
 tags:
   - Copywriting
