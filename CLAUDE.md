@@ -92,20 +92,46 @@ const { data: page } = await useAsyncData(path.value, async () =>
 <span v-for="item in getFirstTwo(items)">{{ item }}</span>
 ```
 
+## Internationalization (i18n)
+
+### Configuration
+- **Strategy**: `'prefix'` - All routes include locale prefix
+- **Default Locale**: `'en'` (English)
+- **Supported Locales**: English (`en`), Dutch (`nl`), Swedish (`sv`)
+
+### URL Structure
+```
+/en/        # English home
+/nl/        # Dutch home
+/sv/        # Swedish home
+/en/about   # English about page
+/nl/about   # Dutch about page
+/sv/about   # Swedish about page
+```
+
+### Navigation Best Practices
+- Always use `localePath()` for navigation links
+- Use `useLocalePath()` composable in components
+- Language switching handled by `useSwitchLocalePath()`
+
 ## Content System
 
-### Structure
+### Structure (Language-First - REQUIRED)
 ```
 content/
-├── articles/           # Blog posts
-├── portfolio/          # Portfolio projects
-└── about/             # About page sections
+├── en/                # English content
+│   ├── articles/      # English blog posts
+│   ├── portfolio/     # English portfolio projects
+│   ├── about/         # English about sections
+│   └── *.md          # English main pages (index, about, work, blog, gallery)
+├── nl/                # Dutch content (same structure)
+└── sv/                # Swedish content (same structure)
 ```
 
 ### Adding Content
-1. Create `.md` file in appropriate folder
+1. Create `.md` file in appropriate language folder
 2. Add frontmatter with required fields
-3. Automatic routing: `/articles/filename`, `/portfolio/filename`, or `/about/filename`
+3. Automatic routing: `/en/articles/filename`, `/nl/articles/filename`, `/sv/articles/filename`
 
 ### Required Dependencies
 - `@nuxt/content` - Content management
@@ -113,25 +139,33 @@ content/
 
 ## Key Project Rules
 
-1. **Pages-only routing** - NO `app.vue` file
-2. **Single root element** per page - wrap in `<div>`
+1. **Content-driven routing** - Uses catch-all `[...slug].vue` pattern
+2. **Language-first content structure** - ALL content organized by locale first
 3. **Never use definePageMeta()** - use `useHead()` instead
-4. **Direct content queries** - no custom composables
+4. **Direct content queries** - no custom composables, use locale-specific collections
 5. **Minimal styling** - avoid complex CSS classes
+6. **Always use localePath()** - for all navigation links
 
 ## File Structure
 ```
 app/
-├── pages/              # File-based routing
-│   ├── articles/[slug].vue    # Blog detail pages
-│   ├── portfolio/[slug].vue   # Portfolio detail pages
-│   └── blog.vue              # Blog listing
+├── pages/
+│   └── [...slug].vue  # Catch-all route for content-driven routing
 ├── components/         # Auto-imported Vue components
 ├── layouts/           # Layout templates
+├── utils/             # Navigation utilities (useNavigation.ts)
 └── composables/       # Reusable logic
 
-content/               # Nuxt Content files
-content.config.ts      # Content collections config
+content/               # Language-first content structure
+├── en/                # English content
+│   ├── articles/      # English blog posts
+│   ├── portfolio/     # English portfolio
+│   ├── about/         # English about sections
+│   └── *.md          # English main pages
+├── nl/                # Dutch content (same structure)
+└── sv/                # Swedish content (same structure)
+
+content.config.ts      # Locale-specific content collections
 ```
 
 ## Development Commands

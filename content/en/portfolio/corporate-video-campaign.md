@@ -1,12 +1,20 @@
 ---
 title: Corporate Video Campaign for Healthcare Provider
-description: Multi-part video campaign showcasing healthcare services with authentic patient stories and professional medical team interviews.
+description: Multi-part video campaign showcasing healthcare services with
+  authentic patient stories and professional medical team interviews.
 date: 2024-11-15
 client: MedCare Health Systems
 services:
+  - Video Production
+  - Scriptwriting
+  - Post-Production
 technologies:
+  - Canon C70
+  - DaVinci Resolve
+  - Adobe Premiere Pro
 featured: true
-excerpt: A compelling video campaign that increased patient trust and engagement for a regional healthcare provider.
+excerpt: A compelling video campaign that increased patient trust and engagement
+  for a regional healthcare provider.
 ---
 
 # Corporate Video Campaign for Healthcare Provider

@@ -1,78 +1,36 @@
 <template>
-  <UiDropdownMenu>
-    <UiDropdownMenuTrigger as-child>
-      <UiButton variant="ghost" size="sm" class="h-8 w-full justify-start gap-2">
-        <Icon :name="currentLocaleIcon" class="w-4 h-4" />
-        <span class="hidden lg:inline">{{ currentLocaleName }}</span>
-        <span class="lg:hidden">{{ currentLocale.toUpperCase() }}</span>
-        <Icon name="lucide:chevron-down" class="w-3 h-3 ml-auto" />
-      </UiButton>
-    </UiDropdownMenuTrigger>
-
-    <UiDropdownMenuContent align="start" class="w-40">
-      <UiDropdownMenuItem
-        v-for="locale in availableLocales"
+  <div class="flex items-center gap-3 rounded-lg border border-white/10 bg-zinc-900/90 px-3 py-1 backdrop-blur-xl">
+    <ClientOnly>
+      <NuxtLink
+        v-for="locale in locales"
         :key="locale.code"
-        @click="switchLanguage(locale.code)"
-        :class="{ 'bg-accent': locale.code === currentLocale }"
+        class="cursor-pointer select-none"
+        :to="switchLocalePath(locale.code)"
       >
-        <Icon :name="getLocaleIcon(locale.code)" class="w-4 h-4 mr-2" />
-        <span>{{ locale.name }}</span>
-        <Icon v-if="locale.code === currentLocale" name="lucide:check" class="w-3 h-3 ml-auto" />
-      </UiDropdownMenuItem>
-    </UiDropdownMenuContent>
-  </UiDropdownMenu>
+        <span
+          class="font-semibold"
+          :class="locale.code === currentLocale?.code ? 'text-white' : 'text-neutral-500'"
+        >
+          {{ locale.code }}
+        </span>
+      </NuxtLink>
+      <template #fallback>
+        <div class="h-2 w-5" />
+      </template>
+    </ClientOnly>
+  </div>
 </template>
 
 <script setup>
-const { locale, locales } = useI18n()
-const localePath = useLocalePath()
-const router = useRouter()
+const { locale: current, setLocaleCookie, locales } = useI18n()
 
-// Current locale
-const currentLocale = computed(() => locale.value)
-
-// Available locales
-const availableLocales = computed(() => locales.value)
-
-// Current locale name
-const currentLocaleName = computed(() => {
-  const current = availableLocales.value.find(l => l.code === currentLocale.value)
-  return current?.name || currentLocale.value
+const currentLocale = computed(() => {
+  return locales.value.find(locale => locale.code === current.value)
 })
 
-// Get flag icons for locales
-const getLocaleIcon = (localeCode) => {
-  const icons = {
-    'en': 'lucide:flag',
-    'nl': 'lucide:flag',
-    'sv': 'lucide:flag'
-  }
-  return icons[localeCode] || 'lucide:flag'
-}
+watch(current, (newLocale) => {
+  setLocaleCookie(newLocale)
+})
 
-const currentLocaleIcon = computed(() => getLocaleIcon(currentLocale.value))
-
-// Switch language function
-const switchLanguage = async (newLocale) => {
-  if (newLocale === currentLocale.value) return
-
-  try {
-    // Get current route path
-    const currentPath = router.currentRoute.value.fullPath
-
-    // Remove current locale prefix if it exists
-    const pathWithoutLocale = currentPath.replace(new RegExp(`^/${currentLocale.value}`), '') || '/'
-
-    // Create new path with new locale
-    const newPath = localePath(pathWithoutLocale, newLocale)
-
-    // Navigate to new path
-    await navigateTo(newPath)
-  } catch (error) {
-    console.error('Language switch error:', error)
-    // Fallback: just set the locale
-    locale.value = newLocale
-  }
-}
+const switchLocalePath = useSwitchLocalePath()
 </script>

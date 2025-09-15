@@ -98,6 +98,7 @@ const filteredArticles = computed(() => {
     const query = searchQuery.value.toLowerCase()
     filtered = filtered.filter(article =>
       article.title.toLowerCase().includes(query) ||
+      article.preview?.toLowerCase().includes(query) ||
       article.description?.toLowerCase().includes(query) ||
       article.excerpt?.toLowerCase().includes(query)
     )

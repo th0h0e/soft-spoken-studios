@@ -1,14 +1,18 @@
 ---
 title: The Art of Strategic Storytelling
-description: Exploring how successful campaigns balance analytical insights with compelling narratives to create meaningful connections with audiences.
+description: Exploring how successful campaigns balance analytical insights with
+  compelling narratives to create meaningful connections with audiences.
 date: 2024-12-15
 image: https://images.unsplash.com/photo-1553028826-f4804a6dba3b?w=800&h=600&fit=crop&crop=center
 tags:
   - Strategy
   - Creative Process
 featured: true
-excerpt: Exploring how successful campaigns balance analytical insights with compelling narratives to create meaningful connections with audiences. A deep dive into the methodology behind effective creative strategy.
-summary: Learn how to create campaigns that balance data-driven insights with emotional storytelling to build authentic connections with your audience.
+excerpt: Exploring how successful campaigns balance analytical insights with
+  compelling narratives to create meaningful connections with audiences. A deep
+  dive into the methodology behind effective creative strategy.
+summary: Learn how to create campaigns that balance data-driven insights with
+  emotional storytelling to build authentic connections with your audience.
 ---
 
 In the world of creative communication, the most powerful stories are born at the intersection of data and emotion. This isn't about choosing between analytical rigor and creative intuition – it's about weaving them together into something greater than the sum of their parts.

@@ -4,9 +4,14 @@
     
     <div class="text-muted-foreground">
       <p class="text-xl leading-relaxed">
-        Brand Strategy for Local Bakery • Website Copy for Tech Startup • 
-        Product Launch Video • Annual Report Design • Social Media Campaign • 
-        Email Newsletter Series • Corporate Presentation
+        <NuxtLink to="/portfolio/local-restaurant-campaign" class="hover:text-foreground transition-colors">Local Restaurant Campaign</NuxtLink> •
+        <NuxtLink to="/portfolio/artisan-workshop-brand" class="hover:text-foreground transition-colors">Artisan Workshop Brand</NuxtLink> •
+        <NuxtLink to="/portfolio/consulting-services-website" class="hover:text-foreground transition-colors">Consulting Services Website</NuxtLink> •
+        <NuxtLink to="/portfolio/community-nonprofit-initiative" class="hover:text-foreground transition-colors">Community Nonprofit Initiative</NuxtLink> •
+        <NuxtLink to="/portfolio/corner-cafe-rebrand" class="hover:text-foreground transition-colors">Corner Cafe Rebrand</NuxtLink> •
+        <NuxtLink to="/portfolio/legal-practice-messaging" class="hover:text-foreground transition-colors">Legal Practice Messaging</NuxtLink> •
+        <NuxtLink to="/portfolio/holistic-wellness-center" class="hover:text-foreground transition-colors">Holistic Wellness Center</NuxtLink> •
+        <NuxtLink to="/portfolio/independent-bookstore-revival" class="hover:text-foreground transition-colors">Independent Bookstore Revival</NuxtLink>
       </p>
     </div>
   </div>
