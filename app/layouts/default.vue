@@ -135,7 +135,11 @@ const hideSidebar = ref(false)
 const localePath = useLocalePath()
 
 // Get navigation items from utility
-const navigation = getNavigation('home') as Record<string, Navigation>
+const navigationData = getNavigation('home')
+const navigation = computed(() => {
+  if (Array.isArray(navigationData)) return []
+  return Object.values(navigationData)
+})
 
 // Use VueUse's built-in breakpoints (already available in your project)
 const { width } = useWindowSize()
