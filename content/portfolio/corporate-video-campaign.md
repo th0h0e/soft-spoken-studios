@@ -24,6 +24,7 @@ This project involved creating a comprehensive video campaign for MedCare Health
 ## Project Scope
 
 MedCare needed video content that would:
+
 - Build trust with potential patients
 - Showcase their state-of-the-art facilities
 - Highlight the expertise of their medical team
@@ -32,18 +33,21 @@ MedCare needed video content that would:
 ## Production Details
 
 ### Pre-Production
+
 - Conducted stakeholder interviews to understand goals
 - Developed creative brief and treatment
 - Scouted locations across three facilities
 - Coordinated with medical staff and patient participants
 
 ### Filming
+
 - 5 days of principal photography
 - Interviews with 8 medical professionals
 - 4 patient testimonial sessions
 - B-roll footage of facilities and equipment
 
 ### Post-Production
+
 - Professional color grading for consistent look
 - Audio mixing and enhancement
 - Custom motion graphics and lower thirds
@@ -60,6 +64,7 @@ MedCare needed video content that would:
 ## Technical Approach
 
 Used a soft spoken visual style that emphasized:
+
 - Natural lighting whenever possible
 - Intimate interview setups for authenticity
 - Clean, professional aesthetics
@@ -68,6 +73,7 @@ Used a soft spoken visual style that emphasized:
 ## Results
 
 The video campaign achieved:
+
 - 200% increase in website engagement
 - 45% boost in appointment bookings
 - Improved patient satisfaction scores
