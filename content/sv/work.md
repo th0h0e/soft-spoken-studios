@@ -1,7 +1,7 @@
 ---
-title: 'Our Work'
-description: 'A collection of projects that showcase our approach to thoughtful communication'
-date: '2024-09-15'
+title: "Our Work"
+description: "A collection of projects that showcase our approach to thoughtful communication"
+date: "2024-09-15"
 ---
 
 # Our Work

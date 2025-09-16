@@ -32,7 +32,7 @@
   const forwarded = reactiveOmit(props, "class", "size");
 
   const styles = tv({
-    base: "pointer-events-none inline-flex items-center gap-1 rounded-sm border border-border bg-muted font-sans font-medium shadow-xs select-none",
+    base: "border-border bg-muted pointer-events-none inline-flex items-center gap-1 rounded-sm border font-sans font-medium shadow-xs select-none",
     variants: {
       size: {
         xs: "h-5 min-h-[16px] px-1 text-[10px]",

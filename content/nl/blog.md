@@ -1,7 +1,7 @@
 ---
-title: 'Creative Insights'
-description: 'Exploring creativity, strategy, and the intersection of thoughtful communication'
-date: '2024-09-15'
+title: "Creative Insights"
+description: "Exploring creativity, strategy, and the intersection of thoughtful communication"
+date: "2024-09-15"
 ---
 
 # Creative Insights

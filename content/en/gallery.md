@@ -1,7 +1,7 @@
 ---
-title: 'Gallery'
-description: 'Visual stories and moments captured'
-date: '2024-09-15'
+title: "Gallery"
+description: "Visual stories and moments captured"
+date: "2024-09-15"
 ---
 
 # Gallery

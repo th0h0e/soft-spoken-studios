@@ -4,11 +4,11 @@
       <UiCarouselContent>
         <UiCarouselItem v-for="(image, index) in images" :key="index">
           <div class="p-1">
-            <UiAspectRatio :ratio="16/9" class="rounded overflow-hidden bg-muted">
+            <UiAspectRatio :ratio="16 / 9" class="bg-muted overflow-hidden rounded">
               <NuxtImg
                 :src="image.src"
                 :alt="image.alt"
-                class="w-full h-full object-cover"
+                class="h-full w-full object-cover"
                 width="800"
                 height="450"
               />
@@ -21,22 +21,22 @@
 </template>
 
 <script setup>
-defineProps({
-  title: {
-    type: String,
-    required: true
-  },
-  category: {
-    type: String,
-    required: true
-  },
-  description: {
-    type: String,
-    required: true
-  },
-  images: {
-    type: Array,
-    required: true
-  }
-})
+  defineProps({
+    title: {
+      type: String,
+      required: true,
+    },
+    category: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    images: {
+      type: Array,
+      required: true,
+    },
+  });
 </script>

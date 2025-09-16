@@ -1,6 +1,6 @@
 <template>
   <UiContainer as="footer">
-    <div class="grid lg:grid-cols-8 gap-8 py-12">
+    <div class="grid gap-8 py-12 lg:grid-cols-8">
       <!-- Left Column - Company Name (matches main content column) -->
       <div class="lg:col-span-5">
         <NuxtLink to="/">
@@ -18,5 +18,4 @@
   </UiContainer>
 </template>
 
-<script setup>
-</script>
+<script setup></script>

@@ -75,4 +75,4 @@ The new brand identity helped TechFlow Solutions:
 
 ## Client Testimonial
 
-*"The brand identity perfectly captures our vision and has been instrumental in our growth. The guidelines are comprehensive yet easy to implement across all our materials."* - Sarah Johnson, CEO, TechFlow Solutions
+_"The brand identity perfectly captures our vision and has been instrumental in our growth. The guidelines are comprehensive yet easy to implement across all our materials."_ - Sarah Johnson, CEO, TechFlow Solutions

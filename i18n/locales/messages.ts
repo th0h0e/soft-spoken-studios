@@ -1,11 +1,11 @@
-import en from './en.json'
-import nl from './nl.json'
-import sv from './sv.json'
+import en from "./en.json";
+import nl from "./nl.json";
+import sv from "./sv.json";
 
 const messages = {
   en,
   nl,
-  sv
-}
+  sv,
+};
 
-export default messages
+export default messages;

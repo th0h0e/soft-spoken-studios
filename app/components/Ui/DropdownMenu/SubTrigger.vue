@@ -9,7 +9,7 @@
       <span v-if="title">{{ title }}</span>
     </slot>
     <Icon
-      class="ml-auto size-4 text-muted-foreground"
+      class="text-muted-foreground ml-auto size-4"
       :name="trailingIcon || 'lucide:chevron-right'"
     />
   </DropdownMenuSubTrigger>
@@ -36,7 +36,7 @@
   >();
   const forwarded = reactiveOmit(props, "class", "inset", "icon", "title", "trailingIcon");
   const styles = tv({
-    base: "flex cursor-pointer items-center rounded-sm px-2 py-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-[inset=true]:pl-8 data-[state=open]:bg-accent data-[state=open]:text-accent-foreground",
+    base: "focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground flex cursor-pointer items-center rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[inset=true]:pl-8",
     variants: {
       inset: {
         true: "pl-8",

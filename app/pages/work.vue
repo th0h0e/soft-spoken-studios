@@ -1,27 +1,30 @@
 <template>
   <div>
-    <Header 
+    <Header
       headline="Portfolio"
       title="Selected work in copywriting and video production"
       description="A collection of projects that showcase our approach to thoughtful communication and authentic storytelling."
     />
-    
-    <UiContainer class="pb-16 -mt-8">
-      <div class="grid lg:grid-cols-8 gap-8 gap-y-4">
+
+    <UiContainer class="-mt-8 pb-16">
+      <div class="grid gap-8 gap-y-4 lg:grid-cols-8">
         <!-- Row 1: Restaurant Campaign -->
         <div class="lg:col-span-5">
           <PortfolioItem
             :images="[
               { src: '/images/3334f4a0741954580a818e303927dfcd.jpg', alt: 'Restaurant interior' },
               { src: '/images/8bfedd83aec8466a4708d60ec299d164.jpg', alt: 'Food preparation' },
-              { src: '/images/90d52ee25f93c3e7deaf019956a6089b.jpg', alt: 'Finished dish' }
+              { src: '/images/90d52ee25f93c3e7deaf019956a6089b.jpg', alt: 'Finished dish' },
             ]"
           />
         </div>
-        <div class="lg:col-span-3 flex items-start">
+        <div class="flex items-start lg:col-span-3">
           <SideCard>
             <template #title>Local Restaurant Campaign</template>
-            <template #content>We believe the best meals happen when quality ingredients meet quiet confidence. No trends. No noise. Just honest food that speaks for itself.</template>
+            <template #content
+              >We believe the best meals happen when quality ingredients meet quiet confidence. No
+              trends. No noise. Just honest food that speaks for itself.</template
+            >
           </SideCard>
         </div>
 
@@ -31,14 +34,17 @@
             :images="[
               { src: '/images/90d52ee25f93c3e7deaf019956a6089b.jpg', alt: 'Workshop tools' },
               { src: '/images/3334f4a0741954580a818e303927dfcd.jpg', alt: 'Craftsmanship detail' },
-              { src: '/images/8bfedd83aec8466a4708d60ec299d164.jpg', alt: 'Finished product' }
+              { src: '/images/8bfedd83aec8466a4708d60ec299d164.jpg', alt: 'Finished product' },
             ]"
           />
         </div>
-        <div class="lg:col-span-3 flex items-start">
+        <div class="flex items-start lg:col-span-3">
           <SideCard>
             <template #title>Artisan Workshop Brand</template>
-            <template #content>Every piece tells a story of patience and skill. In a world of fast everything, we choose slow. We choose thoughtful. We choose lasting.</template>
+            <template #content
+              >Every piece tells a story of patience and skill. In a world of fast everything, we
+              choose slow. We choose thoughtful. We choose lasting.</template
+            >
           </SideCard>
         </div>
 
@@ -48,14 +54,17 @@
             :images="[
               { src: '/images/8bfedd83aec8466a4708d60ec299d164.jpg', alt: 'Team meeting' },
               { src: '/images/90d52ee25f93c3e7deaf019956a6089b.jpg', alt: 'Strategy session' },
-              { src: '/images/3334f4a0741954580a818e303927dfcd.jpg', alt: 'Results presentation' }
+              { src: '/images/3334f4a0741954580a818e303927dfcd.jpg', alt: 'Results presentation' },
             ]"
           />
         </div>
-        <div class="lg:col-span-3 flex items-start">
+        <div class="flex items-start lg:col-span-3">
           <SideCard>
             <template #title>Consulting Services Website</template>
-            <template #content>We help businesses find clarity in complexity. Clear thinking. Clear communication. Clear results. Because the best solutions are often the simplest ones.</template>
+            <template #content
+              >We help businesses find clarity in complexity. Clear thinking. Clear communication.
+              Clear results. Because the best solutions are often the simplest ones.</template
+            >
           </SideCard>
         </div>
 
@@ -65,14 +74,17 @@
             :images="[
               { src: '/images/3334f4a0741954580a818e303927dfcd.jpg', alt: 'Community event' },
               { src: '/images/90d52ee25f93c3e7deaf019956a6089b.jpg', alt: 'Volunteer work' },
-              { src: '/images/8bfedd83aec8466a4708d60ec299d164.jpg', alt: 'Impact story' }
+              { src: '/images/8bfedd83aec8466a4708d60ec299d164.jpg', alt: 'Impact story' },
             ]"
           />
         </div>
-        <div class="lg:col-span-3 flex items-start">
+        <div class="flex items-start lg:col-span-3">
           <SideCard>
             <template #title>Community Nonprofit Initiative</template>
-            <template #content>Real change happens quietly, one person at a time. We helped tell the story of grassroots impact, focusing on genuine connection over grand gestures.</template>
+            <template #content
+              >Real change happens quietly, one person at a time. We helped tell the story of
+              grassroots impact, focusing on genuine connection over grand gestures.</template
+            >
           </SideCard>
         </div>
 
@@ -82,14 +94,17 @@
             :images="[
               { src: '/images/8bfedd83aec8466a4708d60ec299d164.jpg', alt: 'Coffee preparation' },
               { src: '/images/3334f4a0741954580a818e303927dfcd.jpg', alt: 'Cafe atmosphere' },
-              { src: '/images/90d52ee25f93c3e7deaf019956a6089b.jpg', alt: 'Customer moment' }
+              { src: '/images/90d52ee25f93c3e7deaf019956a6089b.jpg', alt: 'Customer moment' },
             ]"
           />
         </div>
-        <div class="lg:col-span-3 flex items-start">
+        <div class="flex items-start lg:col-span-3">
           <SideCard>
             <template #title>Corner Cafe Rebrand</template>
-            <template #content>A neighborhood gathering place deserves words that feel like home. Simple menus, honest descriptions, and copy that invites rather than sells.</template>
+            <template #content
+              >A neighborhood gathering place deserves words that feel like home. Simple menus,
+              honest descriptions, and copy that invites rather than sells.</template
+            >
           </SideCard>
         </div>
 
@@ -99,14 +114,17 @@
             :images="[
               { src: '/images/90d52ee25f93c3e7deaf019956a6089b.jpg', alt: 'Professional meeting' },
               { src: '/images/8bfedd83aec8466a4708d60ec299d164.jpg', alt: 'Office environment' },
-              { src: '/images/3334f4a0741954580a818e303927dfcd.jpg', alt: 'Client consultation' }
+              { src: '/images/3334f4a0741954580a818e303927dfcd.jpg', alt: 'Client consultation' },
             ]"
           />
         </div>
-        <div class="lg:col-span-3 flex items-start">
+        <div class="flex items-start lg:col-span-3">
           <SideCard>
             <template #title>Legal Practice Messaging</template>
-            <template #content>Complex expertise, simple communication. We helped translate legal knowledge into language that puts clients at ease and builds trust through clarity.</template>
+            <template #content
+              >Complex expertise, simple communication. We helped translate legal knowledge into
+              language that puts clients at ease and builds trust through clarity.</template
+            >
           </SideCard>
         </div>
 
@@ -116,14 +134,17 @@
             :images="[
               { src: '/images/3334f4a0741954580a818e303927dfcd.jpg', alt: 'Wellness space' },
               { src: '/images/8bfedd83aec8466a4708d60ec299d164.jpg', alt: 'Treatment room' },
-              { src: '/images/90d52ee25f93c3e7deaf019956a6089b.jpg', alt: 'Peaceful moment' }
+              { src: '/images/90d52ee25f93c3e7deaf019956a6089b.jpg', alt: 'Peaceful moment' },
             ]"
           />
         </div>
-        <div class="lg:col-span-3 flex items-start">
+        <div class="flex items-start lg:col-span-3">
           <SideCard>
             <template #title>Holistic Wellness Center</template>
-            <template #content>Healing happens in spaces that honor both body and spirit. Our words created an atmosphere of calm confidence, inviting clients into genuine self-care.</template>
+            <template #content
+              >Healing happens in spaces that honor both body and spirit. Our words created an
+              atmosphere of calm confidence, inviting clients into genuine self-care.</template
+            >
           </SideCard>
         </div>
 
@@ -133,14 +154,17 @@
             :images="[
               { src: '/images/8bfedd83aec8466a4708d60ec299d164.jpg', alt: 'Book shelves' },
               { src: '/images/90d52ee25f93c3e7deaf019956a6089b.jpg', alt: 'Reading corner' },
-              { src: '/images/3334f4a0741954580a818e303927dfcd.jpg', alt: 'Literary event' }
+              { src: '/images/3334f4a0741954580a818e303927dfcd.jpg', alt: 'Literary event' },
             ]"
           />
         </div>
-        <div class="lg:col-span-3 flex items-start">
+        <div class="flex items-start lg:col-span-3">
           <SideCard>
             <template #title>Independent Bookstore Revival</template>
-            <template #content>In the age of algorithms, we celebrated the human touch of book curation. Copy that honored the ritual of discovery and the irreplaceable value of browsing.</template>
+            <template #content
+              >In the age of algorithms, we celebrated the human touch of book curation. Copy that
+              honored the ritual of discovery and the irreplaceable value of browsing.</template
+            >
           </SideCard>
         </div>
       </div>
@@ -148,5 +172,4 @@
   </div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>

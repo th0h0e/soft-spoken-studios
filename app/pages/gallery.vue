@@ -4,9 +4,7 @@
     <div class="mb-12">
       <Gallery />
     </div>
-
   </UiContainer>
 </template>
 
-<script setup>
-</script>
+<script setup></script>

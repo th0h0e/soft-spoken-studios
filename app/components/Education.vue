@@ -8,9 +8,9 @@
           <UiTimelineDate>2014 - 2018</UiTimelineDate>
         </UiTimelineHeader>
         <div class="mt-2">
-          <p class="text-sm text-muted-foreground mb-3">
-            Central High School. Graduated with honors, focusing on English Literature and Visual Arts. 
-            Active in the school newspaper and photography club.
+          <p class="text-muted-foreground mb-3 text-sm">
+            Central High School. Graduated with honors, focusing on English Literature and Visual
+            Arts. Active in the school newspaper and photography club.
           </p>
         </div>
       </UiTimelineContent>
@@ -25,9 +25,10 @@
           <UiTimelineDate>2018 - 2022</UiTimelineDate>
         </UiTimelineHeader>
         <div class="mt-2">
-          <p class="text-sm text-muted-foreground mb-3">
-            University of Creative Arts. Specialized in Digital Media and Strategic Communications. 
-            Graduated Magna Cum Laude. Completed internships at local creative agencies and media companies.
+          <p class="text-muted-foreground mb-3 text-sm">
+            University of Creative Arts. Specialized in Digital Media and Strategic Communications.
+            Graduated Magna Cum Laude. Completed internships at local creative agencies and media
+            companies.
           </p>
         </div>
       </UiTimelineContent>
@@ -42,9 +43,10 @@
           <UiTimelineDate>2022</UiTimelineDate>
         </UiTimelineHeader>
         <div class="mt-2">
-          <p class="text-sm text-muted-foreground mb-3">
-            Google Digital Marketing Academy. Comprehensive program covering data-driven marketing, 
-            analytics, and digital strategy. Focus on measurable campaign optimization and ROI analysis.
+          <p class="text-muted-foreground mb-3 text-sm">
+            Google Digital Marketing Academy. Comprehensive program covering data-driven marketing,
+            analytics, and digital strategy. Focus on measurable campaign optimization and ROI
+            analysis.
           </p>
         </div>
       </UiTimelineContent>
@@ -59,9 +61,10 @@
           <UiTimelineDate>2023</UiTimelineDate>
         </UiTimelineHeader>
         <div class="mt-2">
-          <p class="text-sm text-muted-foreground mb-3">
-            Creative Media Institute. Advanced techniques in visual storytelling and production. 
-            Mastered both technical skills and creative direction for commercial and artistic projects.
+          <p class="text-muted-foreground mb-3 text-sm">
+            Creative Media Institute. Advanced techniques in visual storytelling and production.
+            Mastered both technical skills and creative direction for commercial and artistic
+            projects.
           </p>
         </div>
       </UiTimelineContent>
@@ -70,5 +73,5 @@
 </template>
 
 <script setup>
-const currentStep = ref(1);
+  const currentStep = ref(1);
 </script>

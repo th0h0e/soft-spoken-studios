@@ -10,11 +10,7 @@
             subtitle="Exploring how successful campaigns balance analytical insights with compelling narratives to create meaningful connections with audiences."
           />
         </UiListContent>
-        <UiButton
-          size="icon-sm"
-          variant="ghost"
-          class="ml-auto shrink-0 self-center rounded-full"
-        >
+        <UiButton size="icon-sm" variant="ghost" class="ml-auto shrink-0 self-center rounded-full">
           <Icon name="lucide:chevron-right" />
         </UiButton>
       </UiListItem>
@@ -29,11 +25,7 @@
             subtitle="How visual storytelling through photography can transform a brand's narrative and create authentic connections with your audience."
           />
         </UiListContent>
-        <UiButton
-          size="icon-sm"
-          variant="ghost"
-          class="ml-auto shrink-0 self-center rounded-full"
-        >
+        <UiButton size="icon-sm" variant="ghost" class="ml-auto shrink-0 self-center rounded-full">
           <Icon name="lucide:chevron-right" />
         </UiButton>
       </UiListItem>
@@ -48,11 +40,7 @@
             subtitle="Timeless copywriting principles that transcend trends and platforms. Learn the foundational elements that make copy compelling and memorable."
           />
         </UiListContent>
-        <UiButton
-          size="icon-sm"
-          variant="ghost"
-          class="ml-auto shrink-0 self-center rounded-full"
-        >
+        <UiButton size="icon-sm" variant="ghost" class="ml-auto shrink-0 self-center rounded-full">
           <Icon name="lucide:chevron-right" />
         </UiButton>
       </UiListItem>
@@ -67,11 +55,7 @@
             subtitle="A behind-the-scenes look at how I approach video projects, from initial client brief to final delivery and creative decisions."
           />
         </UiListContent>
-        <UiButton
-          size="icon-sm"
-          variant="ghost"
-          class="ml-auto shrink-0 self-center rounded-full"
-        >
+        <UiButton size="icon-sm" variant="ghost" class="ml-auto shrink-0 self-center rounded-full">
           <Icon name="lucide:chevron-right" />
         </UiButton>
       </UiListItem>
@@ -86,11 +70,7 @@
             subtitle="Reflections on the creative journey, challenges faced, and lessons learned. How to develop your unique voice while staying authentic."
           />
         </UiListContent>
-        <UiButton
-          size="icon-sm"
-          variant="ghost"
-          class="ml-auto shrink-0 self-center rounded-full"
-        >
+        <UiButton size="icon-sm" variant="ghost" class="ml-auto shrink-0 self-center rounded-full">
           <Icon name="lucide:chevron-right" />
         </UiButton>
       </UiListItem>
@@ -98,5 +78,4 @@
   </div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>

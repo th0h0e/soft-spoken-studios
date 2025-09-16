@@ -1,7 +1,7 @@
 ---
-title: 'About Soft Spoken'
-description: 'Learn more about our creative agency from the inside out'
-date: '2024-09-15'
+title: "About Soft Spoken"
+description: "Learn more about our creative agency from the inside out"
+date: "2024-09-15"
 ---
 
 # About Soft Spoken

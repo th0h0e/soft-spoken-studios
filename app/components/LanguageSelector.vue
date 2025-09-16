@@ -1,5 +1,7 @@
 <template>
-  <div class="flex items-center gap-3 rounded-lg border border-white/10 bg-zinc-900/90 px-3 py-1 backdrop-blur-xl">
+  <div
+    class="flex items-center gap-3 rounded-lg border border-white/10 bg-zinc-900/90 px-3 py-1 backdrop-blur-xl"
+  >
     <ClientOnly>
       <NuxtLink
         v-for="locale in locales"
@@ -22,15 +24,15 @@
 </template>
 
 <script setup>
-const { locale: current, setLocaleCookie, locales } = useI18n()
+  const { locale: current, setLocaleCookie, locales } = useI18n();
 
-const currentLocale = computed(() => {
-  return locales.value.find(locale => locale.code === current.value)
-})
+  const currentLocale = computed(() => {
+    return locales.value.find((locale) => locale.code === current.value);
+  });
 
-watch(current, (newLocale) => {
-  setLocaleCookie(newLocale)
-})
+  watch(current, (newLocale) => {
+    setLocaleCookie(newLocale);
+  });
 
-const switchLocalePath = useSwitchLocalePath()
+  const switchLocalePath = useSwitchLocalePath();
 </script>

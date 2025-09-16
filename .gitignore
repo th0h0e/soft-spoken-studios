@@ -22,3 +22,47 @@ logs
 .env
 .env.*
 !.env.example
+
+# IDE and Editor files
+.vscode/
+.claude/
+*.swp
+*.swo
+.vim/
+
+# Configuration files (personal/local)
+.prettierrc
+.mcp.json
+package-lock.json
+tsconfig.json
+eslint.config.mjs
+
+# Build and cache
+.turbo/
+.parcel-cache/
+
+# Package manager
+.pnpm-debug.log*
+.yarn/
+.pnp.*
+
+# Additional security
+*.key
+*.pem
+.env.local
+.env.*.local
+
+# Testing and coverage
+coverage/
+.nyc_output/
+.jest/
+
+# Deployment
+.vercel/
+.netlify/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+.temp/

@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     "@nuxt/scripts",
     "@nuxt/test-utils",
     "@nuxtjs/color-mode",
-    'nuxt-zod-i18n',
+    "nuxt-zod-i18n",
     "@nuxtjs/i18n",
     "motion-v/nuxt",
     "@vueuse/nuxt",
@@ -22,23 +22,27 @@ export default defineNuxtConfig({
     "@yuta-inoue-ph/nuxt-vcalendar",
     "@vee-validate/nuxt",
     "vue-sonner/nuxt",
+    "nuxt-mcp",
   ],
 
   imports: {
-    imports: [{
-      from: "tailwind-variants",
-      name: "tv",
-    }, {
-      from: "tailwind-variants",
-      name: "VariantProps",
-      type: true,
-    }, {
-      from: "vue-sonner",
-      name: "toast",
-      as: "useSonner",
-    }],
+    imports: [
+      {
+        from: "tailwind-variants",
+        name: "tv",
+      },
+      {
+        from: "tailwind-variants",
+        name: "VariantProps",
+        type: true,
+      },
+      {
+        from: "vue-sonner",
+        name: "toast",
+        as: "useSonner",
+      },
+    ],
   },
-
 
   colorMode: {
     storageKey: "Soft_Spoken-color-mode",
@@ -62,50 +66,59 @@ export default defineNuxtConfig({
   // Site Configuration
   app: {
     head: {
-      title: 'Soft Spoken Studios',
+      title: "Soft Spoken Studios",
       meta: [
-        { name: 'description', content: 'Creative communication and strategic storytelling' },
-        { property: 'og:title', content: 'Soft Spoken Studios' },
-        { property: 'og:description', content: 'Creative communication and strategic storytelling' },
-        { name: 'twitter:title', content: 'Soft Spoken Studios' },
-        { name: 'twitter:description', content: 'Creative communication and strategic storytelling' }
+        { name: "description", content: "Creative communication and strategic storytelling" },
+        { property: "og:title", content: "Soft Spoken Studios" },
+        {
+          property: "og:description",
+          content: "Creative communication and strategic storytelling",
+        },
+        { name: "twitter:title", content: "Soft Spoken Studios" },
+        {
+          name: "twitter:description",
+          content: "Creative communication and strategic storytelling",
+        },
       ],
-      script: [{
-        src: "https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.12/pdfmake.min.js",
-        defer: true,
-      }, {
-        src: "https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.12/vfs_fonts.min.js",
-        defer: true,
-      }],
+      script: [
+        {
+          src: "https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.12/pdfmake.min.js",
+          defer: true,
+        },
+        {
+          src: "https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.12/vfs_fonts.min.js",
+          defer: true,
+        },
+      ],
     },
   },
 
   // Content Configuration
   content: {
     preview: {
-      api: 'https://api.nuxt.studio',
+      api: "https://api.nuxt.studio",
       dev: true,
       // Explicit git information for Studio integration
       gitInfo: {
-        name: 'soft-spoken-studios',
-        owner: 'th0h0e',
-        url: 'https://github.com/th0h0e/soft-spoken-studios'
-      }
+        name: "soft-spoken-studios",
+        owner: "th0h0e",
+        url: "https://github.com/th0h0e/soft-spoken-studios",
+      },
     },
     // Enable Studio editor integration
     editor: true,
     markdown: {
       remarkPlugins: [],
-      rehypePlugins: []
-    }
+      rehypePlugins: [],
+    },
   },
 
   // MDC Configuration for syntax highlighting
   mdc: {
     highlight: {
       theme: {
-        dark: 'github-dark',
-        default: 'github-light',
+        dark: "github-dark",
+        default: "github-light",
       },
     },
   },
@@ -113,23 +126,23 @@ export default defineNuxtConfig({
   // Internationalization Configuration
   i18n: {
     locales: [
-      { code: 'en', name: 'English', language: 'en-US' },
-      { code: 'nl', name: 'Nederlands', language: 'nl-NL' },
-      { code: 'sv', name: 'Svenska', language: 'sv-SE' }
+      { code: "en", name: "English", language: "en-US" },
+      { code: "nl", name: "Nederlands", language: "nl-NL" },
+      { code: "sv", name: "Svenska", language: "sv-SE" },
     ],
     detectBrowserLanguage: {
       useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
+      cookieKey: "i18n_redirected",
+      redirectOn: "root",
     },
-    strategy: 'prefix',
-    defaultLocale: 'en',
+    strategy: "prefix_except_default",
+    defaultLocale: "en",
   },
 
   // Route Rules for Nuxt Studio
   routeRules: {
     // Needed to activate preview on Nuxt Studio
-    '/': { prerender: false },
+    "/": { prerender: false },
   },
 
   // Experimental features following reference project
@@ -139,10 +152,10 @@ export default defineNuxtConfig({
 
   // Hooks configuration following reference project
   hooks: {
-    'nitro:config': (config) => {
+    "nitro:config": (config) => {
       // Custom configuration for content handling
       if (config.handlers) {
-        config.handlers = config.handlers || []
+        config.handlers = config.handlers || [];
       }
     },
   },
@@ -155,7 +168,7 @@ export default defineNuxtConfig({
     prerender: {
       autoSubfolderIndex: false,
       crawlLinks: true,
-      routes: ['/en', '/nl', '/sv'],
+      routes: ["/", "/nl", "/sv"],
     },
   },
 

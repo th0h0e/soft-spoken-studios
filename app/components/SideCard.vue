@@ -1,12 +1,12 @@
 <template>
   <div class="space-y-4">
     <UiDivider />
-    
+
     <div class="space-y-3">
-      <h3 class="font-semibold text-foreground">
+      <h3 class="text-foreground font-semibold">
         <slot name="title" />
       </h3>
-      
+
       <p class="text-muted-foreground leading-relaxed">
         <slot name="content" />
       </p>
@@ -15,5 +15,5 @@
 </template>
 
 <script setup>
-// Simple side card component for right column content
+  // Simple side card component for right column content
 </script>

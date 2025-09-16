@@ -12,6 +12,7 @@ This directory contains organized media assets for Nuxt Studio's media manager.
 ## Usage with Nuxt Studio
 
 When using Nuxt Studio's visual editor:
+
 1. Image fields will show a media picker interface
 2. You can upload new images directly through Studio
 3. Existing images can be selected from the organized folders
