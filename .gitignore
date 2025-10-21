@@ -1,0 +1,59 @@
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# IDE temp files
+*.swp
+*.swo
+.vim/
+
+# Build and cache
+.turbo/
+.parcel-cache/
+
+# Package manager
+.pnpm-debug.log*
+.yarn/
+.pnp.*
+
+# Additional security
+*.key
+*.pem
+.env.local
+.env.*.local
+
+# Testing and coverage
+coverage/
+.nyc_output/
+.jest/
+
+# Deployment
+.vercel/
+.netlify/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+.temp/

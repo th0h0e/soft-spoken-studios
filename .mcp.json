@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "nuxt": {
+      "type": "sse",
+      "url": "http://localhost:3000/__mcp/sse"
+    },
+    "nuxt-docs": {
+      "type": "sse",
+      "url": "https://mcp.nuxt.com/sse"
+    },
+    "context7": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ],
+      "env": {}
+    }
+  }
+}

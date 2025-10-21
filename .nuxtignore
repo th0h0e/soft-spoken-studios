@@ -1,0 +1,18 @@
+# Ignore deprecated components during development
+app/components/Deprecated*.vue
+
+# Ignore WIP/draft pages
+app/pages/draft-*.vue
+app/pages/_wip-*.vue
+
+# Ignore test components
+app/components/**/*.test.vue
+app/components/**/*.spec.vue
+
+# Ignore example/demo files
+app/pages/examples/**
+app/components/examples/**
+
+# Ignore backup files
+**/*.bak
+**/*~
