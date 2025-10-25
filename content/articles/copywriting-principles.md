@@ -16,7 +16,7 @@ excerpt: Timeless copywriting principles that transcend trends and platforms.
 
 Great copywriting isn't about clever wordplay or trendy phrases. It's about understanding people and speaking to them in a way that feels both genuine and compelling. These principles have guided effective communication for decades and will continue to do so regardless of changing platforms and technologies.
 
-![Writer crafting compelling copy](https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=400&fit=crop&crop=center)
+![Writer crafting compelling copy](https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800\&h=400\&fit=crop\&crop=center)
 
 ## Know Your Audience Intimately
 
@@ -46,6 +46,6 @@ Trying to say everything often means saying nothing effectively. Each piece of c
 
 Even the best copywriters test their work. What sounds perfect in your head might fall flat with your audience. Always be prepared to adapt based on real feedback.
 
-![Examples of effective copywriting and messaging](https://images.unsplash.com/photo-1542435503-956c469947f6?w=800&h=300&fit=crop&crop=center)
+![Examples of effective copywriting and messaging](https://images.unsplash.com/photo-1542435503-956c469947f6?w=800\&h=300\&fit=crop\&crop=center)
 
 Remember: effective copywriting isn't about manipulation – it's about connection. When you genuinely understand and care about your audience, the right words will follow.
