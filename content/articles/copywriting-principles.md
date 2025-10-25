@@ -26,6 +26,8 @@ The best copy starts with deep audience research. You need to understand not jus
 
 People don't buy products; they buy better versions of themselves. Every feature should connect to a meaningful benefit that improves their life or solves their problem.
 
+:B
+
 ## Create Emotional Connection
 
 Facts tell, but emotions sell. The most memorable copy connects on an emotional level while supporting that connection with logical reasons to act.
