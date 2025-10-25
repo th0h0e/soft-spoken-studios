@@ -17,7 +17,7 @@ summary: Learn how to create campaigns that balance data-driven insights with
 
 In the world of creative communication, the most powerful stories are born at the intersection of data and emotion. This isn't about choosing between analytical rigor and creative intuition – it's about weaving them together into something greater than the sum of their parts.
 
-![Strategic planning and data visualization](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop&crop=center)
+![Strategic planning and data visualization](/Gallery/CleanShot%202025-10-22%20at%2016.58.57.png)
 
 ## The Foundation: Understanding Your Audience
 
