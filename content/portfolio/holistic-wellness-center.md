@@ -17,7 +17,4 @@ results: The messaging attracted clients who were seeking authentic wellness exp
 duration: 10 weeks
 ---
 
-::portfolio-item{:images="[{ src: '/images/3334f4a0741954580a818e303927dfcd.jpg', alt: 'Wellness space' }, { src: '/images/8bfedd83aec8466a4708d60ec299d164.jpg', alt: 'Treatment room' }, { src: '/images/90d52ee25f93c3e7deaf019956a6089b.jpg', alt: 'Peaceful moment' }]"}
-::
-
 Healing happens in spaces that honor both body and spirit. Our words created an atmosphere of calm confidence, inviting clients into genuine self-care.

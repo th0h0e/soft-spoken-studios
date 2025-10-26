@@ -138,6 +138,20 @@ export default defineNuxtConfig({
     viewTransition: true,
   },
 
+  // Components configuration
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: true, // Use full path to avoid naming conflicts
+    },
+    // Prose components for customizing Markdown HTML rendering
+    {
+      path: '~/components/prose',
+      global: true,
+      prefix: 'Prose',
+    },
+  ],
+
   // Hooks configuration following reference project
   hooks: {
     "nitro:config": (config) => {

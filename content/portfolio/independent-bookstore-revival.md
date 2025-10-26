@@ -17,7 +17,4 @@ results: The campaign helped increase foot traffic by 50% and established the bo
 duration: 3 months
 ---
 
-::portfolio-item{:images="[{ src: '/images/8bfedd83aec8466a4708d60ec299d164.jpg', alt: 'Book shelves' }, { src: '/images/90d52ee25f93c3e7deaf019956a6089b.jpg', alt: 'Reading corner' }, { src: '/images/3334f4a0741954580a818e303927dfcd.jpg', alt: 'Literary event' }]"}
-::
-
 In the age of algorithms, we celebrated the human touch of book curation. Copy that honored the ritual of discovery and the irreplaceable value of browsing.

@@ -17,7 +17,4 @@ results: The rebrand helped solidify the cafe's position as a neighborhood hub, 
 duration: 6 weeks
 ---
 
-::portfolio-item{:images="[{ src: '/images/8bfedd83aec8466a4708d60ec299d164.jpg', alt: 'Coffee preparation' }, { src: '/images/3334f4a0741954580a818e303927dfcd.jpg', alt: 'Cafe atmosphere' }, { src: '/images/90d52ee25f93c3e7deaf019956a6089b.jpg', alt: 'Customer moment' }]"}
-::
-
 A neighborhood gathering place deserves words that feel like home. Simple menus, honest descriptions, and copy that invites rather than sells.

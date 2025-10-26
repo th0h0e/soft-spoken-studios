@@ -17,7 +17,4 @@ results: The campaign increased community engagement by 60% and attracted new vo
 duration: 4 months
 ---
 
-::portfolio-item{:images="[{ src: '/images/3334f4a0741954580a818e303927dfcd.jpg', alt: 'Community event' }, { src: '/images/90d52ee25f93c3e7deaf019956a6089b.jpg', alt: 'Volunteer work' }, { src: '/images/8bfedd83aec8466a4708d60ec299d164.jpg', alt: 'Impact story' }]"}
-::
-
 Real change happens quietly, one person at a time. We helped tell the story of grassroots impact, focusing on genuine connection over grand gestures.

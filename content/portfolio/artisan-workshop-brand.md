@@ -17,7 +17,4 @@ results: The brand messaging resonated strongly with customers seeking authentic
 duration: 3 months
 ---
 
-::portfolio-item{:images="[{ src: '/images/90d52ee25f93c3e7deaf019956a6089b.jpg', alt: 'Workshop tools' }, { src: '/images/3334f4a0741954580a818e303927dfcd.jpg', alt: 'Craftsmanship detail' }, { src: '/images/8bfedd83aec8466a4708d60ec299d164.jpg', alt: 'Finished product' }]"}
-::
-
 Every piece tells a story of patience and skill. In a world of fast everything, we choose slow. We choose thoughtful. We choose lasting.

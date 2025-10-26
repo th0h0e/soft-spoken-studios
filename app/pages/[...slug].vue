@@ -16,43 +16,34 @@
     // Use route path as key to ensure refetch on navigation
     () => `page-${route.path}`,
     async () => {
-    console.log('[DEBUG] Looking for page at path:', path.value);
-
     // Check if this is an article route - query articles collection directly
     if (path.value.includes("/articles/")) {
-      console.log('[DEBUG] Querying articles collection');
       try {
         const result = await queryCollection('articles' as keyof Collections).path(path.value).first();
-        console.log('[DEBUG] Articles query result:', result);
         if (result) return result;
       } catch (e) {
-        console.warn(`[DEBUG] Article query failed:`, e);
+        // Continue to next collection
       }
     }
 
     // Check if this is a portfolio route
     if (path.value.includes("/portfolio/")) {
-      console.log('[DEBUG] Querying portfolio collection');
       try {
         const result = await queryCollection('portfolio' as keyof Collections).path(path.value).first();
-        console.log('[DEBUG] Portfolio query result:', result);
         if (result) return result;
       } catch (e) {
-        console.warn(`[DEBUG] Portfolio query failed:`, e);
+        // Continue to next collection
       }
     }
 
     // Try main content collection as fallback
-    console.log('[DEBUG] Querying main content collection');
     try {
       const result = await queryCollection('content' as keyof Collections).path(path.value).first();
-      console.log('[DEBUG] Content query result:', result);
       if (result) return result;
     } catch (error) {
-      console.warn(`[DEBUG] Content query failed:`, error);
+      // Page not found
     }
 
-    console.warn(`[DEBUG] Page not found in any collection:`, path.value);
     return null;
   },
   {
@@ -300,6 +291,11 @@
                 </UiCardContent>
               </UiCard>
             </div>
+
+            <!-- Markdown Content (uses Prose components) -->
+            <article class="mt-8 space-y-6 text-base leading-relaxed">
+              <ContentRenderer :value="page" />
+            </article>
 
             <!-- Navigation Footer -->
             <div class="mt-16 border-t pt-8">

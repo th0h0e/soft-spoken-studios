@@ -7,7 +7,23 @@
     />
 
     <UiContainer class="-mt-8 pb-16">
-      <div class="grid gap-8 gap-y-4 lg:grid-cols-8">
+      <!-- Loading State -->
+      <div v-if="pending" class="flex h-64 flex-col items-center justify-center">
+        <Icon name="svg-spinners:ring-resize" class="h-8 w-8 text-muted" />
+        <p class="mt-4 text-muted">Loading portfolio projects...</p>
+      </div>
+
+      <!-- Error State -->
+      <div v-else-if="error" class="flex h-64 flex-col items-center justify-center">
+        <Icon name="lucide:alert-circle" class="h-8 w-8 text-destructive" />
+        <p class="mt-4 text-destructive">Failed to load portfolio projects</p>
+        <UiButton @click="refresh" variant="outline" class="mt-4">
+          Try Again
+        </UiButton>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div v-else-if="portfolioProjects?.length" class="grid gap-8 gap-y-4 lg:grid-cols-8">
         <!-- Dynamic Portfolio Items -->
         <template v-for="project in portfolioProjects" :key="project._id">
           <div class="lg:col-span-5">
@@ -23,24 +39,28 @@
           </div>
         </template>
       </div>
+
+      <!-- Empty State -->
+      <div v-else class="flex h-64 flex-col items-center justify-center">
+        <Icon name="lucide:briefcase" class="h-8 w-8 text-muted" />
+        <p class="mt-4 text-muted">No featured projects found.</p>
+      </div>
     </UiContainer>
   </div>
 </template>
 
 <script setup>
 // Fetch portfolio projects
-const { data: portfolioProjects } = await useAsyncData('portfolio-projects', async () => {
-  try {
-    const projects = await queryCollection("portfolio").all();
-    // Sort by date (newest first) and filter for featured projects
-    return projects
+const { data: portfolioProjects, error, pending, refresh } = await useAsyncData(
+  'portfolio-projects',
+  () => queryCollection("portfolio").all(),
+  {
+    transform: (projects) => projects
       .filter(project => project.featured)
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  } catch (error) {
-    console.error('Failed to fetch portfolio projects:', error);
-    return [];
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+    default: () => []
   }
-});
+);
 
 // Helper function to extract images from portfolio projects
 const getProjectImages = (project) => {

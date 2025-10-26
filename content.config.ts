@@ -12,9 +12,9 @@ const commonArticleSchema = z.object({
   date: z.string().nonempty(),
   // New schema fields (optional for backward compatibility)
   preview: z.string().optional(),
-  heroImage: z.string().optional(),
+  heroImage: z.string().optional().editor({ input: 'media' }),
   heroImageDescription: z.string().optional(),
-  contentImage: z.string().optional(),
+  contentImage: z.string().optional().editor({ input: 'media' }),
   contentImageDescription: z.string().optional(),
   paragraphOne: z.string().optional(),
   paragraphTwo: z.string().optional(),
@@ -30,7 +30,7 @@ const commonArticleSchema = z.object({
   tags: z.array(z.string().nonempty()).optional(),
   featured: z.boolean().optional(),
   // Legacy fields (still in use by current articles)
-  image: z.string().optional(),
+  image: z.string().optional().editor({ input: 'media' }),
   description: z.string().optional(),
   excerpt: z.string().optional(),
   readingTime: z.string().optional(),
@@ -50,7 +50,7 @@ const commonPortfolioSchema = z.object({
   solution: z.string().optional(),
   results: z.string().optional(),
   duration: z.string().optional(),
-  image: z.string().optional(),
+  image: z.string().optional().editor({ input: 'media' }),
 });
 
 export const collections = {
