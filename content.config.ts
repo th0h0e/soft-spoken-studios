@@ -1,12 +1,5 @@
 import { defineCollection, defineContentConfig, property, z } from "@nuxt/content";
 
-// Common schemas following reference project pattern
-const commonContentSchema = z.object({
-  title: z.string().nonempty(),
-  description: z.string().nonempty(),
-  date: z.string().nonempty(),
-});
-
 // Articles/Blog schema
 const articlesSchema = z.object({
   // Core fields
@@ -116,16 +109,6 @@ const siteSettingsSchema = z.object({
 
 export default defineContentConfig({
   collections: {
-    // Main content pages
-    content: defineCollection({
-      type: "page",
-      source: {
-        include: "**/*.md",
-        exclude: ["articles/*.md", "portfolio/*.md"],
-        prefix: "/",
-      },
-      schema: commonContentSchema,
-    }),
     // Articles (blog posts)
     articles: defineCollection({
       type: "page",
