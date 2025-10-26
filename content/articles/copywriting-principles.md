@@ -14,21 +14,9 @@ excerpt: Timeless copywriting principles that transcend trends and platforms.
   Learn the foundational elements that make copy compelling and memorable.
 ---
 
-Great copywriting isn't about clever wordplay or trendy phrases. It's about understanding people and speaking to them in a way that feels both genuine and compelling. These principles have guided effective communication for decades and will continue to do so regardless of changing platforms and technologies.
-
-![Writer crafting compelling copy](https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800\&h=400\&fit=crop\&crop=center)
-
-## Know Your Audience Intimately
-
-The best copy starts with deep audience research. You need to understand not just demographics, but emotions, frustrations, dreams, and the language your audience actually uses.
-
-## Lead with Benefits, Not Features
-
-People don't buy products; they buy better versions of themselves. Every feature should connect to a meaningful benefit that improves their life or solves their problem.
-
 :br
 
-# Create Emotional Connection
+#
 
 :br
 
@@ -62,11 +50,113 @@ Complexity doesn't demonstrate intelligence – clarity does. The goal is unders
 ::portfolio-item
 ::
 
-## Tell Stories
+## 1. Catch-all Route Pattern
 
-Humans are wired for narrative. Stories help people see themselves using your product or service and imagine the transformation it could provide.
+\- \[...slug].vue matches all routes under its
 
-/
+directory
+
+\- Route segments are collected into an array:
+
+$route.params.slug
+
+\- Nuxt 2: \_.vue → Nuxt 4: \[...slug].vue
+
+2\. Dynamic Route Parameters
+
+\- Single param: \[id].vue → /posts/\:id
+
+\- Optional param: \[\[slug]].vue → /posts/\:slug?
+
+\- Catch-all: \[...slug].vue → /posts/\*
+
+3\. Accessing Route Data (app/pages/\[...slug].vue:5)
+
+const route = useRoute()
+
+// Access params, query, path, etc.
+
+4\. Data Fetching with Dynamic Keys
+
+(app/pages/\[...slug].vue:15-52)
+
+Your pattern is optimal:
+
+const { data: page } = await useAsyncData(
+
+() => `page-${route.path}`, // Dynamic key ✓
+
+async () => { /\* fetch logic \*/ },
+
+{ watch: \[() => route.path] } // Watch for changes
+
+✓
+
+)
+
+5\. Route Validation (optional enhancement)
+
+You could add validation to your pages:
+
+definePageMeta({
+
+validate: async (route) => {
+
+// Validate route params before rendering
+
+return /^\\/articles\\/\[a-z0-9-]+$/.test(route.path)
+
+}
+
+})
+
+6\. Single Root Element Requirement
+
+⚠️ Important: Pages must have ONE root element (no
+
+comments at root level)
+
+\<!-- ✓ CORRECT -->
+
+\<template>
+
+\<div v-if="page">...\</div>
+
+\</template>
+
+\<!-- ✗ WRONG -->
+
+\<template>
+
+\<!-- Comment here breaks navigation -->
+
+\<div>...\</div>
+
+\</template>
+
+7\. Pre-rendering Dynamic Routes
+
+For static generation, you can add routes dynamically:
+
+// nuxt.config.ts
+
+hooks: {
+
+async 'prerender\:routes'(ctx) {
+
+const articles = await
+
+queryCollection('articles').all()
+
+articles.forEach(article => {
+
+ctx.routes.add(article.path)
+
+})
+
+}
+
+}
 
 ## Focus on One Main Message
 
