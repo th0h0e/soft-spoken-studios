@@ -1,38 +1,118 @@
 # Gallery Items - Editable via Nuxt Studio Data section
-# Each item is optional - leave image.src empty to hide the item from the gallery
+# Add images to fill the grid - layout is pre-determined
+# If image.src is empty, that grid position will be hidden
 
 items:
-  # Portrait Tall Example (3:4 ratio, takes 2 rows)
+  # Item 1 (tall portrait position)
   - image:
       src: /Gallery/img_65dcd5a723854.jpg
       alt: Gallery image
     caption: Quiet moments in natural light.
-    layout: portrait-tall
 
-  # Square Example (1:1 ratio)
+  # Item 2 (square position)
   - image:
       src: /Gallery/crosscurrent.webp
       alt: Gallery image
     caption: Urban textures and patterns.
-    layout: square
 
-  # Wide Landscape Example (16:9 ratio, takes 2 columns)
+  # Item 3 (wide landscape position)
   - image:
       src: /Gallery/download.jpg
       alt: Gallery image
     caption: Wide open spaces and horizon lines.
-    layout: landscape-wide
 
-  # Empty slot - will be hidden until filled
+  # Item 4 (square position)
   - image:
       src: ""
       alt: ""
     caption: ""
-    layout: square
 
-  # Empty slot - will be hidden until filled
+  # Item 5 (tall portrait position)
   - image:
       src: ""
       alt: ""
     caption: ""
-    layout: portrait-tall
+
+  # Item 6 (square position)
+  - image:
+      src: ""
+      alt: ""
+    caption: ""
+
+  # Item 7 (horizontal rectangle position)
+  - image:
+      src: ""
+      alt: ""
+    caption: ""
+
+  # Item 8 (square position)
+  - image:
+      src: ""
+      alt: ""
+    caption: ""
+
+  # Item 9 (vertical rectangle position)
+  - image:
+      src: ""
+      alt: ""
+    caption: ""
+
+  # Item 10 (wide landscape position)
+  - image:
+      src: ""
+      alt: ""
+    caption: ""
+
+  # Item 11 (square position)
+  - image:
+      src: ""
+      alt: ""
+    caption: ""
+
+  # Item 12 (tall portrait position)
+  - image:
+      src: ""
+      alt: ""
+    caption: ""
+
+  # Item 13 (square position)
+  - image:
+      src: ""
+      alt: ""
+    caption: ""
+
+  # Item 14 (wide landscape position)
+  - image:
+      src: ""
+      alt: ""
+    caption: ""
+
+  # Item 15 (square position)
+  - image:
+      src: ""
+      alt: ""
+    caption: ""
+
+  # Item 16 (vertical rectangle position)
+  - image:
+      src: ""
+      alt: ""
+    caption: ""
+
+  # Item 17 (horizontal rectangle position)
+  - image:
+      src: ""
+      alt: ""
+    caption: ""
+
+  # Item 18 (square position)
+  - image:
+      src: ""
+      alt: ""
+    caption: ""
+
+  # Item 19 (tall portrait position)
+  - image:
+      src: ""
+      alt: ""
+    caption: ""

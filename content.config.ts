@@ -90,14 +90,6 @@ const gallerySchema = z.object({
       alt: z.string().optional(),
     }).optional(),
     caption: z.string().optional(),
-    layout: z.enum([
-      "square",           // 1:1 ratio, single cell
-      "portrait-tall",    // 3:4 ratio, row-span-2
-      "portrait",         // 3:4 ratio, single cell
-      "landscape-wide",   // 16:9 ratio, col-span-2
-      "landscape",        // 4:3 ratio, col-span-2
-      "vertical",         // 2:3 ratio, single cell
-    ]).optional().default("square"),
   })).optional().default([]),
 });
 
