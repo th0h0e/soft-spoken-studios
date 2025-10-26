@@ -13,6 +13,7 @@ export interface EmailResult {
 
 /**
  * Sends a contact form email using nodemailer
+ * Recipient email is fetched from site settings (editable in Nuxt Studio)
  * @param options - The email options including message content
  * @returns Promise resolving to EmailResult
  */
@@ -20,7 +21,20 @@ export async function sendContactEmail(
   options: SendContactEmailOptions
 ): Promise<EmailResult> {
   try {
-    const { message, recipientEmail = "info@softspokenstudios.com" } = options;
+    // Fetch recipient email from site settings if not provided
+    let recipientEmail = options.recipientEmail;
+
+    if (!recipientEmail) {
+      try {
+        const settings = await queryCollection("settings").first();
+        recipientEmail = settings?.contact?.email || "info@softspokenstudios.com";
+      } catch (error) {
+        console.warn("Failed to fetch site settings, using default email:", error);
+        recipientEmail = "info@softspokenstudios.com";
+      }
+    }
+
+    const { message } = options;
 
     // Validate message
     if (!message || !message.trim()) {
@@ -36,14 +50,23 @@ export async function sendContactEmail(
       },
     });
 
+    // Fetch site name from settings for email template
+    let siteName = "Soft Spoken Studios";
+    try {
+      const settings = await queryCollection("settings").first();
+      siteName = settings?.siteName || siteName;
+    } catch (error) {
+      console.warn("Failed to fetch site name from settings:", error);
+    }
+
     // Email content
     const mailOptions = {
       from: process.env.GMAIL_USER,
       to: recipientEmail,
-      subject: "New Contact Form Message - Soft Spoken Studios",
+      subject: `New Contact Form Message - ${siteName}`,
       html: `
         <h2>New Contact Form Submission</h2>
-        <p>A new message has been received from the Soft Spoken Studios website.</p>
+        <p>A new message has been received from the ${siteName} website.</p>
 
         <h3>Message:</h3>
         <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 10px 0; font-family: Arial, sans-serif; line-height: 1.6;">
@@ -52,7 +75,7 @@ export async function sendContactEmail(
 
         <hr>
         <p style="color: #666; font-size: 12px;">
-          This message was sent from the contact form at softspokenstudios.com
+          This message was sent from the contact form at ${siteName}
         </p>
       `,
       // Also include plain text version
@@ -63,7 +86,7 @@ Message:
 ${message}
 
 ---
-This message was sent from the contact form at softspokenstudios.com
+This message was sent from the contact form at ${siteName}
       `,
     };
 

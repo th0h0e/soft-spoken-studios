@@ -10,9 +10,11 @@ The site settings data collection allows you to manage global configuration thro
 - `description` - Site description
 
 ### Contact Information
-- `contact.email` - Contact email address
+- `contact.email` - Contact email address (used as recipient for contact form submissions)
 - `contact.phone` - Contact phone number
 - `contact.address` - Physical address
+
+**Important:** The `contact.email` field is automatically used by the contact form to determine where to send messages. When users submit the contact form on your website, messages will be delivered to this email address.
 
 ### Social Media Profiles
 - `social.twitter` - Twitter/X profile URL
@@ -130,6 +132,33 @@ const socialLinks = computed(() => {
   </div>
 </template>
 ```
+
+## Contact Form Integration
+
+The contact form automatically uses the `contact.email` setting to determine where to send messages.
+
+**How it works:**
+
+1. User submits contact form on your website
+2. Server API (`/api/contact`) processes the submission
+3. Email utility (`server/utils/email.ts`) queries the settings collection
+4. Email is sent to the address specified in `settings.contact.email`
+5. Email subject and content use `settings.siteName` for branding
+
+**To change where contact form messages are sent:**
+
+1. Open Nuxt Studio
+2. Go to "Data" section
+3. Click "settings"
+4. Update the `contact.email` field
+5. Save - all future contact form submissions will go to the new email
+
+**Email Template:**
+- Subject: `New Contact Form Message - {siteName}`
+- Recipient: `{contact.email}`
+- Content: Formatted message with site branding
+
+**Fallback:** If settings cannot be loaded, emails default to `info@softspokenstudios.com`
 
 ## Editing in Nuxt Studio
 
