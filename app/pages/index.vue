@@ -126,10 +126,17 @@
 
           <!-- Recent Articles -->
           <template v-else>
-            <SideCard v-for="article in recentArticles" :key="article._id">
-              <template #title>{{ article.title }}</template>
-              <template #content>{{ article.description || article.excerpt }}</template>
-            </SideCard>
+            <NuxtLink
+              v-for="article in recentArticles"
+              :key="article._id"
+              :to="article.path"
+              class="block"
+            >
+              <SideCard class="cursor-pointer transition-opacity hover:opacity-80">
+                <template #title>{{ article.title }}</template>
+                <template #content>{{ article.description || article.excerpt }}</template>
+              </SideCard>
+            </NuxtLink>
           </template>
         </div>
       </div>
