@@ -1,29 +1,34 @@
 import nodemailer from "nodemailer";
-import type { H3Event } from "h3";
 
-export default defineEventHandler(async (event: H3Event) => {
+export interface SendContactEmailOptions {
+  message: string;
+  recipientEmail?: string;
+}
+
+export interface EmailResult {
+  success: boolean;
+  messageId?: string;
+  error?: string;
+}
+
+/**
+ * Sends a contact form email using nodemailer
+ * @param options - The email options including message content
+ * @returns Promise resolving to EmailResult
+ */
+export async function sendContactEmail(
+  options: SendContactEmailOptions
+): Promise<EmailResult> {
   try {
-    // Only allow POST requests
-    if (getMethod(event) !== "POST") {
-      throw createError({
-        statusCode: 405,
-        statusMessage: "Method Not Allowed",
-      });
-    }
+    const { message, recipientEmail = "info@softspokenstudios.com" } = options;
 
-    const body = await readBody(event);
-    const { message } = body;
-
-    // Basic validation
-    if (!message) {
-      throw createError({
-        statusCode: 400,
-        statusMessage: "Message is required",
-      });
+    // Validate message
+    if (!message || !message.trim()) {
+      throw new Error("Message is required");
     }
 
     // Create transporter using Gmail
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
         user: process.env.GMAIL_USER, // Your Gmail address
@@ -34,7 +39,7 @@ export default defineEventHandler(async (event: H3Event) => {
     // Email content
     const mailOptions = {
       from: process.env.GMAIL_USER,
-      to: "info@softspokenstudios.com",
+      to: recipientEmail,
       subject: "New Contact Form Message - Soft Spoken Studios",
       html: `
         <h2>New Contact Form Submission</h2>
@@ -63,18 +68,18 @@ This message was sent from the contact form at softspokenstudios.com
     };
 
     // Send email
-    await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
 
     return {
       success: true,
-      message: "Email sent successfully",
+      messageId: info.messageId,
     };
   } catch (error) {
     console.error("Email sending error:", error);
 
-    throw createError({
-      statusCode: 500,
-      statusMessage: "Failed to send email",
-    });
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Failed to send email",
+    };
   }
-});
+}

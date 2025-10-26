@@ -26,19 +26,27 @@ export default defineEventHandler(async (event) => {
       });
     }
 
-    // Send email using the email service
-    const emailService = await import("../emails/send");
-    const emailResult = await emailService.default(event);
+    // Send email using the email utility
+    const emailResult = await sendContactEmail({
+      message: body.message
+    });
+
+    if (!emailResult.success) {
+      throw createError({
+        statusCode: 500,
+        statusMessage: emailResult.error || "Failed to send email",
+      });
+    }
 
     return {
       success: true,
       message: "Your message has been sent successfully. We'll get back to you soon!",
     };
-  } catch (error) {
+  } catch (error: unknown) {
     console.error("Contact form error:", error);
 
     // Return user-friendly error message
-    if (error.statusCode) {
+    if (error && typeof error === 'object' && 'statusCode' in error) {
       throw error;
     }
 

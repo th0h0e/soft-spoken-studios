@@ -1,6 +1,7 @@
 <template>
-  <!-- Mobile Layout with Sidebar -->
-  <UiSidebarProvider v-if="isMobile" :defaultOpen="false">
+  <!-- Mobile Layout with Sidebar (shown only on mobile via CSS) -->
+  <div class="md:hidden">
+    <UiSidebarProvider :defaultOpen="false">
     <UiSidebar variant="floating" collapsible="offcanvas">
       <UiSidebarHeader>
         <div class="p-2">
@@ -28,10 +29,19 @@
       </UiSidebarContent>
 
       <UiSidebarFooter>
-        <div class="space-y-2 px-4 py-2">
+        <div class="relative space-y-2 px-4 py-2">
           <div class="text-muted-foreground text-sm">
             We can write your talk, and capture your walk
           </div>
+
+          <UiToggle
+            size="xs"
+            :pressed="isDark"
+            @click="isDark = !isDark"
+            class="text-sidebar-foreground hover:text-sidebar-accent-foreground hover:bg-sidebar-accent data-[state=on]:text-sidebar-accent-foreground data-[state=on]:bg-sidebar-accent absolute right-2 bottom-2 h-8 w-8 rounded-md p-0"
+          >
+            <Icon name="lucide:lamp-desk" />
+          </UiToggle>
         </div>
       </UiSidebarFooter>
     </UiSidebar>
@@ -47,12 +57,13 @@
       <AppFooter />
     </UiSidebarInset>
   </UiSidebarProvider>
+  </div>
 
-  <!-- Desktop Layout with Sidebar -->
-  <div v-else class="grid min-h-screen gap-0 p-4 lg:grid-cols-[16rem_1fr]">
+  <!-- Desktop Layout with Sidebar (shown only on desktop via CSS) -->
+  <div class="hidden md:grid min-h-screen gap-0 p-4 md:grid-cols-[16rem_1fr]">
     <!-- Left Column - Custom Sidebar -->
-    <div class="hidden lg:block">
-      <div class="lg:sticky lg:top-4">
+    <div>
+      <div class="md:sticky md:top-4">
         <!-- Open Sidebar Button -->
         <div v-show="hideSidebar" class="p-2">
           <UiButton variant="ghost" size="icon" class="size-7" @click="hideSidebar = false">
@@ -139,8 +150,4 @@
       colorMode.preference = _isDark ? "dark" : "light";
     },
   });
-
-  // Use VueUse's built-in breakpoints (already available in your project)
-  const { width } = useWindowSize();
-  const isMobile = computed(() => width.value < 768); // md breakpoint
 </script>
