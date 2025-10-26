@@ -82,6 +82,25 @@ const portfolioSchema = z.object({
   }).optional(),
 });
 
+// Gallery data schema
+const gallerySchema = z.object({
+  items: z.array(z.object({
+    image: z.object({
+      src: property(z.string()).editor({ input: 'media' }),
+      alt: z.string().optional(),
+    }).optional(),
+    caption: z.string().optional(),
+    layout: z.enum([
+      "square",           // 1:1 ratio, single cell
+      "portrait-tall",    // 3:4 ratio, row-span-2
+      "portrait",         // 3:4 ratio, single cell
+      "landscape-wide",   // 16:9 ratio, col-span-2
+      "landscape",        // 4:3 ratio, col-span-2
+      "vertical",         // 2:3 ratio, single cell
+    ]).optional().default("square"),
+  })).optional().default([]),
+});
+
 // Site Settings data schema (for global configuration)
 const siteSettingsSchema = z.object({
   // Site Information
@@ -139,6 +158,12 @@ export default defineContentConfig({
       type: "data",
       source: "settings.yml",
       schema: siteSettingsSchema,
+    }),
+    // Gallery (data collection)
+    gallery: defineCollection({
+      type: "data",
+      source: "gallery.yml",
+      schema: gallerySchema,
     }),
   },
 });

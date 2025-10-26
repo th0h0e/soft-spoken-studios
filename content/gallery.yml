@@ -1,0 +1,38 @@
+# Gallery Items - Editable via Nuxt Studio Data section
+# Each item is optional - leave image.src empty to hide the item from the gallery
+
+items:
+  # Portrait Tall Example (3:4 ratio, takes 2 rows)
+  - image:
+      src: /Gallery/img_65dcd5a723854.jpg
+      alt: Gallery image
+    caption: Quiet moments in natural light.
+    layout: portrait-tall
+
+  # Square Example (1:1 ratio)
+  - image:
+      src: /Gallery/crosscurrent.webp
+      alt: Gallery image
+    caption: Urban textures and patterns.
+    layout: square
+
+  # Wide Landscape Example (16:9 ratio, takes 2 columns)
+  - image:
+      src: /Gallery/download.jpg
+      alt: Gallery image
+    caption: Wide open spaces and horizon lines.
+    layout: landscape-wide
+
+  # Empty slot - will be hidden until filled
+  - image:
+      src: ""
+      alt: ""
+    caption: ""
+    layout: square
+
+  # Empty slot - will be hidden until filled
+  - image:
+      src: ""
+      alt: ""
+    caption: ""
+    layout: portrait-tall
