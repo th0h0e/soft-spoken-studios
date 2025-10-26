@@ -54,14 +54,10 @@ const portfolioSchema = z.object({
 
   // Project details
   client: z.string().optional(),
-  category: z.string().optional(),
-  services: z.array(z.string()).optional().default([]),
-  technologies: z.array(z.string()).optional().default([]),
 
   // Project status
   status: z.enum(["completed", "in-progress", "planned"]).optional().default("completed"),
   featured: z.boolean().optional().default(false),
-  draft: z.boolean().optional().default(false),
 
   // Visual assets
   image: z.object({
@@ -75,13 +71,6 @@ const portfolioSchema = z.object({
 
   // Project content sections
   overview: z.string().optional(),
-  challenges: z.string().optional(),
-  solution: z.string().optional(),
-  results: z.string().optional(),
-
-  // Links
-  projectUrl: z.string().optional(),
-  githubUrl: z.string().optional(),
 
   // Project metadata
   duration: z.string().optional(),

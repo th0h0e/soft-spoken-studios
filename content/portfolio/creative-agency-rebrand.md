@@ -4,22 +4,8 @@ description: A comprehensive brand identity redesign for a creative agency,
   including visual identity, messaging strategy, and digital presence.
 date: 2024-10-22
 client: Crosscurrent Creative Studio
-category: Brand Identity
-services:
-  - Brand Strategy
-  - Visual Identity Design
-  - Copywriting
-  - Web Development
-  - Video Production
-technologies:
-  - Nuxt
-  - Vue.js
-  - Tailwind CSS
-  - Figma
-  - Adobe Creative Suite
 status: completed
 featured: true
-draft: false
 image:
   src: /Gallery/crosscurrent.webp
   alt: Crosscurrent Creative Studio brand identity showcase
@@ -30,28 +16,13 @@ gallery:
     alt: Marketing materials and business cards
   - src: /Gallery/tumblr_86912c63813414c4da3d7c95d6c6567a_074245b7_1280.jpg
     alt: Website mockups and digital assets
-overview: This project involved a complete brand transformation for a creative
-  agency looking to reposition themselves in the market. We developed a cohesive
-  brand identity that reflected their values of authenticity, craftsmanship, and
-  thoughtful communication.
-challenges: The agency had grown organically over five years, resulting in
-  inconsistent messaging and visual identity. Their existing brand didn't
-  reflect their evolved capabilities or attract their ideal clients. They needed
-  a rebrand that honored their history while positioning them for future growth.
-solution: We conducted comprehensive stakeholder interviews, competitive
-  analysis, and audience research. This informed a brand strategy centered on
-  "thoughtful creativity." We developed a minimal visual identity, crafted new
-  messaging that emphasized their unique approach, and built a custom website to
-  showcase their work.
-results: The rebrand resulted in a 40% increase in qualified leads within the
-  first three months. Client feedback highlighted the clarity and
-  professionalism of the new brand. The agency reported feeling more confident
-  in their market positioning and saw improved team alignment around their core
-  values.
-projectUrl: https://example.com/crosscurrent
-githubUrl: https://github.com/example/crosscurrent
+overview: This project involved a complete brand transformation for a creative agency looking to reposition themselves in the market. We developed a cohesive brand identity that reflected their values of authenticity, craftsmanship, and thoughtful communication.
 duration: 4 months
 year: 2024
+seo:
+  title: Creative Agency Rebrand Case Study | Soft Spoken Studios
+  description: Complete brand transformation for Crosscurrent Creative Studio. See how strategic brand identity design resulted in 40% increase in qualified leads.
+  ogImage: /Gallery/crosscurrent.webp
 ---
 
 ## Project Overview
