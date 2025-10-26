@@ -26,19 +26,47 @@ The best copy starts with deep audience research. You need to understand not jus
 
 People don't buy products; they buy better versions of themselves. Every feature should connect to a meaningful benefit that improves their life or solves their problem.
 
-:B
+:br
 
-## Create Emotional Connection
+# Create Emotional Connection
+
+:br
 
 Facts tell, but emotions sell. The most memorable copy connects on an emotional level while supporting that connection with logical reasons to act.
+
+:br
+
+::ui-card
+---
+content: /Gallery/img_65dcd5a86167c.jpg
+description: Efficitur conubia letius maecenas maximus imperdiet risus
+  elementum. Tempus ad conubia eleifend dapibus consequat nam nibh facilisis.
+  Sed inceptos fermentum iaculis ultrices purus placerat tristique. Vulputate
+  platea leo sed pretium fames est ante. Arcu nostra at ridiculus nec leo etiam
+  faucibus senectus. Aliquet ultricies hac interdum dictum diam class mauris. Id
+  potenti vivamus imperdiet neque nulla si integer.
+title: What Have We Done
+---
+::
+
+:br
 
 ## Use Clear, Simple Language
 
 Complexity doesn't demonstrate intelligence – clarity does. The goal is understanding, not impressing people with your vocabulary.
 
+:br
+
+---
+
+::portfolio-item
+::
+
 ## Tell Stories
 
 Humans are wired for narrative. Stories help people see themselves using your product or service and imagine the transformation it could provide.
+
+/
 
 ## Focus on One Main Message
 
@@ -51,3 +79,5 @@ Even the best copywriters test their work. What sounds perfect in your head migh
 ![Examples of effective copywriting and messaging](https://images.unsplash.com/photo-1542435503-956c469947f6?w=800\&h=300\&fit=crop\&crop=center)
 
 Remember: effective copywriting isn't about manipulation – it's about connection. When you genuinely understand and care about your audience, the right words will follow.
+
+/

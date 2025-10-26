@@ -46,7 +46,7 @@ export default defineAppConfig({
     },
     blog: {
       enabled: true,
-      commentsEnabled: false,
+      commentsEnabled: true,
     },
   },
 
