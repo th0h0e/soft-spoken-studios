@@ -57,7 +57,7 @@
           </div>
           <div class="flex items-start lg:col-span-3">
             <NuxtLink :to="project.path" class="block w-full">
-              <SideCard class="cursor-pointer transition-all hover:bg-accent/50">
+              <SideCard class="cursor-pointer">
                 <template #title>{{ project.title }}</template>
                 <template #content>{{ project.description }}</template>
               </SideCard>
