@@ -64,7 +64,20 @@ const { data: portfolioProjects, error, pending, refresh } = await useAsyncData(
 
 // Helper function to extract images from portfolio projects
 const getProjectImages = (project) => {
-  // Default images as fallback
+  // Use gallery images if available
+  if (project.gallery && project.gallery.length > 0) {
+    return project.gallery.map(img => ({
+      src: img.src,
+      alt: project.title
+    }));
+  }
+
+  // Fallback to single image if gallery is empty
+  if (project.image?.src) {
+    return [{ src: project.image.src, alt: project.title }];
+  }
+
+  // Default images as final fallback
   const defaultImages = [
     { src: '/images/3334f4a0741954580a818e303927dfcd.jpg', alt: project.title },
     { src: '/images/8bfedd83aec8466a4708d60ec299d164.jpg', alt: project.title },
