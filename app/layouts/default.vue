@@ -200,10 +200,16 @@
     hideSidebar.value = true;
   };
 
-  // Close sidebar when navigating to article or portfolio detail pages
-  watch(() => route.path, (newPath) => {
-    if (newPath.startsWith('/articles/') || newPath.startsWith('/portfolio/')) {
+  // Close sidebar when navigating to detail pages, open when navigating away
+  watch(() => route.path, (newPath, oldPath) => {
+    const isDetailPage = (path) => path?.startsWith('/articles/') || path?.startsWith('/portfolio/');
+
+    if (isDetailPage(newPath)) {
+      // Navigating to a detail page - close sidebar
       closeSidebar();
+    } else if (oldPath && isDetailPage(oldPath)) {
+      // Navigating away from a detail page - open sidebar
+      openSidebar();
     }
   });
 
