@@ -29,7 +29,7 @@
           <div class="lg:col-span-5">
             <!-- Carousel for Portfolio Images -->
             <UiCarousel
-              class="relative w-full"
+              class="group relative w-full"
               :plugins="[Autoplay({ delay: 3000, stopOnInteraction: true })]"
             >
               <UiCarouselContent>
@@ -51,8 +51,8 @@
                   </div>
                 </UiCarouselItem>
               </UiCarouselContent>
-              <UiCarouselPrevious class="left-4" />
-              <UiCarouselNext class="right-4" />
+              <UiCarouselPrevious class="left-4 opacity-0 transition-opacity group-hover:opacity-100" />
+              <UiCarouselNext class="right-4 opacity-0 transition-opacity group-hover:opacity-100" />
             </UiCarousel>
           </div>
           <div class="flex items-start lg:col-span-3">
