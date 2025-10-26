@@ -56,37 +56,20 @@
   <div v-if="page">
     <UiContainer>
       <div class="grid items-start gap-8 lg:grid-cols-8">
-        <!-- Left Column - Navigation (2/8) -->
+        <!-- Left Column (2/8) -->
         <div class="lg:sticky lg:top-8 lg:col-span-2">
-          <div class="space-y-6">
-            <!-- Back Navigation -->
-            <NuxtLink
-              to="/work"
-              class="text-muted hover:text-primary group inline-flex items-center transition-colors"
-            >
-              <Icon
-                name="lucide:arrow-left"
-                class="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
-              />
-              Back to Work
-            </NuxtLink>
-          </div>
         </div>
 
-        <!-- Right Column - Content (6/8) -->
+        <!-- Right Column (6/8) -->
         <div class="lg:col-span-6">
-          <!-- Hero Image -->
-          <div v-if="page.image?.src" class="mb-8 overflow-hidden rounded-lg">
-            <UiAspectRatio :ratio="16 / 9">
-              <NuxtImg
-                :src="page.image.src"
-                :alt="`${page.title} hero image`"
-                class="h-full w-full object-cover"
-                width="800"
-                height="450"
-              />
-            </UiAspectRatio>
+          <!-- Gallery -->
+          <div v-if="page.gallery?.length" class="mb-8">
+            <PortfolioItem
+              :images="page.gallery.map(img => ({ src: img.src, alt: page.title }))"
+            />
           </div>
+
+          <UiSeparator class="my-8" />
 
           <!-- Project Header -->
           <header class="mb-8">
@@ -95,6 +78,8 @@
               {{ page.description }}
             </p>
           </header>
+
+          <UiSeparator class="my-8" />
 
           <!-- Project Meta -->
           <UiCard class="mb-8">
@@ -120,12 +105,7 @@
             </UiCardContent>
           </UiCard>
 
-          <!-- Gallery -->
-          <div v-if="page.gallery?.length" class="mb-8">
-            <PortfolioItem
-              :images="page.gallery.map(img => ({ src: img.src, alt: page.title }))"
-            />
-          </div>
+          <UiSeparator class="my-8" />
 
           <!-- Project Details -->
           <div class="space-y-8">
@@ -144,6 +124,21 @@
           <article class="mt-8 space-y-6 text-base leading-relaxed">
             <ContentRenderer :value="page" />
           </article>
+
+          <UiSeparator class="my-8" />
+
+          <!-- Hero Image -->
+          <div v-if="page.image?.src" class="mt-8 mb-8 overflow-hidden rounded-lg">
+            <UiAspectRatio :ratio="16 / 9">
+              <NuxtImg
+                :src="page.image.src"
+                :alt="`${page.title} hero image`"
+                class="h-full w-full object-cover"
+                width="800"
+                height="450"
+              />
+            </UiAspectRatio>
+          </div>
 
           <!-- Navigation Footer -->
           <div class="mt-16 border-t pt-8">
