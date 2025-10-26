@@ -1,8 +1,11 @@
 ---
 title: The Art of Authentic Storytelling
-description: Exploring how genuine narratives create deeper connections with audiences and why authenticity matters more than ever in modern communication.
+description: Exploring how genuine narratives create deeper connections with
+  audiences and why authenticity matters more than ever in modern communication.
 date: 2024-11-15
-excerpt: In a world saturated with content, authentic storytelling stands out. This article explores the principles of creating genuine narratives that resonate with audiences.
+excerpt: In a world saturated with content, authentic storytelling stands out.
+  This article explores the principles of creating genuine narratives that
+  resonate with audiences.
 image:
   src: /Gallery/img_65dcd5a723854.jpg
   alt: Creative workspace with natural lighting and minimalist design
@@ -17,10 +20,6 @@ draft: false
 author:
   name: Soft Spoken Studios
 readingTime: 5 min read
-seo:
-  title: The Art of Authentic Storytelling | Soft Spoken Studios
-  description: Discover how genuine narratives create deeper connections with audiences. Learn the principles of authentic storytelling in modern communication.
-  ogImage: /Gallery/img_65dcd5a723854.jpg
 ---
 
 In an era where content is abundant but attention is scarce, authentic storytelling has become the cornerstone of meaningful communication. This isn't about crafting perfect narratives—it's about creating honest ones.
