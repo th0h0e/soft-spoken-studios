@@ -12,11 +12,8 @@ contact:
 # Social Media Profiles
 social:
   twitter: https://twitter.com/softspokenstudios
-  github: https://github.com/th0h0e/soft-spoken-studios
   linkedin: https://linkedin.com/company/softspokenstudios
   instagram: https://instagram.com/softspokenstudios
-  facebook: ""
-  youtube: ""
 
 # SEO & Branding
 seo:
@@ -26,8 +23,3 @@ seo:
   defaultOgImage: /apple-touch-icon.png
   favicon: /apple-touch-icon.png
   appleTouchIcon: /apple-touch-icon.png
-
-# Analytics & Tracking
-analytics:
-  googleAnalyticsId: ""
-  plausibleDomain: ""

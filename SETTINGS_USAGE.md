@@ -18,11 +18,8 @@ The site settings data collection allows you to manage global configuration thro
 
 ### Social Media Profiles
 - `social.twitter` - Twitter/X profile URL
-- `social.github` - GitHub profile URL
 - `social.linkedin` - LinkedIn profile URL
 - `social.instagram` - Instagram profile URL
-- `social.facebook` - Facebook profile URL
-- `social.youtube` - YouTube channel URL
 
 ### SEO & Branding
 - `seo.defaultTitle` - Default page title
@@ -31,10 +28,6 @@ The site settings data collection allows you to manage global configuration thro
 - `seo.defaultOgImage` - Default Open Graph image (with media picker)
 - `seo.favicon` - Favicon path (with media picker)
 - `seo.appleTouchIcon` - Apple touch icon path (with media picker)
-
-### Analytics & Tracking
-- `analytics.googleAnalyticsId` - Google Analytics ID
-- `analytics.plausibleDomain` - Plausible Analytics domain
 
 ## Usage Examples
 
@@ -110,7 +103,6 @@ const { settings } = await useSiteSettings();
 const socialLinks = computed(() => {
   return [
     { name: 'Twitter', url: settings.value?.social?.twitter, icon: 'lucide:twitter' },
-    { name: 'GitHub', url: settings.value?.social?.github, icon: 'lucide:github' },
     { name: 'LinkedIn', url: settings.value?.social?.linkedin, icon: 'lucide:linkedin' },
     { name: 'Instagram', url: settings.value?.social?.instagram, icon: 'lucide:instagram' },
   ].filter(link => link.url); // Only include links that are set

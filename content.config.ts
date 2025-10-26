@@ -112,11 +112,8 @@ const siteSettingsSchema = z.object({
   // Social Media Profiles
   social: z.object({
     twitter: z.string().optional(),
-    github: z.string().optional(),
     linkedin: z.string().optional(),
     instagram: z.string().optional(),
-    facebook: z.string().optional(),
-    youtube: z.string().optional(),
   }).optional(),
 
   // SEO & Branding
@@ -127,12 +124,6 @@ const siteSettingsSchema = z.object({
     defaultOgImage: property(z.string()).editor({ input: 'media' }).optional(),
     favicon: property(z.string()).editor({ input: 'media' }).optional(),
     appleTouchIcon: property(z.string()).editor({ input: 'media' }).optional(),
-  }).optional(),
-
-  // Analytics & Tracking
-  analytics: z.object({
-    googleAnalyticsId: z.string().optional(),
-    plausibleDomain: z.string().optional(),
   }).optional(),
 });
 
