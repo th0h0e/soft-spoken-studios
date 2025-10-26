@@ -11,6 +11,7 @@ const articlesSchema = z.object({
   excerpt: z.string().optional(),
   text1: z.string().optional(),
   text2: z.string().optional(),
+  text3: z.string().optional(),
   image: z.object({
     src: property(z.string()).editor({ input: 'media' }),
     alt: z.string().optional(),

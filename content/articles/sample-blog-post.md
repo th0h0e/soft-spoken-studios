@@ -8,6 +8,7 @@ excerpt: In a world saturated with content, authentic storytelling stands out.
   resonate with audiences.
 text1: This is an example of text field 1. You can use this for additional content sections or custom text blocks.
 text2: This is an example of text field 2. You can use this for quotes, callouts, or any other text content you need.
+text3: This is an example of text field 3. You can use this for additional notes, highlights, or supplementary information.
 image:
   src: /Gallery/img_65dcd5a723854.jpg
   alt: Creative workspace with natural lighting and minimalist design

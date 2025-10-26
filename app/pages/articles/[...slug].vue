@@ -154,6 +154,11 @@
             <p class="text-base leading-relaxed">{{ page.text1 }}</p>
           </div>
 
+          <!-- Text 3 -->
+          <div v-if="page.text3" class="mb-8">
+            <p class="text-base leading-relaxed">{{ page.text3 }}</p>
+          </div>
+
           <!-- Navigation Footer -->
           <div class="mt-16 border-t pt-8">
             <NuxtLink to="/blog">
