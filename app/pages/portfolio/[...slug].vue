@@ -70,60 +70,22 @@
               />
               Back to Work
             </NuxtLink>
-
-            <!-- Project Meta -->
-            <UiCard>
-              <UiCardContent class="space-y-4 py-4">
-                <div v-if="page.date" class="space-y-1">
-                  <p class="text-xs font-medium">Date</p>
-                  <p class="text-muted-foreground text-sm">{{ formatDate(page.date) }}</p>
-                </div>
-
-                <UiDivider v-if="page.client" />
-
-                <div v-if="page.client" class="space-y-1">
-                  <p class="text-xs font-medium">Client</p>
-                  <p class="text-muted-foreground text-sm">{{ page.client }}</p>
-                </div>
-
-                <UiDivider v-if="page.meta?.category" />
-
-                <div v-if="page.meta?.category" class="space-y-1">
-                  <p class="text-xs font-medium">Category</p>
-                  <p class="text-muted-foreground text-sm">{{ page.meta.category }}</p>
-                </div>
-
-                <UiDivider v-if="page.meta?.services?.length" />
-
-                <div v-if="page.meta?.services?.length" class="space-y-2">
-                  <p class="text-xs font-medium">Services</p>
-                  <div class="flex flex-wrap gap-1">
-                    <UiBadge
-                      v-for="service in page.meta.services"
-                      :key="service"
-                      variant="secondary"
-                      size="sm"
-                    >
-                      {{ service }}
-                    </UiBadge>
-                  </div>
-                </div>
-              </UiCardContent>
-            </UiCard>
           </div>
         </div>
 
         <!-- Right Column - Content (6/8) -->
         <div class="lg:col-span-6">
-          <!-- Gallery -->
-          <div class="mb-8">
-            <PortfolioItem
-              :images="[
-                { src: '/images/3334f4a0741954580a818e303927dfcd.jpg', alt: page.title },
-                { src: '/images/8bfedd83aec8466a4708d60ec299d164.jpg', alt: page.title },
-                { src: '/images/90d52ee25f93c3e7deaf019956a6089b.jpg', alt: page.title },
-              ]"
-            />
+          <!-- Hero Image -->
+          <div v-if="page.image?.src" class="mb-8 overflow-hidden rounded-lg">
+            <UiAspectRatio :ratio="16 / 9">
+              <NuxtImg
+                :src="page.image.src"
+                :alt="`${page.title} hero image`"
+                class="h-full w-full object-cover"
+                width="800"
+                height="450"
+              />
+            </UiAspectRatio>
           </div>
 
           <!-- Project Header -->
@@ -132,48 +94,48 @@
             <p v-if="page.description" class="text-muted-foreground text-lg leading-relaxed">
               {{ page.description }}
             </p>
-            <UiSeparator class="mt-6" />
           </header>
+
+          <!-- Project Meta -->
+          <UiCard class="mb-8">
+            <UiCardContent class="grid grid-cols-2 gap-4 py-4 sm:grid-cols-3">
+              <div v-if="page.date" class="space-y-1">
+                <p class="text-xs font-medium">Date</p>
+                <p class="text-muted-foreground text-sm">{{ formatDate(page.date) }}</p>
+              </div>
+
+              <div v-if="page.client" class="space-y-1">
+                <p class="text-xs font-medium">Client</p>
+                <p class="text-muted-foreground text-sm">{{ page.client }}</p>
+              </div>
+
+              <div v-if="page.status" class="space-y-1">
+                <p class="text-xs font-medium">Status</p>
+                <UiBadge
+                  :variant="page.status === 'completed' ? 'default' : page.status === 'in-progress' ? 'secondary' : 'outline'"
+                >
+                  {{ page.status }}
+                </UiBadge>
+              </div>
+            </UiCardContent>
+          </UiCard>
+
+          <!-- Gallery -->
+          <div v-if="page.gallery?.length" class="mb-8">
+            <PortfolioItem
+              :images="page.gallery.map(img => ({ src: img.src, alt: page.title }))"
+            />
+          </div>
 
           <!-- Project Details -->
           <div class="space-y-8">
             <!-- Overview -->
-            <UiCard v-if="page.meta?.overview">
+            <UiCard v-if="page.overview">
               <UiCardHeader>
                 <UiCardTitle>Overview</UiCardTitle>
               </UiCardHeader>
               <UiCardContent>
-                <p class="text-base leading-relaxed">{{ page.meta.overview }}</p>
-              </UiCardContent>
-            </UiCard>
-
-            <!-- Challenge -->
-            <UiCard v-if="page.meta?.challenges">
-              <UiCardHeader>
-                <UiCardTitle>Challenge</UiCardTitle>
-              </UiCardHeader>
-              <UiCardContent>
-                <p class="text-base leading-relaxed">{{ page.meta.challenges }}</p>
-              </UiCardContent>
-            </UiCard>
-
-            <!-- Solution -->
-            <UiCard v-if="page.meta?.solution">
-              <UiCardHeader>
-                <UiCardTitle>Solution</UiCardTitle>
-              </UiCardHeader>
-              <UiCardContent>
-                <p class="text-base leading-relaxed">{{ page.meta.solution }}</p>
-              </UiCardContent>
-            </UiCard>
-
-            <!-- Results -->
-            <UiCard v-if="page.meta?.results">
-              <UiCardHeader>
-                <UiCardTitle>Results</UiCardTitle>
-              </UiCardHeader>
-              <UiCardContent>
-                <p class="text-base leading-relaxed">{{ page.meta.results }}</p>
+                <p class="text-base leading-relaxed">{{ page.overview }}</p>
               </UiCardContent>
             </UiCard>
           </div>

@@ -48,11 +48,13 @@
     </UiSidebar>
 
     <UiSidebarInset>
-      <div class="flex flex-1 flex-col gap-4 p-4">
+      <div class="flex min-h-screen flex-1 flex-col gap-4 p-4">
         <div class="mb-4 flex items-center">
           <UiSidebarTrigger />
         </div>
-        <slot />
+        <div class="flex-1">
+          <slot />
+        </div>
       </div>
 
       <AppFooter />
@@ -122,8 +124,10 @@
     </div>
 
     <!-- Right Column - Page Content -->
-    <div class="flex flex-1 flex-col gap-4">
-      <slot />
+    <div class="flex min-h-screen flex-1 flex-col gap-4">
+      <div class="flex-1">
+        <slot />
+      </div>
       <AppFooter />
     </div>
   </div>
