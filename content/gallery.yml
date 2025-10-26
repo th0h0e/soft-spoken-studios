@@ -1,118 +1,605 @@
 # Gallery Items - Editable via Nuxt Studio Data section
-# Add images to fill the grid - layout is pre-determined
+# Add images to fill the grid - layout is pre-determined by repeating pattern
 # If image.src is empty, that grid position will be hidden
 
 items:
-  # Item 1 (tall portrait position)
+  # Item 1
   - image:
       src: /Gallery/img_65dcd5a723854.jpg
       alt: Gallery image
     caption: Quiet moments in natural light.
 
-  # Item 2 (square position)
+  # Item 2
+  - image:
+      src: /Gallery/img_65dcd5a723854.jpg
+      alt: Gallery image
+    caption: Quiet moments in natural light.
+
+  # Item 3
   - image:
       src: /Gallery/crosscurrent.webp
       alt: Gallery image
     caption: Urban textures and patterns.
 
-  # Item 3 (wide landscape position)
+  # Item 4
   - image:
       src: /Gallery/download.jpg
       alt: Gallery image
     caption: Wide open spaces and horizon lines.
 
-  # Item 4 (square position)
+  # Item 5
   - image:
       src: /Gallery/img_65dcd5a86167c.jpg
       alt: Gallery image
     caption: Candid street photography.
 
-  # Item 5 (tall portrait position)
+  # Item 6
   - image:
       src: /Gallery/tumblr_776a5a41a0251f41fd84759fd74ae9a4_d3a06d92_1280.jpg
       alt: Gallery image
     caption: Abstract forms and shadows.
 
-  # Item 6 (square position)
+  # Item 7
   - image:
       src: /Gallery/tumblr_86912c63813414c4da3d7c95d6c6567a_074245b7_1280.jpg
       alt: Gallery image
     caption: Details in everyday objects.
 
-  # Item 7 (horizontal rectangle position)
+  # Item 8
   - image:
       src: /Gallery/tumblr_4f7ee9971f08af76724d2bb7123ea3cb_a5744973_1280.jpg
       alt: Gallery image
     caption: Architectural lines and geometry.
 
-  # Item 8 (square position)
+  # Item 9
   - image:
-      src: /Gallery/tumblr_5d36f28f4d2d7f414da50f8e53179f05_ad7b99ee_1280.jpg
+      src: 
       alt: Gallery image
     caption: Personal moments captured.
 
-  # Item 9 (vertical rectangle position)
+  # Item 10
   - image:
       src: /Gallery/img_65dcd5a723854.jpg
       alt: Gallery image
     caption: Movement and energy.
 
-  # Item 10 (wide landscape position)
+  # Item 11
   - image:
       src: /Gallery/crosscurrent.webp
       alt: Gallery image
     caption: Cinematic compositions and mood.
 
-  # Item 11 (square position)
+  # Item 12
   - image:
       src: /Gallery/download.jpg
       alt: Gallery image
     caption: Light and shadow play.
 
-  # Item 12 (tall portrait position)
+  # Item 13
   - image:
       src: /Gallery/img_65dcd5a86167c.jpg
       alt: Gallery image
     caption: Intimate documentary moments.
 
-  # Item 13 (square position)
+  # Item 14
   - image:
       src: /Gallery/tumblr_776a5a41a0251f41fd84759fd74ae9a4_d3a06d92_1280.jpg
       alt: Gallery image
     caption: Textural surfaces and materials.
 
-  # Item 14 (wide landscape position)
+  # Item 15
   - image:
       src: /Gallery/tumblr_86912c63813414c4da3d7c95d6c6567a_074245b7_1280.jpg
       alt: Gallery image
     caption: Expansive landscapes and horizons.
 
-  # Item 15 (square position)
+  # Item 16
   - image:
       src: /Gallery/tumblr_4f7ee9971f08af76724d2bb7123ea3cb_a5744973_1280.jpg
       alt: Gallery image
     caption: Urban environments and people.
 
-  # Item 16 (vertical rectangle position)
+  # Item 17
   - image:
-      src: /Gallery/tumblr_5d36f28f4d2d7f414da50f8e53179f05_ad7b99ee_1280.jpg
+      src: 
       alt: Gallery image
     caption: Vertical compositions and depth.
 
-  # Item 17 (horizontal rectangle position)
+  # Item 18
   - image:
       src: /Gallery/img_65dcd5a723854.jpg
       alt: Gallery image
     caption: Minimalist framing and space.
 
-  # Item 18 (square position)
+  # Item 19
   - image:
       src: /Gallery/crosscurrent.webp
       alt: Gallery image
     caption: Color and contrast studies.
 
-  # Item 19 (tall portrait position)
+  # Item 20
   - image:
       src: /Gallery/download.jpg
       alt: Gallery image
     caption: Emotional storytelling through image.
+
+  # Item 21
+  - image:
+      src: /Gallery/img_65dcd5a86167c.jpg
+      alt: Gallery image
+    caption: 
+
+  # Item 22
+  - image:
+      src: /Gallery/tumblr_776a5a41a0251f41fd84759fd74ae9a4_d3a06d92_1280.jpg
+      alt: Gallery image
+    caption: Quiet moments in natural light.
+
+  # Item 23
+  - image:
+      src: /Gallery/tumblr_86912c63813414c4da3d7c95d6c6567a_074245b7_1280.jpg
+      alt: Gallery image
+    caption: Urban textures and patterns.
+
+  # Item 24
+  - image:
+      src: /Gallery/tumblr_4f7ee9971f08af76724d2bb7123ea3cb_a5744973_1280.jpg
+      alt: Gallery image
+    caption: Wide open spaces and horizon lines.
+
+  # Item 25
+  - image:
+      src: 
+      alt: Gallery image
+    caption: Candid street photography.
+
+  # Item 26
+  - image:
+      src: /Gallery/img_65dcd5a723854.jpg
+      alt: Gallery image
+    caption: Abstract forms and shadows.
+
+  # Item 27
+  - image:
+      src: /Gallery/crosscurrent.webp
+      alt: Gallery image
+    caption: Details in everyday objects.
+
+  # Item 28
+  - image:
+      src: /Gallery/download.jpg
+      alt: Gallery image
+    caption: Architectural lines and geometry.
+
+  # Item 29
+  - image:
+      src: /Gallery/img_65dcd5a86167c.jpg
+      alt: Gallery image
+    caption: Personal moments captured.
+
+  # Item 30
+  - image:
+      src: /Gallery/tumblr_776a5a41a0251f41fd84759fd74ae9a4_d3a06d92_1280.jpg
+      alt: Gallery image
+    caption: Movement and energy.
+
+  # Item 31
+  - image:
+      src: /Gallery/tumblr_86912c63813414c4da3d7c95d6c6567a_074245b7_1280.jpg
+      alt: Gallery image
+    caption: Cinematic compositions and mood.
+
+  # Item 32
+  - image:
+      src: /Gallery/tumblr_4f7ee9971f08af76724d2bb7123ea3cb_a5744973_1280.jpg
+      alt: Gallery image
+    caption: Light and shadow play.
+
+  # Item 33
+  - image:
+      src: 
+      alt: Gallery image
+    caption: Intimate documentary moments.
+
+  # Item 34
+  - image:
+      src: /Gallery/img_65dcd5a723854.jpg
+      alt: Gallery image
+    caption: Textural surfaces and materials.
+
+  # Item 35
+  - image:
+      src: /Gallery/crosscurrent.webp
+      alt: Gallery image
+    caption: Expansive landscapes and horizons.
+
+  # Item 36
+  - image:
+      src: /Gallery/download.jpg
+      alt: Gallery image
+    caption: Urban environments and people.
+
+  # Item 37
+  - image:
+      src: /Gallery/img_65dcd5a86167c.jpg
+      alt: Gallery image
+    caption: Vertical compositions and depth.
+
+  # Item 38
+  - image:
+      src: /Gallery/tumblr_776a5a41a0251f41fd84759fd74ae9a4_d3a06d92_1280.jpg
+      alt: Gallery image
+    caption: Minimalist framing and space.
+
+  # Item 39
+  - image:
+      src: /Gallery/tumblr_86912c63813414c4da3d7c95d6c6567a_074245b7_1280.jpg
+      alt: Gallery image
+    caption: Color and contrast studies.
+
+  # Item 40
+  - image:
+      src: /Gallery/tumblr_4f7ee9971f08af76724d2bb7123ea3cb_a5744973_1280.jpg
+      alt: Gallery image
+    caption: Emotional storytelling through image.
+
+  # Item 41
+  - image:
+      src: 
+      alt: Gallery image
+    caption: 
+
+  # Item 42
+  - image:
+      src: /Gallery/img_65dcd5a723854.jpg
+      alt: Gallery image
+    caption: Quiet moments in natural light.
+
+  # Item 43
+  - image:
+      src: /Gallery/crosscurrent.webp
+      alt: Gallery image
+    caption: Urban textures and patterns.
+
+  # Item 44
+  - image:
+      src: /Gallery/download.jpg
+      alt: Gallery image
+    caption: Wide open spaces and horizon lines.
+
+  # Item 45
+  - image:
+      src: /Gallery/img_65dcd5a86167c.jpg
+      alt: Gallery image
+    caption: Candid street photography.
+
+  # Item 46
+  - image:
+      src: /Gallery/tumblr_776a5a41a0251f41fd84759fd74ae9a4_d3a06d92_1280.jpg
+      alt: Gallery image
+    caption: Abstract forms and shadows.
+
+  # Item 47
+  - image:
+      src: /Gallery/tumblr_86912c63813414c4da3d7c95d6c6567a_074245b7_1280.jpg
+      alt: Gallery image
+    caption: Details in everyday objects.
+
+  # Item 48
+  - image:
+      src: /Gallery/tumblr_4f7ee9971f08af76724d2bb7123ea3cb_a5744973_1280.jpg
+      alt: Gallery image
+    caption: Architectural lines and geometry.
+
+  # Item 49
+  - image:
+      src: 
+      alt: Gallery image
+    caption: Personal moments captured.
+
+  # Item 50
+  - image:
+      src: /Gallery/img_65dcd5a723854.jpg
+      alt: Gallery image
+    caption: Movement and energy.
+
+  # Item 51
+  - image:
+      src: /Gallery/crosscurrent.webp
+      alt: Gallery image
+    caption: Cinematic compositions and mood.
+
+  # Item 52
+  - image:
+      src: /Gallery/download.jpg
+      alt: Gallery image
+    caption: Light and shadow play.
+
+  # Item 53
+  - image:
+      src: /Gallery/img_65dcd5a86167c.jpg
+      alt: Gallery image
+    caption: Intimate documentary moments.
+
+  # Item 54
+  - image:
+      src: /Gallery/tumblr_776a5a41a0251f41fd84759fd74ae9a4_d3a06d92_1280.jpg
+      alt: Gallery image
+    caption: Textural surfaces and materials.
+
+  # Item 55
+  - image:
+      src: /Gallery/tumblr_86912c63813414c4da3d7c95d6c6567a_074245b7_1280.jpg
+      alt: Gallery image
+    caption: Expansive landscapes and horizons.
+
+  # Item 56
+  - image:
+      src: /Gallery/tumblr_4f7ee9971f08af76724d2bb7123ea3cb_a5744973_1280.jpg
+      alt: Gallery image
+    caption: Urban environments and people.
+
+  # Item 57
+  - image:
+      src: 
+      alt: Gallery image
+    caption: Vertical compositions and depth.
+
+  # Item 58
+  - image:
+      src: /Gallery/img_65dcd5a723854.jpg
+      alt: Gallery image
+    caption: Minimalist framing and space.
+
+  # Item 59
+  - image:
+      src: /Gallery/crosscurrent.webp
+      alt: Gallery image
+    caption: Color and contrast studies.
+
+  # Item 60
+  - image:
+      src: /Gallery/download.jpg
+      alt: Gallery image
+    caption: Emotional storytelling through image.
+
+  # Item 61
+  - image:
+      src: /Gallery/img_65dcd5a86167c.jpg
+      alt: Gallery image
+    caption: 
+
+  # Item 62
+  - image:
+      src: /Gallery/tumblr_776a5a41a0251f41fd84759fd74ae9a4_d3a06d92_1280.jpg
+      alt: Gallery image
+    caption: Quiet moments in natural light.
+
+  # Item 63
+  - image:
+      src: /Gallery/tumblr_86912c63813414c4da3d7c95d6c6567a_074245b7_1280.jpg
+      alt: Gallery image
+    caption: Urban textures and patterns.
+
+  # Item 64
+  - image:
+      src: /Gallery/tumblr_4f7ee9971f08af76724d2bb7123ea3cb_a5744973_1280.jpg
+      alt: Gallery image
+    caption: Wide open spaces and horizon lines.
+
+  # Item 65
+  - image:
+      src: 
+      alt: Gallery image
+    caption: Candid street photography.
+
+  # Item 66
+  - image:
+      src: /Gallery/img_65dcd5a723854.jpg
+      alt: Gallery image
+    caption: Abstract forms and shadows.
+
+  # Item 67
+  - image:
+      src: /Gallery/crosscurrent.webp
+      alt: Gallery image
+    caption: Details in everyday objects.
+
+  # Item 68
+  - image:
+      src: /Gallery/download.jpg
+      alt: Gallery image
+    caption: Architectural lines and geometry.
+
+  # Item 69
+  - image:
+      src: /Gallery/img_65dcd5a86167c.jpg
+      alt: Gallery image
+    caption: Personal moments captured.
+
+  # Item 70
+  - image:
+      src: /Gallery/tumblr_776a5a41a0251f41fd84759fd74ae9a4_d3a06d92_1280.jpg
+      alt: Gallery image
+    caption: Movement and energy.
+
+  # Item 71
+  - image:
+      src: /Gallery/tumblr_86912c63813414c4da3d7c95d6c6567a_074245b7_1280.jpg
+      alt: Gallery image
+    caption: Cinematic compositions and mood.
+
+  # Item 72
+  - image:
+      src: /Gallery/tumblr_4f7ee9971f08af76724d2bb7123ea3cb_a5744973_1280.jpg
+      alt: Gallery image
+    caption: Light and shadow play.
+
+  # Item 73
+  - image:
+      src: 
+      alt: Gallery image
+    caption: Intimate documentary moments.
+
+  # Item 74
+  - image:
+      src: /Gallery/img_65dcd5a723854.jpg
+      alt: Gallery image
+    caption: Textural surfaces and materials.
+
+  # Item 75
+  - image:
+      src: /Gallery/crosscurrent.webp
+      alt: Gallery image
+    caption: Expansive landscapes and horizons.
+
+  # Item 76
+  - image:
+      src: /Gallery/download.jpg
+      alt: Gallery image
+    caption: Urban environments and people.
+
+  # Item 77
+  - image:
+      src: /Gallery/img_65dcd5a86167c.jpg
+      alt: Gallery image
+    caption: Vertical compositions and depth.
+
+  # Item 78
+  - image:
+      src: /Gallery/tumblr_776a5a41a0251f41fd84759fd74ae9a4_d3a06d92_1280.jpg
+      alt: Gallery image
+    caption: Minimalist framing and space.
+
+  # Item 79
+  - image:
+      src: /Gallery/tumblr_86912c63813414c4da3d7c95d6c6567a_074245b7_1280.jpg
+      alt: Gallery image
+    caption: Color and contrast studies.
+
+  # Item 80
+  - image:
+      src: /Gallery/tumblr_4f7ee9971f08af76724d2bb7123ea3cb_a5744973_1280.jpg
+      alt: Gallery image
+    caption: Emotional storytelling through image.
+
+  # Item 81
+  - image:
+      src: 
+      alt: Gallery image
+    caption: 
+
+  # Item 82
+  - image:
+      src: /Gallery/img_65dcd5a723854.jpg
+      alt: Gallery image
+    caption: Quiet moments in natural light.
+
+  # Item 83
+  - image:
+      src: /Gallery/crosscurrent.webp
+      alt: Gallery image
+    caption: Urban textures and patterns.
+
+  # Item 84
+  - image:
+      src: /Gallery/download.jpg
+      alt: Gallery image
+    caption: Wide open spaces and horizon lines.
+
+  # Item 85
+  - image:
+      src: /Gallery/img_65dcd5a86167c.jpg
+      alt: Gallery image
+    caption: Candid street photography.
+
+  # Item 86
+  - image:
+      src: /Gallery/tumblr_776a5a41a0251f41fd84759fd74ae9a4_d3a06d92_1280.jpg
+      alt: Gallery image
+    caption: Abstract forms and shadows.
+
+  # Item 87
+  - image:
+      src: /Gallery/tumblr_86912c63813414c4da3d7c95d6c6567a_074245b7_1280.jpg
+      alt: Gallery image
+    caption: Details in everyday objects.
+
+  # Item 88
+  - image:
+      src: /Gallery/tumblr_4f7ee9971f08af76724d2bb7123ea3cb_a5744973_1280.jpg
+      alt: Gallery image
+    caption: Architectural lines and geometry.
+
+  # Item 89
+  - image:
+      src: 
+      alt: Gallery image
+    caption: Personal moments captured.
+
+  # Item 90
+  - image:
+      src: /Gallery/img_65dcd5a723854.jpg
+      alt: Gallery image
+    caption: Movement and energy.
+
+  # Item 91
+  - image:
+      src: /Gallery/crosscurrent.webp
+      alt: Gallery image
+    caption: Cinematic compositions and mood.
+
+  # Item 92
+  - image:
+      src: /Gallery/download.jpg
+      alt: Gallery image
+    caption: Light and shadow play.
+
+  # Item 93
+  - image:
+      src: /Gallery/img_65dcd5a86167c.jpg
+      alt: Gallery image
+    caption: Intimate documentary moments.
+
+  # Item 94
+  - image:
+      src: /Gallery/tumblr_776a5a41a0251f41fd84759fd74ae9a4_d3a06d92_1280.jpg
+      alt: Gallery image
+    caption: Textural surfaces and materials.
+
+  # Item 95
+  - image:
+      src: /Gallery/tumblr_86912c63813414c4da3d7c95d6c6567a_074245b7_1280.jpg
+      alt: Gallery image
+    caption: Expansive landscapes and horizons.
+
+  # Item 96
+  - image:
+      src: /Gallery/tumblr_4f7ee9971f08af76724d2bb7123ea3cb_a5744973_1280.jpg
+      alt: Gallery image
+    caption: Urban environments and people.
+
+  # Item 97
+  - image:
+      src: 
+      alt: Gallery image
+    caption: Vertical compositions and depth.
+
+  # Item 98
+  - image:
+      src: /Gallery/img_65dcd5a723854.jpg
+      alt: Gallery image
+    caption: Minimalist framing and space.
+
+  # Item 99
+  - image:
+      src: /Gallery/crosscurrent.webp
+      alt: Gallery image
+    caption: Color and contrast studies.
+
+  # Item 100
+  - image:
+      src: /Gallery/download.jpg
+      alt: Gallery image
+    caption: Emotional storytelling through image.
+
