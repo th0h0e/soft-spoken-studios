@@ -27,7 +27,33 @@
         <!-- Dynamic Portfolio Items -->
         <template v-for="project in portfolioProjects" :key="project._id">
           <div class="lg:col-span-5">
-            <PortfolioItem :images="getProjectImages(project)" />
+            <!-- Carousel for Portfolio Images -->
+            <UiCarousel
+              class="w-full"
+              :plugins="[Autoplay({ delay: 3000, stopOnInteraction: true })]"
+            >
+              <UiCarouselContent>
+                <UiCarouselItem
+                  v-for="(image, index) in getProjectImages(project)"
+                  :key="index"
+                  grab-cursor
+                >
+                  <div class="overflow-hidden rounded-lg">
+                    <UiAspectRatio :ratio="16 / 9">
+                      <NuxtImg
+                        :src="image.src"
+                        :alt="image.alt"
+                        class="h-full w-full object-cover"
+                        width="800"
+                        height="450"
+                      />
+                    </UiAspectRatio>
+                  </div>
+                </UiCarouselItem>
+              </UiCarouselContent>
+              <UiCarouselPrevious />
+              <UiCarouselNext />
+            </UiCarousel>
           </div>
           <div class="flex items-start lg:col-span-3">
             <NuxtLink :to="project.path" class="block w-full">
@@ -49,7 +75,9 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import Autoplay from "embla-carousel-autoplay";
+
 // Fetch portfolio projects
 const { data: portfolioProjects, error, pending, refresh } = await useAsyncData(
   'portfolio-projects',
