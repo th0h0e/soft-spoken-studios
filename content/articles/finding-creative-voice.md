@@ -237,3 +237,7 @@ caption: z.string().optional()
 draft: z.boolean().default(false) // Checkbox starts unchecked
 
 The form automatically updates whenever you change your schema!
+
+https\://github.com/nuxt/content/blob/main/docs/content/docs/1.getting-star
+
+ted/3.configuration.md
