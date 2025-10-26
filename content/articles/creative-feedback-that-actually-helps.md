@@ -2,7 +2,7 @@
 title: How to Give Creative Feedback That Actually Helps (And Get Better Work as a Result)
 description: Most creative feedback makes things worse, not better. Here's how to give feedback that helps creators do their best work—and gets you the results you want.
 date: 2024-10-12
-excerpt: "Make it pop" and "I'll know it when I see it" aren't helpful feedback. If you want great creative work, you need to learn how to talk about what's working and what's not in a way that guides revision rather than crushing creativity.
+excerpt: Make it pop and I'll know it when I see it aren't helpful feedback. If you want great creative work, you need to learn how to talk about what's working and what's not in a way that guides revision rather than crushing creativity.
 text1: The goal of feedback isn't to prove you're smart or demonstrate control. It's to help the creator understand what you need so they can deliver it.
 text2: Good feedback focuses on problems, not solutions. Tell me what's not working and why, not how to fix it. That's my job.
 text3: Remember that you hired creative professionals because they're good at what they do. Trust their expertise while being clear about your needs.

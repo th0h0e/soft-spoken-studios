@@ -3,8 +3,8 @@ title: Five Rules for Compelling Brand Videos That People Actually Watch
 description: Most brand videos are boring. Here's how to make videos people want to watch, share, and remember—without a Hollywood budget.
 date: 2024-10-22
 excerpt: Great brand videos don't need expensive equipment or celebrity talent. They need authenticity, purpose, and respect for the viewer's time. These five rules will transform how you approach video content.
-text1: Before you hit record, ask yourself: would I watch this video if it wasn't my brand? If the answer is no, figure out why—then fix it.
-text2: The best brand videos show, don't tell. Don't talk about your values—demonstrate them. Don't claim quality—prove it.
+text1: "Before you hit record, ask yourself: would I watch this video if it wasn't my brand? If the answer is no, figure out why—then fix it."
+text2: "The best brand videos show, don't tell. Don't talk about your values—demonstrate them. Don't claim quality—prove it."
 text3: Remember that attention is a gift. Every second someone spends watching your video is a second they're not spending somewhere else. Honor that.
 image:
   src: /Gallery/img_65dcd5a86167c.jpg
