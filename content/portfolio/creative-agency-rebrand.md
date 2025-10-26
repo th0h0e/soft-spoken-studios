@@ -37,6 +37,10 @@ projectUrl: https://example.com/crosscurrent
 githubUrl: https://github.com/example/crosscurrent
 duration: 4 months
 year: 2024
+seo:
+  title: Creative Agency Rebrand Case Study | Soft Spoken Studios
+  description: Complete brand transformation for Crosscurrent Creative Studio. See how strategic brand identity design resulted in 40% increase in qualified leads.
+  ogImage: /Gallery/crosscurrent.webp
 ---
 
 ## Project Overview

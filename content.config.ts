@@ -36,6 +36,13 @@ const articlesSchema = z.object({
 
   // Reading metadata
   readingTime: z.string().optional(),
+
+  // SEO metadata
+  seo: z.object({
+    title: z.string().optional(),
+    description: z.string().optional(),
+    ogImage: z.string().optional(),
+  }).optional(),
 });
 
 // Portfolio/Projects schema
@@ -79,6 +86,13 @@ const portfolioSchema = z.object({
   // Project metadata
   duration: z.string().optional(),
   year: z.string().optional(),
+
+  // SEO metadata
+  seo: z.object({
+    title: z.string().optional(),
+    description: z.string().optional(),
+    ogImage: z.string().optional(),
+  }).optional(),
 });
 
 export default defineContentConfig({
