@@ -69,18 +69,20 @@
       <div class="md:sticky md:top-4">
         <!-- Open Sidebar Button -->
         <ClientOnly>
-          <div
-            v-motion="'openButton'"
-            v-show="hideSidebar"
-            :initial="{ x: -50, opacity: 0 }"
-            :enter="{ x: 0, opacity: 1 }"
-            :visible="{ x: 0, opacity: 1 }"
-            class="p-2"
-          >
-            <UiButton variant="ghost" size="icon" class="size-7" @click="openSidebar">
-              <Icon name="lucide:panel-left" />
-            </UiButton>
-          </div>
+          <AnimatePresence>
+            <Motion
+              v-if="hideSidebar"
+              :initial="{ x: -50, opacity: 0 }"
+              :animate="{ x: 0, opacity: 1 }"
+              :exit="{ x: -50, opacity: 0 }"
+              :transition="{ duration: 0.6, ease: 'easeInOut' }"
+              class="p-2"
+            >
+              <UiButton variant="ghost" size="icon" class="size-7" @click="openSidebar">
+                <Icon name="lucide:panel-left" />
+              </UiButton>
+            </Motion>
+          </AnimatePresence>
           <template #fallback>
             <div v-show="hideSidebar" class="p-2">
               <UiButton variant="ghost" size="icon" class="size-7" @click="openSidebar">
@@ -92,26 +94,18 @@
 
         <!-- Sidebar Content -->
         <ClientOnly>
-          <div
-            v-motion="'sidebarContent'"
-            v-show="!hideSidebar"
-            :initial="{ x: -320, opacity: 0 }"
-            :enter="{ x: 0, opacity: 1 }"
-            :visible="{ x: 0, opacity: 1 }"
-            class="bg-sidebar-background border-sidebar-border flex h-[calc(100vh-2rem)] w-full flex-col rounded-lg border shadow-sm"
-          >
+          <AnimatePresence>
+            <Motion
+              v-if="!hideSidebar"
+              :initial="{ x: -320, opacity: 0 }"
+              :animate="{ x: 0, opacity: 1 }"
+              :exit="{ x: -320, opacity: 0 }"
+              :transition="{ duration: 0.6, ease: 'easeInOut' }"
+              class="bg-sidebar-background border-sidebar-border flex h-[calc(100vh-2rem)] w-full flex-col rounded-lg border shadow-sm"
+            >
           <!-- Header with Navigation -->
           <div class="relative flex-1 p-4">
-            <UiButton
-              variant="ghost"
-              size="sm"
-              class="text-sidebar-foreground hover:text-sidebar-accent-foreground hover:bg-sidebar-accent absolute top-2 right-2 z-10 h-8 w-8 rounded-md p-0"
-              @click="closeSidebar"
-            >
-              <Icon name="lucide:x" />
-            </UiButton>
-
-            <div class="space-y-0 pr-10">
+            <div class="space-y-0">
               <div
                 v-for="item in navigation"
                 :key="item.name"
@@ -140,21 +134,13 @@
               <Icon name="lucide:lamp-desk" />
             </UiToggle>
           </div>
-        </div>
+          </Motion>
+          </AnimatePresence>
         <template #fallback>
           <div v-show="!hideSidebar" class="bg-sidebar-background border-sidebar-border flex h-[calc(100vh-2rem)] w-full flex-col rounded-lg border shadow-sm">
             <!-- Header with Navigation -->
             <div class="relative flex-1 p-4">
-              <UiButton
-                variant="ghost"
-                size="sm"
-                class="text-sidebar-foreground hover:text-sidebar-accent-foreground hover:bg-sidebar-accent absolute top-2 right-2 z-10 h-8 w-8 rounded-md p-0"
-                @click="closeSidebar"
-              >
-                <Icon name="lucide:x" />
-              </UiButton>
-
-              <div class="space-y-0 pr-10">
+              <div class="space-y-0">
                 <div
                   v-for="item in navigation"
                   :key="item.name"
@@ -203,31 +189,23 @@
 <script setup>
   const colorMode = useColorMode();
   const hideSidebar = ref(false);
+  const route = useRoute();
 
-  // Get motion instances
-  const motions = useMotions();
-
-  // Animate sidebar open
-  const openSidebar = async () => {
+  // Toggle sidebar visibility
+  const openSidebar = () => {
     hideSidebar.value = false;
   };
 
-  // Animate sidebar close
-  const closeSidebar = async () => {
-    const sidebarContent = motions.sidebarContent;
-    if (sidebarContent) {
-      await sidebarContent.apply({
-        x: -320,
-        opacity: 0,
-        transition: {
-          type: 'spring',
-          stiffness: 250,
-          damping: 25,
-        },
-      });
-    }
+  const closeSidebar = () => {
     hideSidebar.value = true;
   };
+
+  // Close sidebar when navigating to article or portfolio detail pages
+  watch(() => route.path, (newPath) => {
+    if (newPath.startsWith('/articles/') || newPath.startsWith('/portfolio/')) {
+      closeSidebar();
+    }
+  });
 
   // Simple hardcoded navigation - always English pages
   const navigation = [
