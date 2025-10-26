@@ -1,0 +1,33 @@
+# Site Settings - Editable via Nuxt Studio Data section
+siteName: Soft Spoken Studios
+tagline: We can write your talk, and capture your walk
+description: Creative communication and strategic storytelling
+
+# Contact Information
+contact:
+  email: hello@softspokenstudios.com
+  phone: "+1 (555) 123-4567"
+  address: ""
+
+# Social Media Profiles
+social:
+  twitter: https://twitter.com/softspokenstudios
+  github: https://github.com/th0h0e/soft-spoken-studios
+  linkedin: https://linkedin.com/company/softspokenstudios
+  instagram: https://instagram.com/softspokenstudios
+  facebook: ""
+  youtube: ""
+
+# SEO & Branding
+seo:
+  defaultTitle: Soft Spoken Studios
+  titleTemplate: "%s | Soft Spoken Studios"
+  defaultDescription: Creative communication and strategic storytelling. We help brands find their authentic voice through thoughtful content and design.
+  defaultOgImage: /apple-touch-icon.png
+  favicon: /apple-touch-icon.png
+  appleTouchIcon: /apple-touch-icon.png
+
+# Analytics & Tracking
+analytics:
+  googleAnalyticsId: ""
+  plausibleDomain: ""
