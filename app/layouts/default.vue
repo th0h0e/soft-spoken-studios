@@ -1,6 +1,7 @@
 <template>
-  <!-- Mobile Layout with Sidebar (shown only on mobile via CSS) -->
-  <div class="md:hidden">
+  <div>
+    <!-- Mobile Layout with Sidebar (shown only on mobile via CSS) -->
+    <div class="md:hidden">
     <UiSidebarProvider :defaultOpen="false">
     <UiSidebar variant="floating" collapsible="offcanvas">
       <UiSidebarHeader>
@@ -125,6 +126,7 @@
       <slot />
       <AppFooter />
     </div>
+  </div>
   </div>
 </template>
 
