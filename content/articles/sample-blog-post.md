@@ -6,9 +6,14 @@ date: 2024-11-15
 excerpt: In a world saturated with content, authentic storytelling stands out.
   This article explores the principles of creating genuine narratives that
   resonate with audiences.
+text1: This is an example of text field 1. You can use this for additional content sections or custom text blocks.
+text2: This is an example of text field 2. You can use this for quotes, callouts, or any other text content you need.
 image:
   src: /Gallery/img_65dcd5a723854.jpg
   alt: Creative workspace with natural lighting and minimalist design
+footerImage:
+  src: /Gallery/crosscurrent.webp
+  alt: Creative studio workspace showcasing authentic design
 tags:
   - Storytelling
   - Content Strategy

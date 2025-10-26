@@ -9,7 +9,13 @@ const articlesSchema = z.object({
 
   // Optional content fields
   excerpt: z.string().optional(),
+  text1: z.string().optional(),
+  text2: z.string().optional(),
   image: z.object({
+    src: property(z.string()).editor({ input: 'media' }),
+    alt: z.string().optional(),
+  }).optional(),
+  footerImage: z.object({
     src: property(z.string()).editor({ input: 'media' }),
     alt: z.string().optional(),
   }).optional(),
