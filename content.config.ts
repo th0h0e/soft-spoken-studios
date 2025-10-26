@@ -62,9 +62,11 @@ const portfolioSchema = z.object({
   // Visual assets
   image: z.object({
     src: property(z.string()).editor({ input: 'media' }),
+    alt: z.string().optional(),
   }).optional(),
   gallery: z.array(z.object({
     src: property(z.string()).editor({ input: 'media' }),
+    alt: z.string().optional(),
   })).optional().default([]),
 
   // Project content sections
@@ -72,7 +74,7 @@ const portfolioSchema = z.object({
 
   // Project metadata
   duration: z.string().optional(),
-  year: z.string().optional(),
+  year: z.number().optional(),
 
   // SEO metadata
   seo: z.object({

@@ -2,7 +2,18 @@
   <div class="py-12 text-center">
     <h2 class="mb-4 text-xl font-semibold">Project Index</h2>
 
-    <div class="text-muted-foreground">
+    <!-- Loading State -->
+    <div v-if="pending" class="text-muted-foreground">
+      <p class="text-sm">Loading projects...</p>
+    </div>
+
+    <!-- Error State -->
+    <div v-else-if="error" class="text-destructive">
+      <p class="text-sm">Error loading projects</p>
+    </div>
+
+    <!-- Projects List -->
+    <div v-else-if="portfolioProjects && portfolioProjects.length > 0" class="text-muted-foreground">
       <p class="text-xl leading-relaxed">
         <template v-for="(project, index) in portfolioProjects" :key="project.path">
           <NuxtLink
@@ -17,16 +28,20 @@
         </template>
       </p>
     </div>
+
+    <!-- No Projects State -->
+    <div v-else class="text-muted-foreground">
+      <p class="text-sm">No projects found</p>
+    </div>
   </div>
 </template>
 
 <script setup>
-const { data: portfolioProjects } = await useAsyncData(
+const { data: portfolioProjects, error, pending } = await useAsyncData(
   'portfolio-index',
-  () => queryCollection('portfolio')
-    .sort({ date: -1 })
-    .all(),
+  () => queryCollection('portfolio').all(),
   {
+    transform: (projects) => projects.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
     default: () => []
   }
 );
