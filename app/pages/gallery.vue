@@ -1,13 +1,15 @@
 <template>
-  <UiContainer class="md:!px-0">
-    <!-- Photo Grid (full width in 10-col area) -->
-    <div class="mb-12">
-      <Gallery :gallery-data="galleryData" />
-    </div>
-  </UiContainer>
+  <div class="mb-12">
+    <Gallery :gallery-data="galleryData" />
+  </div>
 </template>
 
 <script setup>
+// Use the new layout
+definePageMeta({
+  layout: 'new-layout'
+});
+
 // Fetch gallery data from data collection
 const { data: galleryData } = await useAsyncData(
   'gallery-data',

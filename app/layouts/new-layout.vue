@@ -175,16 +175,16 @@
         </div>
       </div>
 
-      <!-- Middle Column - Main Content (7/12) -->
-      <div class="col-span-7 flex min-h-screen flex-col">
+      <!-- Middle Column - Main Content (7/12 or 10/12 on gallery) -->
+      <div :class="mainColumnSpan" class="flex min-h-screen flex-col transition-all duration-300">
         <div class="flex-1">
           <slot />
         </div>
         <AppFooter />
       </div>
 
-      <!-- Right Column - Dynamic Content (3/12) -->
-      <div class="col-span-3">
+      <!-- Right Column - Dynamic Content (3/12) - Hidden on gallery page -->
+      <div v-if="!hideRightColumn" class="col-span-3">
         <div class="md:sticky md:top-4">
           <ClientOnly>
             <AnimatePresence mode="wait">
@@ -219,6 +219,10 @@
     // Determine which sidebar to show based on route
     const showAboutCard = computed(() => route.path === '/about' || route.path === '/test-about');
     const sidebarKey = computed(() => showAboutCard.value ? 'about' : 'articles');
+
+    // Hide right column on gallery page to allow full width
+    const hideRightColumn = computed(() => route.path === '/gallery');
+    const mainColumnSpan = computed(() => hideRightColumn.value ? 'col-span-10' : 'col-span-7');
 
     // Toggle sidebar visibility
     const openSidebar = () => {
