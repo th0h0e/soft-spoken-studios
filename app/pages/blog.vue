@@ -1,15 +1,15 @@
 <template>
-  <div>
+  <UiContainer class="md:!px-0">
     <Header
       headline="Creative Insights"
       title="Thoughts & Perspectives"
       description="Exploring creativity, strategy, and the intersection of thoughtful communication with meaningful storytelling."
     />
 
-    <UiContainer class="-mt-8 pb-16 md:!px-0">
-      <div class="grid gap-4 lg:grid-cols-8">
-        <!-- Left Column - Blog List -->
-        <div class="space-y-4 lg:col-span-5">
+    <div class="-mt-8 pb-16">
+      <div class="grid gap-4 lg:grid-cols-10">
+        <!-- Left Column - Blog List (7/10) -->
+        <div class="space-y-4 lg:col-span-7">
           <!-- Loading State -->
           <div v-if="pending" class="flex h-64 flex-col items-center justify-center">
             <Icon name="svg-spinners:ring-resize" class="h-8 w-8 text-muted" />
@@ -47,13 +47,13 @@
           </div>
         </div>
 
-        <!-- Right Column -->
+        <!-- Right Column (3/10) -->
         <div class="lg:col-span-3">
           <!-- Empty for now - could add featured posts, categories, etc. -->
         </div>
       </div>
-    </UiContainer>
-  </div>
+    </div>
+  </UiContainer>
 </template>
 
 <script setup>

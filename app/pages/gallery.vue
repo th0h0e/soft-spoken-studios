@@ -1,6 +1,6 @@
 <template>
-  <UiContainer>
-    <!-- Photo Grid -->
+  <UiContainer class="md:!px-0">
+    <!-- Photo Grid (full width in 10-col area) -->
     <div class="mb-12">
       <Gallery :gallery-data="galleryData" />
     </div>

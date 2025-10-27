@@ -27,16 +27,9 @@
               </UiDrawerTrigger>
 
               <UiDrawerContent class="px-4 pb-6 md:!px-0">
-                <div class="grid gap-4 lg:grid-cols-[16rem_1fr]">
-                  <!-- Sidebar Spacer Column -->
-                  <div class="hidden lg:block">
-                    <!-- Empty spacer to match sidebar width -->
-                  </div>
-
-                  <!-- Content Area -->
-                  <div class="grid gap-4 lg:grid-cols-8">
-                    <!-- Left Column -->
-                    <div class="lg:col-span-5">
+                <div class="grid gap-4 lg:grid-cols-10">
+                  <!-- Left Column - Message Form (7/10) -->
+                  <div class="lg:col-span-7">
                       <div class="space-y-4">
                         <div>
                           <h4 class="mb-2 font-medium">Send me a message</h4>
@@ -79,21 +72,18 @@ Please include your email or phone number so we can get back to you."
                       </UiDrawerFooter>
                     </div>
 
-                    <!-- Right Column -->
-                    <div class="lg:col-span-3">
-                      <div>
-                        <h4 class="mb-2 font-medium">Contact Information</h4>
-                        <p class="text-muted-foreground mb-1 text-sm">
-                          Email: {{ settings?.contact?.email || 'info@softspokenstudios.com' }}
-                        </p>
-                        <p class="text-muted-foreground text-sm">
-                          Phone: {{ settings?.contact?.phone || '+31 6 1234 5678' }}
-                        </p>
-                        <p class="text-muted-foreground text-sm">
-                          Location: {{ settings?.contact?.address || 'Amsterdam, Netherlands' }}
-                        </p>
-                      </div>
-                    </div>
+                  <!-- Right Column - Contact Info (3/10) -->
+                  <div class="lg:col-span-3">
+                    <h4 class="mb-2 font-medium">Contact Information</h4>
+                    <p class="text-muted-foreground mb-1 text-sm">
+                      Email: {{ settings?.contact?.email || 'info@softspokenstudios.com' }}
+                    </p>
+                    <p class="text-muted-foreground text-sm">
+                      Phone: {{ settings?.contact?.phone || '+31 6 1234 5678' }}
+                    </p>
+                    <p class="text-muted-foreground text-sm">
+                      Location: {{ settings?.contact?.address || 'Amsterdam, Netherlands' }}
+                    </p>
                   </div>
                 </div>
               </UiDrawerContent>

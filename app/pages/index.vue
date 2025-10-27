@@ -1,9 +1,9 @@
 <template>
   <div>
     <UiContainer class="md:!px-0">
-      <div class="grid items-start gap-4 lg:grid-cols-8">
-        <!-- Main Content Column -->
-        <div class="space-y-8 lg:col-span-5">
+      <div class="grid items-start gap-4 lg:grid-cols-10">
+        <!-- Main Content Column (7/10) -->
+        <div class="space-y-8 lg:col-span-7">
           <BookCover />
 
           <Header
@@ -110,7 +110,7 @@
           <ProjectIndex />
         </div>
 
-        <!-- Right Column -->
+        <!-- Right Column (3/10) -->
         <div class="space-y-8 lg:sticky lg:top-4 lg:col-span-3">
           <!-- Loading State -->
           <div v-if="pending" class="flex flex-col items-center justify-center py-12">

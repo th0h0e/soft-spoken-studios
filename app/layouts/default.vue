@@ -63,9 +63,9 @@
   </div>
 
   <!-- Desktop Layout with Sidebar (shown only on desktop via CSS) -->
-  <div class="hidden md:grid min-h-screen gap-4 p-4 md:grid-cols-[16rem_1fr]">
-    <!-- Left Column - Custom Sidebar -->
-    <div>
+  <div class="hidden md:grid grid-cols-12 gap-4 p-4 min-h-screen">
+    <!-- Left Column - Custom Sidebar (2/12 width, sticky) -->
+    <div class="col-span-2">
       <div class="md:sticky md:top-4">
         <!-- Open Sidebar Button -->
         <ClientOnly>
@@ -175,8 +175,8 @@
       </div>
     </div>
 
-    <!-- Right Column - Page Content -->
-    <div class="flex min-h-screen flex-1 flex-col gap-4">
+    <!-- Content Area - Remaining 10 columns -->
+    <div class="col-span-10 flex min-h-screen flex-col">
       <div class="flex-1">
         <slot />
       </div>

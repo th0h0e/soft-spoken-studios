@@ -55,9 +55,9 @@
 <template>
   <div v-if="page">
     <UiContainer class="md:!px-0">
-      <div class="grid items-start gap-4 lg:grid-cols-8">
-        <!-- Left Column (5/8) - Main Portfolio Content -->
-        <div class="lg:col-span-5">
+      <div class="grid items-start gap-4 lg:grid-cols-10">
+        <!-- Left Column (7/10) - Main Portfolio Content -->
+        <div class="lg:col-span-7">
           <!-- Gallery -->
           <div v-if="page.gallery?.length" class="mb-8">
             <PortfolioItem
@@ -150,7 +150,7 @@
           </div>
         </div>
 
-        <!-- Right Column (3/8) - Sidebar -->
+        <!-- Right Column (3/10) - Sidebar -->
         <div class="lg:sticky lg:top-8 lg:col-span-3">
         </div>
       </div>
