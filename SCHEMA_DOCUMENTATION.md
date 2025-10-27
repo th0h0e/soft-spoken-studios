@@ -361,7 +361,7 @@ items:
 <script setup>
 const { data: gallery } = await useAsyncData(
   'gallery',
-  () => queryCollectionItem('gallery', 'gallery').first()
+  () => queryCollection('gallery').first()
 );
 
 const items = computed(() => gallery.value?.items || []);
@@ -494,7 +494,7 @@ smtp:
 <script setup>
 const { data: settings } = await useAsyncData(
   'settings',
-  () => queryCollectionItem('settings', 'settings').first()
+  () => queryCollection('settings').first()
 );
 </script>
 
@@ -696,7 +696,7 @@ const route = useRoute();
 
 const { data: article } = await useAsyncData(
   `article-${route.path}`,
-  () => queryCollectionItem('articles', route.path).first()
+  () => queryCollection('articles').path(route.path).first()
 );
 </script>
 ```
@@ -707,12 +707,12 @@ const { data: article } = await useAsyncData(
 <script setup>
 const { data: settings } = await useAsyncData(
   'settings',
-  () => queryCollectionItem('settings', 'settings').first()
+  () => queryCollection('settings').first()
 );
 
 const { data: gallery } = await useAsyncData(
   'gallery',
-  () => queryCollectionItem('gallery', 'gallery').first()
+  () => queryCollection('gallery').first()
 );
 </script>
 ```
