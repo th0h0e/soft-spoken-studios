@@ -1,8 +1,8 @@
 <template>
-  <UiContainer>
-    <div class="grid items-start gap-8 lg:grid-cols-8">
+  <UiContainer class="md:!px-0">
+    <div class="grid items-start gap-4 lg:grid-cols-8">
       <!-- Left Column - About Me Card -->
-      <div class="lg:sticky lg:top-8 lg:col-span-2">
+      <div class="lg:sticky lg:top-4 lg:col-span-2">
         <UiCard class="p-4 sm:p-6 lg:p-8">
           <UiCardHeader class="text-center">
             <div class="mb-4 flex justify-center">

@@ -6,8 +6,8 @@
       description="Exploring creativity, strategy, and the intersection of thoughtful communication with meaningful storytelling."
     />
 
-    <UiContainer class="-mt-8 pb-16">
-      <div class="grid gap-8 lg:grid-cols-8">
+    <UiContainer class="-mt-8 pb-16 md:!px-0">
+      <div class="grid gap-4 lg:grid-cols-8">
         <!-- Left Column - Blog List -->
         <div class="space-y-4 lg:col-span-5">
           <!-- Loading State -->

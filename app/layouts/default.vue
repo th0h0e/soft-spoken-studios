@@ -63,7 +63,7 @@
   </div>
 
   <!-- Desktop Layout with Sidebar (shown only on desktop via CSS) -->
-  <div class="hidden md:grid min-h-screen gap-0 p-4 md:grid-cols-[16rem_1fr]">
+  <div class="hidden md:grid min-h-screen gap-4 p-4 md:grid-cols-[16rem_1fr]">
     <!-- Left Column - Custom Sidebar -->
     <div>
       <div class="md:sticky md:top-4">

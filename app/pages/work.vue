@@ -6,7 +6,7 @@
       description="A collection of projects that showcase our approach to thoughtful communication and authentic storytelling."
     />
 
-    <UiContainer class="-mt-8 pb-16">
+    <UiContainer class="-mt-8 pb-16 md:!px-0">
       <!-- Loading State -->
       <div v-if="pending" class="flex h-64 flex-col items-center justify-center">
         <Icon name="svg-spinners:ring-resize" class="h-8 w-8 text-muted" />
@@ -23,7 +23,7 @@
       </div>
 
       <!-- Portfolio Grid -->
-      <div v-else-if="portfolioProjects?.length" class="grid gap-8 gap-y-4 lg:grid-cols-8">
+      <div v-else-if="portfolioProjects?.length" class="grid gap-4 lg:grid-cols-8">
         <!-- Dynamic Portfolio Items -->
         <template v-for="project in portfolioProjects" :key="project._id">
           <div class="lg:col-span-5">

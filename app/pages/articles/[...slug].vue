@@ -54,8 +54,8 @@
 
 <template>
   <div v-if="page">
-    <UiContainer>
-      <div class="grid items-start gap-8 lg:grid-cols-8">
+    <UiContainer class="md:!px-0">
+      <div class="grid items-start gap-4 lg:grid-cols-8">
         <!-- Left Column (5/8) - Main Article Content -->
         <div class="lg:col-span-5">
           <!-- Hero Image -->

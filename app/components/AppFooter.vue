@@ -1,6 +1,6 @@
 <template>
-  <UiContainer as="footer">
-    <div class="grid gap-8 py-12 lg:grid-cols-8">
+  <UiContainer as="footer" class="md:!px-0">
+    <div class="grid gap-4 py-12 lg:grid-cols-8">
       <!-- Left Column - Company Name (matches main content column) -->
       <div class="lg:col-span-5">
         <NuxtLink to="/">

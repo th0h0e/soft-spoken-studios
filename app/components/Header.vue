@@ -26,27 +26,25 @@
                 <UiButton size="sm">{{ appConfig.cta?.getInTouch || 'Get In Touch' }}</UiButton>
               </UiDrawerTrigger>
 
-              <UiDrawerContent class="px-6 pb-6">
-                <div class="grid gap-0 p-4 lg:grid-cols-[16rem_1fr]">
+              <UiDrawerContent class="px-4 pb-6 md:!px-0">
+                <div class="grid gap-4 lg:grid-cols-[16rem_1fr]">
                   <!-- Sidebar Spacer Column -->
                   <div class="hidden lg:block">
                     <!-- Empty spacer to match sidebar width -->
                   </div>
 
                   <!-- Content Area -->
-                  <div class="grid gap-8 lg:grid-cols-8">
+                  <div class="grid gap-4 lg:grid-cols-8">
                     <!-- Left Column -->
                     <div class="lg:col-span-5">
-                      <div class="space-y-4 p-4">
+                      <div class="space-y-4">
                         <div>
                           <h4 class="mb-2 font-medium">Send me a message</h4>
 
                           <div>
-                            <label class="text-sm font-medium">Message</label>
                             <UiTextarea
                               v-model="contactForm.message"
                               placeholder="Tell us about your project and how we can help...
-
 Please include your email or phone number so we can get back to you."
                               class="min-h-[320px] w-full"
                               required
@@ -55,7 +53,7 @@ Please include your email or phone number so we can get back to you."
                         </div>
                       </div>
 
-                      <UiDrawerFooter class="p-4">
+                      <UiDrawerFooter class="px-0 pt-4">
                         <div class="flex gap-3">
                           <UiButton
                             class="flex-1"
@@ -83,19 +81,17 @@ Please include your email or phone number so we can get back to you."
 
                     <!-- Right Column -->
                     <div class="lg:col-span-3">
-                      <div class="p-4">
-                        <div>
-                          <h4 class="mb-2 font-medium">Contact Information</h4>
-                          <p class="text-muted-foreground mb-1 text-sm">
-                            Email: {{ appConfig.contact?.email || 'info@softspokenstudios.com' }}
-                          </p>
-                          <p class="text-muted-foreground text-sm">
-                            Phone: {{ appConfig.contact?.phone || '+31 6 1234 5678' }}
-                          </p>
-                          <p class="text-muted-foreground text-sm">
-                            Location: {{ appConfig.contact?.address || 'Amsterdam, Netherlands' }}
-                          </p>
-                        </div>
+                      <div>
+                        <h4 class="mb-2 font-medium">Contact Information</h4>
+                        <p class="text-muted-foreground mb-1 text-sm">
+                          Email: {{ settings?.contact?.email || 'info@softspokenstudios.com' }}
+                        </p>
+                        <p class="text-muted-foreground text-sm">
+                          Phone: {{ settings?.contact?.phone || '+31 6 1234 5678' }}
+                        </p>
+                        <p class="text-muted-foreground text-sm">
+                          Location: {{ settings?.contact?.address || 'Amsterdam, Netherlands' }}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -126,6 +122,15 @@ Please include your email or phone number so we can get back to you."
 
   // Access app config for global contact information
   const appConfig = useAppConfig();
+
+  // Fetch settings from Nuxt Content
+  const { data: settings } = await useAsyncData(
+    'header-settings',
+    () => queryCollectionItem('settings', 'settings').first(),
+    {
+      default: () => null
+    }
+  );
 
   // Use contact form composable
   const { contactForm, isSubmitting, submitMessage, submitSuccess, submitContactForm } =
