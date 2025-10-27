@@ -22,7 +22,10 @@
           </UiCard>
 
           <!-- YouTube Video Section -->
-          <YouTubeVideo :url="settings?.video?.homepage || appConfig.video?.homepage" />
+          <YouTubeVideo
+            :url="settings?.video?.homepage || appConfig.video?.homepage"
+            :thumbnail="settings?.video?.thumbnail"
+          />
 
           <!-- What We Do -->
           <div>

@@ -1,9 +1,31 @@
 <template>
   <div>
-    <UiAspectRatio :ratio="16 / 9" class="mb-2 overflow-hidden rounded">
+    <UiAspectRatio :ratio="16 / 9" class="mb-2 overflow-hidden rounded relative">
+      <!-- Custom Thumbnail Overlay -->
+      <div
+        v-if="!isPlaying && thumbnail"
+        @click="playVideo"
+        class="absolute inset-0 z-10 cursor-pointer group"
+      >
+        <NuxtImg
+          :src="thumbnail"
+          alt="Video thumbnail"
+          class="h-full w-full object-cover"
+          width="800"
+          height="450"
+        />
+        <!-- Play Button Overlay -->
+        <div class="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors group-hover:bg-black/30">
+          <div class="flex h-20 w-20 items-center justify-center rounded-full bg-black/70 backdrop-blur-sm transition-transform group-hover:scale-110">
+            <Icon name="lucide:play" class="h-10 w-10 text-white ml-1" />
+          </div>
+        </div>
+      </div>
+
+      <!-- YouTube Video -->
       <iframe
         v-if="videoId"
-        :src="`https://www.youtube.com/embed/${videoId}`"
+        :src="iframeSrc"
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
@@ -24,12 +46,17 @@
     defineProps<{
       url?: string;
       caption?: string;
+      thumbnail?: string;
     }>(),
     {
       url: "",
       caption: "Client project - Brand storytelling video",
+      thumbnail: "",
     }
   );
+
+  // State
+  const isPlaying = ref(false);
 
   // Extract video ID from various YouTube URL formats
   const videoId = computed(() => {
@@ -59,4 +86,16 @@
 
     return id;
   });
+
+  // Build iframe src with autoplay when playing
+  const iframeSrc = computed(() => {
+    if (!videoId.value) return "";
+    const autoplay = isPlaying.value ? "1" : "0";
+    return `https://www.youtube.com/embed/${videoId.value}?autoplay=${autoplay}`;
+  });
+
+  // Play video (hide thumbnail and autoplay)
+  const playVideo = () => {
+    isPlaying.value = true;
+  };
 </script>

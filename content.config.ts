@@ -129,6 +129,7 @@ const siteSettingsSchema = z.object({
   // Video Configuration
   video: z.object({
     homepage: z.string().url().optional(),
+    thumbnail: property(z.string()).editor({ input: 'media' }).optional(),
   }).optional(),
 });
 
