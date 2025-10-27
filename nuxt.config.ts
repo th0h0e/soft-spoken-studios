@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     "@vee-validate/nuxt",
     "vue-sonner/nuxt",
     "nuxt-mcp",
+    "@nuxtjs/mdc",
   ],
 
   imports: {
