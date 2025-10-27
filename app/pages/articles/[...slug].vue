@@ -56,16 +56,8 @@
   <div v-if="page">
     <UiContainer>
       <div class="grid items-start gap-8 lg:grid-cols-8">
-        <!-- Left Column (2/8) -->
-        <div class="lg:sticky lg:top-8 lg:col-span-2">
-          <!-- Text 2 -->
-          <div v-if="page.text2" class="text-sm leading-relaxed">
-            <p>{{ page.text2 }}</p>
-          </div>
-        </div>
-
-        <!-- Right Column (6/8) -->
-        <div class="lg:col-span-6">
+        <!-- Left Column (5/8) - Main Article Content -->
+        <div class="lg:col-span-5">
           <!-- Hero Image -->
           <div v-if="page.image?.src" class="mb-8 overflow-hidden rounded-lg">
             <UiAspectRatio :ratio="16 / 9">
@@ -170,6 +162,14 @@
                 All Articles
               </UiButton>
             </NuxtLink>
+          </div>
+        </div>
+
+        <!-- Right Column (3/8) - Sidebar -->
+        <div class="lg:sticky lg:top-8 lg:col-span-3">
+          <!-- Text 2 -->
+          <div v-if="page.text2" class="text-sm leading-relaxed">
+            <p>{{ page.text2 }}</p>
           </div>
         </div>
       </div>

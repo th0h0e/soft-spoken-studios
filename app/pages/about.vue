@@ -3,13 +3,13 @@
     <div class="grid items-start gap-8 lg:grid-cols-8">
       <!-- Left Column - About Me Card -->
       <div class="lg:sticky lg:top-8 lg:col-span-2">
-        <UiCard class="p-8">
+        <UiCard class="p-4 sm:p-6 lg:p-8">
           <UiCardHeader class="text-center">
             <div class="mb-4 flex justify-center">
               <UiHoverCard>
                 <UiHoverCardTrigger as-child>
-                  <UiAvatar class="h-24 w-24 cursor-pointer">
-                    <UiAvatarFallback class="text-2xl">TH</UiAvatarFallback>
+                  <UiAvatar class="h-20 w-20 sm:h-24 sm:w-24 cursor-pointer">
+                    <UiAvatarFallback class="text-xl sm:text-2xl">TH</UiAvatarFallback>
                   </UiAvatar>
                 </UiHoverCardTrigger>
                 <UiHoverCardContent class="w-80 p-0">
@@ -33,72 +33,13 @@
                 </UiHoverCardContent>
               </UiHoverCard>
             </div>
-            <UiCardTitle class="mb-2 text-3xl">About Soft Spoken</UiCardTitle>
+            <UiCardTitle class="mb-2 text-2xl sm:text-3xl line-clamp-3">About Soft Spoken</UiCardTitle>
           </UiCardHeader>
           <UiCardContent class="text-center">
-            <div class="mb-6 flex gap-2">
-              <UiBadge variant="outline" class="min-w-12 flex-1 justify-center">English</UiBadge>
-              <UiBadge variant="outline" class="min-w-12 flex-1 justify-center">Swedish</UiBadge>
-              <UiBadge variant="outline" class="min-w-12 flex-1 justify-center">Dutch</UiBadge>
-            </div>
-
-            <div class="flex gap-3">
-              <UiButton size="sm" variant="outline" class="flex-1" as-child>
-                <NuxtLink to="/work">Our Work</NuxtLink>
-              </UiButton>
-
-              <UiDrawer>
-                <UiDrawerTrigger as-child>
-                  <UiButton size="sm" class="flex-1">Get In Touch</UiButton>
-                </UiDrawerTrigger>
-
-                <UiDrawerContent class="px-6 pb-6">
-                  <div class="grid gap-0 p-4 lg:grid-cols-[16rem_1fr]">
-                    <!-- Sidebar Spacer Column -->
-                    <div class="hidden lg:block">
-                      <!-- Empty spacer to match sidebar width -->
-                    </div>
-
-                    <!-- Content Area -->
-                    <div class="grid gap-8 lg:grid-cols-8">
-                      <!-- Left Column -->
-                      <div class="lg:col-span-5">
-                        <div class="space-y-4 p-4">
-                          <div>
-                            <h4 class="mb-2 font-medium">Send me a message</h4>
-                            <UiTextarea
-                              placeholder="Tell us about your project and how we can help..."
-                              class="min-h-[280px] w-full"
-                            />
-                          </div>
-                        </div>
-
-                        <UiDrawerFooter class="p-4">
-                          <div class="flex gap-3">
-                            <UiButton class="flex-1">Send</UiButton>
-                            <UiDrawerClose as-child>
-                              <UiButton variant="outline" class="flex-1">Close</UiButton>
-                            </UiDrawerClose>
-                          </div>
-                        </UiDrawerFooter>
-                      </div>
-
-                      <!-- Right Column -->
-                      <div class="lg:col-span-3">
-                        <div class="p-4">
-                          <div>
-                            <h4 class="mb-2 font-medium">Contact Information</h4>
-                            <p class="text-muted-foreground mb-1 text-sm">
-                              Email: hello@softspokenstudios.com
-                            </p>
-                            <p class="text-muted-foreground text-sm">Phone: +31 6 1234 5678</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </UiDrawerContent>
-              </UiDrawer>
+            <div class="mb-6 flex flex-wrap gap-2 justify-center">
+              <UiBadge variant="outline" class="justify-center">English</UiBadge>
+              <UiBadge variant="outline" class="justify-center">Swedish</UiBadge>
+              <UiBadge variant="outline" class="justify-center">Dutch</UiBadge>
             </div>
           </UiCardContent>
         </UiCard>

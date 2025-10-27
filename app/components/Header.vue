@@ -1,5 +1,5 @@
 <template>
-  <UiContainer class="py-16 lg:py-24">
+  <div class="py-16 lg:py-24">
     <UiDivider />
     <div class="mt-8">
       <slot name="headline">
@@ -106,7 +106,7 @@ Please include your email or phone number so we can get back to you."
         </slot>
       </div>
     </div>
-  </UiContainer>
+  </div>
 </template>
 
 <script lang="ts" setup>

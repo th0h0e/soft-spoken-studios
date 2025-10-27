@@ -1,6 +1,5 @@
 <template>
-  <div class="bg-muted p-12">
-    <UiCard class="mx-auto max-w-2xl p-16 shadow-lg">
+  <UiCard class="px-20 pt-20 pb-48 shadow-lg">
       <!-- Header text -->
       <p class="text-muted-foreground mb-8 text-left text-lg">{{ headerText }}</p>
 
@@ -25,7 +24,6 @@
         </p>
       </div>
     </UiCard>
-  </div>
 </template>
 
 <script setup>
