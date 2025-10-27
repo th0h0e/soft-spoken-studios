@@ -2,6 +2,11 @@
   import { joinURL, withLeadingSlash } from "ufo";
   import type { Collections } from "@nuxt/content";
 
+  // Use the new layout
+  definePageMeta({
+    layout: 'new-layout'
+  });
+
   const route = useRoute();
 
   const slug = computed(() =>
@@ -54,12 +59,9 @@
 
 <template>
   <div v-if="page">
-    <UiContainer class="md:!px-0">
-      <div class="grid items-start gap-4 lg:grid-cols-10">
-        <!-- Left Column (7/10) - Main Portfolio Content -->
-        <div class="lg:col-span-7">
-          <!-- Gallery -->
-          <div v-if="page.gallery?.length" class="mb-8">
+    <div class="space-y-8">
+      <!-- Gallery -->
+      <div v-if="page.gallery?.length" class="mb-8">
             <PortfolioItem
               :images="page.gallery.map(img => ({ src: img.src, alt: page.title }))"
             />
@@ -136,24 +138,18 @@
             </UiAspectRatio>
           </div>
 
-          <!-- Navigation Footer -->
-          <div class="mt-16 border-t pt-8">
-            <NuxtLink to="/work">
-              <UiButton variant="ghost" class="group">
-                <Icon
-                  name="lucide:arrow-left"
-                  class="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
-                />
-                All Projects
-              </UiButton>
-            </NuxtLink>
-          </div>
-        </div>
-
-        <!-- Right Column (3/10) - Sidebar -->
-        <div class="lg:sticky lg:top-8 lg:col-span-3">
-        </div>
+      <!-- Navigation Footer -->
+      <div class="mt-16 border-t pt-8">
+        <NuxtLink to="/work">
+          <UiButton variant="ghost" class="group">
+            <Icon
+              name="lucide:arrow-left"
+              class="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
+            />
+            All Projects
+          </UiButton>
+        </NuxtLink>
       </div>
-    </UiContainer>
+    </div>
   </div>
 </template>

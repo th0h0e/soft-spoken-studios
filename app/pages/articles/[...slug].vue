@@ -2,6 +2,11 @@
   import { joinURL, withLeadingSlash } from "ufo";
   import type { Collections } from "@nuxt/content";
 
+  // Use the new layout
+  definePageMeta({
+    layout: 'new-layout'
+  });
+
   const route = useRoute();
 
   const slug = computed(() =>
@@ -54,12 +59,9 @@
 
 <template>
   <div v-if="page">
-    <UiContainer class="md:!px-0">
-      <div class="grid items-start gap-4 lg:grid-cols-10">
-        <!-- Left Column (7/10) - Main Article Content -->
-        <div class="lg:col-span-7">
-          <!-- Hero Image -->
-          <div v-if="page.image?.src" class="mb-8 overflow-hidden rounded-lg">
+    <div class="space-y-8">
+      <!-- Hero Image -->
+      <div v-if="page.image?.src" class="mb-8 overflow-hidden rounded-lg">
             <UiAspectRatio :ratio="16 / 9">
               <NuxtImg
                 :src="page.image.src"
@@ -141,38 +143,33 @@
             </UiAspectRatio>
           </div>
 
-          <!-- Text 1 -->
-          <div v-if="page.text1" class="mb-8">
-            <p class="text-base leading-relaxed">{{ page.text1 }}</p>
-          </div>
-
-          <!-- Text 3 -->
-          <div v-if="page.text3" class="mb-8">
-            <p class="text-base leading-relaxed">{{ page.text3 }}</p>
-          </div>
-
-          <!-- Navigation Footer -->
-          <div class="mt-16 border-t pt-8">
-            <NuxtLink to="/blog">
-              <UiButton variant="ghost" class="group">
-                <Icon
-                  name="lucide:arrow-left"
-                  class="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
-                />
-                All Articles
-              </UiButton>
-            </NuxtLink>
-          </div>
-        </div>
-
-        <!-- Right Column (3/10) - Sidebar -->
-        <div class="lg:sticky lg:top-8 lg:col-span-3">
-          <!-- Text 2 -->
-          <div v-if="page.text2" class="text-sm leading-relaxed">
-            <p>{{ page.text2 }}</p>
-          </div>
-        </div>
+      <!-- Text 1 -->
+      <div v-if="page.text1" class="mb-8">
+        <p class="text-base leading-relaxed">{{ page.text1 }}</p>
       </div>
-    </UiContainer>
+
+      <!-- Text 2 -->
+      <div v-if="page.text2" class="mb-8">
+        <p class="text-base leading-relaxed">{{ page.text2 }}</p>
+      </div>
+
+      <!-- Text 3 -->
+      <div v-if="page.text3" class="mb-8">
+        <p class="text-base leading-relaxed">{{ page.text3 }}</p>
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="mt-16 border-t pt-8">
+        <NuxtLink to="/blog">
+          <UiButton variant="ghost" class="group">
+            <Icon
+              name="lucide:arrow-left"
+              class="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
+            />
+            All Articles
+          </UiButton>
+        </NuxtLink>
+      </div>
+    </div>
   </div>
 </template>

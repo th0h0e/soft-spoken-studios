@@ -1,5 +1,5 @@
 <template>
-  <UiContainer class="md:!px-0">
+  <div class="space-y-8">
     <Header
       headline="Portfolio"
       title="Selected work in copywriting and video production"
@@ -22,12 +22,12 @@
         </UiButton>
       </div>
 
-      <!-- Portfolio Grid -->
-      <div v-else-if="portfolioProjects?.length" class="grid gap-4 lg:grid-cols-10">
-        <!-- Dynamic Portfolio Items -->
-        <template v-for="project in portfolioProjects" :key="project._id">
-          <div class="lg:col-span-7">
-            <!-- Carousel for Portfolio Images -->
+      <!-- Portfolio List -->
+      <div v-else-if="portfolioProjects?.length" class="space-y-8">
+        <!-- Portfolio Item -->
+        <div v-for="project in portfolioProjects" :key="project._id" class="grid gap-4 md:grid-cols-2">
+          <!-- Left: Carousel -->
+          <div>
             <UiCarousel
               class="group relative w-full"
               :plugins="[Autoplay({ delay: 3000, stopOnInteraction: true })]"
@@ -55,7 +55,9 @@
               <UiCarouselNext class="right-4 opacity-0 transition-opacity group-hover:opacity-100" />
             </UiCarousel>
           </div>
-          <div class="flex items-start lg:col-span-3">
+
+          <!-- Right: Project Info -->
+          <div class="flex items-start">
             <NuxtLink :to="project.path" class="block w-full">
               <SideCard class="cursor-pointer">
                 <template #title>{{ project.title }}</template>
@@ -63,7 +65,7 @@
               </SideCard>
             </NuxtLink>
           </div>
-        </template>
+        </div>
       </div>
 
       <!-- Empty State -->
@@ -72,11 +74,16 @@
         <p class="mt-4 text-muted">No featured projects found.</p>
       </div>
     </div>
-  </UiContainer>
+  </div>
 </template>
 
 <script setup lang="ts">
 import Autoplay from "embla-carousel-autoplay";
+
+// Use the new layout
+definePageMeta({
+  layout: 'new-layout'
+});
 
 // Fetch portfolio projects
 const { data: portfolioProjects, error, pending, refresh } = await useAsyncData(
