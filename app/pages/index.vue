@@ -21,15 +21,8 @@
             </UiCardContent>
           </UiCard>
 
-          <!-- 16:9 Video/Image Section -->
-          <div>
-            <UiAspectRatio :ratio="16 / 9" class="bg-muted mb-2 overflow-hidden rounded">
-              <div class="text-muted-foreground flex h-full w-full items-center justify-center">
-                Video placeholder
-              </div>
-            </UiAspectRatio>
-            <p class="text-muted-foreground text-xs">Client project - Brand storytelling video</p>
-          </div>
+          <!-- YouTube Video Section -->
+          <YouTubeVideo :url="settings?.video?.homepage || appConfig.video?.homepage" />
 
           <!-- What We Do -->
           <div>
@@ -145,6 +138,15 @@
 </template>
 
 <script setup>
+// Access app config as fallback
+const appConfig = useAppConfig();
+
+// Fetch settings from Nuxt Content
+const { data: settings } = await useAsyncData(
+  'homepage-settings',
+  () => queryCollection('settings').first()
+);
+
 // Fetch the latest 3 articles for the side cards
 const { data: recentArticles, error, pending } = await useAsyncData(
   'recent-articles',

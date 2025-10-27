@@ -125,6 +125,11 @@ const siteSettingsSchema = z.object({
     favicon: property(z.string()).editor({ input: 'media' }).optional(),
     appleTouchIcon: property(z.string()).editor({ input: 'media' }).optional(),
   }).optional(),
+
+  // Video Configuration
+  video: z.object({
+    homepage: z.string().url().optional(),
+  }).optional(),
 });
 
 export default defineContentConfig({

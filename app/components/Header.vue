@@ -27,8 +27,11 @@
               </UiDrawerTrigger>
 
               <UiDrawerContent class="px-4 pb-6 md:!px-0">
-                <div class="grid gap-4 lg:grid-cols-10">
-                  <!-- Left Column - Message Form (7/10) -->
+                <div class="grid gap-4 lg:grid-cols-12">
+                  <!-- Empty column for sidebar (2/12) -->
+                  <div class="hidden lg:block lg:col-span-2"></div>
+
+                  <!-- Center Column - Message Form (7/12) -->
                   <div class="lg:col-span-7">
                       <div class="space-y-4">
                         <div>
@@ -72,7 +75,7 @@ Please include your email or phone number so we can get back to you."
                       </UiDrawerFooter>
                     </div>
 
-                  <!-- Right Column - Contact Info (3/10) -->
+                  <!-- Right Column - Contact Info (3/12) -->
                   <div class="lg:col-span-3">
                     <h4 class="mb-2 font-medium">Contact Information</h4>
                     <p class="text-muted-foreground mb-1 text-sm">
@@ -116,10 +119,7 @@ Please include your email or phone number so we can get back to you."
   // Fetch settings from Nuxt Content
   const { data: settings } = await useAsyncData(
     'header-settings',
-    () => queryCollectionItem('settings', 'settings').first(),
-    {
-      default: () => null
-    }
+    () => queryCollection('settings').first()
   );
 
   // Use contact form composable

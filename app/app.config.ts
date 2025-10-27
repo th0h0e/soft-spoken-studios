@@ -91,4 +91,9 @@ export default defineAppConfig({
     contactUs: "Contact Us",
     scheduleCall: "Schedule Call",
   },
+
+  // Video Configuration
+  video: {
+    homepage: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Replace with actual YouTube URL
+  },
 });
