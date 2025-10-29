@@ -1,22 +1,16 @@
 <template>
-  <footer>
-    <div class="grid gap-4 py-12 lg:grid-cols-12">
-      <!-- Empty column for sidebar (2/12) -->
-      <div class="hidden lg:block lg:col-span-2"></div>
+  <footer class="py-12">
+    <hr class="mb-12 border-t border-neutral-300 dark:border-neutral-700" />
+    <div class="flex items-baseline justify-between">
+      <!-- Company Name -->
+      <NuxtLink to="/">
+        <span class="text-xl font-semibold">Soft Spoken Studios</span>
+      </NuxtLink>
 
-      <!-- Left Column - Company Name (7/12) -->
-      <div class="lg:col-span-7">
-        <NuxtLink to="/">
-          <span class="text-xl font-semibold lg:text-lg">Soft Spoken Studios</span>
-        </NuxtLink>
-      </div>
-
-      <!-- Right Column - Copyright (3/12) -->
-      <div class="lg:col-span-3">
-        <p class="text-muted-foreground">
-          &copy; {{ new Date().getFullYear() }} Soft Spoken Studios. All rights reserved.
-        </p>
-      </div>
+      <!-- Copyright -->
+      <p class="text-muted-foreground text-md">
+        &copy; {{ new Date().getFullYear() }} Soft Spoken Studios. All rights reserved.
+      </p>
     </div>
   </footer>
 </template>

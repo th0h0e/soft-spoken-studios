@@ -17,12 +17,14 @@
   const path = computed(() => withLeadingSlash(joinURL('/portfolio', ...slug.value)));
 
   // Query only the portfolio collection
+  type PortfolioItem = Collections['portfolio'];
+
   const { data: page } = await useAsyncData(
     `portfolio-${route.path}`,
     async () => {
-      const result = await queryCollection('portfolio' as keyof Collections)
+      const result = await queryCollection('portfolio')
         .path(path.value)
-        .first();
+        .first() as PortfolioItem | null;
 
       if (!result) {
         throw createError({ statusCode: 404, statusMessage: "Project not found" });
@@ -37,8 +39,8 @@
 
   // Set page head for SEO
   useHead({
-    title: page.value.title,
-    meta: [{ name: "description", content: page.value.description }],
+    title: page.value?.title || '',
+    meta: [{ name: "description", content: page.value?.description || '' }],
   });
 
   // Format date utility
@@ -61,9 +63,9 @@
   <div v-if="page">
     <div class="space-y-8">
       <!-- Gallery -->
-      <div v-if="page.gallery?.length" class="mb-8">
+      <div v-if="page?.gallery?.length" class="mb-8">
             <PortfolioItem
-              :images="page.gallery.map(img => ({ src: img.src, alt: page.title }))"
+              :images="page.gallery.map(img => ({ src: img.src, alt: page?.title || '' }))"
             />
           </div>
 
@@ -71,8 +73,8 @@
 
           <!-- Project Header -->
           <header class="mb-8">
-            <h1 class="mb-4 text-3xl font-semibold">{{ page.title }}</h1>
-            <p v-if="page.description" class="text-muted-foreground text-lg leading-relaxed">
+            <h1 class="mb-4 text-3xl font-semibold">{{ page?.title }}</h1>
+            <p v-if="page?.description" class="text-muted-foreground text-lg leading-relaxed">
               {{ page.description }}
             </p>
           </header>
@@ -82,17 +84,17 @@
           <!-- Project Meta -->
           <UiCard class="mb-8">
             <UiCardContent class="grid grid-cols-2 gap-4 py-4 sm:grid-cols-3">
-              <div v-if="page.date" class="space-y-1">
+              <div v-if="page?.date" class="space-y-1">
                 <p class="text-xs font-medium">Date</p>
                 <p class="text-muted-foreground text-sm">{{ formatDate(page.date) }}</p>
               </div>
 
-              <div v-if="page.client" class="space-y-1">
+              <div v-if="page?.client" class="space-y-1">
                 <p class="text-xs font-medium">Client</p>
                 <p class="text-muted-foreground text-sm">{{ page.client }}</p>
               </div>
 
-              <div v-if="page.status" class="space-y-1">
+              <div v-if="page?.status" class="space-y-1">
                 <p class="text-xs font-medium">Status</p>
                 <UiBadge
                   :variant="page.status === 'completed' ? 'default' : page.status === 'in-progress' ? 'secondary' : 'outline'"
@@ -108,7 +110,7 @@
           <!-- Project Details -->
           <div class="space-y-8">
             <!-- Overview -->
-            <UiCard v-if="page.overview">
+            <UiCard v-if="page?.overview">
               <UiCardHeader>
                 <UiCardTitle>Overview</UiCardTitle>
               </UiCardHeader>
@@ -119,18 +121,18 @@
           </div>
 
           <!-- Markdown Content (uses Prose components) -->
-          <article class="mt-8 space-y-6 text-base leading-relaxed">
+          <article v-if="page" class="mt-8 space-y-6 text-base leading-relaxed">
             <ContentRenderer :value="page" />
           </article>
 
           <UiSeparator class="my-8" />
 
           <!-- Hero Image -->
-          <div v-if="page.image?.src" class="mt-8 mb-8 overflow-hidden rounded-lg">
+          <div v-if="page?.image?.src" class="mt-8 mb-8 overflow-hidden rounded-lg">
             <UiAspectRatio :ratio="16 / 9">
               <NuxtImg
                 :src="page.image.src"
-                :alt="`${page.title} hero image`"
+                :alt="`${page?.title || 'Project'} hero image`"
                 class="h-full w-full object-cover"
                 width="800"
                 height="450"

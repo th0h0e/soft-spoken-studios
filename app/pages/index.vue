@@ -1,6 +1,6 @@
 <template>
   <div class="space-y-8">
-    <BookCover />
+    <SectionsBookCover />
 
     <Header
       headline="We can write your talk, and capture your walk"
@@ -60,46 +60,10 @@
     </UiCard>
 
     <!-- Gallery Section -->
-    <div>
-      <UiDivider class="mb-6" />
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <!-- Photo 1 -->
-        <div class="group cursor-pointer">
-          <UiAspectRatio :ratio="4 / 5" class="mb-3">
-            <NuxtImg
-              src="/images/3334f4a0741954580a818e303927dfcd.jpg"
-              alt="Featured work"
-              class="h-full w-full rounded object-cover transition-opacity group-hover:opacity-90"
-              width="400"
-              height="500"
-            />
-          </UiAspectRatio>
-          <h3 class="mb-1 font-medium">Creative Work</h3>
-          <p class="text-muted-foreground text-sm">Visual storytelling in action</p>
-        </div>
-
-        <!-- Photo 2 -->
-        <div class="group cursor-pointer">
-          <UiAspectRatio :ratio="4 / 5" class="mb-3">
-            <NuxtImg
-              src="/images/8bfedd83aec8466a4708d60ec299d164.jpg"
-              alt="Featured work"
-              class="h-full w-full rounded object-cover transition-opacity group-hover:opacity-90"
-              width="400"
-              height="500"
-            />
-          </UiAspectRatio>
-          <h3 class="mb-1 font-medium">Professional Projects</h3>
-          <p class="text-muted-foreground text-sm">Client work and collaborations</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Divider -->
-    <UiDivider />
+    <SectionsImages :items="galleryItems" />
 
     <!-- Project Index -->
-    <ProjectIndex />
+    <SectionsProjectIndex />
   </div>
 </template>
 
@@ -111,6 +75,20 @@ definePageMeta({
 
 // Access app config as fallback
 const appConfig = useAppConfig();
+
+// Gallery items for the Images section
+const galleryItems = [
+  {
+    src: '/images/3334f4a0741954580a818e303927dfcd.jpg',
+    alt: 'Featured work',
+    title: 'Creative Work'
+  },
+  {
+    src: '/images/8bfedd83aec8466a4708d60ec299d164.jpg',
+    alt: 'Featured work',
+    title: 'Professional Projects'
+  }
+];
 
 // Fetch settings from Nuxt Content
 const { data: settings } = await useAsyncData(

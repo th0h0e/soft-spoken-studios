@@ -1,5 +1,6 @@
 <template>
   <div class="py-12 text-center">
+    <hr class="mb-6 border-t border-neutral-300 dark:border-neutral-700" />
     <h2 class="mb-4 text-xl font-semibold">Project Index</h2>
 
     <!-- Loading State -->

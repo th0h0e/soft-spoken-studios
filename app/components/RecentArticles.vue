@@ -22,7 +22,9 @@
       >
         <SideCard class="cursor-pointer transition-opacity hover:opacity-80">
           <template #title>{{ article.title }}</template>
-          <template #content>{{ article.description || article.excerpt }}</template>
+          <template #content>
+            <p class="text-base leading-normal text-muted-foreground">{{ article.description || article.excerpt }}</p>
+          </template>
         </SideCard>
       </NuxtLink>
     </template>

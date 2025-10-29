@@ -20,7 +20,6 @@ export default defineNuxtConfig({
     "@yuta-inoue-ph/nuxt-vcalendar",
     "@vee-validate/nuxt",
     "vue-sonner/nuxt",
-    "nuxt-mcp",
     "@nuxtjs/mdc",
   ],
 

@@ -25,47 +25,13 @@
       <!-- Portfolio List -->
       <div v-else-if="portfolioProjects?.length" class="space-y-8">
         <!-- Portfolio Item -->
-        <div v-for="project in portfolioProjects" :key="project._id" class="grid gap-4 md:grid-cols-2">
-          <!-- Left: Carousel -->
-          <div>
-            <UiCarousel
-              class="group relative w-full"
-              :plugins="[Autoplay({ delay: 3000, stopOnInteraction: true })]"
-            >
-              <UiCarouselContent>
-                <UiCarouselItem
-                  v-for="(image, index) in getProjectImages(project)"
-                  :key="index"
-                  grab-cursor
-                >
-                  <div class="overflow-hidden rounded-lg">
-                    <UiAspectRatio :ratio="16 / 9">
-                      <NuxtImg
-                        :src="image.src"
-                        :alt="image.alt"
-                        class="h-full w-full object-cover"
-                        width="800"
-                        height="450"
-                      />
-                    </UiAspectRatio>
-                  </div>
-                </UiCarouselItem>
-              </UiCarouselContent>
-              <UiCarouselPrevious class="left-4 opacity-0 transition-opacity group-hover:opacity-100" />
-              <UiCarouselNext class="right-4 opacity-0 transition-opacity group-hover:opacity-100" />
-            </UiCarousel>
-          </div>
-
-          <!-- Right: Project Info -->
-          <div class="flex items-start">
-            <NuxtLink :to="project.path" class="block w-full">
-              <SideCard class="cursor-pointer">
-                <template #title>{{ project.title }}</template>
-                <template #content>{{ project.description }}</template>
-              </SideCard>
-            </NuxtLink>
-          </div>
-        </div>
+        <NuxtLink v-for="project in portfolioProjects" :key="project._id" :to="project.path" class="block">
+          <SectionsPortfolioPreview
+            :images="getProjectImages(project)"
+            :title="project.title"
+            :description="project.description"
+          />
+        </NuxtLink>
       </div>
 
       <!-- Empty State -->
@@ -78,8 +44,6 @@
 </template>
 
 <script setup lang="ts">
-import Autoplay from "embla-carousel-autoplay";
-
 // Use the new layout
 definePageMeta({
   layout: 'new-layout'

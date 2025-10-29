@@ -1,6 +1,6 @@
 <template>
   <div class="space-y-4">
-    <UiDivider />
+    <hr class="border-t border-neutral-300 dark:border-neutral-700" />
 
     <div class="space-y-3">
       <h3 class="text-foreground font-semibold">
