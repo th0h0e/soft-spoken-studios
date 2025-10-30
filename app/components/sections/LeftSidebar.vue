@@ -1,10 +1,10 @@
 <template>
   <div class="col-span-2">
-    <div class="md:sticky md:top-4">
+    <div class="md:sticky md:top-4 flex flex-col h-[calc(100vh-2rem)]">
       <div class="space-y-6">
         <!-- Title -->
         <div>
-          <h2 class="text-base font-normal tracking-wider uppercase">Soft Spoken Studio</h2>
+          <h2 class="text-base font-bold tracking-wider">Soft Spoken Studio</h2>
         </div>
 
         <!-- Navigation Links -->
@@ -19,12 +19,12 @@
             {{ item.name }}
           </NuxtLink>
         </nav>
-
-        <!-- Lorem Ipsum -->
-        <p class="text-base text-muted-foreground leading-tight">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
       </div>
+
+      <!-- Lorem Ipsum - Bottom -->
+      <p class="text-base text-muted-foreground leading-tight mt-auto">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
     </div>
   </div>
 </template>

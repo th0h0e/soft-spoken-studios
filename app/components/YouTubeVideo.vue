@@ -1,6 +1,6 @@
 <template>
   <div>
-    <UiAspectRatio :ratio="16 / 9" class="mb-2 overflow-hidden rounded relative">
+    <div class="relative mb-4 rounded overflow-hidden w-full" style="aspect-ratio: 16 / 9;">
       <!-- Custom Thumbnail Overlay -->
       <div
         v-if="!isPlaying && thumbnail"
@@ -23,14 +23,14 @@
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
-        class="h-full w-full"
+        class="absolute inset-0 w-full h-full border-0"
         loading="lazy"
       />
-      <div v-else class="text-muted-foreground flex h-full w-full items-center justify-center">
+      <div v-else class="text-muted-foreground flex h-full w-full items-center justify-center bg-muted">
         Invalid video URL
       </div>
-    </UiAspectRatio>
-    <p class="text-muted-foreground text-xs">{{ caption }}</p>
+    </div>
+    <p class="text-muted-foreground text-sm italic">{{ caption }}</p>
   </div>
 </template>
 
