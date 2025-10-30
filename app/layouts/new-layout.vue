@@ -1,6 +1,6 @@
 <template>
   <!-- Desktop Layout - 12 Column Grid -->
-  <div class="grid grid-cols-12 gap-4 p-4 min-h-screen">
+  <div class="grid grid-cols-12 gap-8 p-4 min-h-screen">
     <!-- Left Column - New Sidebar (2/12) -->
     <SectionsLeftSidebar />
 

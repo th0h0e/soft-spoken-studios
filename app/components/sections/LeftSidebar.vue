@@ -13,12 +13,17 @@
             v-for="item in navigation"
             :key="item.to"
             :to="item.to"
-            class="block text-sm hover:text-foreground/70 transition-colors text-foreground/90 uppercase"
+            class="block text-base hover:text-foreground transition-colors text-muted-foreground uppercase leading-none"
             :class="{ 'font-medium text-foreground': isActive(item.to) }"
           >
             {{ item.name }}
           </NuxtLink>
         </nav>
+
+        <!-- Lorem Ipsum -->
+        <p class="text-base text-muted-foreground leading-tight">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
       </div>
     </div>
   </div>
