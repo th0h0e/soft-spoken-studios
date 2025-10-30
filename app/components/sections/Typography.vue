@@ -18,7 +18,7 @@
       <div class="space-y-4">
         <div>
           <p class="text-sm text-muted-foreground mb-1">P1</p>
-          <p class="mb-4 text-base leading-normal">This is a paragraph with standard text styling and line height for readability. The quick brown fox jumps over the lazy dog. It demonstrates how text wraps and flows across multiple lines while maintaining consistent spacing and visual hierarchy.</p>
+          <p class="mb-4 text-lg leading-normal">This is a paragraph with standard text styling and line height for readability. The quick brown fox jumps over the lazy dog. It demonstrates how text wraps and flows across multiple lines while maintaining consistent spacing and visual hierarchy.</p>
         </div>
         <div>
           <p class="text-sm text-muted-foreground mb-1">P2</p>

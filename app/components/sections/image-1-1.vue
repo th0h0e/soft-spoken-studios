@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pb-8">
     <hr class="mb-6 border-t border-neutral-300 dark:border-neutral-700" />
     <UiAspectRatio :ratio="1" class="bg-muted rounded-lg overflow-hidden">
       <img
@@ -9,8 +9,8 @@
       />
     </UiAspectRatio>
     <div class="flex gap-4 mt-4">
-      <p class="w-1/2 text-base text-foreground leading-relaxed">Featured visual content</p>
-      <p class="w-1/2 text-base text-foreground leading-relaxed">High-quality imagery selection</p>
+      <p class="w-1/3 text-base leading-normal text-muted-foreground italic">Featured visual content</p>
+      <p class="w-2/3 text-base leading-normal text-muted-foreground italic">High-quality imagery selection</p>
     </div>
   </div>
 </template>

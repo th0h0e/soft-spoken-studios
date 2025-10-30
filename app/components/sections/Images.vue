@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pb-8">
     <hr class="mb-6 border-t border-neutral-300 dark:border-neutral-700" />
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
       <!-- Gallery Items -->
