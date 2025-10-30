@@ -32,10 +32,10 @@
                 <img
                   src="/images/0cb12b5fba26e02dec8f0ab5f325c334.jpg"
                   alt="Video Production"
-                  class="h-[280px] w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  class="h-[280px] w-full object-cover"
                 />
                 <div
-                  class="absolute inset-0 bg-linear-to-t from-background/80 via-background/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100"
+                  class="absolute inset-0 bg-linear-to-t from-background/80 via-background/20 to-transparent opacity-0 transition-opacity duration-700 ease-in-out group-hover:opacity-100"
                 />
               </div>
             </Motion>
@@ -171,10 +171,10 @@
                 <img
                   src="/images/3334f4a0741954580a818e303927dfcd.jpg"
                   alt="Copywriting"
-                  class="h-[280px] w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  class="h-[280px] w-full object-cover"
                 />
                 <div
-                  class="absolute inset-0 bg-linear-to-t from-background/80 via-background/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100"
+                  class="absolute inset-0 bg-linear-to-t from-background/80 via-background/20 to-transparent opacity-0 transition-opacity duration-700 ease-in-out group-hover:opacity-100"
                 />
               </div>
             </Motion>
