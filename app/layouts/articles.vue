@@ -41,7 +41,7 @@
                 @click="isDark = !isDark"
                 class="text-sidebar-foreground hover:text-sidebar-accent-foreground hover:bg-sidebar-accent data-[state=on]:text-sidebar-accent-foreground data-[state=on]:bg-sidebar-accent absolute right-2 bottom-2 h-8 w-8 rounded-md p-0"
               >
-                <Icon name="lucide:lamp-desk" />
+                <Icon :name="isDark ? 'feather:sun' : 'feather:moon'" />
               </UiToggle>
             </div>
           </UiSidebarFooter>

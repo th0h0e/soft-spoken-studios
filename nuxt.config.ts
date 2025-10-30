@@ -47,17 +47,7 @@ export default defineNuxtConfig({
     classSuffix: "",
   },
 
-  icon: {
-    clientBundle: {
-      scan: true,
-      sizeLimitKb: 0,
-    },
-
-    mode: "svg",
-    class: "shrink-0",
-    fetchTimeout: 2000,
-    serverBundle: "local",
-  },
+  // Icon configuration is defined in app.config.ts
 
   css: ["~/assets/css/tailwind.css"],
 
