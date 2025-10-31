@@ -139,16 +139,22 @@ export default defineNuxtConfig({
       global: true,
       prefix: 'Prose',
     },
-    // Content components for Nuxt Studio MDC
+    // Content components for Nuxt Studio MDC (registered via hooks below)
     {
       path: '~/components/content',
-      global: true,
       prefix: '',
     },
   ],
 
   // Hooks configuration following reference project
   hooks: {
+    // Make content components globally available in Nuxt Studio
+    'components:extend': (components) => {
+      const contentComponents = components.filter(c =>
+        ['ImageGrid', 'Image16x9', 'ImageSquare', 'ImageWide', 'ImageBox', 'ImageGallery'].includes(c.pascalName)
+      )
+      contentComponents.forEach(c => c.global = true)
+    },
     "nitro:config": (config) => {
       // Custom configuration for content handling
       if (config.handlers) {
