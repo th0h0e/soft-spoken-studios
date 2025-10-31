@@ -2,7 +2,6 @@
   import { joinURL, withLeadingSlash } from "ufo";
   import type { Collections } from "@nuxt/content";
 
-  // Use the new layout
   definePageMeta({
     layout: 'new-layout'
   });
