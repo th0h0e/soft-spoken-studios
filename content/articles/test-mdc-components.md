@@ -72,6 +72,52 @@ items:
 ---
 ::
 
+## Slot-Based Components (Easier for Studio)
+
+The slot-based versions make it even easier to use Nuxt Studio's media picker!
+
+### Wide Image with Slot
+
+::image-wide
+![Beautiful landscape](/Gallery/img_65dcd5a723854.jpg)
+#caption
+Simply insert an image using markdown syntax - perfect for Nuxt Studio's image picker!
+::
+
+### Square Image with Captions
+
+::image-box
+![Creative workspace](/Gallery/crosscurrent.webp)
+#captionLeft
+Studio Integration
+#captionRight
+Use the built-in media picker to select images directly from your assets
+::
+
+### Simple Gallery
+
+::gallery
+![First image](/Gallery/img_65dcd5a723854.jpg)
+![Second image](/Gallery/crosscurrent.webp)
+![Third image](/Gallery/img_65dcd5a723854.jpg)
+![Fourth image](/Gallery/crosscurrent.webp)
+::
+
 ## Regular Markdown Content
 
 You can mix regular markdown content with your custom components seamlessly. The prose components (like this paragraph) are styled automatically, while custom MDC components give you more control over layout and functionality.
+
+---
+
+## Component Comparison
+
+### Prop-Based (Original)
+- More structured data (YAML frontmatter)
+- Good for programmatic content
+- Requires typing out paths
+
+### Slot-Based (New)
+- Natural markdown syntax
+- Works with Studio's media picker
+- Easier for content creators
+- Just insert images normally!
