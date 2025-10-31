@@ -139,6 +139,12 @@ export default defineNuxtConfig({
       global: true,
       prefix: 'Prose',
     },
+    // Content components for Nuxt Studio MDC
+    {
+      path: '~/components/content',
+      global: true,
+      prefix: '',
+    },
   ],
 
   // Hooks configuration following reference project
