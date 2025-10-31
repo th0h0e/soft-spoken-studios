@@ -25,7 +25,7 @@
       <!-- Portfolio List -->
       <div v-else-if="portfolioProjects?.length" class="space-y-8">
         <!-- Portfolio Item -->
-        <NuxtLink v-for="project in portfolioProjects" :key="project._id" :to="project.path" class="block">
+        <NuxtLink v-for="project in portfolioProjects" :key="project._path" :to="project._path" class="block">
           <SectionsPortfolioPreview
             :images="getProjectImages(project)"
             :title="project.title"
@@ -44,10 +44,14 @@
 </template>
 
 <script setup lang="ts">
+import type { Collections } from "@nuxt/content";
+
 // Use the new layout
 definePageMeta({
   layout: 'new-layout'
 });
+
+type PortfolioItem = Collections['portfolio'];
 
 // Fetch portfolio projects
 const { data: portfolioProjects, error, pending, refresh } = await useAsyncData(
@@ -55,17 +59,17 @@ const { data: portfolioProjects, error, pending, refresh } = await useAsyncData(
   () => queryCollection("portfolio").all(),
   {
     transform: (projects) => projects
-      .filter(project => project.featured)
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+      .filter((project: PortfolioItem) => project.featured)
+      .sort((a: PortfolioItem, b: PortfolioItem) => new Date(b.date).getTime() - new Date(a.date).getTime()),
     default: () => []
   }
 );
 
 // Helper function to extract images from portfolio projects
-const getProjectImages = (project) => {
+const getProjectImages = (project: PortfolioItem) => {
   // Use gallery images if available
   if (project.gallery && project.gallery.length > 0) {
-    return project.gallery.map(img => ({
+    return project.gallery.map((img: { src: string; alt?: string }) => ({
       src: img.src,
       alt: project.title
     }));

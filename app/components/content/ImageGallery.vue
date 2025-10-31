@@ -26,11 +26,14 @@
 
 <style scoped>
 :deep(img) {
-  @apply rounded object-cover w-full h-full;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
   aspect-ratio: 4 / 5;
 }
 
 :deep(p) {
-  @apply m-0;
+  margin: 0;
 }
 </style>
