@@ -96,7 +96,7 @@ Use the built-in media picker to select images directly from your assets
 
 ### Simple Gallery
 
-::gallery
+::image-gallery
 ![First image](/Gallery/img_65dcd5a723854.jpg)
 ![Second image](/Gallery/crosscurrent.webp)
 ![Third image](/Gallery/img_65dcd5a723854.jpg)

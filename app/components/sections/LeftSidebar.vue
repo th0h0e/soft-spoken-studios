@@ -36,7 +36,7 @@ const navigation = [
   { name: "Home", to: "/" },
   { name: "About", to: "/about" },
   { name: "Work", to: "/work" },
-  { name: "Blog", to: "/blog" },
+  { name: "Articles", to: "/blog" },
   { name: "Gallery", to: "/gallery" },
 ];
 

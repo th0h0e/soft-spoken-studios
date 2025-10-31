@@ -12,7 +12,7 @@
  * MDC Component for Nuxt Studio - Simple Image Gallery (Slot-based)
  *
  * Usage in markdown:
- * ::gallery
+ * ::image-gallery
  * ![Image 1](/path/to/image1.jpg)
  * ![Image 2](/path/to/image2.jpg)
  * ![Image 3](/path/to/image3.jpg)
