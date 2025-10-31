@@ -121,3 +121,37 @@ You can mix regular markdown content with your custom components seamlessly. The
 - Works with Studio's media picker
 - Easier for content creators
 - Just insert images normally!
+
+---
+
+## Service Cards
+
+Showcase your services with animated, professional cards:
+
+::service-cards
+
+:::service-card
+---
+image: /images/0cb12b5fba26e02dec8f0ab5f325c334.jpg
+imageAlt: Video Production Services
+badge: Service
+title: Video Production
+icon: feather:play
+iconLabel: Creative Visual Storytelling
+---
+Stories that move. We create videos that capture authentic moments and communicate your message with clarity and impact.
+:::
+
+:::service-card
+---
+image: /images/3334f4a0741954580a818e303927dfcd.jpg
+imageAlt: Copywriting Services
+badge: Writing
+title: Copywriting
+icon: feather:pen-tool
+iconLabel: Purposeful Communication
+---
+Words that matter. We craft copy that speaks directly to your audience without unnecessary noise. Every word is chosen with purpose.
+:::
+
+::

@@ -151,7 +151,7 @@ export default defineNuxtConfig({
     // Make content components globally available in Nuxt Studio
     'components:extend': (components) => {
       const contentComponents = components.filter(c =>
-        ['ImageGrid', 'Image16x9', 'ImageSquare', 'ImageWide', 'ImageBox', 'ImageGallery'].includes(c.pascalName)
+        ['ImageGrid', 'Image16x9', 'ImageSquare', 'ImageWide', 'ImageBox', 'ImageGallery', 'ServiceCard', 'ServiceCards'].includes(c.pascalName)
       )
       contentComponents.forEach(c => c.global = true)
     },
