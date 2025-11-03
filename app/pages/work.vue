@@ -25,13 +25,14 @@
       <!-- Portfolio List -->
       <div v-else-if="portfolioProjects?.length" class="space-y-8">
         <!-- Portfolio Item -->
-        <NuxtLink v-for="project in portfolioProjects" :key="project._path" :to="project._path" class="block">
-          <SectionsPortfolioPreview
-            :images="getProjectImages(project)"
-            :title="project.title"
-            :description="project.description"
-          />
-        </NuxtLink>
+        <SectionsPortfolioPreview
+          v-for="project in portfolioProjects"
+          :key="project._id"
+          :to="project.path"
+          :images="getProjectImages(project)"
+          :title="project.title"
+          :description="project.description"
+        />
       </div>
 
       <!-- Empty State -->
@@ -59,7 +60,6 @@ const { data: portfolioProjects, error, pending, refresh } = await useAsyncData(
   () => queryCollection("portfolio").all(),
   {
     transform: (projects) => projects
-      .filter((project: PortfolioItem) => project.featured)
       .sort((a: PortfolioItem, b: PortfolioItem) => new Date(b.date).getTime() - new Date(a.date).getTime()),
     default: () => []
   }

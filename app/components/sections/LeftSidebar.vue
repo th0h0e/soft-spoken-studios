@@ -4,7 +4,7 @@
       <div class="space-y-6">
         <!-- Title -->
         <div>
-          <h2 class="text-base font-bold tracking-wider">Soft Spoken Studio</h2>
+          <h2 class="text-base font-bold tracking-wider cursor-pointer" @click="toggleColorMode">Soft Spoken Studio</h2>
         </div>
 
         <!-- Navigation Links -->
@@ -31,6 +31,7 @@
 
 <script setup>
 const route = useRoute();
+const colorMode = useColorMode();
 
 const navigation = [
   { name: "Home", to: "/" },
@@ -42,5 +43,10 @@ const navigation = [
 
 const isActive = (path) => {
   return route.path === path;
+};
+
+const toggleColorMode = () => {
+  // Always toggle between 'light' and 'dark' explicitly
+  colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark';
 };
 </script>

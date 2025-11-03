@@ -32,20 +32,28 @@
 
     <!-- Right: Project Info -->
     <div class="flex items-start">
-      <SideCard class="cursor-pointer w-full">
-        <template #title>{{ title }}</template>
-        <template #content>{{ description }}</template>
-      </SideCard>
+      <NuxtLink :to="to" class="w-full">
+        <SideCard class="cursor-pointer w-full">
+          <template #title>{{ title }}</template>
+          <template #content>{{ description }}</template>
+        </SideCard>
+      </NuxtLink>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { PropType } from 'vue'
 import Autoplay from "embla-carousel-autoplay";
 
 defineProps({
+  to: {
+    type: String,
+    required: false,
+    default: '#'
+  },
   images: {
-    type: Array,
+    type: Array as PropType<Array<{ src: string; alt: string }>>,
     required: true,
     validator: (value) => Array.isArray(value) && value.length > 0
   },

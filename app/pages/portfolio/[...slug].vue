@@ -96,11 +96,7 @@
 
               <div v-if="page?.status" class="space-y-1">
                 <p class="text-xs font-medium">Status</p>
-                <UiBadge
-                  :variant="page.status === 'completed' ? 'default' : page.status === 'in-progress' ? 'secondary' : 'outline'"
-                >
-                  {{ page.status }}
-                </UiBadge>
+                <p class="text-muted-foreground text-sm capitalize">{{ page.status }}</p>
               </div>
             </UiCardContent>
           </UiCard>
