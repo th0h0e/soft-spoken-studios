@@ -1,0 +1,8 @@
+images:
+  links:
+      to: projects
+  images:
+    - src: /downloads.jpg
+      alt: Random Image 1
+    - src: /downloads.jpg
+      alt: Random Image 2
