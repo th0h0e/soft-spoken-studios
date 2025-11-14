@@ -58,19 +58,5 @@ export const navLinks: NavigationMenuItem[][] = [
       icon: 'i-lucide-user',
       to: '/about'
     }
-  ],
-  [
-    {
-      label: 'GitHub',
-      icon: 'i-simple-icons-github',
-      to: 'https://github.com',
-      target: '_blank'
-    },
-    {
-      label: 'Twitter',
-      icon: 'i-simple-icons-x',
-      to: 'https://twitter.com',
-      target: '_blank'
-    }
   ]
 ]
