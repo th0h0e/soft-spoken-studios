@@ -12,12 +12,10 @@
     </template>
 
     <!-- Main content area -->
-    <UContainer class="sm:border-x border-default pt-10">
-      <!-- Old navigation navbar - commented out -->
-      <!-- <AppHeader :links="navLinks" /> -->
+    <div class="pt-10">
       <slot />
       <AppFooter />
-    </UContainer>
+    </div>
 
     <!-- Right sticky sidebar with your custom card -->
     <template #right>
