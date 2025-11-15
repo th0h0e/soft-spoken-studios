@@ -17,46 +17,46 @@ export const navLinks: NavigationMenuItem[][] = [
       to: '/projects'
     },
     {
-      label: 'Blog',
-      icon: 'i-lucide-file-text',
-      to: '/blog',
+      label: 'Writing',
+      icon: 'i-lucide-pen-line',
+      to: '/writing',
       defaultOpen: true,
       children: [
         {
-          label: 'All Posts',
-          description: 'View all blog posts',
+          label: 'All Articles',
+          description: 'View all articles',
           icon: 'i-lucide-library',
-          to: '/blog'
+          to: '/writing'
         },
         {
           label: 'Web Development',
-          description: 'Posts about web development',
+          description: 'Articles about web development',
           icon: 'i-lucide-code',
-          to: '/blog/web-development'
+          to: '/writing/web-development'
         },
         {
           label: 'Design',
-          description: 'Posts about design',
+          description: 'Articles about design',
           icon: 'i-lucide-palette',
-          to: '/blog/design'
+          to: '/writing/design'
         },
         {
           label: 'Tutorials',
           description: 'Step-by-step tutorials',
           icon: 'i-lucide-graduation-cap',
-          to: '/blog/tutorials'
+          to: '/writing/tutorials'
         }
       ]
-    },
-    {
-      label: 'Speaking',
-      icon: 'i-lucide-mic',
-      to: '/speaking'
     },
     {
       label: 'About',
       icon: 'i-lucide-user',
       to: '/about'
+    },
+    {
+      label: 'Test Layout',
+      icon: 'i-lucide-layout-grid',
+      to: '/test-layout'
     }
   ],
   [

@@ -6,19 +6,19 @@ import { findPageBreadcrumb } from '@nuxt/content/utils'
 const route = useRoute()
 
 const { data: page } = await useAsyncData(route.path, () =>
-  queryCollection('blog').path(route.path).first()
+  queryCollection('projects').path(route.path).first()
 )
 if (!page.value) throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
-  queryCollectionItemSurroundings('blog', route.path, {
+  queryCollectionItemSurroundings('projects', route.path, {
     fields: ['description']
   })
 )
 
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation', ref([]))
-const blogNavigation = computed(() => navigation.value.find(item => item.path === '/blog')?.children || [])
+const projectsNavigation = computed(() => navigation.value.find(item => item.path === '/projects')?.children || [])
 
-const breadcrumb = computed(() => mapContentNavigation(findPageBreadcrumb(blogNavigation?.value, page.value?.path)).map(({ icon, ...link }) => link))
+const breadcrumb = computed(() => mapContentNavigation(findPageBreadcrumb(projectsNavigation?.value, page.value?.path)).map(({ icon, ...link }) => link))
 
 if (page.value.image) {
   defineOgImage({ url: page.value.image })
@@ -40,7 +40,7 @@ useSeoMeta({
   ogTitle: title
 })
 
-const articleLink = computed(() => `${window?.location}`)
+const projectLink = computed(() => `${window?.location}`)
 
 const formatDate = (dateString: string) => {
   return new Date(dateString).toLocaleDateString('en-US', {
@@ -56,22 +56,28 @@ const formatDate = (dateString: string) => {
     <UContainer class="relative min-h-screen">
       <UPage v-if="page">
         <ULink
-          to="/blog"
+          to="/projects"
           class="text-sm flex items-center gap-1"
         >
           <UIcon name="lucide:chevron-left" />
-          Blog
+          Projects
         </ULink>
         <div class="flex flex-col gap-3 mt-8">
           <div class="flex text-xs text-muted items-center justify-center gap-2">
-            <span v-if="page.date">
-              {{ formatDate(page.date) }}
+            <span v-if="page.client">
+              {{ page.client }}
             </span>
-            <span v-if="page.date && page.minRead">
-              -
+            <span v-if="page.client && page.year">
+              •
             </span>
-            <span v-if="page.minRead">
-              {{ page.minRead }} MIN READ
+            <span v-if="page.year">
+              {{ page.year }}
+            </span>
+            <span v-if="page.role && (page.client || page.year)">
+              •
+            </span>
+            <span v-if="page.role">
+              {{ page.role }}
             </span>
           </div>
           <NuxtImg
@@ -85,14 +91,16 @@ const formatDate = (dateString: string) => {
           <p class="text-muted text-center max-w-2xl mx-auto">
             {{ page.description }}
           </p>
-          <div class="flex items-center justify-center gap-2 mt-2">
-            <UUser
-              orientation="vertical"
+          <div v-if="page.tags" class="flex items-center justify-center gap-2 mt-2 flex-wrap">
+            <UBadge
+              v-for="tag in page.tags"
+              :key="tag"
               color="neutral"
-              variant="outline"
-              class="justify-center items-center text-center"
-              v-bind="page.author"
-            />
+              variant="subtle"
+              size="sm"
+            >
+              {{ tag }}
+            </UBadge>
           </div>
         </div>
         <UPageBody class="max-w-3xl mx-auto">
@@ -107,7 +115,7 @@ const formatDate = (dateString: string) => {
               variant="link"
               color="neutral"
               label="Copy link"
-              @click="copyToClipboard(articleLink, 'Article link copied to clipboard')"
+              @click="copyToClipboard(projectLink, 'Project link copied to clipboard')"
             />
           </div>
           <UContentSurround :surround />
