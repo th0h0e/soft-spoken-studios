@@ -40,6 +40,12 @@ useSeoMeta({
         links: 'justify-start'
       }"
     />
+    <div class="py-8">
+      <USeparator
+        color="neutral"
+        type="solid"
+      />
+    </div>
     <UPageSection
       :ui="{
         container: '!pt-0'
@@ -59,7 +65,7 @@ useSeoMeta({
           :to="article.path"
           orientation="horizontal"
           variant="naked"
-          :reverse="index % 2 === 1"
+          reverse
           class="group"
           :ui="{
             wrapper: 'max-sm:order-last'

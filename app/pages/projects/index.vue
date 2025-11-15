@@ -53,6 +53,12 @@ useSeoMeta({
         </div>
       </template>
     </UPageHero>
+    <div class="py-8">
+      <USeparator
+        color="neutral"
+        type="solid"
+      />
+    </div>
     <UPageSection
       :ui="{
         container: '!pt-0'

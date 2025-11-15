@@ -1,4 +1,3 @@
 <template>
-	<USeparator />
-  </template>
-  
+  <USeparator />
+</template>

@@ -19,7 +19,11 @@ const items = [
     :items="items"
     :ui="{ item: 'basis-1/3' }"
   >
-    <img :src="item" width="234" height="234" class="rounded-lg">
+    <img
+      :src="item"
+      width="234"
+      height="234"
+      class="rounded-lg"
+    >
   </UCarousel>
 </template>
-

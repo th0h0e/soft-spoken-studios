@@ -91,7 +91,10 @@ const formatDate = (dateString: string) => {
           <p class="text-muted text-center max-w-2xl mx-auto">
             {{ page.description }}
           </p>
-          <div v-if="page.tags" class="flex items-center justify-center gap-2 mt-2 flex-wrap">
+          <div
+            v-if="page.tags"
+            class="flex items-center justify-center gap-2 mt-2 flex-wrap"
+          >
             <UBadge
               v-for="tag in page.tags"
               :key="tag"
