@@ -1,12 +1,19 @@
 ---
 title: EcoTrack Sustainability App
 description: Created a mobile-first application to help users track and reduce their environmental impact. Translated complex sustainability metrics into an accessible and motivating user interface.
-image: https://images.unsplash.com/photo-1613858749733-3a3e456e3d9e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+image: /sss-black.png
 date: 2023-06-15
 tags: ["UX Research", "UI Design", "Mobile App"]
 client: GreenTech Solutions
 role: UX/UI Designer
 year: "2023"
+gallery:
+  - /sss-black.png
+  - /sss-black.png
+  - /sss-black.png
+  - /sss-black.png
+  - /sss-black.png
+  - /sss-black.png
 ---
 
 ## Project Overview

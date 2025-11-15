@@ -1,12 +1,19 @@
 ---
 title: Wavelength Music Streaming Service
 description: Designed and developed the user interface for an indie music streaming service, focusing on discovery features and creating a unique, engaging listening experience using custom audio visualizations.
-image: https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80
+image: /sss-black.png
 date: 2023-09-20
 tags: ["UI Design", "Front-End Dev", "Animation"]
 client: Wavelength Music
 role: UI Designer & Front-end Developer
 year: "2023"
+gallery:
+  - /sss-black.png
+  - /sss-black.png
+  - /sss-black.png
+  - /sss-black.png
+  - /sss-black.png
+  - /sss-black.png
 ---
 
 ## Project Overview

@@ -1,41 +1,49 @@
 <script setup lang="ts">
-const versions = ref([
-  {
-    title: 'Nuxt 3.17',
-    description: 'Nuxt 3.17 is out - bringing a major reworking of the async data layer, a new built-in component, better warnings, and performance improvements!',
-    image: 'https://nuxt.com/assets/blog/v3.17.png',
-    date: '2025-04-27',
-    to: 'https://nuxt.com/blog/v3-17',
-    target: '_blank',
+import type { ProjectsCollectionItem } from '@nuxt/content'
+
+const props = defineProps<{
+  projects: ProjectsCollectionItem[]
+}>()
+
+const versions = computed(() => {
+  return props.projects.map(project => ({
+    title: project.title,
+    description: project.description,
+    image: project.image,
+    date: project.date,
+    to: project.path,
+    gallery: project.gallery,
     ui: {
       container: 'max-w-lg'
     }
-  },
-  {
-    title: 'Nuxt 3.16',
-    description: 'Nuxt 3.16 is out - packed with features and performance improvements!',
-    image: 'https://nuxt.com/assets/blog/v3.16.png',
-    date: '2025-03-07',
-    to: 'https://nuxt.com/blog/v3-16',
-    target: '_blank',
-    ui: {
-      container: 'max-w-lg'
-    }
-  },
-  {
-    title: 'Nuxt 3.15',
-    description: 'Nuxt 3.15 is out - with Vite 6, better HMR and faster performance!',
-    image: 'https://nuxt.com/assets/blog/v3.15.png',
-    date: '2024-12-24',
-    to: 'https://nuxt.com/blog/v3-15',
-    target: '_blank',
-    ui: {
-      container: 'max-w-lg'
-    }
-  }
-])
+  }))
+})
 </script>
 
 <template>
-  <UChangelogVersions :versions="versions" />
+  <UChangelogVersions :versions="versions">
+    <template #body="{ version }">
+      <UCard class="mt-4">
+        <template #header>
+          <h3 class="text-lg font-semibold">
+            {{ version.title }}
+          </h3>
+        </template>
+
+        <p>
+          <Carousel :images="version.gallery" />
+        </p>
+
+        <template #footer>
+          <div class="flex gap-2">
+            <UButton
+              label="Learn More"
+              size="xs"
+              :to="version.to"
+            />
+          </div>
+        </template>
+      </UCard>
+    </template>
+  </UChangelogVersions>
 </template>

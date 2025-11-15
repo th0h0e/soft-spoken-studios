@@ -1,12 +1,19 @@
 ---
 title: Bloom Finance App Redesign
 description: Led the complete UX/UI overhaul and front-end implementation for a personal finance platform, focusing on data visualization clarity and improving user onboarding flow. Resulted in a 32% increase in user retention.
-image: https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80
+image: /sss-black.png
 date: 2024-01-15
 tags: ["UX Design", "UI Design", "Front-end Development"]
 client: Bloom Finance
 role: Lead Designer & Front-end Developer
 year: "2024"
+gallery:
+  - /sss-black.png
+  - /sss-black.png
+  - /sss-black.png
+  - /sss-black.png
+  - /sss-black.png
+  - /sss-black.png
 ---
 
 ## Project Overview

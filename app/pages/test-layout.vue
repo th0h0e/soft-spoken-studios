@@ -166,7 +166,6 @@ definePageMeta({
         <p class="text-sm text-muted">
           Display a timeline of version releases with images and descriptions:
         </p>
-        <ChangeLogVersions />
       </div>
 
       <div class="space-y-4">

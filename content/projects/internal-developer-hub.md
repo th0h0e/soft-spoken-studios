@@ -1,12 +1,19 @@
 ---
 title: Internal Developer Hub (Nuxt Team)
 description: Designed and built key components for an internal documentation and tooling hub for Nuxt developers, focusing on improving developer experience and streamlining access to resources.
-image: https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80
+image: /sss-black.png
 date: 2024-03-10
 tags: ["Developer Tools", "UX Design", "Nuxt", "Design System", "Internal Tools"]
 client: Nuxt Team
 role: UX Designer & Developer
 year: "2024"
+gallery:
+  - /sss-black.png
+  - /sss-black.png
+  - /sss-black.png
+  - /sss-black.png
+  - /sss-black.png
+  - /sss-black.png
 ---
 
 ## Project Overview
