@@ -4,12 +4,12 @@
 @source "../../../content/**/*";
 
 @theme static {
-  --font-sans: 'Public Sans', sans-serif;
-  --font-serif: 'Instrument Serif', serif;
+  --font-sans: 'Times New Roman', sans-serif;
+  --font-serif: 'Times New Roman', serif;
 }
 
 :root {
-  --ui-container: var(--container-4xl);
+  --ui-radius: 0.08rem;
 
   ::selection {
     color: #282a30;

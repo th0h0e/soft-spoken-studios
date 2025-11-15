@@ -5,18 +5,18 @@ defineProps<{
   page: IndexCollectionItem
 }>()
 
-const { data: posts } = await useAsyncData('index-blogs', () =>
-  queryCollection('blog').order('date', 'DESC').limit(3).all()
+const { data: articles } = await useAsyncData('index-articles', () =>
+  queryCollection('writing').order('date', 'DESC').limit(3).all()
 )
-if (!posts.value) {
-  throw createError({ statusCode: 404, statusMessage: 'blogs posts not found', fatal: true })
+if (!articles.value) {
+  throw createError({ statusCode: 404, statusMessage: 'articles not found', fatal: true })
 }
 </script>
 
 <template>
   <UPageSection
-    :title="page.blog.title"
-    :description="page.blog.description"
+    :title="page.writing.title"
+    :description="page.writing.description"
     :ui="{
       container: 'px-0 !pt-0 sm:gap-6 lg:gap-8',
       title: 'text-left text-xl sm:text-xl lg:text-2xl font-medium',
@@ -28,12 +28,12 @@ if (!posts.value) {
       class="gap-4 lg:gap-y-4"
     >
       <UBlogPost
-        v-for="(post, index) in posts"
+        v-for="(article, index) in articles"
         :key="index"
         orientation="horizontal"
         variant="naked"
-        v-bind="post"
-        :to="post.path"
+        v-bind="article"
+        :to="article.path"
         :ui="{
           root: 'group relative lg:items-start lg:flex ring-0 hover:ring-0',
           body: '!px-0',

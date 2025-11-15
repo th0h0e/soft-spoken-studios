@@ -11,13 +11,8 @@ export default defineAppConfig({
   },
   ui: {
     colors: {
-      primary: 'blue',
-      neutral: 'neutral'
-    },
-    pageAside: {
-      slots: {
-        root: 'hidden overflow-y-auto lg:block lg:max-h-[calc(100vh-var(--ui-header-height))] lg:sticky lg:top-(--ui-header-height) py-8 lg:ps-6.5 lg:pe-6.5'
-      }
+      primary: 'red',
+      neutral: 'zinc'
     },
     pageHero: {
       slots: {
