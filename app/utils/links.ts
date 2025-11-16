@@ -19,34 +19,7 @@ export const navLinks: NavigationMenuItem[][] = [
     {
       label: 'Writing',
       icon: 'i-lucide-pen-line',
-      to: '/writing',
-      defaultOpen: true,
-      children: [
-        {
-          label: 'All Articles',
-          description: 'View all articles',
-          icon: 'i-lucide-library',
-          to: '/writing'
-        },
-        {
-          label: 'Web Development',
-          description: 'Articles about web development',
-          icon: 'i-lucide-code',
-          to: '/writing/web-development'
-        },
-        {
-          label: 'Design',
-          description: 'Articles about design',
-          icon: 'i-lucide-palette',
-          to: '/writing/design'
-        },
-        {
-          label: 'Tutorials',
-          description: 'Step-by-step tutorials',
-          icon: 'i-lucide-graduation-cap',
-          to: '/writing/tutorials'
-        }
-      ]
+      to: '/writing'
     },
     {
       label: 'About',

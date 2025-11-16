@@ -4,13 +4,15 @@ description: Why designing digital experiences that encourage users to slow down
   and engage deeply can lead to more meaningful interactions and better
   outcomes.
 date: 2025-01-28
-image: /sss-black.png
-minRead: 7
+image:
+  src: /download.jpg
+  alt: Random Image 1
+minRead: 8
 author:
-  name: Emma Thompson
+  name: Soft Spoken Studio
   avatar:
-    src: https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-    alt: Emma Thompson
+    src: downloads.jpg
+    alt: Soft Spoken Studio
 ---
 
 I recently took on a project that challenged everything about my usual design process. A small literary journal wanted a digital platform that encouraged readers to slow down and engage deeply with content—the exact opposite of most websites optimized for quick consumption.

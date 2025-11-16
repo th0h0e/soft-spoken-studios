@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { property } from '@nuxt/content'
 import { createImageSchema } from './common.schema'
 
 /**
@@ -16,9 +17,15 @@ const createAuthorSchema = () => z.object({
 
 /**
  * Writing/Blog collection schema
- * Defines structure for blog posts and articles
+ * Defines structure for individual blog posts
  */
 export const writingCollectionSchema = z.object({
+  // Title of the post
+  title: z.string(),
+
+  // Description/summary of the post
+  description: z.string(),
+
   // Estimated reading time in minutes
   minRead: z.number(),
 
@@ -26,8 +33,11 @@ export const writingCollectionSchema = z.object({
   date: z.date(),
 
   // Featured image
-  image: z.string().nonempty().editor({ input: 'media' }),
+  image: z.object({
+    src: property(z.string()).editor({ input: 'media' }),
+    alt: z.string()
+  }),
 
-  // Article author
+  // Post author
   author: createAuthorSchema()
 })

@@ -3,6 +3,10 @@ import type { ContentNavigationItem } from '@nuxt/content'
 import { mapContentNavigation } from '@nuxt/ui/utils/content'
 import { findPageBreadcrumb } from '@nuxt/content/utils'
 
+definePageMeta({
+  layout: 'content'
+})
+
 const route = useRoute()
 
 const { data: page } = await useAsyncData(route.path, () =>
@@ -92,6 +96,12 @@ const projectLink = computed(() => `${window?.location}`)
           <ContentRenderer
             v-if="page.body"
             :value="page"
+          />
+
+          <Carousel
+            v-if="page.gallery && page.gallery.length > 0"
+            :images="page.gallery"
+            class="my-8"
           />
 
           <div class="flex items-center justify-end gap-2 text-sm text-muted">

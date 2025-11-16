@@ -1,11 +1,64 @@
+<script lang="ts" setup>
+definePageMeta({
+  layout: 'content'
+})
+
+const route = useRoute()
+const authorEl = ref<HTMLElement | null>()
+const clipboard = useClipboard()
+const toast = useToast()
+
+const formatDate = (dateString: string) => {
+  return new Date(dateString).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  })
+}
+
+const { data } = await useAsyncData(route.path, () => queryCollection('writing').path(route.path).first())
+if (!data.value) throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+
+const { data: relatedPosts } = await useAsyncData(`linked-${route.path}`, async () => {
+  const res = await queryCollection('writing').where('path', 'NOT LIKE', data.value?.path).all()
+  return res.slice(0, 5)
+})
+const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
+  return queryCollectionItemSurroundings('writing', route.path, {
+    fields: ['description']
+  })
+})
+
+if (data.value.image) {
+  defineOgImage({ url: data.value.image.src })
+} else {
+  defineOgImageComponent('Blog', {
+    headline: data.value?.title
+  })
+}
+
+async function copyLink() {
+  await clipboard.copy(window.location.href)
+  toast.add({ title: 'Copied to clipboard', icon: 'lucide:check-circle', color: 'success' })
+}
+async function share() {
+  await navigator.share({ url: route.fullPath })
+}
+
+onMounted(() => {
+  const contentEl = document.getElementById('content')
+  authorEl.value = contentEl?.querySelector('#author-about')
+})
+</script>
+
 <template>
   <UPage :ui="{ center: 'lg:col-span-7!' }">
     <template #right>
       <UPageAside :ui="{ root: 'lg:col-span-3!' }">
         <UPageAnchors
           :links="[
-            { label: 'YouTube tutorial', icon: 'mdi:youtube', to: 'https://www.youtube.com/@matteo-beltrame', target: '_blank' },
-            { label: 'All articles', icon: 'material-symbols:article-rounded', to: '/articles/' }
+            { label: 'YouTube tutorial', icon: 'lucide:youtube', to: 'https://www.youtube.com/@matteo-beltrame', target: '_blank' },
+            { label: 'All posts', icon: 'lucide:newspaper', to: '/writing/' }
           ]"
         />
         <USeparator type="dotted" />
@@ -17,15 +70,15 @@
         <UFieldGroup class="w-full">
           <UButton
             label="Share this article"
-            icon="material-symbols:share"
+            icon="lucide:share-2"
             variant="subtle"
             color="neutral"
             class="grow"
             @click="share"
           />
-          <UDropdownMenu :items="[{ label: 'Copy URL', icon: 'mdi:link-variant', onSelect: copyLink }]">
+          <UDropdownMenu :items="[{ label: 'Copy URL', icon: 'lucide:link', onSelect: copyLink }]">
             <UButton
-              icon="i-lucide-chevron-down"
+              icon="lucide:chevron-down"
               variant="subtle"
               color="neutral"
             />
@@ -52,7 +105,7 @@
             class="flex flex-row items-center gap-1 typ-sublabel"
           >
             <UIcon
-              name="material-symbols:calendar-today-rounded"
+              name="lucide:calendar"
               class="text-primary"
             /> {{ formatDate(data.date) }}
           </p>
@@ -61,7 +114,7 @@
             class="flex flex-row items-center gap-1 typ-sublabel"
           >
             <UIcon
-              name="material-symbols:alarm-rounded"
+              name="lucide:clock"
               class="text-primary"
             /> {{ data.minRead }} MIN READ
           </p>
@@ -95,18 +148,18 @@
 
       <USeparator />
       <p class="font-semibold">
-        Related articles
+        Related posts
       </p>
-      <UBlogPosts id="related-articles">
+      <UBlogPosts id="related-posts">
         <UBlogPost
-          v-for="article in links"
-          :key="article.path"
-          :title="article.title"
-          :image="article.image"
-          :authors="[article.author]"
-          :badge="Math.abs(new Date().getTime() - new Date(article?.date).getTime()) < 8.64e7 * 7 ? { label: 'New', color: 'primary' } : undefined"
-          :date="article.date"
-          :to="article.path"
+          v-for="post in relatedPosts"
+          :key="post.path"
+          :title="post.title"
+          :image="post.image"
+          :authors="[post.author]"
+          :badge="Math.abs(new Date().getTime() - new Date(post?.date).getTime()) < 8.64e7 * 7 ? { label: 'New', color: 'primary' } : undefined"
+          :date="post.date"
+          :to="post.path"
           variant="subtle"
         />
       </UBlogPosts>
@@ -115,62 +168,3 @@
     </UPageBody>
   </UPage>
 </template>
-
-<script lang="ts" setup>
-const route = useRoute()
-const authorEl = ref<HTMLElement | null>()
-const clipboard = useClipboard()
-const toast = useToast()
-
-const formatDate = (date: Date) => {
-  return new Date(date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
-  })
-}
-
-const { data } = await useAsyncData(route.path, () => queryCollection('writing').path(route.path).first())
-if (!data.value) throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
-
-const { data: links } = await useAsyncData(`linked-${route.path}`, async () => {
-  const res = await queryCollection('writing').where('path', 'NOT LIKE', data.value?.path).all()
-  return res.slice(0, 5)
-})
-const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
-  return queryCollectionItemSurroundings('writing', route.path, {
-    fields: ['description']
-  })
-})
-
-if (data.value.image) {
-  defineOgImage({ url: data.value.image })
-} else {
-  defineOgImageComponent('Blog', {
-    headline: data.value?.title
-  })
-}
-
-async function copyLink() {
-  await clipboard.copy(window.location.href)
-  toast.add({ title: 'Copied to clipboard', icon: 'material-symbols:check-circle-rounded', color: 'success' })
-}
-async function share() {
-  await navigator.share({ url: route.fullPath })
-}
-
-onMounted(() => {
-  const contentEl = document.getElementById('content')
-  authorEl.value = contentEl?.querySelector('#author-about')
-})
-</script>
-
-<style lang="css">
-@reference "~/assets/css/main.css";
-
-@variant max-lg {
-    * {
-        scroll-margin-top: calc(var(--ui-header-height) + 4rem) !important;
-    }
-}
-</style>

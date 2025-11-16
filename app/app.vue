@@ -53,5 +53,7 @@ const [{ data: navigation }, { data: files }] = await Promise.all([
         :fuse="{ resultLimit: 42 }"
       />
     </ClientOnly>
+
+    <UNotifications />
   </UApp>
 </template>
