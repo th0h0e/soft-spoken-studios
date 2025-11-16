@@ -7,12 +7,13 @@ const props = defineProps<{
 
 const versions = computed(() => {
   return props.projects.map(project => ({
-    title: project.title,
-    description: project.description,
-    image: project.image,
     date: project.date,
     to: project.path,
+
+    cardTitle: project.title,
+    cardDescription: project.description,
     gallery: project.gallery,
+
     ui: {
       container: 'max-w-lg'
     }
@@ -23,27 +24,33 @@ const versions = computed(() => {
 <template>
   <UChangelogVersions :versions="versions">
     <template #body="{ version }">
-      <UCard class="mt-4">
+      <UCard>
         <template #header>
-          <h3 class="text-lg font-semibold">
-            {{ version.title }}
-          </h3>
+          <Carousel
+            v-if="version.gallery"
+            :images="version.gallery"
+          />
         </template>
 
-        <p>
-          <Carousel :images="version.gallery" />
+        <h2 class="text-xl font-semibold">
+          {{ version.cardTitle }}
+        </h2>
+        <p class="text-sm">
+          {{ version.cardDescription }}
         </p>
 
         <template #footer>
-          <div class="flex gap-2">
-            <UButton
-              label="Learn More"
-              size="xs"
-              :to="version.to"
-            />
-          </div>
+          <UButton
+            label="Learn More"
+            size="xs"
+            :to="version.to"
+          />
         </template>
       </UCard>
+    </template>
+
+    <template #footer>
+      <USeparator icon="i-simple-icons-nuxtdotjs" />
     </template>
   </UChangelogVersions>
 </template>

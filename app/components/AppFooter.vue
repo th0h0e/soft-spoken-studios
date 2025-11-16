@@ -7,6 +7,13 @@ const { footer } = useAppConfig()
     class="z-10 bg-default"
     :ui="{ left: 'text-muted text-xs' }"
   >
+    <template #top>
+      <USeparator
+        color="primary"
+        type="solid"
+      />
+    </template>
+
     <template #left>
       {{ footer.credits }}
     </template>
