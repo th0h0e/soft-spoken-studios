@@ -1,8 +1,4 @@
 <script lang="ts" setup>
-definePageMeta({
-  layout: 'content'
-})
-
 const route = useRoute()
 const authorEl = ref<HTMLElement | null>()
 const clipboard = useClipboard()

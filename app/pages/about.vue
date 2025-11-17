@@ -1,8 +1,4 @@
 <script setup lang="ts">
-definePageMeta({
-  layout: 'content'
-})
-
 const { data: page } = await useAsyncData('about', () => {
   return queryCollection('about').first()
 })
@@ -13,8 +9,6 @@ if (!page.value) {
     fatal: true
   })
 }
-
-const { global } = useAppConfig()
 </script>
 
 <template>
