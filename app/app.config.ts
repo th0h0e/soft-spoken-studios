@@ -27,6 +27,15 @@ export default defineAppConfig({
       slots: {
         container: 'py-18 sm:py-24 lg:py-32'
       }
+    },
+    avatar: {
+      variants: {
+        size: {
+          md: {
+            root: 'size-8 text-sm'
+          }
+        }
+      }
     }
   },
   footer: {

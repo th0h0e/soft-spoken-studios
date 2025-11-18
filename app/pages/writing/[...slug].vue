@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+definePageMeta({
+  layout: 'no-columns'
+})
+
 const route = useRoute()
 const authorEl = ref<HTMLElement | null>()
 const clipboard = useClipboard()
@@ -81,9 +85,22 @@ onMounted(() => {
     <UPageHeader
       :title="data?.title"
       :description="data?.description"
-      headline="Blog"
+      :ui="{
+        title: '!mx-0 max-w-xl text-pretty text-3xl sm:text-4xl lg:text-5xl',
+        description: '!mx-0 text-left'
+      }"
+      class="py-18 sm:py-24 lg:py-32 border-none"
     >
-      <div class="flex items-end flex-wrap gap-4 justify-between mt-4">
+      <template #headline>
+        <ULink
+          to="/writing"
+          class="text-sm flex items-center gap-1"
+        >
+          <UIcon name="lucide:chevron-left" />
+          Blog
+        </ULink>
+      </template>
+      <div class="flex items-center flex-wrap gap-4 justify-between mt-4">
         <div class="flex flex-col gap-4">
           <UUser
             v-bind="data?.author"
@@ -91,26 +108,30 @@ onMounted(() => {
             @click="() => authorEl?.scrollIntoView()"
           />
         </div>
-        <div class="flex flex-row items-center gap-4">
-          <p
+        <div class="flex flex-row items-center gap-2">
+          <UBadge
             v-if="data?.date"
-            class="flex flex-row items-center gap-1 typ-sublabel"
-          >
-            <UIcon
-              name="lucide:calendar"
-              class="text-primary"
-            /> {{ formatDate(data.date) }}
-          </p>
-          <p
+            size="sm"
+            variant="subtle"
+            color="neutral"
+            :label="formatDate(data.date)"
+            icon="lucide:calendar"
+          />
+          <UBadge
             v-if="data?.minRead"
-            class="flex flex-row items-center gap-1 typ-sublabel"
-          >
-            <UIcon
-              name="lucide:clock"
-              class="text-primary"
-            /> {{ data.minRead }} MIN READ
-          </p>
+            size="sm"
+            variant="subtle"
+            color="neutral"
+            :label="`${data.minRead} Min Read`"
+            icon="lucide:clock"
+          />
         </div>
+      </div>
+      <div class="py-8">
+        <USeparator
+          color="neutral"
+          type="solid"
+        />
       </div>
     </UPageHeader>
 

@@ -10,7 +10,7 @@ minRead: 8
 author:
   name: Soft Spoken Studio
   avatar:
-    src: downloads.jpg
+    text: SSS
     alt: Soft Spoken Studio
 ---
 
