@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { footer } = useAppConfig()
+const { footer, global } = useAppConfig()
 </script>
 
 <template>
@@ -12,6 +12,9 @@ const { footer } = useAppConfig()
         color="primary"
         type="solid"
       />
+      <div class="py-8">
+        <Copy :content="global.email" />
+      </div>
     </template>
 
     <template #left>

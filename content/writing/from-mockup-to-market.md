@@ -23,6 +23,14 @@ In this article, I'll walk through my end-to-end design process, from initial di
 
 Every great product starts with understanding the problem it's trying to solve. For EcoTrack, our challenge was creating an engaging way for users to track their environmental impact without feeling overwhelmed by guilt or complex data.
 
+::warning{}
+That 3 PM energy crash isn't a mysterious phenomenon – it's your body staging a revolt against the sugar-laden breakfast pastry and the lunch that came from a drive-through window! 
+::
+
+::card{title="The Whole Foods Cheat Sheet"}
+If it has more than 5 ingredients, if you can't pronounce half of them, or if it promises to 'boost your energy with natural flavors' – it's probably not whole food. Real food doesn't need a marketing department.
+::
+
 ### User Interviews
 
 I began by conducting interviews with 12 potential users across different demographics, focusing on their current habits and attitudes toward sustainability. These conversations revealed a crucial insight: most people wanted to make environmentally friendly choices but felt paralyzed by the complexity of calculating their impact.

@@ -33,6 +33,8 @@ if (data.value.image) {
   })
 }
 
+const blogLink = computed(() => `${window?.location}`)
+
 async function copyLink() {
   await clipboard.copy(window.location.href)
   toast.add({ title: 'Copied to clipboard', icon: 'lucide:check-circle', color: 'success' })
@@ -40,6 +42,14 @@ async function copyLink() {
 async function share() {
   await navigator.share({ url: route.fullPath })
 }
+
+const shareMenuItems = [
+  {
+    label: 'Copy URL',
+    icon: 'lucide:link',
+    onSelect: copyLink
+  }
+]
 
 onMounted(() => {
   const contentEl = document.getElementById('content')
@@ -72,7 +82,7 @@ onMounted(() => {
             class="grow"
             @click="share"
           />
-          <UDropdownMenu :items="[{ label: 'Copy URL', icon: 'lucide:link', onSelect: copyLink }]">
+          <UDropdownMenu :items="shareMenuItems">
             <UButton
               icon="lucide:chevron-down"
               variant="subtle"
@@ -149,15 +159,7 @@ onMounted(() => {
         class="markdown-content flex-1"
       />
 
-      <div class="flex items-center justify-end gap-2 text-sm text-muted">
-        <UButton
-          size="sm"
-          variant="link"
-          color="neutral"
-          label="Copy link"
-          @click="copyLink"
-        />
-      </div>
+      <Copy :content="blogLink" />
 
       <USeparator />
       <p class="font-semibold mb-4">

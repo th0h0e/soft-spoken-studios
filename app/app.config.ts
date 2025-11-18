@@ -36,6 +36,54 @@ export default defineAppConfig({
           }
         }
       }
+    },
+    prose: {
+      callout: {
+        slots: {
+          base: [
+            'group relative block px-4 py-3 rounded-md text-sm/6 my-5 last:mb-0',
+            '[&_code]:text-xs/5 [&_code]:bg-default [&_pre]:bg-default',
+            '[&>div]:my-2.5 [&_ul]:my-2.5 [&_ol]:my-2.5 [&>*]:last:!mb-0',
+            '[&_ul]:ps-4.5 [&_ol]:ps-4.5 [&_li]:my-0',
+            'transition-colors'
+          ],
+          icon: [
+            'size-4 shrink-0 align-sub me-1.5 inline-block',
+            'transition-colors'
+          ]
+        },
+        variants: {
+          color: {
+            primary: {
+              base: 'border border-primary/25 bg-primary/10 text-primary-600 dark:text-primary-300',
+              icon: 'text-primary'
+            },
+            success: {
+              base: 'border border-success/25 bg-success/10 text-success-600 dark:text-success-300',
+              icon: 'text-success'
+            },
+            info: {
+              base: 'border border-info/25 bg-info/10 text-info-600 dark:text-info-300',
+              icon: 'text-info'
+            },
+            warning: {
+              base: 'border border-warning/25 bg-warning/10 text-warning-600 dark:text-warning-300',
+              icon: 'text-warning'
+            },
+            error: {
+              base: 'border border-error/25 bg-error/10 text-error-600 dark:text-error-300',
+              icon: 'text-error'
+            },
+            neutral: {
+              base: 'border border-muted bg-muted text-default',
+              icon: 'text-highlighted'
+            }
+          }
+        },
+        defaultVariants: {
+          color: 'neutral'
+        }
+      }
     }
   },
   footer: {

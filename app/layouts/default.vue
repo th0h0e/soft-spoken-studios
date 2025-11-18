@@ -12,6 +12,7 @@
       <!-- CENTER CONTENT -->
       <main class="lg:col-span-7">
         <slot />
+        <AppFooter />
       </main>
 
       <!-- RIGHT SIDEBAR -->
