@@ -3,7 +3,7 @@ import type { NavigationMenuItem } from '@nuxt/ui'
 export const navLinks: NavigationMenuItem[][] = [
   [
     {
-      label: 'Navigation',
+      label: 'Soft Spoken Studio',
       type: 'label'
     },
     {

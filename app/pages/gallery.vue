@@ -1,12 +1,23 @@
 <script setup lang="ts">
+const { data: gallery } = await useAsyncData('gallery', () => {
+  return queryCollection('gallery').first()
+})
+
+if (!gallery.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Gallery not found',
+    fatal: true
+  })
+}
 </script>
 
 <template>
   <div>
-    <UPage>
+    <UPage v-if="gallery">
       <UPageHero
-        title="Gallery"
-        description="Explore our collection"
+        :title="gallery.title"
+        :description="gallery.description"
         :ui="{
           title: '!mx-0 text-left',
           description: '!mx-0 text-left'
@@ -19,7 +30,7 @@
         />
       </div>
       <UPageSection>
-        <PageColumns />
+        <PageColumns :items="gallery.items" />
       </UPageSection>
     </UPage>
   </div>

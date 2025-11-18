@@ -4,6 +4,9 @@ import { projectsCollectionSchema } from './schemas/projects.schema'
 import { writingCollectionSchema } from './schemas/writing.schema'
 import { pagesCollectionSchema } from './schemas/pages.schema'
 import { aboutCollectionSchema } from './schemas/about.schema'
+import { letterCollectionSchema } from './schemas/letter.schema'
+import { twoImagesCollectionSchema } from './schemas/twoimages.schema'
+import { galleryCollectionSchema } from './schemas/gallery.schema'
 
 /**
  * Nuxt Content Configuration
@@ -47,6 +50,27 @@ export default defineContentConfig({
       type: 'page',
       source: 'about.yml',
       schema: aboutCollectionSchema
+    }),
+
+    // Letter collection
+    letter: defineCollection({
+      type: 'page',
+      source: 'letter.yml',
+      schema: letterCollectionSchema
+    }),
+
+    // TwoImages collection
+    twoimages: defineCollection({
+      type: 'page',
+      source: 'TwoImages.yml',
+      schema: twoImagesCollectionSchema
+    }),
+
+    // Gallery collection
+    gallery: defineCollection({
+      type: 'page',
+      source: 'gallery.yml',
+      schema: galleryCollectionSchema
     })
   }
 })
