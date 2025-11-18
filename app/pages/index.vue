@@ -11,6 +11,10 @@ const { data: twoimages } = await useAsyncData('twoimages', () => {
   return queryCollection('twoimages').first()
 })
 
+const { data: book } = await useAsyncData('book', () => {
+  return queryCollection('book').first()
+})
+
 if (!page.value) {
   throw createError({
     statusCode: 404,
@@ -23,6 +27,10 @@ if (!page.value) {
 <template>
   <UPage v-if="page">
     <LandingHero :page />
+    <Book
+      v-if="book"
+      :page="book"
+    />
     <LandingLetter
       v-if="letter"
       :page="letter"
@@ -35,7 +43,6 @@ if (!page.value) {
       <LandingAbout :page />
       <LandingWorkExperience :page />
     </UPageSection>
-    <LandingWriting :page />
     <TwoImages
       v-if="twoimages"
       :page="twoimages"

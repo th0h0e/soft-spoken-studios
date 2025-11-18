@@ -7,6 +7,7 @@ import { aboutCollectionSchema } from './schemas/about.schema'
 import { letterCollectionSchema } from './schemas/letter.schema'
 import { twoImagesCollectionSchema } from './schemas/twoimages.schema'
 import { galleryCollectionSchema } from './schemas/gallery.schema'
+import { bookCollectionSchema } from './schemas/book.schema'
 
 /**
  * Nuxt Content Configuration
@@ -71,6 +72,13 @@ export default defineContentConfig({
       type: 'page',
       source: 'gallery.yml',
       schema: galleryCollectionSchema
+    }),
+
+    // Book cover collection
+    book: defineCollection({
+      type: 'page',
+      source: 'book.yml',
+      schema: bookCollectionSchema
     })
   }
 })
