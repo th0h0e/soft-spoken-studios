@@ -31,7 +31,7 @@ if (!articles.value) {
         v-bind="article"
         :to="article.path"
         :ui="{
-          root: 'group relative lg:items-start lg:flex ring-0 hover:ring-0',
+          root: 'group relative items-start lg:flex ring-0 hover:ring-0',
           body: '!px-0',
           header: 'hidden'
         }"

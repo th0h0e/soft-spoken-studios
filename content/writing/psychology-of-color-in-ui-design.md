@@ -22,6 +22,14 @@ The results were striking: switching to a specific shade of blue increased our c
 
 Beyond conversion metrics, I discovered that color significantly affected how users perceived waiting times. By implementing a softer color progression in our loading animations, users reported that the app felt faster, even though the actual loading times remained unchanged.
 
+::one-image
+---
+src: /crosscurrent.webp
+alt: Color progression in loading animations
+title: Softer color transitions improve perceived performance
+---
+::
+
 I've since developed a framework for color decision-making that goes beyond aesthetics:
 
 1. Consider the emotional response you want to evoke
@@ -31,5 +39,17 @@ I've since developed a framework for color decision-making that goes beyond aest
 5. Ensure sufficient contrast for readability and accessibility
 
 The most valuable lesson I've learned is that there are no universal "right" colors—only colors that effectively communicate your message and guide users toward their goals within your specific context.
+
+::two-images
+---
+images:
+  - src: /download.jpg
+    alt: Color palette comparison
+    title: Before and after color optimization
+  - src: /downloads.jpg
+    alt: User engagement metrics
+    title: Impact on conversion rates
+---
+::
 
 Next time you're selecting a color palette, think beyond what looks good and consider what your colors are actually saying to your users.
