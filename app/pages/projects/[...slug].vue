@@ -94,7 +94,7 @@ const projectLink = computed(() => `${window?.location}`)
             :value="page"
           />
 
-          <Carousel
+          <ProjectGallery
             v-if="page.gallery && page.gallery.length > 0"
             :images="page.gallery"
             class="my-8"

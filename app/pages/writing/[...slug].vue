@@ -15,10 +15,6 @@ const formatDate = (dateString: string) => {
 const { data } = await useAsyncData(route.path, () => queryCollection('writing').path(route.path).first())
 if (!data.value) throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 
-const { data: relatedPosts } = await useAsyncData(`linked-${route.path}`, async () => {
-  const res = await queryCollection('writing').where('path', 'NOT LIKE', data.value?.path).all()
-  return res.slice(0, 5)
-})
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
   return queryCollectionItemSurroundings('writing', route.path, {
     fields: ['description']
@@ -143,22 +139,10 @@ onMounted(() => {
       </div>
 
       <USeparator />
-      <p class="font-semibold">
+      <p class="font-semibold mb-4">
         Related posts
       </p>
-      <UBlogPosts id="related-posts">
-        <UBlogPost
-          v-for="post in relatedPosts"
-          :key="post.path"
-          :title="post.title"
-          :image="post.image"
-          :authors="[post.author]"
-          :badge="Math.abs(new Date().getTime() - new Date(post?.date).getTime()) < 8.64e7 * 7 ? { label: 'New', color: 'primary' } : undefined"
-          :date="post.date"
-          :to="post.path"
-          variant="subtle"
-        />
-      </UBlogPosts>
+      <Card />
 
       <UContentSurround :surround="surround" />
     </UPageBody>
