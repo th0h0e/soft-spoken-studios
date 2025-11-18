@@ -19,7 +19,5 @@
         <Card />
       </aside>
     </div>
-
-    <AppFooter />
   </div>
 </template>
