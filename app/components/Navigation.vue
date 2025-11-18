@@ -8,6 +8,11 @@ const items = ref<NavigationMenuItem[][]>(navLinks)
 <template>
   <UCard
     variant="subtle"
+    class="h-full"
+    :ui="{
+      root: 'flex flex-col h-full',
+      body: 'flex-1'
+    }"
   >
     <template #header>
       <UNavigationMenu
@@ -17,7 +22,7 @@ const items = ref<NavigationMenuItem[][]>(navLinks)
       />
     </template>
 
-    <Placeholder class="h-32" />
+    <div class="flex-1" />
 
     <template #footer>
       <div class="flex justify-center">
