@@ -10,7 +10,7 @@
 
 :root {
   --ui-radius: 0.08rem;
-  --ui-bg: var(--ui-color-neutral-150);
+  --ui-bg: var(--ui-color-neutral-250);
 
   ::selection {
     color: #282a30;
