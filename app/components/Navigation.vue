@@ -7,7 +7,7 @@ const items = ref<NavigationMenuItem[][]>(navLinks)
 
 <template>
   <UCard
-    variant="subtle"
+    variant="outline"
     class="h-full"
     :ui="{
       root: 'flex flex-col h-full',

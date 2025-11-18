@@ -12,11 +12,7 @@ const versions = computed(() => {
 
     cardTitle: project.title,
     cardDescription: project.description,
-    gallery: project.gallery,
-
-    ui: {
-      container: 'max-w-lg'
-    }
+    gallery: project.gallery
   }))
 })
 </script>
@@ -24,7 +20,7 @@ const versions = computed(() => {
 <template>
   <UChangelogVersions :versions="versions">
     <template #body="{ version }">
-      <UCard>
+      <UCard variant="subtle">
         <template #header>
           <Carousel
             v-if="version.gallery"

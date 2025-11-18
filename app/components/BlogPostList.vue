@@ -1,11 +1,4 @@
 <script setup lang="ts">
-/**
- * Custom Blog Post List Component
- *
- * Displays blog posts in a horizontal layout with image on left and content on right.
- * Content is aligned to the top of the image.
- */
-
 defineProps<{
   posts?: Array<{
     path: string
@@ -44,7 +37,7 @@ const formatDate = (dateString: string) => {
         <NuxtImg
           :src="post.image.src"
           :alt="post.image.alt"
-          class="w-full aspect-[4/3] object-cover rounded-lg transition-opacity group-hover:opacity-90"
+          class="w-full aspect-4/3 object-cover rounded-lg transition-opacity group-hover:opacity-90"
           width="400"
           height="300"
         />
