@@ -31,6 +31,21 @@ That 3 PM energy crash isn't a mysterious phenomenon – it's your body staging 
 If it has more than 5 ingredients, if you can't pronounce half of them, or if it promises to 'boost your energy with natural flavors' – it's probably not whole food. Real food doesn't need a marketing department.
 ::
 
+::u-table{:data='[{"Food":"Frozen berries, canned beans, plain yogurt", "Benefit":"Retains most nutrients, minimal additives"}, {"Food":"Whole grain bread, cheese, canned tomatoes", "Benefit":"Still nutritious, convenient options"}, {"Food":"Breakfast cereals, flavored yogurts, deli meats", "Benefit":"Convenience vs. nutrition trade-off"}, {"Food":"Pop-Tarts, instant noodles, soda", "Benefit":"Convenience, long shelf life, questionable nutrition"}]'}
+::
+
+::note{}
+You are hereby granted permission to eat foods you enjoy without guilt. The stress from guilt might be worse for you than the occasional cookie. Mind = blown! 🍪
+::
+
+
+::tip{}
+Salt your vegetables while cooking them, not after. They'll taste better and you'll use less salt overall. Your taste buds and your blood pressure will thank you! 👨‍🍳
+::
+
+
+
+
 ### User Interviews
 
 I began by conducting interviews with 12 potential users across different demographics, focusing on their current habits and attitudes toward sustainability. These conversations revealed a crucial insight: most people wanted to make environmentally friendly choices but felt paralyzed by the complexity of calculating their impact.

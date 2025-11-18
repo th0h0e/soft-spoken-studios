@@ -11,10 +11,13 @@ export default defineAppConfig({
   },
   ui: {
     colors: {
-      primary: 'neutral',
+      primary: 'zink',
       secondary: 'black',
+      success: 'green',
+      error: 'red',
+      info: 'blue',
       warning: 'red',
-      neutral: 'zinc'
+      neutral: 'neutral'
     },
     pageHero: {
       slots: {
