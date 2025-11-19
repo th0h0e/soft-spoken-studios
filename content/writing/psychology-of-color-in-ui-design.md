@@ -46,7 +46,7 @@ images:
   - src: /download.jpg
     alt: Color palette comparison
     title: Before and after color optimization
-  - src: /downloads.jpg
+  - src: /download.jpg
     alt: User engagement metrics
     title: Impact on conversion rates
 ---

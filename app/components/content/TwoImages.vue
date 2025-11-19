@@ -32,9 +32,9 @@ defineProps<{
 </script>
 
 <template>
-  <div class="pb-8">
-    <USeparator class="mb-6" />
-    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+  <UPageSection>
+    <USeparator />
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 -mt-8">
       <!-- Loop through images (max 2) -->
       <NuxtLink
         v-for="(image, index) in images?.slice(0, 2)"
@@ -53,20 +53,19 @@ defineProps<{
           />
           <h3
             v-if="image.title"
-            class="mt-4 text-sm text-muted italic"
+            class="mt-4 text-xs text-muted italic"
           >
             {{ image.title }}
           </h3>
         </div>
       </NuxtLink>
     </div>
-  </div>
+  </UPageSection>
 </template>
 
 <style scoped>
 /* Style for slot-based images */
 :deep(img) {
-  border-radius: 0.5rem;
   object-fit: cover;
   width: 100%;
   height: 100%;

@@ -1,4 +1,8 @@
-<script setup lang="ts">
+<script lang="ts" setup>
+definePageMeta({
+  layout: 'no-columns'
+})
+
 const { data: gallery } = await useAsyncData('gallery', () => {
   return queryCollection('gallery').first()
 })
@@ -30,7 +34,7 @@ if (!gallery.value) {
         />
       </div>
       <UPageSection>
-        <PageColumns :items="gallery.items" />
+        <RandomGrid :items="gallery.items" />
       </UPageSection>
     </UPage>
   </div>

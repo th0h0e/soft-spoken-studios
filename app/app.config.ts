@@ -1,8 +1,8 @@
 export default defineAppConfig({
   global: {
     picture: {
-      dark: 'https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      light: 'https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      dark: 'sss.png',
+      light: 'sss-black.png',
       alt: 'My profile picture'
     },
     meetingLink: 'https://cal.com/',
@@ -87,11 +87,63 @@ export default defineAppConfig({
           color: 'neutral'
         }
       }
+    },
+    card: {
+      slots: {
+        header: 'p-4 sm:px-6',
+        body: 'p-4 sm:p-6',
+        footer: 'p-4 sm:px-6'
+      },
+      variants: {
+        variant: {
+          solid: {
+            root: 'text-inverted divide-y divide-default',
+            header: 'bg-inverted',
+            body: 'bg-inverted',
+            footer: 'bg-inverted'
+          },
+          outline: {
+            root: 'ring ring-default divide-y divide-default',
+            header: 'bg-default',
+            body: 'bg-default',
+            footer: 'bg-default'
+          },
+          soft: {
+            root: 'divide-y divide-default',
+            header: 'bg-elevated/50',
+            body: 'bg-elevated/50',
+            footer: 'bg-elevated/50'
+          },
+          subtle: {
+            root: 'ring ring-default divide-y divide-default',
+            header: 'bg-elevated/10',
+            body: 'bg-elevated/10',
+            footer: 'bg-elevated/50'
+          }
+        }
+      },
+      defaultVariants: {
+        variant: 'outline'
+      }
+    },
+    footer: {
+      slots: {
+        top: 'p-0',
+        bottom: 'pt-0 pb-8 lg:pb-12'
+      }
+    },
+    changelogVersion: {
+      slots: {
+        container: 'flex flex-col max-w-none ps-4 lg:ps-0 lg:ms-48 pe-4 sm:pe-4 lg:pe-10 pb-18',
+        indicator: 'absolute start-0 top-0 w-32 hidden lg:flex items-center justify-end gap-3 min-w-0'
+      }
+    },
+    pageColumns: {
+      base: 'relative column-1 md:columns-2 lg:columns-3 gap-4 space-y-8 *:break-inside-avoid-column *:will-change-transform'
     }
   },
   footer: {
     credits: `Built with Nuxt UI • © ${new Date().getFullYear()}`,
-    colorMode: false,
     links: [{
       'icon': 'i-simple-icons-discord',
       'to': 'https://go.nuxt.com/discord',

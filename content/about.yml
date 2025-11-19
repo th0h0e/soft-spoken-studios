@@ -1,5 +1,29 @@
 title: About Me
 description: Learn more about my journey as a Boston-based UX/UI Designer & Front-End Developer, my design philosophy, and my passion for crafting intuitive digital experiences.
+hero:
+  links:
+    - label: "Reach Out"
+      to: https://github.com/nuxt-ui-templates/portfolio
+      color: "neutral"
+  images:
+    - src: /hero/3334f4a0741954580a818e303927dfcd.jpg
+      alt: Random Image 1
+    - src: /hero/3334f4a0741954580a818e303927dfcd.jpg
+      alt: Random Image 2
+    - src: /hero/3334f4a0741954580a818e303927dfcd.jpg
+      alt: Random Image 3
+    - src: /hero/3334f4a0741954580a818e303927dfcd.jpg
+      alt: Random Image 4
+    - src: /hero/3334f4a0741954580a818e303927dfcd.jpg
+      alt: Random Image 5
+    - src: /hero/3334f4a0741954580a818e303927dfcd.jpg
+      alt: Random Image 6
+    - src: /hero/3334f4a0741954580a818e303927dfcd.jpg
+      alt: Random Image 7
+    - src: /hero/3334f4a0741954580a818e303927dfcd.jpg
+      alt: Random Image 8
+    - src: /hero/3334f4a0741954580a818e303927dfcd.jpg
+      alt: Random Image 9
 content: |
   Hi, I'm **Emma Thompson**, a UX/UI Designer and Front-End Developer based right here in Boston. For the past six years, I've been immersed in the world of digital product creation, focusing on building experiences that are not just functional, but genuinely intuitive and engaging for users.
 
@@ -25,3 +49,32 @@ images:
     alt: My coffee workspace
   - src: https://images.unsplash.com/photo-1744429523595-2c06b8611242?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
     alt: My trip to Tokyo
+about:
+  title: "About Me"
+  description: |
+    As a UX/UI designer and front-end developer with 6 years of experience, I leverage my Boston University Interactive Design degree to craft user-centered digital experiences.
+    My approach blends creative strategy with technical expertise, transforming concepts into functional, purposeful digital products that seamlessly integrate design and technology.
+experience:
+  title: Work Experience
+  items:
+    - position: "Brand Designer at"
+      date: "2023 - Present"
+      company:
+        name: Nuxt
+        logo: "i-simple-icons-nuxtdotjs"
+        url: "https://nuxt.com"
+        color: "#00DC82"
+    - position: "Assets Designer at"
+      date: "2022 - 2023"
+      company:
+        name: Raycast
+        logo: "i-simple-icons-raycast"
+        url: "https://raycast.com"
+        color: "#FF6363"
+    - position: "Senior UX/UI Designer at"
+      date: "2020 - 2021"
+      company:
+        name: Linear
+        logo: "i-simple-icons-linear"
+        url: "https://linear.app"
+        color: "#5E6AD2"

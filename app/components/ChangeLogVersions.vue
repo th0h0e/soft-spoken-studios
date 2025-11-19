@@ -18,35 +18,38 @@ const versions = computed(() => {
 </script>
 
 <template>
-  <UChangelogVersions :versions="versions">
+  <UChangelogVersions
+    :versions="versions"
+    :ui="{
+      container: 'px-0 !pt-0',
+      indicator: 'h-[calc(100%-12px)]'
+    }"
+  >
     <template #body="{ version }">
-      <UCard variant="subtle">
-        <template #header>
-          <Carousel
-            v-if="version.gallery"
-            :images="version.gallery"
-          />
-        </template>
+      <NuxtLink :to="version.to">
+        <UCard
+          :ui="{
+            header: '!p-0',
+            body: 'bg-elevated/30 hover:bg-elevated/50 transition-colors'
+          }"
+        >
+          <template #header>
+            <Carousel
+              v-if="version.gallery"
+              :images="version.gallery"
+            />
+          </template>
 
-        <h2 class="text-xl font-semibold">
-          {{ version.cardTitle }}
-        </h2>
-        <p class="text-sm">
-          {{ version.cardDescription }}
-        </p>
-
-        <template #footer>
-          <UButton
-            label="Learn More"
-            size="xs"
-            :to="version.to"
-          />
-        </template>
-      </UCard>
-    </template>
-
-    <template #footer>
-      <USeparator icon="i-simple-icons-nuxtdotjs" />
+          <div class="flex flex-col gap-1">
+            <h2 class="text-md font-semibold">
+              {{ version.cardTitle }}
+            </h2>
+            <p class="text-sm">
+              {{ version.cardDescription }}
+            </p>
+          </div>
+        </UCard>
+      </NuxtLink>
     </template>
   </UChangelogVersions>
 </template>

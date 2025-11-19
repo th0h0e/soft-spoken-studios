@@ -1,25 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-/**
- * ProjectGallery MDC Component
- *
- * Displays project images in an interactive gallery with 16:10 aspect ratio.
- * Features a main image viewer with thumbnail navigation.
- * Can be used in Markdown files with MDC syntax.
- *
- * Usage in Markdown:
- * ::project-gallery
- * ---
- * images:
- *   - /images/project1.jpg
- *   - /images/project2.jpg
- *   - /images/project3.jpg
- *   - /images/project4.jpg
- * ---
- * ::
- */
-
 defineProps<{
   images?: string[]
 }>()
@@ -33,7 +14,7 @@ const currentIndex = ref(0)
     class="space-y-2"
   >
     <!-- Main Image -->
-    <div class="overflow-hidden rounded-lg aspect-[16/10]">
+    <div class="overflow-hidden rounded-lg aspect-16/10">
       <NuxtImg
         :src="images[currentIndex]"
         :alt="`Gallery image ${currentIndex + 1}`"
@@ -55,7 +36,7 @@ const currentIndex = ref(0)
         :active="index === currentIndex"
         variant="soft"
         :ui="{ base: 'overflow-hidden rounded transition-opacity hover:opacity-75 p-0 h-auto' }"
-        class="overflow-hidden rounded aspect-[16/10]"
+        class="overflow-hidden rounded aspect-16/10"
         :class="{ 'ring-1 ring-primary': index === currentIndex }"
         @click="currentIndex = index"
       >

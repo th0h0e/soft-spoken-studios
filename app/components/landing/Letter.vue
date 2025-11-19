@@ -25,7 +25,7 @@ const props = withDefaults(
   {
     headerText: 'Intent, SSS Ink.',
     title: 'SIGNAL TO\nNOISE RATIOS',
-    subtitle: 'Proin Magna',
+    subtitle: 'Thomas Hibbert & Sons',
     paragraphs: () => [
       {
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl metus, accumsan id eros id, vehicula tincidunt nisl. Nulla sit amet urna ut mi tempor euismod. Fusce elementum sapien eget elit sodales fringilla. Pellentesque et nulla vel velit malesuada fermentum vitae vitae justo. Nulla dignissim volutpat interdum. Pellentesque at molestie tortor. Proin magna ante, fermentum ac elementum at, lacinia et arcu.',
@@ -58,7 +58,8 @@ const letterParagraphs = computed(() => props.page?.paragraphs || props.paragrap
   <UPageSection>
     <UCard
       v-if="letterHeaderText || letterTitle"
-      class="px-20 pt-20 pb-48 shadow-lg"
+      class="shadow-md"
+      :ui="{ body: 'bg-elevated/30 !px-28 !pt-20 !pb-48' }"
     >
       <!-- Header text -->
       <p class="text-muted mb-8 text-left text-lg">

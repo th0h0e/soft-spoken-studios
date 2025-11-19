@@ -3,9 +3,9 @@
 
 <template>
   <div>
-    <div class="flex flex-col lg:grid lg:grid-cols-12 lg:gap-10">
+    <div class="flex flex-col lg:grid lg:grid-cols-12 lg:gap-0">
       <!-- LEFT SIDEBAR -->
-      <aside class="lg:col-span-2 lg:sticky lg:top-0 lg:self-start lg:h-screen lg:overflow-y-auto">
+      <aside class="lg:col-span-2 lg:sticky lg:top-0 lg:self-start lg:h-screen lg:overflow-y-auto pr-px">
         <Navigation />
       </aside>
 

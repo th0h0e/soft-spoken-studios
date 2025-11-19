@@ -11,7 +11,8 @@ const items = ref<NavigationMenuItem[][]>(navLinks)
     class="h-full"
     :ui="{
       root: 'flex flex-col h-full',
-      body: 'flex-1'
+      body: 'flex-1',
+      footer: 'bg-elevated/30'
     }"
   >
     <template #header>

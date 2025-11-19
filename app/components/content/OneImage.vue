@@ -1,21 +1,4 @@
 <script setup lang="ts">
-/**
- * OneImage MDC Component
- *
- * Displays a single image with 16:10 aspect ratio.
- * Can be used in Markdown files with MDC syntax.
- *
- * Usage in Markdown:
- * ::one-image
- * ---
- * src: /images/image.jpg
- * alt: Image description
- * title: Optional caption
- * link: /optional-link
- * ---
- * ::
- */
-
 defineProps<{
   src?: string
   alt?: string
@@ -25,12 +8,12 @@ defineProps<{
 </script>
 
 <template>
-  <div class="my-8">
-    <USeparator class="mb-6" />
+  <UPageSection>
+    <USeparator />
     <NuxtLink
       v-if="link"
       :to="link"
-      class="block"
+      class="block -mt-8"
     >
       <div class="group overflow-hidden rounded-lg aspect-[16/10]">
         <NuxtImg
@@ -49,7 +32,10 @@ defineProps<{
         {{ title }}
       </p>
     </NuxtLink>
-    <div v-else>
+    <div
+      v-else
+      class="-mt-8"
+    >
       <div class="overflow-hidden rounded-lg aspect-[16/10]">
         <NuxtImg
           :src="src"
@@ -67,5 +53,5 @@ defineProps<{
         {{ title }}
       </p>
     </div>
-  </div>
+  </UPageSection>
 </template>

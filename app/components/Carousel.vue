@@ -11,15 +11,19 @@ const items = computed(() => props.images || [])
     v-if="items.length > 0"
     v-slot="{ item }"
     loop
-    :autoplay="{ delay: 4800 }"
+    class-names
+    wheel-gestures
+    :autoplay="{ delay: 10000 }"
     :items="items"
-    :ui="{ item: 'basis-1/2' }"
+    :ui="{
+      root: 'p-0',
+      viewport: 'p-0',
+      item: 'basis-[100%] transition-opacity [&:not(.is-snapped)]:opacity-10'
+    }"
   >
     <img
       :src="item"
-      width="416"
-      height="234"
-      class="rounded-lg"
+      class="w-full h-full object-cover aspect-[3/2]"
     >
   </UCarousel>
 </template>

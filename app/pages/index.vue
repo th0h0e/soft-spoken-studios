@@ -26,7 +26,6 @@ if (!page.value) {
 
 <template>
   <UPage v-if="page">
-    <LandingHero :page />
     <Book
       v-if="book"
       :page="book"
@@ -35,19 +34,29 @@ if (!page.value) {
       v-if="letter"
       :page="letter"
     />
-    <UPageSection
-      :ui="{
-        container: '!pt-0 lg:grid lg:grid-cols-2 lg:gap-8'
-      }"
-    >
-      <LandingAbout :page />
-      <LandingWorkExperience :page />
-    </UPageSection>
     <TwoImages
-      v-if="twoimages"
-      :page="twoimages"
+      v-if="twoimages?.twoimages?.images"
+      :images="twoimages.twoimages.images"
     />
-    <LandingTestimonials :page />
+
+    <!-- Example: TwoImages with hardcoded data -->
+    <TwoImages
+      :images="[
+        {
+          src: '/hero/3334f4a0741954580a818e303927dfcd.jpg',
+          alt: 'Example image 1',
+          title: 'Direct component usage',
+          link: '/projects'
+        },
+        {
+          src: '/hero/3334f4a0741954580a818e303927dfcd.jpg',
+          alt: 'Example image 2',
+          title: 'No YAML needed',
+          link: '/about'
+        }
+      ]"
+    />
+
     <LandingFAQ :page />
     <ProjectIndex title="Recent Projects" />
   </UPage>

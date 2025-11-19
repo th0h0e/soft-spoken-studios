@@ -52,11 +52,9 @@ const { global } = useAppConfig()
         type="solid"
       />
     </div>
-    <UPageSection>
-      <ChangeLogVersions
-        v-if="projects"
-        :projects="projects"
-      />
-    </UPageSection>
+    <ChangeLogVersions
+      v-if="projects"
+      :projects="projects"
+    />
   </UPage>
 </template>
