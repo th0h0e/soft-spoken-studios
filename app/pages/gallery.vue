@@ -33,9 +33,9 @@ if (!gallery.value) {
           type="solid"
         />
       </div>
-      <UPageSection>
+      <div class="px-4 sm:px-6 lg:px-8 py-12">
         <RandomGrid :items="gallery.items" />
-      </UPageSection>
+      </div>
     </UPage>
   </div>
 </template>
