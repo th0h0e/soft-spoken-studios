@@ -8,14 +8,14 @@ const props = defineProps<{
 
 const gridSpans = computed(() => {
   return props.items?.map((_, index) => ({
-    colSpan: (index % 3) + 1,  // 1-3 columns
-    rowSpan: (index % 2) + 1   // 1-2 rows
+    colSpan: (index % 3) + 1,
+    rowSpan: (index % 2) + 1
   })) || []
 })
 </script>
 
 <template>
-  <div class="grid grid-cols-6 gap-4 auto-rows-[250px]">
+  <div class="grid grid-cols-6 gap-4 auto-rows-[minmax(250px,auto)]">
     <div
       v-for="(item, index) in items"
       :key="index"
@@ -32,7 +32,7 @@ const gridSpans = computed(() => {
           class="w-full object-cover"
           loading="lazy"
         />
-        <p class="p-4 text-sm text-muted italic bg-default text-left">
+        <p class="px-0 py-4 text-xs text-muted italic bg-default text-left">
           "{{ item.quote }}"
         </p>
       </div>
