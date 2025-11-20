@@ -10,7 +10,6 @@ const { data: articles } = await useAsyncData('sidebar-articles', () =>
       v-for="article in articles"
       :key="article.path"
       variant="outline"
-      :ui="{ body: '!pl-0' }"
     >
       <NuxtLink
         :to="article.path"
