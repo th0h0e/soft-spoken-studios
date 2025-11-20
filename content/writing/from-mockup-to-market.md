@@ -124,6 +124,20 @@ A second round of testing showed significant improvements in usability, but high
 
 ## Phase 4: Visual Design & Refinement
 
+
+::code-preview
+---
+class: "[&>div]:*:w-full"
+---
+:iframe{src="https://www.youtube.com/embed/8o7gyUsoAw0?si=6B94hNvDRk0CVh-A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="aspect-ratio: 16/9;"}
+
+
+#code
+```mdc
+:iframe{src="https://www.youtube.com/watch?v=8o7gyUsoAw0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="aspect-ratio: 16/9;"}
+```
+::
+
 With the core experience validated, I moved into high-fidelity visual design.
 
 ### Visual Language

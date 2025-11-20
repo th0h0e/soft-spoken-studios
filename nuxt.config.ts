@@ -46,12 +46,12 @@ export default defineNuxtConfig({
     }
   },
 
-  schemaOrg: {
-    identity: definePerson(appMeta.author)
-  },
-
   robots: {
     allow: '/',
     disallow: ['/admin']
+  },
+
+  schemaOrg: {
+    identity: definePerson(appMeta.author)
   }
 })
