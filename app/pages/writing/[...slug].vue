@@ -40,8 +40,6 @@ if (data.value.image) {
   })
 }
 
-const blogLink = computed(() => `${window?.location}`)
-
 async function copyLink() {
   await clipboard.copy(window.location.href)
   toast.add({ title: 'Copied to clipboard', icon: 'lucide:check-circle', color: 'success' })
@@ -173,14 +171,6 @@ onMounted(() => {
         :value="data"
         class="markdown-content flex-1"
       />
-
-      <Copy :content="blogLink" />
-
-      <USeparator />
-      <p class="font-semibold mb-4">
-        Related posts
-      </p>
-      <Card />
 
       <UContentSurround :surround="surround" />
     </UPageBody>

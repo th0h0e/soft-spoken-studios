@@ -12,6 +12,7 @@
       <!-- MAIN CONTENT (takes remaining space) -->
       <main class="lg:col-span-10">
         <slot />
+        <AppFooter />
       </main>
     </div>
   </div>

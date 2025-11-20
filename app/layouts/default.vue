@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import appMeta from '../app.meta'
 </script>
 
 <template>
@@ -29,7 +30,7 @@
           <Card />
 
           <template #footer>
-            <Copy content="https://example.com" />
+            <Copy :content="appMeta.contactEmail" />
           </template>
         </UCard>
       </aside>
