@@ -65,7 +65,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <UPage :ui="{ center: 'lg:col-span-7!' }">
+  <UPage :ui="{ center: 'lg:col-span-7! pl-4 sm:pl-6 lg:pl-8' }">
+    <!-- Right sidebar: Navigation + Table of Contents (desktop only) -->
     <template #right>
       <UPageAside :ui="{ root: 'lg:col-span-3!' }">
         <UPageAnchors
@@ -75,6 +76,7 @@ onMounted(() => {
           ]"
         />
         <USeparator type="dotted" />
+        <!-- Table of Contents: Desktop -->
         <UContentToc
           v-if="data"
           :links="data.body.toc?.links"
@@ -99,6 +101,8 @@ onMounted(() => {
         </UFieldGroup>
       </UPageAside>
     </template>
+
+    <!-- Article header: Title, description, metadata -->
     <UPageHeader
       :title="data?.title"
       :description="data?.description"
@@ -152,13 +156,17 @@ onMounted(() => {
       </div>
     </UPageHeader>
 
+    <!-- Table of Contents: Mobile only -->
     <UContentToc
       v-if="data"
       :links="data.body.toc?.links"
       highlight
       class="lg:hidden"
     />
+
+    <!-- Main article content -->
     <UPageBody>
+      <!-- Markdown content renderer -->
       <ContentRenderer
         v-if="data"
         id="content"
