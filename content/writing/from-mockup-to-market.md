@@ -43,7 +43,13 @@ You are hereby granted permission to eat foods you enjoy without guilt. The stre
 Salt your vegetables while cooking them, not after. They'll taste better and you'll use less salt overall. Your taste buds and your blood pressure will thank you! 👨‍🍳
 ::
 
+::card
 
+
+:iframe{src="https://www.youtube.com/embed/8o7gyUsoAw0?si=6B94hNvDRk0CVh-A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="aspect-ratio: 16/9;"}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. This video demonstrates the visual design process and key decisions that shaped the final product experience.
+::
 
 
 ### User Interviews
@@ -122,23 +128,6 @@ A second round of testing showed significant improvements in usability, but high
 - Weekly summaries were more motivating than daily statistics
 - The onboarding process felt too lengthy
 
-## Phase 4: Visual Design & Refinement
-
-
-::code-preview
----
-class: "[&>div]:*:w-full"
----
-:iframe{src="https://www.youtube.com/embed/8o7gyUsoAw0?si=6B94hNvDRk0CVh-A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="aspect-ratio: 16/9;"}
-
-
-#code
-```mdc
-:iframe{src="https://www.youtube.com/watch?v=8o7gyUsoAw0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="aspect-ratio: 16/9;"}
-```
-::
-
-With the core experience validated, I moved into high-fidelity visual design.
 
 ### Visual Language
 
