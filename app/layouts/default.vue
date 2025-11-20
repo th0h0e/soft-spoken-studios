@@ -16,8 +16,17 @@
       </main>
 
       <!-- RIGHT SIDEBAR -->
-      <aside class="lg:col-span-3 order-first lg:order-last lg:sticky lg:top-0 lg:self-start lg:max-h-screen lg:overflow-y-auto">
-        <Card />
+      <aside class="lg:col-span-3 lg:sticky lg:top-0 lg:self-start lg:h-screen lg:overflow-y-auto pl-px">
+        <UCard
+          variant="outline"
+          class="h-full"
+          :ui="{
+            root: 'flex flex-col h-full',
+            body: 'flex-1 !p-0'
+          }"
+        >
+          <Card />
+        </UCard>
       </aside>
     </div>
   </div>

@@ -22,15 +22,6 @@ if (!page.value) {
 <template>
   <UPage v-if="page">
     <LandingHero :page="page" />
-    <UPageHero
-      :title="page.title"
-      :description="page.description"
-      :ui="{
-        title: '!mx-0 text-left',
-        description: '!mx-0 text-left',
-        links: 'justify-start'
-      }"
-    />
     <div class="py-8">
       <USeparator
         color="neutral"

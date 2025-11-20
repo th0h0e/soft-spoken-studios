@@ -63,7 +63,7 @@ if (!page.value) {
       ]"
     />
 
-    <LandingFAQ :page />
+    <LandingFAQ :page="page" />
     <ProjectIndex title="Recent Projects" />
   </UPage>
 </template>
