@@ -22,10 +22,15 @@
           class="h-full"
           :ui="{
             root: 'flex flex-col h-full',
-            body: 'flex-1 !p-0'
+            body: 'flex-1 !p-0',
+            footer: 'bg-elevated/30 py-4'
           }"
         >
           <Card />
+
+          <template #footer>
+            <Copy content="https://example.com" />
+          </template>
         </UCard>
       </aside>
     </div>

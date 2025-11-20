@@ -15,7 +15,7 @@ const { data: articles } = await useAsyncData('sidebar-articles', () =>
         :to="article.path"
         class="group block"
       >
-        <h3 class="text-sm font-medium mb-1 group-hover:text-neutral transition-colors">
+        <h3 class="text-sm font-medium mb-1">
           {{ article.title }}
         </h3>
         <p class="text-sm text-muted line-clamp-2">

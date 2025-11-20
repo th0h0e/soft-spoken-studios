@@ -52,6 +52,7 @@ const startViewTransition = (event: MouseEvent) => {
       variant="ghost"
       size="sm"
       class="rounded-full"
+      :ui="{ base: '!py-1' }"
       @click="startViewTransition"
     />
     <template #fallback>

@@ -51,7 +51,7 @@ const formatDate = (dateString: string) => {
         >
           {{ formatDate(post.date) }}
         </p>
-        <h3 class="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+        <h3 class="text-xl font-semibold mb-2">
           {{ post.title }}
         </h3>
         <p

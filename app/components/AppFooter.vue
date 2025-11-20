@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { footer, global } = useAppConfig()
+const { footer } = useAppConfig()
 </script>
 
 <template>
@@ -7,7 +7,7 @@ const { footer, global } = useAppConfig()
     class="z-10 bg-elevated/30 border-t border-default"
     :ui="{
       left: 'text-muted text-xs',
-      container: 'px-4 sm:px-6 lg:px-8'
+      container: 'px-4 sm:px-6 lg:px-8 !py-5'
     }"
   >
     <template #left>
@@ -22,9 +22,6 @@ const { footer, global } = useAppConfig()
     </template>
 
     <template #right>
-      <div class="py-8 px-4 sm:px-6 lg:px-8">
-        <Copy :content="global.email" />
-      </div>
       <template v-if="footer?.links">
         <UButton
           v-for="(link, index) of footer?.links"
