@@ -46,7 +46,6 @@ if (!page.value) {
       :images="twoimages.twoimages.images"
     />
 
-    <!-- Example: TwoImages with hardcoded data -->
     <TwoImages
       :images="[
         {
