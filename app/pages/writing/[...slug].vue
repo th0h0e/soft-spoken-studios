@@ -1,6 +1,13 @@
 <script lang="ts" setup>
+import appMeta from '../../app.meta'
+
 definePageMeta({
   layout: 'no-columns'
+})
+
+useSeoMeta({
+  title: appMeta.name,
+  description: appMeta.description
 })
 
 const route = useRoute()

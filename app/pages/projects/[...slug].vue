@@ -2,6 +2,12 @@
 import type { ContentNavigationItem } from '@nuxt/content'
 import { mapContentNavigation } from '@nuxt/ui/utils/content'
 import { findPageBreadcrumb } from '@nuxt/content/utils'
+import appMeta from '../../app.meta'
+
+useSeoMeta({
+  title: appMeta.name,
+  description: appMeta.description
+})
 
 const route = useRoute()
 

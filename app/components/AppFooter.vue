@@ -11,7 +11,14 @@ const { footer, global } = useAppConfig()
     }"
   >
     <template #left>
-      {{ footer.credits }}
+      <a
+        :href="footer.creditsLink"
+        target="_blank"
+        rel="noopener"
+        class="hover:text-default transition-colors"
+      >
+        {{ footer.credits }}
+      </a>
     </template>
 
     <template #right>

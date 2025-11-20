@@ -1,20 +1,17 @@
 <script setup lang="ts">
+import appMeta from './app.meta'
+
 const colorMode = useColorMode()
 
 const color = computed(() => colorMode.value === 'dark' ? '#020618' : 'white')
 
 useHead({
   meta: [
-    { charset: 'utf-8' },
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     { key: 'theme-color', name: 'theme-color', content: color }
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico' }
-  ],
-  htmlAttrs: {
-    lang: 'en'
-  }
+    { rel: 'icon', href: appMeta.icon }
+  ]
 })
 
 const [{ data: navigation }, { data: files }] = await Promise.all([

@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import appMeta from '../app.meta'
+
+useSeoMeta({
+  title: appMeta.name,
+  description: appMeta.description
+})
+
 const { data: page } = await useAsyncData('index', () => {
   return queryCollection('index').first()
 })
