@@ -1,10 +1,6 @@
 <script lang="ts" setup>
 import appMeta from '../../app.meta'
 
-definePageMeta({
-  layout: false
-})
-
 useSeoMeta({
   title: appMeta.name,
   description: appMeta.description
@@ -12,8 +8,6 @@ useSeoMeta({
 
 const route = useRoute()
 const authorEl = ref<HTMLElement | null>()
-const clipboard = useClipboard()
-const toast = useToast()
 
 const formatDate = (dateString: string) => {
   return new Date(dateString).toLocaleDateString('en-US', {
@@ -40,22 +34,6 @@ if (data.value.image) {
   })
 }
 
-async function copyLink() {
-  await clipboard.copy(window.location.href)
-  toast.add({ title: 'Copied to clipboard', icon: 'lucide:check-circle', color: 'success' })
-}
-async function share() {
-  await navigator.share({ url: route.fullPath })
-}
-
-const shareMenuItems = [
-  {
-    label: 'Copy URL',
-    icon: 'lucide:link',
-    onSelect: copyLink
-  }
-]
-
 onMounted(() => {
   const contentEl = document.getElementById('content')
   authorEl.value = contentEl?.querySelector('#author-about')
@@ -63,57 +41,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <NuxtLayout name="default">
-    <!-- Mobile ToC only (no nested collapsible) -->
-    <template #mobile-toc>
-      <UContentToc
-        v-if="data"
-        :links="data.body.toc?.links"
-        highlight
-        default-open
-        :ui="{
-          root: 'bg-transparent',
-          container: 'py-0 border-0',
-          trigger: 'hidden',
-          content: ''
-        }"
-      />
-    </template>
-
-    <!-- Right sidebar content (desktop) -->
-    <template #right>
-      <UPageAnchors
-        :links="[
-          { label: 'YouTube tutorial', icon: 'lucide:youtube', to: 'https://www.youtube.com/@matteo-beltrame', target: '_blank' },
-          { label: 'All posts', icon: 'lucide:newspaper', to: '/writing/' }
-        ]"
-      />
-      <USeparator type="dotted" class="my-4" />
-      <!-- Table of Contents -->
-      <UContentToc
-        v-if="data"
-        :links="data.body.toc?.links"
-        highlight
-      />
-      <UFieldGroup class="w-full mt-4">
-        <UButton
-          label="Share this article"
-          icon="lucide:share-2"
-          variant="subtle"
-          color="neutral"
-          class="grow"
-          @click="share"
-        />
-        <UDropdownMenu :items="shareMenuItems">
-          <UButton
-            icon="lucide:chevron-down"
-            variant="subtle"
-            color="neutral"
-          />
-        </UDropdownMenu>
-      </UFieldGroup>
-    </template>
-
+  <div>
     <!-- Article header: Title, description, metadata -->
     <UPageHeader
       :title="data?.title"
@@ -180,5 +108,5 @@ onMounted(() => {
 
       <UContentSurround :surround="surround" />
     </UPageBody>
-  </NuxtLayout>
+  </div>
 </template>
