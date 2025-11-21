@@ -46,11 +46,6 @@ onMounted(() => {
     <UPageHeader
       :title="data?.title"
       :description="data?.description"
-      :ui="{
-        title: '!mx-0 max-w-xl text-pretty text-3xl sm:text-4xl lg:text-5xl',
-        description: '!mx-0 text-left'
-      }"
-      class="py-18 sm:py-24 lg:py-32 border-none"
     >
       <template #headline>
         <ULink
@@ -61,6 +56,15 @@ onMounted(() => {
           Blog
         </ULink>
       </template>
+    </UPageHeader>
+
+    <USeparator
+      color="neutral"
+      type="solid"
+    />
+
+    <!-- Main article content -->
+    <UPageBody>
       <div class="flex items-center flex-wrap gap-4 justify-between mt-4">
         <div class="flex flex-col gap-4">
           <UUser
@@ -88,16 +92,6 @@ onMounted(() => {
           />
         </div>
       </div>
-      <div class="py-8">
-        <USeparator
-          color="neutral"
-          type="solid"
-        />
-      </div>
-    </UPageHeader>
-
-    <!-- Main article content -->
-    <UPageBody>
       <!-- Markdown content renderer -->
       <ContentRenderer
         v-if="data"

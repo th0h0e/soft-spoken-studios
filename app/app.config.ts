@@ -26,7 +26,10 @@ export default defineAppConfig({
     },
     pageHeader: {
       slots: {
-        root: 'relative border-b border-default py-8 px-4'
+        root: 'relative border-none pt-18 pb-8 sm:pt-24 sm:pb-12 lg:pt-32 lg:pb-16 px-4',
+        title: 'mx-0 text-left max-w-xl text-pretty text-3xl sm:text-4xl lg:text-5xl',
+        description: 'mx-0 text-left text-sm text-muted max-w-2xl',
+        links: 'justify-start'
       }
     },
     pageHero: {

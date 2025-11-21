@@ -26,13 +26,9 @@ if (!gallery.value) {
 <template>
   <div>
     <UPage v-if="gallery">
-      <UPageHero
+      <UPageHeader
         :title="gallery.title"
         :description="gallery.description"
-        :ui="{
-          title: '!mx-0 text-left',
-          description: '!mx-0 text-left'
-        }"
       />
       <div class="py-8">
         <USeparator

@@ -30,15 +30,10 @@ if (!posts.value) {
 
 <template>
   <UPage v-if="page">
-    <UPageHero
+    <UPageHeader
       :title="page.title"
       :description="page.description"
       :links="page.links"
-      :ui="{
-        title: '!mx-0 text-left',
-        description: '!mx-0 text-left',
-        links: 'justify-start'
-      }"
     />
     <div class="py-8">
       <USeparator
