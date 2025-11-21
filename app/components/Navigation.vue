@@ -3,12 +3,78 @@ import type { NavigationMenuItem } from '@nuxt/ui'
 import { navLinks } from '~/utils/links'
 
 const items = ref<NavigationMenuItem[][]>(navLinks)
+
+// Color mode toggle for mobile navigation
+const colorMode = useColorMode()
+
+const switchTheme = () => {
+  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+}
+
+const startViewTransition = (event: Event) => {
+  if (!document.startViewTransition) {
+    switchTheme()
+    return
+  }
+
+  // Try to get coordinates from event, fallback to center of screen
+  const mouseEvent = event as MouseEvent
+  const x = mouseEvent.clientX || window.innerWidth / 2
+  const y = mouseEvent.clientY || window.innerHeight / 2
+
+  const endRadius = Math.hypot(
+    Math.max(x, window.innerWidth - x),
+    Math.max(y, window.innerHeight - y)
+  )
+
+  const transition = document.startViewTransition(() => {
+    switchTheme()
+  })
+
+  transition.ready.then(() => {
+    document.documentElement.animate(
+      {
+        clipPath: [
+          `circle(0px at ${x}px ${y}px)`,
+          `circle(${endRadius}px at ${x}px ${y}px)`
+        ]
+      },
+      {
+        duration: 600,
+        easing: 'cubic-bezier(.76,.32,.29,.99)',
+        pseudoElement: '::view-transition-new(root)'
+      }
+    )
+  })
+}
+
+// Mobile items with color mode toggle appended to last group (no separator)
+const mobileItems = computed<NavigationMenuItem[][]>(() => {
+  const items = navLinks.map(group => [...group])
+  const lastGroupIndex = items.length - 1
+  items[lastGroupIndex] = [
+    ...items[lastGroupIndex],
+    {
+      label: colorMode.value === 'dark' ? 'Light Mode' : 'Dark Mode',
+      onSelect: startViewTransition
+    }
+  ]
+  return items
+})
 </script>
 
 <template>
+  <!-- Mobile: Navigation menu with color mode toggle -->
+  <UNavigationMenu
+    orientation="vertical"
+    :items="mobileItems"
+    class="lg:hidden data-[orientation=vertical]:w-full"
+  />
+
+  <!-- Desktop: Full card with navigation, spacer, and footer -->
   <UCard
     variant="outline"
-    class="h-full"
+    class="hidden lg:flex h-full"
     :ui="{
       root: 'flex flex-col h-full',
       body: 'flex-1',
