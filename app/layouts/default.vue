@@ -39,9 +39,6 @@ const navOpen = ref(false)
           </UCollapsible>
         </div>
 
-        <!-- Mobile ToC collapsible (article pages only) -->
-        <MobileToc />
-
         <slot />
         <AppFooter />
       </main>

@@ -63,6 +63,9 @@ onMounted(() => {
       type="solid"
     />
 
+    <!-- Mobile ToC collapsible -->
+    <MobileToc />
+
     <!-- Main article content -->
     <UPageBody>
       <div class="flex items-center flex-wrap gap-4 justify-between mt-4">
