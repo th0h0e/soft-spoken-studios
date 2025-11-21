@@ -2,7 +2,7 @@
 import appMeta from '../../app.meta'
 
 definePageMeta({
-  layout: 'no-columns'
+  layout: false
 })
 
 useSeoMeta({
@@ -63,41 +63,55 @@ onMounted(() => {
 </script>
 
 <template>
-  <UPage :ui="{ center: 'lg:col-span-7! pl-4 sm:pl-6 lg:pl-8' }">
-    <!-- Right sidebar: Navigation + Table of Contents (desktop only) -->
+  <NuxtLayout name="layout-writing">
+    <!-- Mobile ToC only (no nested collapsible) -->
+    <template #mobile-toc>
+      <UContentToc
+        v-if="data"
+        :links="data.body.toc?.links"
+        highlight
+        default-open
+        :ui="{
+          root: 'bg-transparent',
+          container: 'py-0 border-0',
+          trigger: 'hidden',
+          content: ''
+        }"
+      />
+    </template>
+
+    <!-- Right sidebar content (desktop) -->
     <template #right>
-      <UPageAside :ui="{ root: 'lg:col-span-3!' }">
-        <UPageAnchors
-          :links="[
-            { label: 'YouTube tutorial', icon: 'lucide:youtube', to: 'https://www.youtube.com/@matteo-beltrame', target: '_blank' },
-            { label: 'All posts', icon: 'lucide:newspaper', to: '/writing/' }
-          ]"
+      <UPageAnchors
+        :links="[
+          { label: 'YouTube tutorial', icon: 'lucide:youtube', to: 'https://www.youtube.com/@matteo-beltrame', target: '_blank' },
+          { label: 'All posts', icon: 'lucide:newspaper', to: '/writing/' }
+        ]"
+      />
+      <USeparator type="dotted" class="my-4" />
+      <!-- Table of Contents -->
+      <UContentToc
+        v-if="data"
+        :links="data.body.toc?.links"
+        highlight
+      />
+      <UFieldGroup class="w-full mt-4">
+        <UButton
+          label="Share this article"
+          icon="lucide:share-2"
+          variant="subtle"
+          color="neutral"
+          class="grow"
+          @click="share"
         />
-        <USeparator type="dotted" />
-        <!-- Table of Contents: Desktop -->
-        <UContentToc
-          v-if="data"
-          :links="data.body.toc?.links"
-          highlight
-        />
-        <UFieldGroup class="w-full">
+        <UDropdownMenu :items="shareMenuItems">
           <UButton
-            label="Share this article"
-            icon="lucide:share-2"
+            icon="lucide:chevron-down"
             variant="subtle"
             color="neutral"
-            class="grow"
-            @click="share"
           />
-          <UDropdownMenu :items="shareMenuItems">
-            <UButton
-              icon="lucide:chevron-down"
-              variant="subtle"
-              color="neutral"
-            />
-          </UDropdownMenu>
-        </UFieldGroup>
-      </UPageAside>
+        </UDropdownMenu>
+      </UFieldGroup>
     </template>
 
     <!-- Article header: Title, description, metadata -->
@@ -154,14 +168,6 @@ onMounted(() => {
       </div>
     </UPageHeader>
 
-    <!-- Table of Contents: Mobile only -->
-    <UContentToc
-      v-if="data"
-      :links="data.body.toc?.links"
-      highlight
-      class="lg:hidden"
-    />
-
     <!-- Main article content -->
     <UPageBody>
       <!-- Markdown content renderer -->
@@ -174,5 +180,5 @@ onMounted(() => {
 
       <UContentSurround :surround="surround" />
     </UPageBody>
-  </UPage>
+  </NuxtLayout>
 </template>
