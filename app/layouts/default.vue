@@ -16,7 +16,10 @@ const navOpen = ref(false)
       <main class="lg:col-span-7">
         <!-- Mobile navigation collapsible -->
         <div class="lg:hidden border-b border-default">
-          <UCollapsible v-model:open="navOpen" class="px-4 py-3">
+          <UCollapsible
+            v-model:open="navOpen"
+            class="px-4 py-3"
+          >
             <UButton
               class="group w-full justify-between"
               label="Navigation"

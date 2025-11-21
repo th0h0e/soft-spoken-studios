@@ -21,6 +21,14 @@ export default defineAppConfig({
       warning: 'red',
       neutral: 'neutral'
     },
+    pageBody: {
+      base: 'mt-8 pb-24 space-y-12 px-4'
+    },
+    pageHeader: {
+      slots: {
+        root: 'relative border-b border-default py-8 px-4'
+      }
+    },
     pageHero: {
       slots: {
         container: 'py-18 sm:py-24 lg:py-32',
@@ -30,7 +38,7 @@ export default defineAppConfig({
     },
     pageSection: {
       slots: {
-        container: 'py-18 sm:py-24 lg:py-32'
+        container: 'py-18 sm:py-24 lg:py-32 px-4'
       }
     },
     avatar: {
