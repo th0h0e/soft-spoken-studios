@@ -63,7 +63,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <NuxtLayout name="layout-writing">
+  <NuxtLayout name="default">
     <!-- Mobile ToC only (no nested collapsible) -->
     <template #mobile-toc>
       <UContentToc
