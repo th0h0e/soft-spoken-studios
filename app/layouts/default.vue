@@ -22,7 +22,7 @@ const navOpen = ref(false)
           >
             <UButton
               class="group w-full justify-between"
-              label="Navigation"
+              label="Soft Spoken Studio"
               color="neutral"
               variant="ghost"
               trailing-icon="lucide:chevron-down"

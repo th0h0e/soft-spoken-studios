@@ -49,8 +49,11 @@ const startViewTransition = (event: Event) => {
 }
 
 // Mobile items with color mode toggle appended to last group (no separator)
+// Filter out the "Soft Spoken Studio" label since it's shown in the collapsible trigger
 const mobileItems = computed<NavigationMenuItem[][]>(() => {
-  const items = navLinks.map(group => [...group])
+  const items = navLinks.map(group =>
+    group.filter(item => !(item.type === 'label' && item.label === 'Soft Spoken Studio'))
+  )
   const lastGroupIndex = items.length - 1
   items[lastGroupIndex] = [
     ...items[lastGroupIndex],
