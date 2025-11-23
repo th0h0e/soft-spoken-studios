@@ -16,11 +16,6 @@ export default {
   // TODO: Update with actual cal.com booking link
   bookingLink: 'https://cal.com/placeholder',
   social: {
-    x: {
-      url: 'https://softspokenstudio.com/x',
-      icon: 'i-simple-icons-x',
-      label: 'Soft Spoken Studio on X'
-    },
     instagram: {
       // TODO: Update with actual Instagram profile URL
       url: 'https://instagram.com/softspokenstudio',

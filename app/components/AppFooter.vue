@@ -22,13 +22,16 @@ const { footer } = useAppConfig()
     </template>
 
     <template #right>
-      <template v-if="footer?.links">
-        <UButton
-          v-for="(link, index) of footer?.links"
-          :key="index"
-          v-bind="{ size: 'xs', color: 'neutral', variant: 'ghost', ...link }"
-        />
-      </template>
+      <div class="flex items-center gap-2">
+        <span class="text-muted text-sm">Soft Spoken Studio</span>
+        <template v-if="footer?.links">
+          <UButton
+            v-for="(link, index) of footer?.links"
+            :key="index"
+            v-bind="{ size: 'xs', color: 'neutral', variant: 'ghost', ...link }"
+          />
+        </template>
+      </div>
     </template>
   </UFooter>
 </template>
