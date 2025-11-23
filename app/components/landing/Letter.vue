@@ -59,7 +59,7 @@ const letterParagraphs = computed(() => props.page?.paragraphs || props.paragrap
     <UCard
       v-if="letterHeaderText || letterTitle"
       class="shadow-md"
-      :ui="{ body: 'bg-elevated/30 !px-28 !pt-20 !pb-48' }"
+      :ui="{ body: 'bg-elevated/30 !px-6 sm:!px-12 lg:!px-28 !pt-20 !pb-48' }"
     >
       <!-- Header text -->
       <p class="text-muted mb-8 text-left text-lg">
