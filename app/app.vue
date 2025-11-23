@@ -34,7 +34,7 @@ const [{ data: navigation }, { data: files }] = await Promise.all([
 </script>
 
 <template>
-  <UApp>
+  <UApp :scroll-body="false">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>

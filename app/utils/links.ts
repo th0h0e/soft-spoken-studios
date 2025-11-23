@@ -25,10 +25,6 @@ export const navLinks: NavigationMenuItem[][] = [
     {
       label: 'Gallery',
       to: '/gallery'
-    },
-    {
-      label: 'Test Layout',
-      to: '/test-layout'
     }
   ]
 ]

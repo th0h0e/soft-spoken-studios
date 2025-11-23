@@ -3,6 +3,10 @@
 
 @source "../../../content/**/*";
 
+html, body {
+  overscroll-behavior: none;
+}
+
 @theme static {
   --font-sans: 'Times New Roman', sans-serif;
   --font-serif: 'Times New Roman', serif;
