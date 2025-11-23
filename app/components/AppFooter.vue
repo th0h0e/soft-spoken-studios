@@ -58,7 +58,7 @@ const { footer } = useAppConfig()
 
     <template #right>
       <div class="flex items-center gap-2">
-        <span class="text-muted text-sm">Soft Spoken Studio</span>
+        <span class="text-default">Soft Spoken Studio</span>
         <template v-if="footer?.links">
           <UButton
             v-for="(link, index) of footer?.links"

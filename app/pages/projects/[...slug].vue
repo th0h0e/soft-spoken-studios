@@ -93,7 +93,7 @@ if (page.value.image) {
             </UBadge>
           </div>
         </div>
-        <UPageBody class="max-w-3xl mx-auto">
+        <UPageBody>
           <ContentRenderer
             v-if="page.body"
             :value="page"
