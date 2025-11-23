@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-og-image',
     'motion-v/nuxt',
-    '@nuxtjs/seo'
+    '@nuxtjs/seo',
+    '@nuxt/hints'
   ],
 
   devtools: {
