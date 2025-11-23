@@ -36,7 +36,6 @@ if (page.value.image) {
   })
 }
 
-const projectLink = computed(() => `${window?.location}`)
 </script>
 
 <template>
@@ -106,15 +105,6 @@ const projectLink = computed(() => `${window?.location}`)
             class="my-8"
           />
 
-          <div class="flex items-center justify-end gap-2 text-sm text-muted">
-            <UButton
-              size="sm"
-              variant="link"
-              color="neutral"
-              label="Copy link"
-              @click="copyToClipboard(projectLink, 'Project link copied to clipboard')"
-            />
-          </div>
           <UContentSurround :surround />
         </UPageBody>
       </UPage>
