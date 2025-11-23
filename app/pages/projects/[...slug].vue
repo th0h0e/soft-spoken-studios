@@ -35,7 +35,6 @@ if (page.value.image) {
     fonts: ['Geist:400', 'Geist:600']
   })
 }
-
 </script>
 
 <template>

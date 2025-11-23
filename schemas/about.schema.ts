@@ -18,6 +18,20 @@ export const aboutCollectionSchema = z.object({
   // Images for the about page
   images: z.array(createImageSchema()),
 
+  // Sphere component images
+  sphere: z.object({
+    images: z.array(z.object({
+      id: z.string(),
+      src: z.string(),
+      alt: z.string(),
+      title: z.string().optional(),
+      description: z.string().optional()
+    })),
+    containerSize: z.number().optional(),
+    autoRotate: z.boolean().optional(),
+    autoRotateSpeed: z.number().optional()
+  }).optional(),
+
   // About section (title and description)
   about: createBaseSchema(),
 

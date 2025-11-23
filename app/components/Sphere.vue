@@ -46,7 +46,7 @@
         <div
           v-for="(position, index) in worldPositions"
           v-show="position.isVisible"
-          :key="images[index].id"
+          :key="images[index]?.id ?? index"
           class="absolute cursor-pointer select-none transition-transform duration-200 ease-out"
           :style="{
             width: `${baseImageSize * position.scale}px`,
@@ -59,12 +59,12 @@
           }"
           @mouseenter="hoveredIndex = index"
           @mouseleave="hoveredIndex = null"
-          @click="selectedImage = images[index]; isModalOpen = true"
+          @click="images[index] && (selectedImage = images[index], isModalOpen = true)"
         >
           <div class="relative w-full h-full rounded-full overflow-hidden shadow-lg border-2 border-white/20">
             <img
-              :src="images[index].src"
-              :alt="images[index].alt"
+              :src="images[index]?.src"
+              :alt="images[index]?.alt"
               class="w-full h-full object-cover"
               draggable="false"
               :loading="index < 3 ? 'eager' : 'lazy'"
@@ -100,7 +100,10 @@
             </div>
           </template>
 
-          <template v-if="selectedImage.title || selectedImage.description" #default>
+          <template
+            v-if="selectedImage.title || selectedImage.description"
+            #default
+          >
             <h3
               v-if="selectedImage.title"
               class="text-xl font-bold mb-2"
@@ -356,7 +359,7 @@ const calculateWorldPositions = (): WorldPosition[] => {
 
   for (let i = 0; i < adjustedPositions.length; i++) {
     const pos = adjustedPositions[i]
-    if (!pos.isVisible) continue
+    if (!pos || !pos.isVisible) continue
 
     let adjustedScale = pos.scale
     const imageSize = baseImageSize.value * adjustedScale
@@ -365,7 +368,7 @@ const calculateWorldPositions = (): WorldPosition[] => {
       if (i === j) continue
 
       const other = adjustedPositions[j]
-      if (!other.isVisible) continue
+      if (!other || !other.isVisible) continue
 
       const otherSize = baseImageSize.value * other.scale
 
@@ -473,6 +476,7 @@ const handleMouseUp = () => {
 const handleTouchStart = (e: TouchEvent) => {
   e.preventDefault()
   const touch = e.touches[0]
+  if (!touch) return
   isDragging.value = true
   velocity.value = { x: 0, y: 0 }
   lastMousePos.value = { x: touch.clientX, y: touch.clientY }
@@ -483,6 +487,7 @@ const handleTouchMove = (e: TouchEvent) => {
   e.preventDefault()
 
   const touch = e.touches[0]
+  if (!touch) return
   const deltaX = touch.clientX - lastMousePos.value.x
   const deltaY = touch.clientY - lastMousePos.value.y
 
