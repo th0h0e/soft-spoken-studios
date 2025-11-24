@@ -2,6 +2,7 @@
 const props = defineProps<{
   items?: Array<{
     image: string
+    caption: string
     quote: string
   }>
 }>()
@@ -32,9 +33,14 @@ const gridSpans = computed(() => {
           class="w-full object-cover"
           loading="lazy"
         />
-        <p class="px-0 py-4 text-xs text-muted italic bg-default text-left">
-          "{{ item.quote }}"
-        </p>
+        <div class="px-0 py-4 bg-default text-left">
+          <p class="text-sm text-default">
+            {{ item.caption }}
+          </p>
+          <p class="text-xs text-muted italic mt-1">
+            — {{ item.quote }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
