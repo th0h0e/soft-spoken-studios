@@ -28,6 +28,9 @@ export default defineNuxtConfig({
   },
 
   content: {
+    database: {
+      type: 'sqlite'
+    },
     preview: {
       api: 'https://api.nuxt.studio',
       gitInfo: {
