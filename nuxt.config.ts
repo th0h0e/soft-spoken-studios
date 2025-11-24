@@ -33,15 +33,6 @@ export default defineNuxtConfig({
     }
   },
 
-  routeRules: {
-    '/**': {
-      headers: {
-        'X-Frame-Options': 'ALLOWALL',
-        'Content-Security-Policy': 'frame-ancestors \'self\' https://nuxt.studio https://*.nuxt.studio'
-      }
-    }
-  },
-
   compatibilityDate: '2024-11-01',
 
   nitro: {
