@@ -56,7 +56,7 @@ const mobileItems = computed<NavigationMenuItem[][]>(() => {
   )
   const lastGroupIndex = items.length - 1
   items[lastGroupIndex] = [
-    ...items[lastGroupIndex],
+    ...(items[lastGroupIndex] ?? []),
     {
       label: colorMode.value === 'dark' ? 'Light Mode' : 'Dark Mode',
       onSelect: startViewTransition

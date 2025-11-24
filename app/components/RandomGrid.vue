@@ -21,8 +21,8 @@ const gridSpans = computed(() => {
       v-for="(item, index) in items"
       :key="index"
       :style="{
-        gridColumn: `span ${gridSpans[index].colSpan}`,
-        gridRow: `span ${gridSpans[index].rowSpan}`
+        gridColumn: `span ${gridSpans[index]?.colSpan ?? 1}`,
+        gridRow: `span ${gridSpans[index]?.rowSpan ?? 1}`
       }"
       class="overflow-hidden rounded"
     >
