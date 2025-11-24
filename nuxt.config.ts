@@ -1,4 +1,3 @@
-import { definePerson } from 'nuxt-schema-org/schema'
 import appMeta from './app/app.meta'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -8,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/ui',
     '@nuxt/content',
+    'nuxt-studio',
     '@vueuse/nuxt',
     'nuxt-og-image',
     'motion-v/nuxt',
@@ -28,9 +28,6 @@ export default defineNuxtConfig({
   },
 
   content: {
-    database: {
-      type: 'sqlite'
-    },
     preview: {
       api: 'https://api.nuxt.studio',
       gitInfo: {
@@ -67,9 +64,5 @@ export default defineNuxtConfig({
   robots: {
     allow: '/',
     disallow: ['/admin']
-  },
-
-  schemaOrg: {
-    identity: definePerson(appMeta.author)
   }
 })
