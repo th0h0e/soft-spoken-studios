@@ -29,12 +29,7 @@ export default defineNuxtConfig({
 
   content: {
     preview: {
-      api: 'https://api.nuxt.studio',
-      gitInfo: {
-        name: 'soft-spoken-studios',
-        owner: 'th0h0e',
-        url: 'https://github.com/th0h0e/soft-spoken-studios'
-      }
+      api: 'https://api.nuxt.studio'
     }
   },
 
