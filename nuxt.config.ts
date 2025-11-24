@@ -29,8 +29,16 @@ export default defineNuxtConfig({
 
   content: {
     preview: {
-      api: 'https://api.nuxt.studio',
-      iframeMessagingAllowedOrigins: ['https://nuxt.studio']
+      api: 'https://api.nuxt.studio'
+    }
+  },
+
+  routeRules: {
+    '/**': {
+      headers: {
+        'X-Frame-Options': 'ALLOWALL',
+        'Content-Security-Policy': 'frame-ancestors \'self\' https://nuxt.studio https://*.nuxt.studio'
+      }
     }
   },
 
