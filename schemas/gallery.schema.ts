@@ -8,7 +8,7 @@ export const galleryCollectionSchema = z.object({
   title: z.string(),
   description: z.string(),
   items: z.array(z.object({
-    image: z.string(),
+    image: z.string().editor({ input: 'media' }),
     quote: z.string()
   }))
 })
