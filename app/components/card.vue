@@ -44,7 +44,7 @@ const shareMenuItems = [
     <UPageAnchors
       :links="[
         { label: 'YouTube tutorial', icon: 'lucide:youtube', to: 'https://www.youtube.com/@matteo-beltrame', target: '_blank' },
-        { label: 'All posts', icon: 'lucide:newspaper', to: '/writing/' }
+        { label: 'All posts', icon: 'lucide:newspaper', to: '/writing' }
       ]"
     />
     <USeparator type="dotted" />

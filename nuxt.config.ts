@@ -27,6 +27,17 @@ export default defineNuxtConfig({
     description: appMeta.description
   },
 
+  content: {
+    preview: {
+      api: 'https://api.nuxt.studio',
+      gitInfo: {
+        name: 'soft-spoken-studios',
+        owner: 'th0h0e',
+        url: 'https://github.com/th0h0e/soft-spoken-studios'
+      }
+    }
+  },
+
   compatibilityDate: '2024-11-01',
 
   nitro: {

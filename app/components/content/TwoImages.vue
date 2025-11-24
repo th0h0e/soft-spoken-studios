@@ -36,17 +36,42 @@ defineProps<{
     <USeparator />
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 -mt-8">
       <!-- Loop through images (max 2) -->
-      <NuxtLink
+      <template
         v-for="(image, index) in images?.slice(0, 2)"
         :key="index"
-        :to="image.link || '#'"
-        :class="{ 'pointer-events-none': !image.link }"
       >
-        <div class="group cursor-pointer">
+        <!-- With link -->
+        <NuxtLink
+          v-if="image.link"
+          :to="image.link"
+          :aria-label="image.alt"
+        >
+          <div class="group cursor-pointer">
+            <NuxtImg
+              :src="image.src"
+              :alt="image.alt"
+              class="aspect-4/5 w-full h-auto rounded object-cover transition-opacity group-hover:opacity-90"
+              fit="cover"
+              width="400"
+              height="500"
+            />
+            <h3
+              v-if="image.title"
+              class="mt-4 text-xs text-muted italic"
+            >
+              {{ image.title }}
+            </h3>
+          </div>
+        </NuxtLink>
+        <!-- Without link -->
+        <div
+          v-else
+          class="group"
+        >
           <NuxtImg
             :src="image.src"
             :alt="image.alt"
-            class="aspect-4/5 w-full h-auto rounded object-cover transition-opacity group-hover:opacity-90"
+            class="aspect-4/5 w-full h-auto rounded object-cover"
             fit="cover"
             width="400"
             height="500"
@@ -58,7 +83,7 @@ defineProps<{
             {{ image.title }}
           </h3>
         </div>
-      </NuxtLink>
+      </template>
     </div>
   </UPageSection>
 </template>
