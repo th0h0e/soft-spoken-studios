@@ -39,7 +39,7 @@
                 height="280"
               />
               <div
-                class="absolute inset-0 bg-gradient-to-t from-default/80 via-default/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                class="absolute inset-0 bg-linear-to-t from-default/80 via-default/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
               />
             </div>
           </Motion>

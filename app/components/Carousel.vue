@@ -23,7 +23,7 @@ const items = computed(() => props.images || [])
   >
     <img
       :src="item"
-      class="w-full h-full object-cover aspect-[3/2]"
+      class="w-full h-full object-cover aspect-3/2"
     >
   </UCarousel>
 </template>
