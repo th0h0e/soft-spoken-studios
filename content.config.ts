@@ -310,30 +310,30 @@ export default defineContentConfig({
       schema: aboutCollectionSchema
     }),
 
-    // Letter collection
+    // Letter collection (data component, not a page)
     letter: defineCollection({
-      type: 'page',
+      type: 'data',
       source: 'letter.yml',
       schema: letterCollectionSchema
     }),
 
-    // TwoImages collection
+    // TwoImages collection (data component, not a page)
     twoimages: defineCollection({
-      type: 'page',
+      type: 'data',
       source: 'TwoImages.yml',
       schema: twoImagesCollectionSchema
     }),
 
-    // Gallery collection
+    // Gallery collection (data component, not a page)
     gallery: defineCollection({
-      type: 'page',
+      type: 'data',
       source: 'gallery.yml',
       schema: galleryCollectionSchema
     }),
 
-    // Book cover collection
+    // Book cover collection (data component, not a page)
     book: defineCollection({
-      type: 'page',
+      type: 'data',
       source: 'book.yml',
       schema: bookCollectionSchema
     })
