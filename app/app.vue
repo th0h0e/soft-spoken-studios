@@ -5,6 +5,20 @@ const colorMode = useColorMode()
 
 const color = computed(() => colorMode.value === 'dark' ? '#020618' : 'white')
 
+// Global SEO meta - applied to all pages by default
+useSeoMeta({
+  title: appMeta.name,
+  description: appMeta.description,
+  ogTitle: appMeta.name,
+  ogDescription: appMeta.description,
+  ogImage: appMeta.author.image,
+  ogUrl: appMeta.url,
+  twitterCard: 'summary_large_image',
+  twitterTitle: appMeta.name,
+  twitterDescription: appMeta.description,
+  twitterImage: appMeta.author.image
+})
+
 useHead({
   meta: [
     { key: 'theme-color', name: 'theme-color', content: color }

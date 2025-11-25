@@ -4,17 +4,18 @@ import { mapContentNavigation } from '@nuxt/ui/utils/content'
 import { findPageBreadcrumb } from '@nuxt/content/utils'
 import appMeta from '../../app.meta'
 
-useSeoMeta({
-  title: appMeta.name,
-  description: appMeta.description
-})
-
 const route = useRoute()
 
 const { data: page } = await useAsyncData(route.path, () =>
   queryCollection('projects').path(route.path).first()
 )
 if (!page.value) throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+
+// Override SEO with project-specific data
+useSeoMeta({
+  title: `${page.value.title} - ${appMeta.name}`,
+  description: page.value.description || appMeta.description
+})
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
   queryCollectionItemSurroundings('projects', route.path, {
     fields: ['description']

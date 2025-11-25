@@ -1,11 +1,6 @@
 <script lang="ts" setup>
 import appMeta from '../../app.meta'
 
-useSeoMeta({
-  title: appMeta.name,
-  description: appMeta.description
-})
-
 const route = useRoute()
 const authorEl = ref<HTMLElement | null>()
 
@@ -19,6 +14,12 @@ const formatDate = (dateString: string) => {
 
 const { data } = await useAsyncData(route.path, () => queryCollection('writing').path(route.path).first())
 if (!data.value) throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+
+// Override SEO with blog post-specific data
+useSeoMeta({
+  title: `${data.value.title} - ${appMeta.name}`,
+  description: data.value.description
+})
 
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
   return queryCollectionItemSurroundings('writing', route.path, {
