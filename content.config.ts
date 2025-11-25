@@ -119,7 +119,10 @@ const projectsCollectionSchema = z.object({
 
   year: z.string().optional(),
 
-  gallery: z.array(z.string()).optional()
+  gallery: z.array(z.string()).optional(),
+
+  // Hidden fields - not editable in Studio
+  navigation: z.boolean().default(true).optional().editor({ hidden: true })
 })
 
 /**
@@ -146,7 +149,10 @@ const writingCollectionSchema = z.object({
   }),
 
   // Post author
-  author: createAuthorSchema()
+  author: createAuthorSchema(),
+
+  // Hidden fields - not editable in Studio
+  navigation: z.boolean().default(true).optional().editor({ hidden: true })
 })
 
 /**
