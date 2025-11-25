@@ -11,9 +11,21 @@ minRead: 8
 author:
   name: Soft Spoken Studio
   avatar:
-    src: download.jpg
+    src: /download.jpg
     alt: Soft Spoken Studio
 ---
+
+::two-images
+---
+images:
+  - src: /hero/3334f4a0741954580a818e303927dfcd.jpg
+    title: gg
+    alt: gg
+  - src: /c7cb6ff8df2b3bcc233eda201420fb2a-2.jpg
+    title: ghghg
+    alt: ghghg
+---
+::
 
 Creating successful digital products isn't about following a rigid formula—it's about developing a flexible framework that adapts to the unique challenges of each project. After refining my approach across dozens of products, I've developed a process that consistently delivers results while leaving room for creativity and iteration.
 
@@ -23,34 +35,41 @@ In this article, I'll walk through my end-to-end design process, from initial di
 
 Every great product starts with understanding the problem it's trying to solve. For EcoTrack, our challenge was creating an engaging way for users to track their environmental impact without feeling overwhelmed by guilt or complex data.
 
-::warning{}
-That 3 PM energy crash isn't a mysterious phenomenon – it's your body staging a revolt against the sugar-laden breakfast pastry and the lunch that came from a drive-through window! 
+::warning
+That 3 PM energy crash isn't a mysterious phenomenon – it's your body staging a revolt against the sugar-laden breakfast pastry and the lunch that came from a drive-through window!
 ::
 
 ::card{title="The Whole Foods Cheat Sheet"}
 If it has more than 5 ingredients, if you can't pronounce half of them, or if it promises to 'boost your energy with natural flavors' – it's probably not whole food. Real food doesn't need a marketing department.
 ::
 
-::u-table{:data='[{"Food":"Frozen berries, canned beans, plain yogurt", "Benefit":"Retains most nutrients, minimal additives"}, {"Food":"Whole grain bread, cheese, canned tomatoes", "Benefit":"Still nutritious, convenient options"}, {"Food":"Breakfast cereals, flavored yogurts, deli meats", "Benefit":"Convenience vs. nutrition trade-off"}, {"Food":"Pop-Tarts, instant noodles, soda", "Benefit":"Convenience, long shelf life, questionable nutrition"}]'}
+::u-table
+---
+data:
+  - Food: Frozen berries, canned beans, plain yogurt
+    Benefit: Retains most nutrients, minimal additives
+  - Food: Whole grain bread, cheese, canned tomatoes
+    Benefit: Still nutritious, convenient options
+  - Food: Breakfast cereals, flavored yogurts, deli meats
+    Benefit: Convenience vs. nutrition trade-off
+  - Food: Pop-Tarts, instant noodles, soda
+    Benefit: Convenience, long shelf life, questionable nutrition
+---
 ::
 
-::note{}
+::note
 You are hereby granted permission to eat foods you enjoy without guilt. The stress from guilt might be worse for you than the occasional cookie. Mind = blown! 🍪
 ::
 
-
-::tip{}
+::tip
 Salt your vegetables while cooking them, not after. They'll taste better and you'll use less salt overall. Your taste buds and your blood pressure will thank you! 👨‍🍳
 ::
 
 ::card
-
-
-:iframe{src="https://www.youtube.com/embed/8o7gyUsoAw0?si=6B94hNvDRk0CVh-A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="aspect-ratio: 16/9;"}
+:iframe{allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" frameBorder="0" referrerPolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/8o7gyUsoAw0?si=6B94hNvDRk0CVh-A" style="aspect-ratio: 16/9;" title="YouTube video player"}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. This video demonstrates the visual design process and key decisions that shaped the final product experience.
 ::
-
 
 ### User Interviews
 
@@ -127,7 +146,6 @@ A second round of testing showed significant improvements in usability, but high
 - Users wanted to compare their impact with friends or community averages
 - Weekly summaries were more motivating than daily statistics
 - The onboarding process felt too lengthy
-
 
 ### Visual Language
 
