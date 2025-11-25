@@ -2,24 +2,6 @@ import { defineCollection, defineContentConfig, property } from '@nuxt/content'
 import { z } from 'zod'
 
 /**
- * Nuxt Content Configuration
- * All schemas consolidated in this file for easier maintenance
- */
-
-// ============================================================================
-// COMMON SCHEMA HELPERS
-// ============================================================================
-
-/**
- * Base schema with title and description
- * Used across multiple collections (index, experience, faq, writing)
- */
-const createBaseSchema = () => z.object({
-  title: z.string(),
-  description: z.string()
-})
-
-/**
  * Button/Link schema
  * Used for CTAs, navigation links, etc.
  */
@@ -83,11 +65,16 @@ const indexCollectionSchema = z.object({
   // Testimonials section
   testimonials: z.array(createTestimonialSchema()),
 
-  // Writing/Blog section
-  writing: createBaseSchema(),
+  // Writing/Blog section heading
+  writing: z.object({
+    title: z.string(),
+    description: z.string()
+  }),
 
   // FAQ section
-  faq: createBaseSchema().extend({
+  faq: z.object({
+    title: z.string(),
+    description: z.string(),
     categories: z.array(
       z.object({
         title: z.string().nonempty(),
@@ -102,10 +89,6 @@ const indexCollectionSchema = z.object({
   })
 })
 
-/**
- * Projects/Portfolio collection schema
- * Defines structure for individual project pages
- */
 const projectsCollectionSchema = z.object({
   image: z.string().nonempty().editor({ input: 'media' }),
 
@@ -119,10 +102,8 @@ const projectsCollectionSchema = z.object({
 
   year: z.string().optional(),
 
-  gallery: z.array(z.string()).optional(),
+  gallery: z.array(z.string()).optional()
 
-  // Hidden fields - not editable in Studio
-  navigation: z.boolean().default(true).optional().editor({ hidden: true })
 })
 
 /**
@@ -149,10 +130,7 @@ const writingCollectionSchema = z.object({
   }),
 
   // Post author
-  author: createAuthorSchema(),
-
-  // Hidden fields - not editable in Studio
-  navigation: z.boolean().default(true).optional().editor({ hidden: true })
+  author: createAuthorSchema()
 })
 
 /**
@@ -196,11 +174,16 @@ const aboutCollectionSchema = z.object({
     autoRotateSpeed: z.number().optional()
   }).optional(),
 
-  // About section (title and description)
-  about: createBaseSchema(),
+  // About section heading
+  about: z.object({
+    title: z.string(),
+    description: z.string()
+  }),
 
   // Experience/Work history section
-  experience: createBaseSchema().extend({
+  experience: z.object({
+    title: z.string(),
+    description: z.string(),
     items: z.array(z.object({
       date: z.date(),
       position: z.string(),
