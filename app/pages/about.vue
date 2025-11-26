@@ -26,7 +26,6 @@ useSeoMeta({
       <div class="flex justify-center">
         <Sphere
           :images="page.sphere.images"
-          :container-size="page.sphere.containerSize"
           :auto-rotate="page.sphere.autoRotate"
           :auto-rotate-speed="page.sphere.autoRotateSpeed"
         />

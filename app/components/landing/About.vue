@@ -8,8 +8,8 @@ defineProps<{
 
 <template>
   <UPageSection
-    :title="page.about.title"
-    :description="page.about.description"
+    :title="page.hero.title"
+    :description="page.hero.description"
     :ui="{
       container: '!p-0',
       title: 'text-left text-xl sm:text-xl lg:text-2xl font-medium',

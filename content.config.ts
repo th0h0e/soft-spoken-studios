@@ -1,5 +1,10 @@
 import { defineCollection, defineContentConfig, property, z } from '@nuxt/content'
 
+// ========================================================================
+// REUSABLE SCHEMA HELPERS
+// These are building blocks used across multiple collections
+// ========================================================================
+
 const createImageSchema = () => z.object({
   src: z.string().editor({ input: 'media' }),
   alt: z.string()
@@ -17,14 +22,10 @@ const createTestimonialSchema = () => z.object({
   })
 })
 
-const createAuthorSchema = () => z.object({
-  name: z.string(),
-  description: z.string().optional(),
-  username: z.string().optional(),
-  twitter: z.string().optional(),
-  to: z.string().optional(),
-  avatar: createImageSchema().optional()
-})
+// ========================================================================
+// COLLECTIONS
+// Data sources and routes for the application
+// ========================================================================
 
 export default defineContentConfig({
   collections: {
@@ -77,7 +78,6 @@ export default defineContentConfig({
           images: z.array(z.object({
             src: z.string(),
             alt: z.string(),
-            title: z.string().optional(),
             link: z.string().optional()
           }))
         })
@@ -90,25 +90,19 @@ export default defineContentConfig({
       source: 'about.yml',
       schema: z.object({
         hero: z.object({
-          images: z.array(createImageSchema())
+          images: z.array(createImageSchema()),
+          title: z.string().optional(),
+          description: z.string().optional()
         }),
         content: z.object({}),
         images: z.array(createImageSchema()),
         sphere: z.object({
           images: z.array(z.object({
-            id: z.string(),
             src: z.string(),
-            alt: z.string(),
-            title: z.string().optional(),
-            description: z.string().optional()
+            alt: z.string()
           })),
-          containerSize: z.number().optional(),
           autoRotate: z.boolean().optional(),
           autoRotateSpeed: z.number().optional()
-        }).optional(),
-        about: z.object({
-          title: z.string(),
-          description: z.string()
         }),
         experience: z.object({
           title: z.string(),
@@ -155,20 +149,21 @@ export default defineContentConfig({
           src: property(z.string()).editor({ input: 'media' }),
           alt: z.string()
         }),
-        author: createAuthorSchema()
+        author: z.object({
+          name: z.string(),
+          avatar: createImageSchema().optional()
+        })
       })
     }),
 
-    // Page Headers for /projects and /writing listing pages
-    pages: defineCollection({
+    // Collection Pages - Metadata for /projects and /writing listing pages
+    collectionPages: defineCollection({
       type: 'page',
       source: [
         { include: 'projects.yml' },
         { include: 'writing.yml' }
       ],
-      schema: z.object({
-        // Empty schema - this collection is only used for title/description metadata
-      })
+      schema: z.object({})
     }),
 
     // ========================================================================

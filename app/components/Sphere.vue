@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <UPageSection>
+    <div class="flex justify-center">
     <!-- Loading State -->
     <div
       v-if="!isMounted"
@@ -46,7 +47,7 @@
         <div
           v-for="(position, index) in worldPositions"
           v-show="position.isVisible"
-          :key="images[index]?.id ?? index"
+          :key="images[index]?.alt ?? index"
           class="absolute cursor-pointer select-none transition-transform duration-200 ease-out"
           :style="{
             width: `${baseImageSize * position.scale}px`,
@@ -100,27 +101,16 @@
             </div>
           </template>
 
-          <template
-            v-if="selectedImage.title || selectedImage.description"
-            #default
-          >
-            <h3
-              v-if="selectedImage.title"
-              class="text-xl font-bold mb-2"
-            >
-              {{ selectedImage.title }}
-            </h3>
-            <p
-              v-if="selectedImage.description"
-              class="text-muted"
-            >
-              {{ selectedImage.description }}
+          <template #default>
+            <p class="text-muted">
+              {{ selectedImage.alt }}
             </p>
           </template>
         </UCard>
       </template>
     </UModal>
-  </div>
+    </div>
+  </UPageSection>
 </template>
 
 <script setup lang="ts">
@@ -158,11 +148,8 @@ export interface WorldPosition extends Position3D {
 }
 
 export interface ImageData {
-  id: string
   src: string
   alt: string
-  title?: string
-  description?: string
 }
 
 interface RotationState {

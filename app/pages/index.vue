@@ -27,14 +27,12 @@ if (!page.value) {
       :images="[
         {
           src: '/hero/3334f4a0741954580a818e303927dfcd.jpg',
-          alt: 'Example image 1',
-          title: 'Direct component usage',
+          alt: 'Direct component usage',
           link: '/projects'
         },
         {
           src: '/hero/3334f4a0741954580a818e303927dfcd.jpg',
-          alt: 'Example image 2',
-          title: 'No YAML needed',
+          alt: 'No YAML needed',
           link: '/about'
         }
       ]"

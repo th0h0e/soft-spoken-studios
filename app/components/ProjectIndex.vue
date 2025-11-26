@@ -53,7 +53,12 @@ const { data: projectsList, error, pending } = await useAsyncData(
         v-else-if="projectsList && projectsList.length > 0"
         class="text-muted"
       >
-        <p class="text-xl leading-relaxed">
+        <p
+          class="
+          text-md
+          sm:text-xl
+          leading-relaxed"
+        >
           <template
             v-for="(project, index) in projectsList"
             :key="project.path"

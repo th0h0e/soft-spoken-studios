@@ -15,7 +15,6 @@ const props = defineProps<{
       images?: Array<{
         src: string
         alt: string
-        title?: string
         link?: string
       }>
     }
@@ -23,7 +22,6 @@ const props = defineProps<{
   images?: Array<{
     src: string
     alt: string
-    title?: string
     link?: string
   }>
 }>()
@@ -55,11 +53,8 @@ const displayImages = computed(() => props.page?.twoimages?.images || props.imag
               width="400"
               height="500"
             />
-            <h3
-              v-if="image.title"
-              class="mt-4 text-xs text-muted italic"
-            >
-              {{ image.title }}
+            <h3 class="mt-4 text-xs text-muted italic">
+              {{ image.alt }}
             </h3>
           </div>
         </NuxtLink>
@@ -76,11 +71,8 @@ const displayImages = computed(() => props.page?.twoimages?.images || props.imag
             width="400"
             height="500"
           />
-          <h3
-            v-if="image.title"
-            class="mt-4 text-xs text-muted italic"
-          >
-            {{ image.title }}
+          <h3 class="mt-4 text-xs text-muted italic">
+            {{ image.alt }}
           </h3>
         </div>
       </template>
