@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { ContentNavigationItem } from '@nuxt/content'
 import appMeta from '../../app.meta'
 
 const route = useRoute()
@@ -19,9 +18,6 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
     fields: ['description']
   })
 )
-
-const navigation = inject<Ref<ContentNavigationItem[]>>('navigation', ref([]))
-const projectsNavigation = computed(() => navigation.value.find(item => item.path === '/projects')?.children || [])
 </script>
 
 <template>
