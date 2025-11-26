@@ -23,8 +23,10 @@ defineOgImageComponent('NuxtSeo', {
 
 // Override SEO with blog post-specific data
 useSeoMeta({
-  title: `${data.value.title} - ${appMeta.name}`,
-  description: data.value.description
+  title: data.value?.seo?.title || `${data.value.title} - ${appMeta.name}`,
+  ogTitle: data.value?.seo?.title || `${data.value.title} - ${appMeta.name}`,
+  description: data.value?.seo?.description || data.value.description,
+  ogDescription: data.value?.seo?.description || data.value.description
 })
 
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {

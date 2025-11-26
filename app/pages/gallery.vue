@@ -14,6 +14,13 @@ if (!gallery.value) {
     fatal: true
   })
 }
+
+useSeoMeta({
+  title: gallery.value?.title,
+  ogTitle: gallery.value?.title,
+  description: gallery.value?.description,
+  ogDescription: gallery.value?.description
+})
 </script>
 
 <template>

@@ -10,8 +10,10 @@ if (!page.value) throw createError({ statusCode: 404, statusMessage: 'Page not f
 
 // Override SEO with project-specific data
 useSeoMeta({
-  title: `${page.value.title} - ${appMeta.name}`,
-  description: page.value.description || appMeta.description
+  title: page.value?.seo?.title || `${page.value.title} - ${appMeta.name}`,
+  ogTitle: page.value?.seo?.title || `${page.value.title} - ${appMeta.name}`,
+  description: page.value?.seo?.description || page.value.description || appMeta.description,
+  ogDescription: page.value?.seo?.description || page.value.description || appMeta.description
 })
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
   queryCollectionItemSurroundings('projects', route.path, {
