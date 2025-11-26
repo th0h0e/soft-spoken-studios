@@ -1,5 +1,3 @@
-import appMeta from './app/app.meta'
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -29,12 +27,6 @@ export default defineNuxtConfig({
   nitro: {
     experimental: {
       openAPI: true
-    },
-    prerender: {
-      routes: [
-        '/'
-      ],
-      crawlLinks: true
     }
   },
 
