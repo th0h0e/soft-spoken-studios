@@ -182,10 +182,10 @@ export default defineAppConfig({
     creditsLink: 'https://kontext.site',
     links: [
       {
-        to: 'https://instagram.com/softspokenstudio',
-        icon: 'i-simple-icons-instagram',
+        'to': 'https://instagram.com/softspokenstudio',
+        'icon': 'i-simple-icons-instagram',
         'aria-label': 'Soft Spoken Studio on Instagram',
-        target: '_blank'
+        'target': '_blank'
       }
     ]
   }

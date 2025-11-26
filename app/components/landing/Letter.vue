@@ -12,10 +12,12 @@
 const props = withDefaults(
   defineProps<{
     page?: {
-      headerText?: string
-      title?: string
-      subtitle?: string
-      paragraphs?: Array<{ text: string, italic: boolean }>
+      letter?: {
+        headerText?: string
+        title?: string
+        subtitle?: string
+        paragraphs?: Array<{ text: string, italic: boolean }>
+      }
     }
     headerText?: string
     title?: string
@@ -47,11 +49,11 @@ const props = withDefaults(
   }
 )
 
-// Support both page.* (from letter collection) and direct props
-const letterHeaderText = computed(() => props.page?.headerText || props.headerText)
-const letterTitle = computed(() => props.page?.title || props.title)
-const letterSubtitle = computed(() => props.page?.subtitle || props.subtitle)
-const letterParagraphs = computed(() => props.page?.paragraphs || props.paragraphs)
+// Support both page.letter.* (from index collection) and direct props
+const letterHeaderText = computed(() => props.page?.letter?.headerText || props.headerText)
+const letterTitle = computed(() => props.page?.letter?.title || props.title)
+const letterSubtitle = computed(() => props.page?.letter?.subtitle || props.subtitle)
+const letterParagraphs = computed(() => props.page?.letter?.paragraphs || props.paragraphs)
 </script>
 
 <template>

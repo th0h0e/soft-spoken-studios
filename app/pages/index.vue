@@ -10,18 +10,6 @@ const { data: page } = await useAsyncData('index', () => {
   return queryCollection('index').first()
 })
 
-const { data: letter } = await useAsyncData('letter', () => {
-  return queryCollection('letter').first()
-})
-
-const { data: twoimages } = await useAsyncData('twoimages', () => {
-  return queryCollection('twoimages').first()
-})
-
-const { data: book } = await useAsyncData('book', () => {
-  return queryCollection('book').first()
-})
-
 if (!page.value) {
   throw createError({
     statusCode: 404,
@@ -33,18 +21,9 @@ if (!page.value) {
 
 <template>
   <UPage v-if="page">
-    <Book
-      v-if="book"
-      :page="book"
-    />
-    <LandingLetter
-      v-if="letter"
-      :page="letter"
-    />
-    <TwoImages
-      v-if="twoimages?.twoimages?.images"
-      :images="twoimages.twoimages.images"
-    />
+    <Book :page />
+    <LandingLetter :page />
+    <TwoImages :page />
 
     <TwoImages
       :images="[
@@ -88,7 +67,7 @@ if (!page.value) {
       />
     </UPageSection>
 
-    <LandingFAQ :page="page" />
+    <LandingFAQ :page />
     <ProjectIndex title="Recent Projects" />
   </UPage>
 </template>

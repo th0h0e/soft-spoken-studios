@@ -20,9 +20,37 @@ testimonials:
       avatar:
         src: /90d52ee25f93c3e7deaf019956a6089b.jpg
         alt: Dr. Aisha Johnson
-writing:
-  title: "Latest Articles"
-  description: "Some of my recent thoughts"
+letter:
+  headerText: Intent, SSS Ink.
+  title: SIGNAL TO NOISE RATIOS
+  subtitle: Thomas Hibbert & Sons
+  paragraphs:
+    - text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl metus, accumsan id eros id, vehicula tincidunt nisl. Nulla sit amet urna ut mi tempor euismod. Fusce elementum sapien eget elit sodales fringilla. Pellentesque et nulla vel velit malesuada fermentum vitae vitae justo. Nulla dignissim volutpat interdum. Pellentesque at molestie tortor. Proin magna ante, fermentum ac elementum at, lacinia et arcu.
+      italic: false
+    - text: Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent porttitor venenatis lacus sed mollis. Nulla varius leo nec porta tempus. Nunc orci enim, bibendum in gravida eu, pretium eu purus. Sed vestibulum quam
+      italic: true
+    - text: Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent porttitor venenatis lacus sed mollis. Nulla varius leo nec porta tempus. Nunc orci enim, bibendum in gravida eu, pretium eu purus. Sed vestibulum quam. Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent porttitor venenatis lacus sed mollis. Nulla varius leo nec porta tempus. Nunc orci enim, bibendum in gravida eu, pretium eu purus. Sed vestibulum quam Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent porttitor venenatis lacus sed mollis. Nulla varius leo nec porta tempus. Nunc orci enim, bibendum in gravida eu, pretium eu purus. Sed vestibulum quam. Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent porttitor venenatis lacus sed mollis. Nulla varius leo nec porta tempus. Nunc orci enim, bibendum in gravida eu, pretium eu purus. Sed vestibulum quam. Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent porttitor venenatis lacus sed mollis. Nulla varius leo nec porta tempus. Nunc orci enim, bibendum in gravida eu, pretium eu purus. Sed vestibulum quam. Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent porttitor venenatis lacus sed mollis. Nulla varius leo nec porta tempus. Nunc orci enim, bibendum in gravida eu, pretium eu purus. Sed vestibulum quam.
+      italic: false
+    - text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl metus, accumsan id eros id, vehicula tincidunt nisl. Nulla sit amet urna ut mi tempor euismod. Fusce elementum sapien eget elit sodales fringilla. Pellentesque et nulla vel velit malesuada fermentum vitae vitae justo. Nulla dignissim volutpat interdum. Pellentesque at molestie tortor. Proin magna ante, fermentum ac elementum at, lacinia et arcu.
+      italic: true
+    - text: '- The End'
+book:
+  author: Thomas G. Hibbert
+  title: Soft Spoken Studio
+  subtitle: A Design Journey
+  postscript:
+    - A collection of insights and learnings
+    - from six years in UX/UI design
+    - and front-end development
+  editor: Published by Hibbert & Sons, Boston 2025
+twoimages:
+  links:
+    to: projects
+  images:
+    - src: /90d52ee25f93c3e7deaf019956a6089b.jpg
+      alt: Random Image 1
+    - src: /tumblr_45294e923a08cac6b392791119069ecc_1130aea5_1280.jpg
+      alt: Random Image 2
 faq:
   title: Frequently Asked Questions
   description: Answers to common questions about my process and services.

@@ -53,6 +53,33 @@ export default defineContentConfig({
               )
             })
           )
+        }),
+        letter: z.object({
+          headerText: z.string(),
+          title: z.string(),
+          subtitle: z.string(),
+          paragraphs: z.array(z.object({
+            text: z.string(),
+            italic: z.boolean()
+          }))
+        }),
+        book: z.object({
+          author: z.string(),
+          title: z.string(),
+          subtitle: z.string(),
+          postscript: z.array(z.string()),
+          editor: z.string()
+        }),
+        twoimages: z.object({
+          links: z.object({
+            to: z.string()
+          }).optional(),
+          images: z.array(z.object({
+            src: z.string(),
+            alt: z.string(),
+            title: z.string().optional(),
+            link: z.string().optional()
+          }))
         })
       })
     }),
@@ -149,38 +176,6 @@ export default defineContentConfig({
     // Reusable data components used across pages
     // ========================================================================
 
-    letter: defineCollection({
-      type: 'data',
-      source: 'letter.yml',
-      schema: z.object({
-        headerText: z.string(),
-        title: z.string(),
-        subtitle: z.string(),
-        paragraphs: z.array(z.object({
-          text: z.string(),
-          italic: z.boolean()
-        }))
-      })
-    }),
-
-    twoimages: defineCollection({
-      type: 'data',
-      source: 'TwoImages.yml',
-      schema: z.object({
-        twoimages: z.object({
-          links: z.object({
-            to: z.string()
-          }).optional(),
-          images: z.array(z.object({
-            src: z.string(),
-            alt: z.string(),
-            title: z.string().optional(),
-            link: z.string().optional()
-          }))
-        })
-      })
-    }),
-
     gallery: defineCollection({
       type: 'data',
       source: 'gallery.yml',
@@ -192,18 +187,6 @@ export default defineContentConfig({
           caption: z.string(),
           quote: z.string()
         }))
-      })
-    }),
-
-    book: defineCollection({
-      type: 'data',
-      source: 'book.yml',
-      schema: z.object({
-        author: z.string(),
-        title: z.string(),
-        subtitle: z.string(),
-        postscript: z.array(z.string()),
-        editor: z.string()
       })
     })
   }

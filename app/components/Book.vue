@@ -1,31 +1,39 @@
 <script setup lang="ts">
-import type { BookCollectionItem } from '@nuxt/content'
-
-defineProps<{
-  page: BookCollectionItem
+const props = defineProps<{
+  page: {
+    book?: {
+      author: string
+      title: string
+      subtitle: string
+      postscript: string[]
+      editor: string
+    }
+  }
 }>()
+
+const book = computed(() => props.page.book)
 </script>
 
 <template>
-  <UPageSection>
+  <UPageSection v-if="book">
     <div class="py-8">
       <!-- Author Name -->
       <h1 class="mb-16 text-3xl font-normal">
-        {{ page.author }}
+        {{ book.author }}
       </h1>
 
       <!-- Main Title -->
       <div class="mb-12">
         <h2 class="mb-4 text-6xl leading-tight font-bold">
           <template
-            v-for="(word, index) in page.title.split(' ')"
+            v-for="(word, index) in book.title.split(' ')"
             :key="index"
           >
             {{ word }}<br>
           </template>
         </h2>
         <p class="text-3xl font-normal italic">
-          {{ page.subtitle }}
+          {{ book.subtitle }}
         </p>
       </div>
     </div>
@@ -37,7 +45,7 @@ defineProps<{
       <!-- Postscript -->
       <div class="space-y-2 text-left">
         <p
-          v-for="(line, index) in page.postscript"
+          v-for="(line, index) in book.postscript"
           :key="index"
           class="text-lg text-muted font-normal"
           :class="{ 'tracking-wider': index === 1 }"
@@ -48,7 +56,7 @@ defineProps<{
 
       <!-- Editor -->
       <p class="mt-8 text-left text-lg font-normal">
-        {{ page.editor }}
+        {{ book.editor }}
       </p>
     </div>
   </UPageSection>

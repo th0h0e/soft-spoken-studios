@@ -1,27 +1,25 @@
 <script setup lang="ts">
 /**
- * TwoImages MDC Component
+ * TwoImages Component
  *
  * Displays exactly 2 images in a responsive 2-column grid with 4:5 aspect ratio.
- * Can be used in Markdown files with MDC syntax.
  *
- * Usage in Markdown:
- * ::two-images
- * ---
- * images:
- *   - src: /images/image1.jpg
- *     alt: Image 1 description
- *     title: Optional title
- *     link: /optional-link
- *   - src: /images/image2.jpg
- *     alt: Image 2 description
- *     title: Optional title
- *     link: /optional-link
- * ---
- * ::
+ * Can be used in two ways:
+ * 1. With page object: <TwoImages :page="page" /> (uses page.twoimages.images)
+ * 2. With direct images prop: <TwoImages :images="[...]" />
  */
 
-defineProps<{
+const props = defineProps<{
+  page?: {
+    twoimages?: {
+      images?: Array<{
+        src: string
+        alt: string
+        title?: string
+        link?: string
+      }>
+    }
+  }
   images?: Array<{
     src: string
     alt: string
@@ -29,6 +27,8 @@ defineProps<{
     link?: string
   }>
 }>()
+
+const displayImages = computed(() => props.page?.twoimages?.images || props.images)
 </script>
 
 <template>
@@ -37,7 +37,7 @@ defineProps<{
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 -mt-8">
       <!-- Loop through images (max 2) -->
       <template
-        v-for="(image, index) in images?.slice(0, 2)"
+        v-for="(image, index) in displayImages?.slice(0, 2)"
         :key="index"
       >
         <!-- With link -->
