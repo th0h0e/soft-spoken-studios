@@ -26,135 +26,19 @@ const createAuthorSchema = () => z.object({
   avatar: createImageSchema().optional()
 })
 
-const indexCollectionSchema = z.object({
-  testimonials: z.array(createTestimonialSchema()),
-
-  writing: z.object({
-    title: z.string(),
-    description: z.string()
-  }),
-
-  faq: z.object({
-    title: z.string(),
-    description: z.string(),
-    categories: z.array(
-      z.object({
-        title: z.string().nonempty(),
-        questions: z.array(
-          z.object({
-            label: z.string().nonempty(),
-            content: z.string().nonempty()
-          })
-        )
-      })
-    )
-  })
-})
-
-const projectsCollectionSchema = z.object({
-  image: z.string().nonempty().editor({ input: 'media' }),
-  tags: z.array(z.string()),
-  date: z.date(),
-  client: z.string().optional(),
-  role: z.string().optional(),
-  year: z.string().optional(),
-  gallery: z.array(z.string()).optional()
-})
-
-const writingCollectionSchema = z.object({
+const createBaseSchema = () => z.object({
   title: z.string(),
-  description: z.string(),
-  minRead: z.number(),
-  date: z.date(),
-  image: z.object({
-    src: property(z.string()).editor({ input: 'media' }),
-    alt: z.string()
-  }),
-  author: createAuthorSchema()
+  description: z.string()
 })
 
-const pagesCollectionSchema = z.object({
-  // Empty schema - this collection is only used for title/description metadata
-})
-
-const aboutCollectionSchema = z.object({
-  hero: z.object({
-    images: z.array(createImageSchema())
-  }),
-  content: z.object({}),
-  images: z.array(createImageSchema()),
-  sphere: z.object({
-    images: z.array(z.object({
-      id: z.string(),
-      src: z.string(),
-      alt: z.string(),
-      title: z.string().optional(),
-      description: z.string().optional()
-    })),
-    containerSize: z.number().optional(),
-    autoRotate: z.boolean().optional(),
-    autoRotateSpeed: z.number().optional()
-  }).optional(),
-  about: z.object({
-    title: z.string(),
-    description: z.string()
-  }),
-  experience: z.object({
-    title: z.string(),
-    description: z.string(),
-    items: z.array(z.object({
-      date: z.date(),
-      position: z.string(),
-      company: z.object({
-        name: z.string(),
-        url: z.string(),
-        logo: z.string().editor({ input: 'icon' }),
-        color: z.string()
-      })
-    }))
-  })
-})
-
-const letterCollectionSchema = z.object({
-  headerText: z.string(),
-  title: z.string(),
-  subtitle: z.string(),
-  paragraphs: z.array(z.object({
-    text: z.string(),
-    italic: z.boolean()
-  }))
-})
-
-const twoImagesCollectionSchema = z.object({
-  twoimages: z.object({
-    links: z.object({
-      to: z.string()
-    }).optional(),
-    images: z.array(z.object({
-      src: z.string(),
-      alt: z.string(),
-      title: z.string().optional(),
-      link: z.string().optional()
-    }))
-  })
-})
-
-const galleryCollectionSchema = z.object({
-  title: z.string(),
-  description: z.string(),
-  items: z.array(z.object({
-    image: z.string().editor({ input: 'media' }),
-    caption: z.string(),
-    quote: z.string()
-  }))
-})
-
-const bookCollectionSchema = z.object({
-  author: z.string(),
-  title: z.string(),
-  subtitle: z.string(),
-  postscript: z.array(z.string()),
-  editor: z.string()
+const createButtonSchema = () => z.object({
+  label: z.string(),
+  icon: z.string().optional(),
+  to: z.string().optional(),
+  color: z.enum(['primary', 'neutral', 'success', 'warning', 'error', 'info']).optional(),
+  size: z.enum(['xs', 'sm', 'md', 'lg', 'xl']).optional(),
+  variant: z.enum(['solid', 'outline', 'subtle', 'soft', 'ghost', 'link']).optional(),
+  target: z.enum(['_blank', '_self']).optional()
 })
 
 export default defineContentConfig({
@@ -168,28 +52,103 @@ export default defineContentConfig({
     index: defineCollection({
       type: 'page',
       source: 'index.yml',
-      schema: indexCollectionSchema
+      schema: z.object({
+        testimonials: z.array(createTestimonialSchema()),
+        writing: z.object({
+          title: z.string(),
+          description: z.string()
+        }),
+        faq: z.object({
+          title: z.string(),
+          description: z.string(),
+          categories: z.array(
+            z.object({
+              title: z.string().nonempty(),
+              questions: z.array(
+                z.object({
+                  label: z.string().nonempty(),
+                  content: z.string().nonempty()
+                })
+              )
+            })
+          )
+        })
+      })
     }),
 
     // About Page (/about)
     about: defineCollection({
       type: 'page',
       source: 'about.yml',
-      schema: aboutCollectionSchema
+      schema: z.object({
+        hero: z.object({
+          images: z.array(createImageSchema())
+        }),
+        content: z.object({}),
+        images: z.array(createImageSchema()),
+        sphere: z.object({
+          images: z.array(z.object({
+            id: z.string(),
+            src: z.string(),
+            alt: z.string(),
+            title: z.string().optional(),
+            description: z.string().optional()
+          })),
+          containerSize: z.number().optional(),
+          autoRotate: z.boolean().optional(),
+          autoRotateSpeed: z.number().optional()
+        }).optional(),
+        about: z.object({
+          title: z.string(),
+          description: z.string()
+        }),
+        experience: z.object({
+          title: z.string(),
+          description: z.string(),
+          items: z.array(z.object({
+            date: z.date(),
+            position: z.string(),
+            company: z.object({
+              name: z.string(),
+              url: z.string(),
+              logo: z.string().editor({ input: 'icon' }),
+              color: z.string()
+            })
+          }))
+        })
+      })
     }),
 
     // Individual Project Pages (/projects/[slug])
     projects: defineCollection({
       type: 'page',
       source: 'projects/*.md',
-      schema: projectsCollectionSchema
+      schema: z.object({
+        image: z.string().nonempty().editor({ input: 'media' }),
+        tags: z.array(z.string()),
+        date: z.date(),
+        client: z.string().optional(),
+        role: z.string().optional(),
+        year: z.string().optional(),
+        gallery: z.array(z.string()).optional()
+      })
     }),
 
     // Individual Blog Posts (/writing/[slug])
     writing: defineCollection({
       type: 'page',
       source: 'writing/*.md',
-      schema: writingCollectionSchema
+      schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        minRead: z.number(),
+        date: z.date(),
+        image: z.object({
+          src: property(z.string()).editor({ input: 'media' }),
+          alt: z.string()
+        }),
+        author: createAuthorSchema()
+      })
     }),
 
     // Page Headers for /projects and /writing listing pages
@@ -199,7 +158,9 @@ export default defineContentConfig({
         { include: 'projects.yml' },
         { include: 'writing.yml' }
       ],
-      schema: pagesCollectionSchema
+      schema: z.object({
+        // Empty schema - this collection is only used for title/description metadata
+      })
     }),
 
     // ========================================================================
@@ -210,25 +171,59 @@ export default defineContentConfig({
     letter: defineCollection({
       type: 'data',
       source: 'letter.yml',
-      schema: letterCollectionSchema
+      schema: z.object({
+        headerText: z.string(),
+        title: z.string(),
+        subtitle: z.string(),
+        paragraphs: z.array(z.object({
+          text: z.string(),
+          italic: z.boolean()
+        }))
+      })
     }),
 
     twoimages: defineCollection({
       type: 'data',
       source: 'TwoImages.yml',
-      schema: twoImagesCollectionSchema
+      schema: z.object({
+        twoimages: z.object({
+          links: z.object({
+            to: z.string()
+          }).optional(),
+          images: z.array(z.object({
+            src: z.string(),
+            alt: z.string(),
+            title: z.string().optional(),
+            link: z.string().optional()
+          }))
+        })
+      })
     }),
 
     gallery: defineCollection({
       type: 'data',
       source: 'gallery.yml',
-      schema: galleryCollectionSchema
+      schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        items: z.array(z.object({
+          image: z.string().editor({ input: 'media' }),
+          caption: z.string(),
+          quote: z.string()
+        }))
+      })
     }),
 
     book: defineCollection({
       type: 'data',
       source: 'book.yml',
-      schema: bookCollectionSchema
+      schema: z.object({
+        author: z.string(),
+        title: z.string(),
+        subtitle: z.string(),
+        postscript: z.array(z.string()),
+        editor: z.string()
+      })
     })
   }
 })
