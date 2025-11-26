@@ -1,9 +1,9 @@
 title: About SSS
-description: Learn more about my journey as a Boston-based UX/UI Designer & Front-End Developer, my design philosophy, and my passion for crafting intuitive digital experiences.
+description: Learn more about my journey as a Boston-based Copywriter & Video Producer, my creative philosophy, and my passion for crafting compelling stories that connect and convert.
 hero:
   links:
     - label: Reach Out
-      to: https://github.com/nuxt-ui-templates/portfolio
+      to: 
       color: neutral
   images:
     - src: /hero/3334f4a0741954580a818e303927dfcd.jpg
@@ -25,30 +25,25 @@ hero:
     - src: /hero/3334f4a0741954580a818e303927dfcd.jpg
       alt: Random Image 9
 content: |
-  Hi, I'm **Emma Thompson**, a UX/UI Designer and Front-End Developer based right here in Boston. For the past six years, I've been immersed in the world of digital product creation, focusing on building experiences that are not just functional, but genuinely intuitive and engaging for users.
+  Hi, I'm **Thomas**, a Copywriter and Video Producer based right here in Boston. For the past six years, I've been immersed in the world of brand storytelling, focusing on creating content that doesn't just look good, but genuinely connects with audiences and drives meaningful results.
 
-  My path started at **Boston University**, where I earned a degree in Interactive Design. It was there I discovered my dual passion for the visual language of design and the logical puzzle of code. Since then, I've honed my skills in both areas, believing that the best digital products are born from a deep understanding of both aesthetics and implementation.
+  My path started at **Boston University**, where I earned a degree in Film & Television. It was there I discovered my dual passion for the written word and visual storytelling. Since then, I've honed my skills in both areas, believing that the most powerful content is born from a deep understanding of both narrative craft and production technique.
 
-  ### My Design Philosophy
+  ### Philosophy
 
-  My design philosophy is rooted in **empathy** and **problem-solving**. I believe great design starts with understanding the 'why' – the user's needs, motivations, and pain points. I use research, iterative prototyping (often with tools like Figma), and user testing to ensure the solutions I build are truly effective.
+  My creative philosophy is rooted in **authenticity** and **strategic thinking**. I believe great content starts with understanding the 'why' – the audience's needs, desires, and the story that will resonate with them. I use research, scriptwriting, and iterative editing to ensure the messages I craft are truly effective.
 
-  I strive to create interfaces that feel effortless, where functionality and beauty work hand-in-hand. Whether I'm crafting pixel-perfect UIs or writing clean Vue.js/Nuxt.js code, my focus is always on creating value for the end-user.
+  I strive to create content that feels natural and engaging, where compelling copy and striking visuals work hand-in-hand. Whether I'm writing conversion-focused web copy or directing a brand documentary, my focus is always on creating value that moves people to action.
 
   ### What Drives Me
 
-  What keeps me excited about this work is the constant learning and the challenge of translating complex ideas into simple, elegant solutions. There's nothing more rewarding than seeing a design come to life and knowing it's making someone's digital interaction easier or more enjoyable.
+  What keeps me excited about this work is the constant evolution of storytelling and the challenge of distilling complex ideas into clear, persuasive narratives. There's nothing more rewarding than seeing a campaign launch and knowing it's helping a brand connect with their audience in a meaningful way.
 
-  ### Beyond the Screen
+  ### Beyond the Camera
 
-  When I'm not designing or coding, you might find me exploring Boston's latest coffee shops, hiking nearby trails, or occasionally contributing to open-source projects.
+  When I'm not writing or filming, you might find me exploring Boston's independent cinema scene, capturing street photography, or experimenting with new editing techniques.
 
   Thanks for stopping by. Feel free to browse my [projects](/projects) or [get in touch](/#contact) if you'd like to collaborate!
-images:
-  - src: https://images.unsplash.com/photo-1744877478622-a78c7a3336f6?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-    alt: My coffee workspace
-  - src: https://images.unsplash.com/photo-1744429523595-2c06b8611242?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-    alt: My trip to Tokyo
 sphere:
   containerSize: 400
   autoRotate: true
@@ -129,26 +124,26 @@ sphere:
 about:
   title: About SSS
   description: |
-    As a UX/UI designer and front-end developer with 6 years of experience, I leverage my Boston University Interactive Design degree to craft user-centered digital experiences.
-    My approach blends creative strategy with technical expertise, transforming concepts into functional, purposeful digital products that seamlessly integrate design and technology.
+    As a copywriter and video producer with 6 years of experience, I leverage my Boston University Film & Television degree to craft compelling narratives that drive results.
+    My approach blends strategic messaging with visual storytelling, transforming concepts into impactful content that seamlessly integrates persuasive copy and cinematic production.
 experience:
   title: Projects & Experience
   items:
-    - position: Brand Designer at
+    - position: Lead Copywriter at
       date: 2023 - Present
       company:
         name: Nuxt
         logo: i-simple-icons-nuxtdotjs
         url: https://nuxt.com
         color: '#00DC82'
-    - position: Assets Designer at
+    - position: Senior Content Strategist at
       date: 2022 - 2023
       company:
         name: Raycast
         logo: i-simple-icons-raycast
         url: https://raycast.com
         color: '#FF6363'
-    - position: Senior UX/UI Designer at
+    - position: Video Producer at
       date: 2020 - 2021
       company:
         name: Linear
