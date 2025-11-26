@@ -36,16 +36,6 @@ const indexCollectionSchema = z.object({
     })
   ])).editor({ hidden: true }),
 
-  seo: property(z.intersection(
-    z.object({
-      title: z.string().optional(),
-      description: z.string().optional(),
-      meta: z.array(z.record(z.string(), z.any())).optional(),
-      link: z.array(z.record(z.string(), z.any())).optional()
-    }),
-    z.record(z.string(), z.any())
-  ).optional()).editor({ hidden: true }),
-
   testimonials: z.array(createTestimonialSchema()),
 
   writing: z.object({
@@ -80,16 +70,6 @@ const projectsCollectionSchema = z.object({
     })
   ])).editor({ hidden: true }),
 
-  seo: property(z.intersection(
-    z.object({
-      title: z.string().optional(),
-      description: z.string().optional(),
-      meta: z.array(z.record(z.string(), z.any())).optional(),
-      link: z.array(z.record(z.string(), z.any())).optional()
-    }),
-    z.record(z.string(), z.any())
-  ).optional()).editor({ hidden: true }),
-
   image: z.string().nonempty().editor({ input: 'media' }),
   tags: z.array(z.string()),
   date: z.date(),
@@ -108,16 +88,6 @@ const writingCollectionSchema = z.object({
       icon: z.string()
     })
   ])).editor({ hidden: true }),
-
-  seo: property(z.intersection(
-    z.object({
-      title: z.string().optional(),
-      description: z.string().optional(),
-      meta: z.array(z.record(z.string(), z.any())).optional(),
-      link: z.array(z.record(z.string(), z.any())).optional()
-    }),
-    z.record(z.string(), z.any())
-  ).optional()).editor({ hidden: true }),
 
   title: z.string(),
   description: z.string(),
@@ -138,17 +108,7 @@ const pagesCollectionSchema = z.object({
       description: z.string(),
       icon: z.string()
     })
-  ])).editor({ hidden: true }),
-
-  seo: property(z.intersection(
-    z.object({
-      title: z.string().optional(),
-      description: z.string().optional(),
-      meta: z.array(z.record(z.string(), z.any())).optional(),
-      link: z.array(z.record(z.string(), z.any())).optional()
-    }),
-    z.record(z.string(), z.any())
-  ).optional()).editor({ hidden: true })
+  ])).editor({ hidden: true })
 })
 
 const aboutCollectionSchema = z.object({
@@ -160,16 +120,6 @@ const aboutCollectionSchema = z.object({
       icon: z.string()
     })
   ])).editor({ hidden: true }),
-
-  seo: property(z.intersection(
-    z.object({
-      title: z.string().optional(),
-      description: z.string().optional(),
-      meta: z.array(z.record(z.string(), z.any())).optional(),
-      link: z.array(z.record(z.string(), z.any())).optional()
-    }),
-    z.record(z.string(), z.any())
-  ).optional()).editor({ hidden: true }),
 
   hero: z.object({
     images: z.array(createImageSchema())
