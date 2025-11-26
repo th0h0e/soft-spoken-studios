@@ -1,1 +1,0 @@
-import{y as c,z as l,c as r,d as p,Q as u,n as d,ah as e}from"./Difmdv0f.js";const m={base:"bg-muted"},h={__name:"ProseThead",props:{class:{type:null,required:!1}},setup(s){const a=s,t=c(),o=l(()=>e({extend:e(m),...t.ui?.prose?.thead||{}}));return(n,i)=>(p(),r("thead",{class:d(o.value({class:a.class}))},[u(n.$slots,"default")],2))}};export{h as default};
