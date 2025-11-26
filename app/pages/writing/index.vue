@@ -26,7 +26,6 @@ if (!posts.value) {
     <UPageHeader
       :title="page.title"
       :description="page.description"
-      :links="page.links"
     />
     <div class="py-8">
       <USeparator

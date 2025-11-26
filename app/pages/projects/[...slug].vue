@@ -26,16 +26,6 @@ const navigation = inject<Ref<ContentNavigationItem[]>>('navigation', ref([]))
 const projectsNavigation = computed(() => navigation.value.find(item => item.path === '/projects')?.children || [])
 
 const breadcrumb = computed(() => mapContentNavigation(findPageBreadcrumb(projectsNavigation?.value, page.value?.path)).map(({ icon, ...link }) => link))
-
-if (page.value.image) {
-  defineOgImage({ url: page.value.image })
-} else {
-  defineOgImageComponent('Blog', {
-    headline: breadcrumb.value.map(item => item.label).join(' > ')
-  }, {
-    fonts: ['Geist:400', 'Geist:600']
-  })
-}
 </script>
 
 <template>

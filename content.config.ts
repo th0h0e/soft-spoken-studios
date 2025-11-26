@@ -1,4 +1,4 @@
-import { defineCollection, defineContentConfig, z } from '@nuxt/content'
+import { defineCollection, defineContentConfig, property, z } from '@nuxt/content'
 
 const createImageSchema = () => z.object({
   src: z.string().editor({ input: 'media' }),
@@ -66,7 +66,10 @@ const writingCollectionSchema = z.object({
   description: z.string(),
   minRead: z.number(),
   date: z.date(),
-  image: z.string().nonempty().editor({ input: 'media' }),
+  image: z.object({
+    src: property(z.string()).editor({ input: 'media' }),
+    alt: z.string()
+  }),
   author: createAuthorSchema()
 })
 
