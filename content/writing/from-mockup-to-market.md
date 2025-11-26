@@ -66,7 +66,7 @@ Salt your vegetables while cooking them, not after. They'll taste better and you
 ::
 
 ::card
-:iframe{allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" frameBorder="0" referrerPolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/8o7gyUsoAw0?si=6B94hNvDRk0CVh-A" style="aspect-ratio: 16/9;" title="YouTube video player"}
+:iframe{allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" frame-border="0" referrer-policy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/8o7gyUsoAw0?si=6B94hNvDRk0CVh-A" style="aspect-ratio: 16/9;" title="YouTube video player"}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. This video demonstrates the visual design process and key decisions that shaped the final product experience.
 ::
