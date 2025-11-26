@@ -59,33 +59,33 @@ faq:
       questions:
         - label: What services do you offer?
           content: |
-            I specialize in UX/UI design and front-end development. This includes user research, wireframing, interactive prototyping, creating intuitive user interfaces, building responsive websites and web applications (especially with Vue.js/Nuxt.js), and developing design systems. My goal is to create seamless digital experiences from concept to deployment.
-        - label: What is your design process like?
+            I specialize in copywriting and video production. This includes brand messaging, website copy, email campaigns, scriptwriting, commercial production, documentary-style content, promotional videos, and social media content. My goal is to create compelling narratives that connect with audiences and drive measurable results.
+        - label: What is your creative process like?
           content: |
-            My process is collaborative and iterative, typically involving stages like Discovery & Research, Ideation & Prototyping, User Testing, Visual Design, and close collaboration with development teams during implementation. I tailor the process based on project needs, always focusing on user-centered solutions.
+            My process is collaborative and strategic, typically involving stages like Discovery & Strategy, Scriptwriting & Storyboarding, Production & Filming, Editing & Revisions, and final delivery with performance tracking. I tailor the approach based on project needs, always focusing on authentic storytelling that resonates with your target audience.
         - label: Do you work with startups?
           content: |
-            Absolutely! I enjoy working with startups to help shape their product vision and create user-friendly interfaces from the ground up. I can adapt my process to fit the fast-paced startup environment.
+            Absolutely! I enjoy working with startups to help craft their brand voice and visual identity from the ground up. I can adapt my process to fit the fast-paced startup environment and create content that grows with your brand.
     - title: Pricing & Timelines
       questions:
         - label: How much does a project typically cost?
           content: |
-            Project costs vary based on scope, complexity, features, and timeline. For comprehensive UX/UI design and front-end development projects, my engagements typically start around $5,000, with average projects ranging between $8,000 and $25,000. For consulting or specific design tasks, my day rate is $700.
+            Project costs vary based on scope, deliverables, production complexity, and timeline. For comprehensive brand campaigns with multiple video deliverables and copy packages, projects typically start around $6,000, with average projects ranging between $10,000 and $30,000. For consulting or single-day shoots, my day rate is $800.
         - label: What are your payment terms?
           content: |
-            I generally require a 40% deposit to schedule the project and begin work, with the remaining 60% due upon successful project completion and delivery. I accept payments via bank transfer and Stripe.
+            I generally require a 40% deposit to schedule the project and begin pre-production, with the remaining 60% due upon successful project completion and delivery. I accept payments via bank transfer and Stripe.
         - label: How long does a typical project take?
           content: |
-            Timelines depend heavily on the project's scope and complexity. Smaller projects might take 3-4 weeks, while larger, more involved projects can range from 2 to 4 months. I always provide a detailed timeline estimate after the initial discovery phase.
+            Timelines depend heavily on the project's scope and production requirements. Smaller projects like website copy or short-form video might take 2-3 weeks, while larger campaigns with multiple videos and comprehensive copy can range from 6 to 12 weeks. I always provide a detailed timeline estimate after the initial discovery phase.
         - label: Do you offer retainers or ongoing support?
           content: |
-            Yes, for clients needing ongoing design support, feature development, or maintenance, I offer monthly retainer options tailored to specific needs. Let's discuss if this is something you're interested in.
+            Yes, for clients needing ongoing content creation, monthly campaigns, or continuous social media production, I offer monthly retainer options tailored to specific needs. Let's discuss if this is something you're interested in.
     - title: About Me
       questions:
         - label: What do you enjoy most about your work?
           content: |
-            I love the challenge of solving complex problems through design and technology. It's incredibly rewarding to see people interact with something I've created and find it genuinely useful and easy to navigate. Bridging the gap between user needs and technical possibilities is what truly excites me.
+            I love the challenge of distilling complex ideas into clear, persuasive narratives that move people to action. It's incredibly rewarding to see a campaign launch and watch audiences engage with the story we've crafted. Bringing together the power of words and visuals to create meaningful connections is what truly excites me.
         - label: What are your hobbies outside of work?
           content: |
-            When I'm not designing or coding, I enjoy exploring Boston's neighborhoods, trying out new coffee shops, and hiking in the nearby reservations. I'm also passionate about photography and occasionally contribute to open-source projects.
+            When I'm not writing or filming, I enjoy exploring Boston's independent cinema scene, capturing street photography around the city, and experimenting with new editing techniques. I'm also passionate about documentary filmmaking and occasionally work on passion projects that tell local stories.
 
