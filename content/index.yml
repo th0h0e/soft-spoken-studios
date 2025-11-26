@@ -1,22 +1,22 @@
 testimonials:
-  - quote: "Thomas's copywriting transformed our entire brand voice. He crafted messaging that was both compelling and authentic, helping us connect with our audience on a deeper level. After launching his new website copy and campaign materials, we saw a 45% increase in qualified leads and our email open rates jumped from 18% to 34%."
+  - quote: Thomas's copywriting transformed our entire brand voice. He crafted messaging that was both compelling and authentic, helping us connect with our audience on a deeper level. After launching his new website copy and campaign materials, we saw a 45% increase in qualified leads and our email open rates jumped from 18% to 34%.
     author:
-      name: 'Sarah Chen'
-      description: 'Product Director at Bloom Finance'
+      name: Sarah Chen
+      description: Product Director at Bloom Finance
       avatar:
         src: /90d52ee25f93c3e7deaf019956a6089b.jpg
         alt: Sarah Chen
-  - quote: "Working with Thomas was a game-changer for our startup. His video production skills brought our story to life in ways we never imagined, and his scriptwriting made complex ideas feel accessible. The launch video he produced became our most-shared piece of content, and the sales page copy he wrote converted at 3x our previous rate."
+  - quote: Working with Thomas was a game-changer for our startup. His video production skills brought our story to life in ways we never imagined, and his scriptwriting made complex ideas feel accessible. The launch video he produced became our most-shared piece of content, and the sales page copy he wrote converted at 3x our previous rate.
     author:
-      name: 'Michael Rodriguez'
-      description: 'Co-founder of Wavelength Music'
+      name: Michael Rodriguez
+      description: Co-founder of Wavelength Music
       avatar:
         src: /90d52ee25f93c3e7deaf019956a6089b.jpg
         alt: Michael Rodriguez
-  - quote: "Thomas has a rare talent for distilling technical information into clear, persuasive messaging. His documentary-style videos for our EcoTrack campaign didn't just look professional—they told our story with emotional resonance while maintaining scientific accuracy. His combination of strategic copywriting and visual storytelling is exactly what modern brands need."
+  - quote: Thomas has a rare talent for distilling technical information into clear, persuasive messaging. His documentary-style videos for our EcoTrack campaign didn't just look professional—they told our story with emotional resonance while maintaining scientific accuracy. His combination of strategic copywriting and visual storytelling is exactly what modern brands need.
     author:
-      name: 'Dr. Aisha Johnson'
-      description: 'Chief Innovation Officer at GreenTech Solutions'
+      name: Dr. Aisha Johnson
+      description: Chief Innovation Officer at GreenTech Solutions
       avatar:
         src: /90d52ee25f93c3e7deaf019956a6089b.jpg
         alt: Dr. Aisha Johnson
@@ -37,11 +37,11 @@ letter:
 book:
   author: Thomas G. Hibbert
   title: Soft Spoken Studio
-  subtitle: A Design Journey
+  subtitle: Word on hese Streets
   postscript:
-    - A collection of insights and learnings
-    - from six years in UX/UI design
-    - and front-end development
+    - Six years without telling on em
+    - Copywriting & Video Production
+    - Seesh with No Accent
   editor: Published by Hibbert & Sons, Boston 2025
 twoimages:
   links:
@@ -88,4 +88,3 @@ faq:
         - label: What are your hobbies outside of work?
           content: |
             When I'm not writing or filming, I enjoy exploring Boston's independent cinema scene, capturing street photography around the city, and experimenting with new editing techniques. I'm also passionate about documentary filmmaking and occasionally work on passion projects that tell local stories.
-
