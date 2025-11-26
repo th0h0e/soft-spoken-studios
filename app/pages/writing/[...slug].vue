@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 const route = useRoute()
-const appConfig = useAppConfig()
 const authorEl = ref<HTMLElement | null>()
 
 const formatDate = (dateString: string) => {
@@ -18,14 +17,6 @@ defineOgImageComponent('NuxtSeo', {
   title: data.value.title,
   description: data.value.description,
   colorMode: 'dark'
-})
-
-// Override SEO with blog post-specific data
-useSeoMeta({
-  title: data.value?.seo?.title || `${data.value.title} - ${appConfig.meta.name}`,
-  ogTitle: data.value?.seo?.title || `${data.value.title} - ${appConfig.meta.name}`,
-  description: data.value?.seo?.description || data.value.description,
-  ogDescription: data.value?.seo?.description || data.value.description
 })
 
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
