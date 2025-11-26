@@ -27,14 +27,6 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
   })
 })
 
-if (data.value.image) {
-  defineOgImage({ url: data.value.image.src })
-} else {
-  defineOgImageComponent('Blog', {
-    headline: data.value?.title
-  })
-}
-
 onMounted(() => {
   const contentEl = document.getElementById('content')
   authorEl.value = contentEl?.querySelector('#author-about')

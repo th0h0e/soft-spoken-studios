@@ -3,7 +3,6 @@ const colorMode = useColorMode()
 
 const color = computed(() => colorMode.value === 'dark' ? '#020618' : 'white')
 
-// Global head settings - SEO is handled per-page
 useHead({
   meta: [
     { key: 'theme-color', name: 'theme-color', content: color }

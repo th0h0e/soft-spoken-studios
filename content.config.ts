@@ -1,33 +1,10 @@
-import { defineCollection, defineContentConfig, property } from '@nuxt/content'
-import { z } from 'zod'
+import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
-/**
- * Button/Link schema
- * Used for CTAs, navigation links, etc.
- */
-const createButtonSchema = () => z.object({
-  label: z.string(),
-  icon: z.string().optional(),
-  to: z.string().optional(),
-  color: z.enum(['primary', 'neutral', 'success', 'warning', 'error', 'info']).optional(),
-  size: z.enum(['xs', 'sm', 'md', 'lg', 'xl']).optional(),
-  variant: z.enum(['solid', 'outline', 'subtle', 'soft', 'ghost', 'link']).optional(),
-  target: z.enum(['_blank', '_self']).optional()
-})
-
-/**
- * Image schema
- * Used for all image fields across collections
- */
 const createImageSchema = () => z.object({
   src: z.string().editor({ input: 'media' }),
   alt: z.string()
 })
 
-/**
- * Testimonial schema
- * Used in the index/homepage collection
- */
 const createTestimonialSchema = () => z.object({
   quote: z.string(),
   author: z.object({
@@ -40,10 +17,6 @@ const createTestimonialSchema = () => z.object({
   })
 })
 
-/**
- * Author schema for blog posts
- * Used specifically in writing/blog collection
- */
 const createAuthorSchema = () => z.object({
   name: z.string(),
   description: z.string().optional(),
@@ -53,25 +26,14 @@ const createAuthorSchema = () => z.object({
   avatar: createImageSchema().optional()
 })
 
-// ============================================================================
-// COLLECTION SCHEMAS
-// ============================================================================
-
-/**
- * Homepage/Index collection schema
- * Contains all sections for the landing page
- */
 const indexCollectionSchema = z.object({
-  // Testimonials section
   testimonials: z.array(createTestimonialSchema()),
 
-  // Writing/Blog section heading
   writing: z.object({
     title: z.string(),
     description: z.string()
   }),
 
-  // FAQ section
   faq: z.object({
     title: z.string(),
     description: z.string(),
@@ -91,76 +53,33 @@ const indexCollectionSchema = z.object({
 
 const projectsCollectionSchema = z.object({
   image: z.string().nonempty().editor({ input: 'media' }),
-
   tags: z.array(z.string()),
-
   date: z.date(),
-
   client: z.string().optional(),
-
   role: z.string().optional(),
-
   year: z.string().optional(),
-
   gallery: z.array(z.string()).optional()
-
 })
 
-/**
- * Writing/Blog collection schema
- * Defines structure for individual blog posts
- */
 const writingCollectionSchema = z.object({
-  // Title of the post
   title: z.string(),
-
-  // Description/summary of the post
   description: z.string(),
-
-  // Estimated reading time in minutes
   minRead: z.number(),
-
-  // Publication date
   date: z.date(),
-
-  // Featured image
-  image: z.object({
-    src: property(z.string()).editor({ input: 'media' }),
-    alt: z.string()
-  }),
-
-  // Post author
+  image: z.string().nonempty().editor({ input: 'media' }),
   author: createAuthorSchema()
 })
 
-/**
- * Pages collection schema
- * Used for general pages like projects.yml and writing.yml
- * Defines navigation links and CTAs
- */
 const pagesCollectionSchema = z.object({
-  // Array of button/link elements
-  links: z.array(createButtonSchema())
+  // Empty schema - this collection is only used for title/description metadata
 })
 
-/**
- * About page collection schema
- * Defines structure for the about page content
- */
 const aboutCollectionSchema = z.object({
-  // Hero section
   hero: z.object({
-    links: z.array(createButtonSchema()),
     images: z.array(createImageSchema())
   }),
-
-  // Content object (can be extended later with specific fields)
   content: z.object({}),
-
-  // Images for the about page
   images: z.array(createImageSchema()),
-
-  // Sphere component images
   sphere: z.object({
     images: z.array(z.object({
       id: z.string(),
@@ -173,14 +92,10 @@ const aboutCollectionSchema = z.object({
     autoRotate: z.boolean().optional(),
     autoRotateSpeed: z.number().optional()
   }).optional(),
-
-  // About section heading
   about: z.object({
     title: z.string(),
     description: z.string()
   }),
-
-  // Experience/Work history section
   experience: z.object({
     title: z.string(),
     description: z.string(),
@@ -197,10 +112,6 @@ const aboutCollectionSchema = z.object({
   })
 })
 
-/**
- * Letter collection schema
- * Used for the Letter component with header, title, subtitle, and paragraphs
- */
 const letterCollectionSchema = z.object({
   headerText: z.string(),
   title: z.string(),
@@ -211,14 +122,6 @@ const letterCollectionSchema = z.object({
   }))
 })
 
-/**
- * TwoImages collection schema
- * Used for the TwoImages component displaying 2 images in a responsive grid
- *
- * Note: The component expects page.images.image1 and page.images.image2,
- * but the YAML currently has a different structure. You may need to update
- * either the component or the YAML to match.
- */
 const twoImagesCollectionSchema = z.object({
   twoimages: z.object({
     links: z.object({
@@ -233,10 +136,6 @@ const twoImagesCollectionSchema = z.object({
   })
 })
 
-/**
- * Gallery collection schema
- * Used for the gallery page displaying images with quotes
- */
 const galleryCollectionSchema = z.object({
   title: z.string(),
   description: z.string(),
@@ -247,17 +146,6 @@ const galleryCollectionSchema = z.object({
   }))
 })
 
-/**
- * Book Cover collection schema
- * Used for the Book component displaying book cover-style layouts
- *
- * Structure:
- * - author: Author name displayed at the top
- * - title: Single string that will be split by words for display
- * - subtitle: Italic subtitle text
- * - postscript: Array of text lines shown after divider
- * - editor: Editor/publisher information
- */
 const bookCollectionSchema = z.object({
   author: z.string(),
   title: z.string(),
@@ -266,34 +154,42 @@ const bookCollectionSchema = z.object({
   editor: z.string()
 })
 
-// ============================================================================
-// CONTENT CONFIGURATION
-// ============================================================================
-
 export default defineContentConfig({
   collections: {
-    // Homepage/Landing page collection
+    // ========================================================================
+    // PAGE COLLECTIONS (type: 'page')
+    // These represent actual pages/routes in the application
+    // ========================================================================
+
+    // Homepage (/) - Main landing page
     index: defineCollection({
       type: 'page',
       source: 'index.yml',
       schema: indexCollectionSchema
     }),
 
-    // Projects/Portfolio collection
+    // About Page (/about)
+    about: defineCollection({
+      type: 'page',
+      source: 'about.yml',
+      schema: aboutCollectionSchema
+    }),
+
+    // Individual Project Pages (/projects/[slug])
     projects: defineCollection({
       type: 'page',
       source: 'projects/*.md',
       schema: projectsCollectionSchema
     }),
 
-    // Writing/Blog collection
+    // Individual Blog Posts (/writing/[slug])
     writing: defineCollection({
       type: 'page',
       source: 'writing/*.md',
       schema: writingCollectionSchema
     }),
 
-    // General pages collection (projects.yml, writing.yml)
+    // Page Headers for /projects and /writing listing pages
     pages: defineCollection({
       type: 'page',
       source: [
@@ -303,35 +199,29 @@ export default defineContentConfig({
       schema: pagesCollectionSchema
     }),
 
-    // About page collection
-    about: defineCollection({
-      type: 'page',
-      source: 'about.yml',
-      schema: aboutCollectionSchema
-    }),
+    // ========================================================================
+    // DATA COLLECTIONS (type: 'data')
+    // Reusable data components used across pages
+    // ========================================================================
 
-    // Letter collection (data component, not a page)
     letter: defineCollection({
       type: 'data',
       source: 'letter.yml',
       schema: letterCollectionSchema
     }),
 
-    // TwoImages collection (data component, not a page)
     twoimages: defineCollection({
       type: 'data',
       source: 'TwoImages.yml',
       schema: twoImagesCollectionSchema
     }),
 
-    // Gallery collection (data component, not a page)
     gallery: defineCollection({
       type: 'data',
       source: 'gallery.yml',
       schema: galleryCollectionSchema
     }),
 
-    // Book cover collection (data component, not a page)
     book: defineCollection({
       type: 'data',
       source: 'book.yml',
