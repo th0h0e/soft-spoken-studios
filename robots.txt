@@ -1,7 +1,0 @@
-# START nuxt-robots (indexable)
-User-agent: *
-Allow: /
-Disallow: /admin
-
-Sitemap: https://softspokenstudio.com/sitemap.xml
-# END nuxt-robots
