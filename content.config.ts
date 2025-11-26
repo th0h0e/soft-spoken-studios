@@ -27,6 +27,25 @@ const createAuthorSchema = () => z.object({
 })
 
 const indexCollectionSchema = z.object({
+  navigation: property(z.union([
+    z.boolean(),
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      icon: z.string()
+    })
+  ])).editor({ hidden: true }),
+
+  seo: property(z.intersection(
+    z.object({
+      title: z.string().optional(),
+      description: z.string().optional(),
+      meta: z.array(z.record(z.string(), z.any())).optional(),
+      link: z.array(z.record(z.string(), z.any())).optional()
+    }),
+    z.record(z.string(), z.any())
+  ).optional()).editor({ hidden: true }),
+
   testimonials: z.array(createTestimonialSchema()),
 
   writing: z.object({
@@ -52,6 +71,25 @@ const indexCollectionSchema = z.object({
 })
 
 const projectsCollectionSchema = z.object({
+  navigation: property(z.union([
+    z.boolean(),
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      icon: z.string()
+    })
+  ])).editor({ hidden: true }),
+
+  seo: property(z.intersection(
+    z.object({
+      title: z.string().optional(),
+      description: z.string().optional(),
+      meta: z.array(z.record(z.string(), z.any())).optional(),
+      link: z.array(z.record(z.string(), z.any())).optional()
+    }),
+    z.record(z.string(), z.any())
+  ).optional()).editor({ hidden: true }),
+
   image: z.string().nonempty().editor({ input: 'media' }),
   tags: z.array(z.string()),
   date: z.date(),
@@ -62,6 +100,25 @@ const projectsCollectionSchema = z.object({
 })
 
 const writingCollectionSchema = z.object({
+  navigation: property(z.union([
+    z.boolean(),
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      icon: z.string()
+    })
+  ])).editor({ hidden: true }),
+
+  seo: property(z.intersection(
+    z.object({
+      title: z.string().optional(),
+      description: z.string().optional(),
+      meta: z.array(z.record(z.string(), z.any())).optional(),
+      link: z.array(z.record(z.string(), z.any())).optional()
+    }),
+    z.record(z.string(), z.any())
+  ).optional()).editor({ hidden: true }),
+
   title: z.string(),
   description: z.string(),
   minRead: z.number(),
@@ -74,10 +131,46 @@ const writingCollectionSchema = z.object({
 })
 
 const pagesCollectionSchema = z.object({
-  // Empty schema - this collection is only used for title/description metadata
+  navigation: property(z.union([
+    z.boolean(),
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      icon: z.string()
+    })
+  ])).editor({ hidden: true }),
+
+  seo: property(z.intersection(
+    z.object({
+      title: z.string().optional(),
+      description: z.string().optional(),
+      meta: z.array(z.record(z.string(), z.any())).optional(),
+      link: z.array(z.record(z.string(), z.any())).optional()
+    }),
+    z.record(z.string(), z.any())
+  ).optional()).editor({ hidden: true })
 })
 
 const aboutCollectionSchema = z.object({
+  navigation: property(z.union([
+    z.boolean(),
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      icon: z.string()
+    })
+  ])).editor({ hidden: true }),
+
+  seo: property(z.intersection(
+    z.object({
+      title: z.string().optional(),
+      description: z.string().optional(),
+      meta: z.array(z.record(z.string(), z.any())).optional(),
+      link: z.array(z.record(z.string(), z.any())).optional()
+    }),
+    z.record(z.string(), z.any())
+  ).optional()).editor({ hidden: true }),
+
   hero: z.object({
     images: z.array(createImageSchema())
   }),
