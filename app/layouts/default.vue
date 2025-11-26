@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const appConfig = useAppConfig()
 const navOpen = ref(false)
 </script>
 
@@ -56,7 +55,7 @@ const navOpen = ref(false)
           <Card />
 
           <template #footer>
-            <Copy :content="appConfig.meta.contactEmail" />
+            <Copy content="info@softspokenstudio.com" />
           </template>
         </UCard>
       </aside>
