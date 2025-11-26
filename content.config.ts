@@ -27,15 +27,6 @@ const createAuthorSchema = () => z.object({
 })
 
 const indexCollectionSchema = z.object({
-  navigation: property(z.union([
-    z.boolean(),
-    z.object({
-      title: z.string(),
-      description: z.string(),
-      icon: z.string()
-    })
-  ])).editor({ hidden: true }),
-
   testimonials: z.array(createTestimonialSchema()),
 
   writing: z.object({
@@ -61,15 +52,6 @@ const indexCollectionSchema = z.object({
 })
 
 const projectsCollectionSchema = z.object({
-  navigation: property(z.union([
-    z.boolean(),
-    z.object({
-      title: z.string(),
-      description: z.string(),
-      icon: z.string()
-    })
-  ])).editor({ hidden: true }),
-
   image: z.string().nonempty().editor({ input: 'media' }),
   tags: z.array(z.string()),
   date: z.date(),
@@ -80,15 +62,6 @@ const projectsCollectionSchema = z.object({
 })
 
 const writingCollectionSchema = z.object({
-  navigation: property(z.union([
-    z.boolean(),
-    z.object({
-      title: z.string(),
-      description: z.string(),
-      icon: z.string()
-    })
-  ])).editor({ hidden: true }),
-
   title: z.string(),
   description: z.string(),
   minRead: z.number(),
@@ -101,26 +74,10 @@ const writingCollectionSchema = z.object({
 })
 
 const pagesCollectionSchema = z.object({
-  navigation: property(z.union([
-    z.boolean(),
-    z.object({
-      title: z.string(),
-      description: z.string(),
-      icon: z.string()
-    })
-  ])).editor({ hidden: true })
+  // Empty schema - this collection is only used for title/description metadata
 })
 
 const aboutCollectionSchema = z.object({
-  navigation: property(z.union([
-    z.boolean(),
-    z.object({
-      title: z.string(),
-      description: z.string(),
-      icon: z.string()
-    })
-  ])).editor({ hidden: true }),
-
   hero: z.object({
     images: z.array(createImageSchema())
   }),
