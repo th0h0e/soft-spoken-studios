@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@vueuse/nuxt',
     'motion-v/nuxt',
-    '@nuxt/hints'
+    '@nuxt/hints',
+    'nuxt-og-image'
   ],
 
   devtools: {

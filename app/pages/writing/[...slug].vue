@@ -15,6 +15,12 @@ const formatDate = (dateString: string) => {
 const { data } = await useAsyncData(route.path, () => queryCollection('writing').path(route.path).first())
 if (!data.value) throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 
+defineOgImageComponent('NuxtSeo', {
+  title: data.value.title,
+  description: data.value.description,
+  colorMode: 'dark'
+})
+
 // Override SEO with blog post-specific data
 useSeoMeta({
   title: `${data.value.title} - ${appMeta.name}`,

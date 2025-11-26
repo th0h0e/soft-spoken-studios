@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import type { ContentNavigationItem } from '@nuxt/content'
-import { mapContentNavigation } from '@nuxt/ui/utils/content'
-import { findPageBreadcrumb } from '@nuxt/content/utils'
 import appMeta from '../../app.meta'
 
 const route = useRoute()
@@ -24,8 +22,6 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
 
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation', ref([]))
 const projectsNavigation = computed(() => navigation.value.find(item => item.path === '/projects')?.children || [])
-
-const breadcrumb = computed(() => mapContentNavigation(findPageBreadcrumb(projectsNavigation?.value, page.value?.path)).map(({ icon, ...link }) => link))
 </script>
 
 <template>
