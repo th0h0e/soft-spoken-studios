@@ -24,8 +24,8 @@ Beyond conversion metrics, I discovered that color significantly affected how us
 
 ::one-image
 ---
-src: /crosscurrent.webp
 alt: Color progression in loading animations
+src: /crosscurrent.webp
 title: Softer color transitions improve perceived performance
 ---
 ::
