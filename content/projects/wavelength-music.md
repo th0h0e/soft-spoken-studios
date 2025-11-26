@@ -1,9 +1,14 @@
 ---
 title: Wavelength Music Streaming Service
-description: Designed and developed the user interface for an indie music streaming service, focusing on discovery features and creating a unique, engaging listening experience using custom audio visualizations.
+description: Designed and developed the user interface for an indie music
+  streaming service, focusing on discovery features and creating a unique,
+  engaging listening experience using custom audio visualizations.
 image: /tumblr_5d36f28f4d2d7f414da50f8e53179f05_ad7b99ee_1280.jpg
 date: 2023-09-20
-tags: ["UI Design", "Front-End Dev", "Animation"]
+tags:
+  - UI Design
+  - Front-End Dev
+  - Animation
 client: Wavelength Music
 role: UI Designer & Front-end Developer
 year: "2023"
@@ -26,6 +31,7 @@ Wavelength Music wanted to stand out in the crowded music streaming market by fo
 In a market dominated by Spotify and Apple Music, how do you create a streaming service that feels different and attracts music enthusiasts?
 
 Key challenges:
+
 - Differentiate from established players without losing familiar UX patterns
 - Make music discovery exciting rather than overwhelming
 - Give indie artists more visibility
@@ -40,20 +46,25 @@ I wanted every interaction to feel like discovering hidden gems in a record stor
 ## Key Features
 
 ### Mood-Based Discovery
+
 Instead of generic playlists, users select a mood visualization and the app creates a journey through similar-feeling songs.
 
 ### Audio Visualizations
+
 Custom-built WebGL visualizations that react to the music in real-time, giving each song a unique visual identity.
 
 ### Artist Stories
+
 Short-form content from artists about their creative process, displayed alongside their music.
 
 ### Listening Parties
+
 Live listening sessions where users can discover music together and chat in real-time.
 
 ## Design System
 
 Created a dark-first interface with:
+
 - **Vibrant accent colors** that adapt to album artwork
 - **Fluid animations** that feel musical and organic
 - **Typography** optimized for readability in low-light conditions
@@ -62,12 +73,14 @@ Created a dark-first interface with:
 ## Technical Implementation
 
 ### Front-end Stack
+
 - Next.js for server-side rendering and optimal performance
 - Three.js for 3D audio visualizations
 - Framer Motion for smooth, physics-based animations
 - Web Audio API for real-time audio analysis
 
 ### Performance Optimizations
+
 - Lazy loading of visualizations to prevent performance issues
 - Service workers for offline playback
 - Optimized album art delivery with progressive loading
@@ -76,6 +89,7 @@ Created a dark-first interface with:
 ## Results
 
 Launch metrics exceeded expectations:
+
 - **25,000 users** in first month (10x target)
 - **45-minute average session length** (industry average: 25 minutes)
 - **Featured in** TechCrunch, The Verge, and Product Hunt #1 Product of the Day
@@ -97,6 +111,7 @@ Launch metrics exceeded expectations:
 ## Future Iterations
 
 Based on user feedback, we're planning:
+
 - Collaborative playlists with real-time editing
 - AI-powered music recommendations based on listening patterns
 - Integration with live concert discovery
