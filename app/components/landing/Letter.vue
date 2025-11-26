@@ -61,7 +61,7 @@ const letterParagraphs = computed(() => props.page?.letter?.paragraphs || props.
     <UCard
       v-if="letterHeaderText || letterTitle"
       class="shadow-md"
-      :ui="{ body: 'bg-elevated/30 !px-6 sm:!px-12 lg:!px-32 !pt-20 !pb-48' }"
+      :ui="{ body: 'bg-elevated/30 !px-6 sm:!px-12 lg:!px-32 !pt-8 sm:!pt-20 !pb-24 sm:!pb-48' }"
     >
       <!-- Header text -->
       <p class="text-muted mb-8 text-left text-lg">
@@ -85,7 +85,7 @@ const letterParagraphs = computed(() => props.page?.letter?.paragraphs || props.
         <p
           v-for="(paragraph, index) in letterParagraphs"
           :key="index"
-          :class="['text-justify', paragraph.italic && 'pl-8 italic']"
+          :class="['text-sm sm:text-base text-justify', paragraph.italic && 'px-8 italic']"
         >
           {{ paragraph.text }}
         </p>
