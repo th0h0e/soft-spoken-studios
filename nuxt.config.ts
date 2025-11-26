@@ -18,12 +18,6 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
-  site: {
-    name: appMeta.name,
-    url: appMeta.url,
-    description: appMeta.description
-  },
-
   content: {
     preview: {
       api: 'https://api.nuxt.studio'
@@ -51,10 +45,5 @@ export default defineNuxtConfig({
         braceStyle: '1tbs'
       }
     }
-  },
-
-  robots: {
-    allow: '/',
-    disallow: ['/admin']
   }
 })
