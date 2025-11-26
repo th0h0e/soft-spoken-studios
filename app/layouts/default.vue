@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import appMeta from '../app.meta'
-
+const appConfig = useAppConfig()
 const navOpen = ref(false)
 </script>
 
@@ -57,7 +56,7 @@ const navOpen = ref(false)
           <Card />
 
           <template #footer>
-            <Copy :content="appMeta.contactEmail" />
+            <Copy :content="appConfig.meta.contactEmail" />
           </template>
         </UCard>
       </aside>

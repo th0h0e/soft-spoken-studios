@@ -1,14 +1,36 @@
-import appMeta from './app.meta'
-
 export default defineAppConfig({
+  meta: {
+    id: 'soft_spoken_studio',
+    name: 'Soft Spoken Studio',
+    description: 'Copywriting and video production agency specializing in compelling brand storytelling.',
+    author: {
+      name: 'Thomas Hibbert',
+      url: 'https://softspokenstudio.com',
+      image: '/sss.png',
+      email: 'info@softspokenstudio.com',
+      description: 'Founder and Creative Director at Soft Spoken Studio',
+      jobTitle: 'Creative Director'
+    },
+    url: 'https://softspokenstudio.com',
+    icon: '/favicon.ico',
+    contactEmail: 'info@softspokenstudio.com',
+    bookingLink: 'https://cal.com/placeholder',
+    social: {
+      instagram: {
+        url: 'https://instagram.com/softspokenstudio',
+        icon: 'i-simple-icons-instagram',
+        label: 'Soft Spoken Studio on Instagram'
+      }
+    }
+  },
   global: {
     picture: {
       dark: 'sss.png',
       light: 'sss-black.png',
       alt: 'Soft Spoken Studio'
     },
-    meetingLink: appMeta.bookingLink,
-    email: appMeta.contactEmail,
+    meetingLink: 'https://cal.com/placeholder',
+    email: 'info@softspokenstudio.com',
     available: true
   },
   ui: {
@@ -158,11 +180,13 @@ export default defineAppConfig({
   footer: {
     credits: `Built by Kontext • © ${new Date().getFullYear()}`,
     creditsLink: 'https://kontext.site',
-    links: Object.entries(appMeta.social).map(([, social]) => ({
-      'to': social.url,
-      'icon': social.icon,
-      'aria-label': social.label,
-      'target': '_blank'
-    }))
+    links: [
+      {
+        to: 'https://instagram.com/softspokenstudio',
+        icon: 'i-simple-icons-instagram',
+        'aria-label': 'Soft Spoken Studio on Instagram',
+        target: '_blank'
+      }
+    ]
   }
 })

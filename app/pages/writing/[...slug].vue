@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-import appMeta from '../../app.meta'
-
 const route = useRoute()
+const appConfig = useAppConfig()
 const authorEl = ref<HTMLElement | null>()
 
 const formatDate = (dateString: string) => {
@@ -23,8 +22,8 @@ defineOgImageComponent('NuxtSeo', {
 
 // Override SEO with blog post-specific data
 useSeoMeta({
-  title: data.value?.seo?.title || `${data.value.title} - ${appMeta.name}`,
-  ogTitle: data.value?.seo?.title || `${data.value.title} - ${appMeta.name}`,
+  title: data.value?.seo?.title || `${data.value.title} - ${appConfig.meta.name}`,
+  ogTitle: data.value?.seo?.title || `${data.value.title} - ${appConfig.meta.name}`,
   description: data.value?.seo?.description || data.value.description,
   ogDescription: data.value?.seo?.description || data.value.description
 })
