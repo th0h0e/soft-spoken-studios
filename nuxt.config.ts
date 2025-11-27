@@ -8,7 +8,8 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'motion-v/nuxt',
     '@nuxt/hints',
-    'nuxt-og-image'
+    'nuxt-og-image',
+    'nuxt-studio'
   ],
 
   devtools: {
@@ -18,9 +19,8 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   content: {
-    preview: {
-      api: 'https://api.nuxt.studio'
-    }
+    // Studio alpha configuration
+    // The new module handles preview automatically
   },
 
   compatibilityDate: '2024-11-01',
@@ -37,6 +37,12 @@ export default defineNuxtConfig({
         commaDangle: 'never',
         braceStyle: '1tbs'
       }
+    }
+  },
+
+  studio: {
+    development: {
+      sync: true
     }
   }
 })

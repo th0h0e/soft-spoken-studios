@@ -15,20 +15,20 @@
   "dependencies": {
     "@iconify-json/lucide": "^1.2.71",
     "@iconify-json/simple-icons": "^1.2.55",
-    "@nuxt/content": "^3.7.1",
+    "@nuxt/content": "^3.8.2",
     "@nuxt/image": "^1.11.0",
     "@nuxt/ui": "^4.1.0",
     "@vueuse/nuxt": "^13.9.0",
     "better-sqlite3": "^12.4.1",
     "motion-v": "^1.7.3",
-    "nuxt": "^4.2.0"
+    "nuxt": "^4.2.1"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.9.0",
     "@nuxt/hints": "1.0.0-alpha.1",
     "eslint": "^9.38.0",
     "nuxt-og-image": "^5.1.12",
-    "nuxt-studio": "^0.0.0",
+    "nuxt-studio": "1.0.0-alpha.2",
     "typescript": "^5.9.3",
     "vue-tsc": "^3.1.2"
   },

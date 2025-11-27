@@ -1,62 +1,220 @@
-# Nuxt Portfolio Template
+# Nuxt Studio
 
-[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
+[![npm version](https://img.shields.io/npm/v/nuxt-studio/alpha.svg?style=flat&colorA=020420&colorB=EEEEEE)](https://npmjs.com/package/nuxt-studio)
+[![npm downloads](https://img.shields.io/npm/dm/nuxt-studio.svg?style=flat&colorA=020420&colorB=EEEEEE)](https://npm.chart.dev/nuxt-studio)
+[![License](https://img.shields.io/npm/l/nuxt-studio.svg?style=flat&colorA=020420&colorB=EEEEEE)](https://npmjs.com/package/nuxt-studio)
 
-Use this template to create your own portfolio with [Nuxt UI](https://ui.nuxt.com).
+---
 
-- [Live demo](https://portfolio-template.nuxt.dev/)
-- [Documentation](https://ui.nuxt.com/getting-started/installation)
+## ⚠️ Alpha Version
 
-<a href="https://portfolio-template.nuxt.dev/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/portfolio-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/portfolio-light.png">
-    <img alt="Nuxt Portfolio Template" src="https://ui.nuxt.com/assets/templates/nuxt/portfolio-dark.png">
-  </picture>
-</a>
+> **Current Status: Alpha Testing**
+>
+> Nuxt Studio is currently in **alpha** and uses the Monaco code editor for content editing. This phase focuses on testing and stabilizing core functionality:
+>
+> - ✅ File operations (create, edit, delete, rename)
+> - ✅ Content editing with Monaco editor
+> - ✅ Media management and uploads
+> - ✅ GitHub authentication and publishing workflow
+>
+>
+> Once all file operations and GitHub publishing workflows are tested and stable, we'll release **Phase 2 (Beta)** with the full visual editor for Markdown, Vue components, and medias...
+>
+> Read the [announcement blog post](https://content.nuxt.com/blog/studio-module-alpha) for more details.
 
-## Quick Start
+---
 
-```bash [Terminal]
-npm create nuxt@latest -- -t github:nuxt-ui-templates/portfolio
-```
+Visual edition in production for your [Nuxt Content](https://content.nuxt.com) website.
 
-## Deploy your own
+Originally offered as a standalone premium platform at https://nuxt.studio, Studio has evolved into a free, open-source, and self-hostable Nuxt module. Enable your entire team to edit website content right in production.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=portfolio&repository-url=https%3A%2F%2Fgithub.com%2Fnuxt-ui-templates%2Fportfolio&demo-image=https%3A%2F%2Fui.nuxt.com%2Fassets%2Ftemplates%2Fnuxt%2Fportfolio-dark.png&demo-url=https%3A%2F%2Fportfolio-template.nuxt.dev%2F&demo-title=Nuxt%20Portfolio%20Template&demo-description=A%20sleek%20portfolio%20template%20to%20showcase%20your%20work%2C%20skills%20and%20blog%20powered%20by%20Nuxt%20Content.)
+**Current Features (Alpha):**
 
-## Setup
+- 💻 **Monaco Code Editor** - Code editor for enhanced Markdown with MDC syntax, YAML, and JSON
+- 🔄 **Real-time Preview** - See your changes instantly on your production website
+- 🔐 **GitHub Authentication** - Secure OAuth-based login with GitHub
+- 📝 **File Management** - Create, edit, delete, and rename content files (`content/` directory)
+- 🖼️ **Media Management** - Centralized media library for all your assets (`public/` directory)
+- 🌳 **Git Integration** - Commit changes directly from your production website and just wait your CI/CD pipeline to deploy your changes
+- 🚀 **Development Mode** - Directly edit your content files and media files in your local filesystem using the module interface
 
-Make sure to install the dependencies:
+**Coming in Beta:**
+- 🎨 **Visual Editor** - Visual editor for content management, from text edition to media management - all without touching code
+- 🔐 **Google OAuth Authentication** - Secure OAuth-based login with Google
+
+**Future Features:**
+- 📂 **Collections view** - View and manage your content collections in a unified interface
+- 🖼️ **Media optimization** - Optimize your media files in the editor
+- 🤖 **AI Content Assistant** — Receive smart, AI-powered suggestions to enhance your content creation flow
+- 💡 **Community-driven Features** — Have an idea? [Share your suggestions](https://github.com/nuxt-content/studio/discussions) to shape the future of Nuxt Studio
+
+### Resources
+- [📖 Documentation](https://content.nuxt.com/docs/studio/setup)
+- [🎮 Live Demo](https://docus.dev/admin)
+
+## Quick Setup
+
+> **Note**: This alpha release provides a Monaco-based code editor. The visual WYSIWYG editor will be available in the beta release.
+
+### 1. Module Installation
+
+Install the module in your Nuxt application with one command:
 
 ```bash
+npx nuxi module add nuxt-studio@alpha
+```
+
+Add it to your `nuxt.config` and configure your repository.
+
+```ts
+export default defineNuxtConfig({
+  modules: [
+    '@nuxt/content',
+    'nuxt-studio'
+  ],
+  studio: {
+    // Your configuration
+    repository: {
+      provider: 'github', // default: only GitHub supported currently
+      owner: 'your-username', // your GitHub owner
+      repo: 'your-repo', // your GitHub repository name
+      branch: 'main',
+      rootDir: '' // optional: location of your content app
+    }
+  }
+})
+```
+
+### 2. Create a GitHub OAuth App
+
+1. Go to [GitHub Developer Settings](https://github.com/settings/developers)
+2. Click **"New OAuth App"**
+3. Fill in the application details:
+   - **Application name**: Your App Name
+   - **Homepage URL**: Your website homepage URL
+   - **Authorization callback URL**: `${YOUR_WEBSITE_URL}/${options.route}/auth/github` (default: `${YOUR_WEBSITE_URL}/_studio/auth/github`)
+4. Copy the **Client ID** and generate a **Client Secret**
+5. Add them to your deployment environment variables (see next section)
+
+### 3. Environment Variables
+
+Nuxt Studio requires environment variables for authentication and publication on your repository.
+
+Add the previsously generated Client ID and Client Secret to your deployment environment variables.
+
+```bash
+STUDIO_GITHUB_CLIENT_ID=your_github_client_id
+STUDIO_GITHUB_CLIENT_SECRET=your_github_client_secret
+```
+
+## Configuration
+
+Configure Nuxt Studio in your `nuxt.config.ts`:
+
+```ts
+export default defineNuxtConfig({
+  modules: ['nuxt-studio'],
+  studio: {
+    // Studio admin login route
+    route: '/_studio', // default
+
+    // Git repository configuration (required)
+    repository: {
+      provider: 'github', // only GitHub is supported currently (default)
+      owner: 'your-username', // your GitHub owner
+      repo: 'your-repo', // your GitHub repository name
+      branch: 'main', // your GitHub branch
+      rootDir: '' // optional: root directory for
+    },
+  }
+})
+```
+
+## Contributing
+You must clone the repository and create a local GitHub OAuth App (pointing to `http://localhost:3000` as callback URL).
+
+Set your GitHub OAuth credentials in the `.env` file.
+
+### Development Setup
+
+```bash
+# Install dependencies
 pnpm install
-```
 
-## Development Server
+# Generate type stubs
+pnpm dev:prepare
 
-Start the development server on `http://localhost:3000`:
+# Build the app and service worker
+pnpm prepack
 
-```bash
+# Terminal 1: Start the playground
 pnpm dev
+
+# Terminal 2: Start the app dev server
+pnpm dev:app
+
+# Login at http://localhost:3000/admin
 ```
 
-## Production
+### Project Structure
 
-Build the application for production:
+```
+studio/
+├── src/
+│   ├── app/           # Studio editor Vue app
+│   └── module/        # Nuxt module
+├── playground/        # Development playground
+│   ├── docus/         # Docus example
+│   └── minimal/       # Minimal example
+```
+
+### Testing
 
 ```bash
-pnpm build
+# Run tests
+pnpm test
+
+# Run type checking
+pnpm typecheck
+
+# Run linter
+pnpm lint
 ```
 
-Locally preview production build:
+## Roadmap
 
-```bash
-pnpm preview
-```
+### ✅ Phase 1 - Alpha (Current)
+- [x] Monaco code editor
+- [x] File operations (create, edit, delete, rename)
+- [x] Media management
+- [x] GitHub authentication
+- [x] Development mode (**experimental**)
+- [x] Git integration
+- [x] Real-time preview
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+### 🚧 Phase 2 - Beta (In Development)
+- [ ] Google OAuth authentication
+- [ ] Visual editor
+- [ ] Frontmatter edition as form
+- [ ] Vue Component edition (props, slots)
 
-## Renovate integration
+### 🔮 Future
 
-Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
+- [ ] GitLab provider support
+- [ ] Other provider support
+- [ ] Advanced conflict resolution
+- [ ] Pull request generation (from a branch to the main one)
+- [ ] AI-powered content suggestions
+
+## Links
+
+- 📖 [Documentation](https://content.nuxt.com/studio)
+- 🐛 [Report a Bug](https://github.com/nuxt-content/studio/issues/new)
+- 💡 [Feature Request](https://github.com/nuxt-content/studio/issues/new)
+- 🗨️ [Discussions](https://github.com/nuxt-content/studio/discussions)
+- 🆇 [Twitter](https://x.com/nuxtstudio)
+- 🦋 [Bluesky](https://bsky.app/profile/nuxt.com)
+
+## License
+
+Published under the [MIT](LICENSE) license.
