@@ -29,6 +29,18 @@ onMounted(() => {
   const contentEl = document.getElementById('content')
   authorEl.value = contentEl?.querySelector('#author-about')
 })
+
+useSeoMeta({
+  title: data.value?.title,
+  ogTitle: data.value?.title,
+  description: data.value?.description,
+  ogDescription: data.value?.description
+})
+
+defineOgImageComponent('SoftSpokenStudio', {
+  title: data.value?.title,
+  description: data.value?.description
+})
 </script>
 
 <template>

@@ -1,11 +1,4 @@
 <script setup lang="ts">
-defineOgImageComponent('NuxtSeo', {
-  title: 'Hello OG Image',
-  description: 'Look at me in dark mode',
-  theme: '#ff0000',
-  colorMode: 'dark'
-})
-
 const { data: page } = await useAsyncData('index', () => {
   return queryCollection('index').first()
 })
@@ -17,6 +10,19 @@ if (!page.value) {
     fatal: true
   })
 }
+
+useSeoMeta({
+  title: page.value?.book?.title,
+  ogTitle: page.value?.book?.title,
+  description: page.value?.book?.subtitle,
+  ogDescription: page.value?.book?.subtitle
+})
+
+defineOgImageComponent('SoftSpokenStudio', {
+  title: page.value?.book?.title,
+  description: page.value?.book?.subtitle,
+  colorMode: 'dark'
+})
 </script>
 
 <template>
