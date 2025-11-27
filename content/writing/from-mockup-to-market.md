@@ -1,18 +1,16 @@
 ---
 title: "From Mockup to Market: My End-to-End Product Design Process"
-description: A detailed breakdown of my iterative design methodology, from
-  initial research to final handoff, with practical tips for designers at every
-  stage.
-date: 2025-04-23
-image:
-  src: /download.jpg
-  alt: Random Image 1
-minRead: 8
+description: A detailed breakdown of my iterative design methodology, from initial research to final handoff, with practical tips for designers at every stage.
 author:
   name: Soft Spoken Studio
   avatar:
     src: /download.jpg
     alt: Soft Spoken Studio
+date: 2025-04-23T00:00:00.000Z
+image:
+  src: /download.jpg
+  alt: Random Image 1
+minRead: 8
 ---
 
 ::two-images
@@ -34,6 +32,18 @@ In this article, I'll walk through my end-to-end design process, from initial di
 ## Phase 1: Discovery & Research
 
 Every great product starts with understanding the problem it's trying to solve. For EcoTrack, our challenge was creating an engaging way for users to track their environmental impact without feeling overwhelmed by guilt or complex data.
+
+::two-images
+---
+images:
+  - src: /hero/3334f4a0741954580a818e303927dfcd.jpg
+    title: gg
+    alt: gg
+  - src: /c7cb6ff8df2b3bcc233eda201420fb2a-2.jpg
+    title: ghghg
+    alt: ghghg
+---
+::
 
 ::warning
 That 3 PM energy crash isn't a mysterious phenomenon – it's your body staging a revolt against the sugar-laden breakfast pastry and the lunch that came from a drive-through window!

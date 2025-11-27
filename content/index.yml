@@ -1,25 +1,12 @@
-testimonials:
-  - quote: Thomas's copywriting transformed our entire brand voice. He crafted messaging that was both compelling and authentic, helping us connect with our audience on a deeper level. After launching his new website copy and campaign materials, we saw a 45% increase in qualified leads and our email open rates jumped from 18% to 34%.
-    author:
-      name: Sarah Chen
-      description: Product Director at Bloom Finance
-      avatar:
-        src: /90d52ee25f93c3e7deaf019956a6089b.jpg
-        alt: Sarah Chen
-  - quote: Working with Thomas was a game-changer for our startup. His video production skills brought our story to life in ways we never imagined, and his scriptwriting made complex ideas feel accessible. The launch video he produced became our most-shared piece of content, and the sales page copy he wrote converted at 3x our previous rate.
-    author:
-      name: Michael Rodriguez
-      description: Co-founder of Wavelength Music
-      avatar:
-        src: /90d52ee25f93c3e7deaf019956a6089b.jpg
-        alt: Michael Rodriguez
-  - quote: Thomas has a rare talent for distilling technical information into clear, persuasive messaging. His documentary-style videos for our EcoTrack campaign didn't just look professional—they told our story with emotional resonance while maintaining scientific accuracy. His combination of strategic copywriting and visual storytelling is exactly what modern brands need.
-    author:
-      name: Dr. Aisha Johnson
-      description: Chief Innovation Officer at GreenTech Solutions
-      avatar:
-        src: /90d52ee25f93c3e7deaf019956a6089b.jpg
-        alt: Dr. Aisha Johnson
+book:
+  author: Thomas G. Hibbert
+  title: Soft Spoken Studio
+  subtitle: Word on These Streets
+  postscript:
+    - Six years without telling on em
+    - Copywriting & Video Production
+    - Seesh with No Accent
+  editor: Published by Hibbert & Sons, Boston 2025
 letter:
   headerText: Intent, SSS Ink.
   title: SIGNAL TO NOISE RATIOS
@@ -33,21 +20,21 @@ letter:
       italic: false
     - text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl metus, accumsan id eros id, vehicula tincidunt nisl. Nulla sit amet urna ut mi tempor euismod. Fusce elementum sapien eget elit sodales fringilla. Pellentesque et nulla vel velit malesuada fermentum vitae vitae justo. Nulla dignissim volutpat interdum. Pellentesque at molestie tortor. Proin magna ante, fermentum ac elementum at, lacinia et arcu.
       italic: true
-    - text: '- The End'
-book:
-  author: Thomas G. Hibbert
-  title: Soft Spoken Studio
-  subtitle: Word on These Streets
-  postscript:
-    - Six years without telling on em
-    - Copywriting & Video Production
-    - Seesh with No Accent
-  editor: Published by Hibbert & Sons, Boston 2025
+    - text: "- The End"
+testimonials:
+  - quote: Thomas's copywriting transformed our entire brand voice. He crafted messaging that was both compelling and authentic, helping us connect with our audience on a deeper level. After launching his new website copy and campaign materials, we saw a 45% increase in qualified leads and our email open rates jumped from 18% to 34%.
+    author:
+      name: Sarah Chen
+      description: Product Director at Bloom Finance
+      avatar:
+        src: /90d52ee25f93c3e7deaf019956a6089b.jpg
+        alt: Sarah Chen
+  - quote: Working with Thomas was a game-changer for our startup. His video production skills brought our story to life in ways we never imagined, and his scriptwriting made complex ideas feel accessible. The launch video he produced became our most-shared piece of content, and the sales page copy he wrote converted at 3x our previous rate.
 twoimages:
   links:
     to: projects
   images:
-    - src: /90d52ee25f93c3e7deaf019956a6089b.jpg
+    - src: /75a0147226ad9ec53bb8f4ef9a16b48e.jpg
       alt: Random Image 1
     - src: /tumblr_45294e923a08cac6b392791119069ecc_1130aea5_1280.jpg
       alt: Random Image 2
