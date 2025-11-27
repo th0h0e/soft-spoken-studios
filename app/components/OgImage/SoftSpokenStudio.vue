@@ -32,7 +32,7 @@ const pageDescription = computed(() => {
       overflow: 'hidden',
       position: 'relative',
       fontFamily: 'Times New Roman, serif',
-      backgroundColor: props.colorMode === 'light' ? '#ffffff' : '#000000',
+      backgroundColor: props.colorMode === 'light' ? '#fbfbfb' : '#121212',
       color: props.colorMode === 'light' ? '#000000' : '#ffffff'
     }"
   >
