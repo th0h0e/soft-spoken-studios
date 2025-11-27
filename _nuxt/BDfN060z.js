@@ -1,0 +1,1 @@
+import{I as e,r as o,h as i}from"./Bbg-wlxJ.js";function u(r){const t=e({dir:o("ltr")});return i(()=>r?.value||t.dir?.value||"ltr")}export{u};

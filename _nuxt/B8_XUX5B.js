@@ -1,0 +1,1 @@
+import{U as n,h as r,S as c,o as p,Q as u,a3 as d,$ as s}from"./Bbg-wlxJ.js";const i={base:""},_={__name:"ProseTbody",props:{class:{type:null,required:!1}},setup(e){const a=e,o=n(),t=r(()=>s({extend:s(i),...o.ui?.prose?.tbody||{}}));return(l,m)=>(p(),c("tbody",{class:d(t.value({class:a.class}))},[u(l.$slots,"default")],2))}};export{_ as default};

@@ -1,0 +1,1 @@
+import{U as n,h as c,S as l,o as p,Q as m,a3 as u,$ as s}from"./Bbg-wlxJ.js";const i={base:""},_={__name:"ProseEm",props:{class:{type:String,required:!1}},setup(e){const a=e,o=n(),t=c(()=>s({extend:s(i),...o.ui?.prose?.em||{}}));return(r,f)=>(p(),l("em",{class:u(t.value({class:a.class}))},[m(r.$slots,"default")],2))}};export{_ as default};
