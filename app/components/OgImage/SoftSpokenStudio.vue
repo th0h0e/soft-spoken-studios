@@ -19,57 +19,38 @@ const pageTitle = computed(() => {
 const pageDescription = computed(() => {
   return props.description || siteConfig.description || 'Word on These Streets'
 })
-
-const bgColor = computed(() => {
-  return props.colorMode === 'light' ? 'bg-white' : 'bg-black'
-})
-
-const textColor = computed(() => {
-  return props.colorMode === 'light' ? 'text-black' : 'text-white'
-})
-
-const mutedColor = computed(() => {
-  return props.colorMode === 'light' ? 'text-gray-500' : 'text-gray-400'
-})
 </script>
 
 <template>
   <div
-    style="
-      height: 100%;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      overflow: hidden;
-      position: relative;
-      font: Times New Roman,
-      background-color: #000000;
-      color: #ffffff;
-    "
     :style="{
+      height: '100%',
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      overflow: 'hidden',
+      position: 'relative',
+      fontFamily: 'Times New Roman, serif',
       backgroundColor: props.colorMode === 'light' ? '#ffffff' : '#000000',
       color: props.colorMode === 'light' ? '#000000' : '#ffffff'
     }"
   >
     <!-- Header section -->
     <div
-      style="
-        position: relative;
-        z-index: 10;
-        padding: 80px 80px 0 80px;
-      "
+      :style="{
+        position: 'relative',
+        zIndex: 10,
+        padding: '80px 80px 0 80px'
+      }"
     >
       <!-- Badge/headline -->
       <p
-        style="
-          font-size: 12px;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          margin-bottom: 48px;
-          color: #888888;
-        "
         :style="{
+          fontSize: '12px',
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          marginBottom: '48px',
           color: props.colorMode === 'light' ? '#666666' : '#888888'
         }"
       >
@@ -79,38 +60,36 @@ const mutedColor = computed(() => {
 
     <!-- Main content centered -->
     <div
-      style="
-        position: relative;
-        z-index: 10;
-        padding: 0 80px;
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        justify-content: center;
-      "
+      :style="{
+        position: 'relative',
+        zIndex: 10,
+        padding: '0 80px',
+        display: 'flex',
+        flexDirection: 'column',
+        flex: 1,
+        justifyContent: 'center'
+      }"
     >
       <h1
-        style="
-          font-size: 72px;
-          font-weight: 600;
-          line-height: 1.2;
-          letter-spacing: -0.02em;
-          margin-bottom: 32px;
-          margin-top: 0;
-          max-width: 90%;
-        "
+        :style="{
+          fontSize: '72px',
+          fontWeight: 600,
+          lineHeight: 1.2,
+          letterSpacing: '-0.02em',
+          marginBottom: '32px',
+          marginTop: 0,
+          maxWidth: '90%'
+        }"
       >
         {{ pageTitle }}
       </h1>
       <p
-        style="
-          font-size: 40px;
-          line-height: 1.6;
-          max-width: 90%;
-          margin: 0;
-          font-weight: 300;
-        "
         :style="{
+          fontSize: '40px',
+          lineHeight: 1.6,
+          maxWidth: '90%',
+          margin: 0,
+          fontWeight: 300,
           color: props.colorMode === 'light' ? '#666666' : '#aaaaaa'
         }"
       >
@@ -120,37 +99,33 @@ const mutedColor = computed(() => {
 
     <!-- Footer with branding -->
     <div
-      style="
-        position: relative;
-        z-index: 10;
-        padding: 0 80px 80px 80px;
-      "
+      :style="{
+        position: 'relative',
+        zIndex: 10,
+        padding: '0 80px 80px 80px'
+      }"
     >
       <div
-        style="
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-        "
+        :style="{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '16px'
+        }"
       >
         <!-- Divider line -->
         <div
-          style="
-            width: 48px;
-            height: 1px;
-            margin: 0;
-          "
           :style="{
+            width: '48px',
+            height: '1px',
+            margin: 0,
             backgroundColor: props.colorMode === 'light' ? '#cccccc' : '#444444'
           }"
         />
         <p
-          style="
-            font-size: 12px;
-            letter-spacing: 0.05em;
-            margin: 0;
-          "
           :style="{
+            fontSize: '12px',
+            letterSpacing: '0.05em',
+            margin: 0,
             color: props.colorMode === 'light' ? '#666666' : '#888888'
           }"
         >
