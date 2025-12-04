@@ -26,5 +26,5 @@ logs
 # VSC
 .history
 
-# Server plugins
-server/plugins
+# Server
+server
