@@ -21,11 +21,6 @@ useSeoMeta({
   description: gallery.value?.description,
   ogDescription: gallery.value?.description
 })
-
-defineOgImageComponent('SoftSpokenStudio', {
-  title: gallery.value?.title,
-  description: gallery.value?.description
-})
 </script>
 
 <template>

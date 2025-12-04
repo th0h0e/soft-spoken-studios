@@ -17,12 +17,6 @@ useSeoMeta({
   description: page.value?.book?.subtitle,
   ogDescription: page.value?.book?.subtitle
 })
-
-defineOgImageComponent('SoftSpokenStudio', {
-  title: page.value?.book?.title,
-  description: page.value?.book?.subtitle,
-  colorMode: 'dark'
-})
 </script>
 
 <template>

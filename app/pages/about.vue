@@ -20,11 +20,6 @@ useSeoMeta({
   ogDescription: page.value?.seo?.description || page.value?.description
 })
 
-defineOgImageComponent('SoftSpokenStudio', {
-  title: page.value?.seo?.title || page.value?.title,
-  description: page.value?.seo?.description || page.value?.description
-})
-
 const sphereContainerSize = ref(400)
 
 onMounted(() => {

@@ -13,12 +13,6 @@ const formatDate = (dateString: string) => {
 const { data } = await useAsyncData(route.path, () => queryCollection('writing').path(route.path).first())
 if (!data.value) throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 
-defineOgImageComponent('NuxtSeo', {
-  title: data.value.title,
-  description: data.value.description,
-  colorMode: 'dark'
-})
-
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
   return queryCollectionItemSurroundings('writing', route.path, {
     fields: ['description']
@@ -35,11 +29,6 @@ useSeoMeta({
   ogTitle: data.value?.title,
   description: data.value?.description,
   ogDescription: data.value?.description
-})
-
-defineOgImageComponent('SoftSpokenStudio', {
-  title: data.value?.title,
-  description: data.value?.description
 })
 </script>
 

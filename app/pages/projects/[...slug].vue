@@ -18,11 +18,6 @@ useSeoMeta({
   description: page.value?.description,
   ogDescription: page.value?.description
 })
-
-defineOgImageComponent('SoftSpokenStudio', {
-  title: page.value?.title,
-  description: page.value?.description
-})
 </script>
 
 <template>
