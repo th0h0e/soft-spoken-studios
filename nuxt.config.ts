@@ -37,6 +37,10 @@ export default defineNuxtConfig({
     }
   },
 
+  hub: {
+    database: true
+  },
+
   eslint: {
     config: {
       stylistic: {
