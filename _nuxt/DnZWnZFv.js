@@ -1,0 +1,1 @@
+import{U as r,h as l,S as c,o as p,Q as u,a1 as i,Y as s}from"./DYvv4Hww.js";const m={base:""},g={__name:"ProseStrong",props:{class:{type:null,required:!1}},setup(e){const a=e,o=r(),t=l(()=>s({extend:s(m),...o.ui?.prose?.strong||{}}));return(n,f)=>(p(),c("strong",{class:i(t.value({class:a.class}))},[u(n.$slots,"default")],2))}};export{g as default};
