@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { AboutCollectionItem } from '@nuxt/content'
 
-const { footer, global } = useAppConfig()
+const { global } = useAppConfig()
 
 defineProps<{
   page: AboutCollectionItem
