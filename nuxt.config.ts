@@ -10,7 +10,8 @@ export default defineNuxtConfig({
     'motion-v/nuxt',
     '@nuxt/hints',
     'nuxt-og-image',
-    'nuxt-studio'
+    'nuxt-studio',
+    '@nuxthub/core'
   ],
 
   devtools: {
@@ -19,7 +20,7 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
   site: {
-    url: process.env.NUXT_SITE_URL || 'http://localhost:3000',
+    url: process.env.NUXT_SITE_URL || 'https://soft-spoken-studios.th0h0e.workers.dev',
     name: 'Soft Spoken Studios'
   },
 
