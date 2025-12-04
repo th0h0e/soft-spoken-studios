@@ -1,113 +1,113 @@
 <template>
   <div class="flex justify-center">
-      <!-- Loading State -->
-      <div
-        v-if="!isMounted"
-        class="bg-elevated rounded-lg animate-pulse flex items-center justify-center"
-        :style="{ width: `${containerSize}px`, height: `${containerSize}px` }"
-      >
-        <div class="text-muted">
-          Loading...
-        </div>
+    <!-- Loading State -->
+    <div
+      v-if="!isMounted"
+      class="bg-elevated rounded-lg animate-pulse flex items-center justify-center"
+      :style="{ width: `${containerSize}px`, height: `${containerSize}px` }"
+    >
+      <div class="text-muted">
+        Loading...
       </div>
+    </div>
 
-      <!-- Empty State -->
-      <div
-        v-else-if="!images.length"
-        class="bg-elevated rounded-lg border-2 border-dashed border-muted flex items-center justify-center"
-        :style="{ width: `${containerSize}px`, height: `${containerSize}px` }"
-      >
-        <div class="text-muted text-center">
-          <p>No images provided</p>
-          <p class="text-sm">
-            Add images to the images prop
-          </p>
-        </div>
+    <!-- Empty State -->
+    <div
+      v-else-if="!images.length"
+      class="bg-elevated rounded-lg border-2 border-dashed border-muted flex items-center justify-center"
+      :style="{ width: `${containerSize}px`, height: `${containerSize}px` }"
+    >
+      <div class="text-muted text-center">
+        <p>No images provided</p>
+        <p class="text-sm">
+          Add images to the images prop
+        </p>
       </div>
+    </div>
 
-      <!-- Main Sphere Container -->
+    <!-- Main Sphere Container -->
+    <div
+      v-else
+      ref="containerRef"
+      :class="['relative select-none cursor-grab', { 'cursor-grabbing': isDragging }, className]"
+      :style="{
+        width: `${containerSize}px`,
+        height: `${containerSize}px`,
+        perspective: `${perspective}px`
+      }"
+      @mousedown="handleMouseDown"
+      @touchstart="handleTouchStart"
+    >
       <div
-        v-else
-        ref="containerRef"
-        :class="['relative select-none cursor-grab', { 'cursor-grabbing': isDragging }, className]"
-        :style="{
-          width: `${containerSize}px`,
-          height: `${containerSize}px`,
-          perspective: `${perspective}px`
-        }"
-        @mousedown="handleMouseDown"
-        @touchstart="handleTouchStart"
+        class="relative w-full h-full"
+        style="z-index: 10"
       >
+        <!-- Image Nodes -->
         <div
-          class="relative w-full h-full"
-          style="z-index: 10"
+          v-for="(position, index) in worldPositions"
+          v-show="position.isVisible"
+          :key="images[index]?.alt ?? index"
+          class="absolute cursor-pointer select-none transition-transform duration-200 ease-out"
+          :style="{
+            width: `${baseImageSize * position.scale}px`,
+            height: `${baseImageSize * position.scale}px`,
+            left: `${containerSize/2 + position.x}px`,
+            top: `${containerSize/2 + position.y}px`,
+            opacity: position.fadeOpacity,
+            transform: `translate(-50%, -50%) scale(${hoveredIndex === index ? Math.min(1.2, 1.2 / position.scale) : 1})`,
+            zIndex: position.zIndex
+          }"
+          @mouseenter="hoveredIndex = index"
+          @mouseleave="hoveredIndex = null"
+          @click="images[index] && (selectedImage = images[index], isModalOpen = true)"
         >
-          <!-- Image Nodes -->
-          <div
-            v-for="(position, index) in worldPositions"
-            v-show="position.isVisible"
-            :key="images[index]?.alt ?? index"
-            class="absolute cursor-pointer select-none transition-transform duration-200 ease-out"
-            :style="{
-              width: `${baseImageSize * position.scale}px`,
-              height: `${baseImageSize * position.scale}px`,
-              left: `${containerSize/2 + position.x}px`,
-              top: `${containerSize/2 + position.y}px`,
-              opacity: position.fadeOpacity,
-              transform: `translate(-50%, -50%) scale(${hoveredIndex === index ? Math.min(1.2, 1.2 / position.scale) : 1})`,
-              zIndex: position.zIndex
-            }"
-            @mouseenter="hoveredIndex = index"
-            @mouseleave="hoveredIndex = null"
-            @click="images[index] && (selectedImage = images[index], isModalOpen = true)"
-          >
-            <div class="relative w-full h-full rounded-full overflow-hidden shadow-lg border-2 border-white/20">
-              <img
-                :src="images[index]?.src"
-                :alt="images[index]?.alt"
-                class="w-full h-full object-cover"
-                draggable="false"
-                :loading="index < 3 ? 'eager' : 'lazy'"
-              >
-            </div>
+          <div class="relative w-full h-full rounded-full overflow-hidden shadow-lg border-2 border-white/20">
+            <img
+              :src="images[index]?.src"
+              :alt="images[index]?.alt"
+              class="w-full h-full object-cover"
+              draggable="false"
+              :loading="index < 3 ? 'eager' : 'lazy'"
+            >
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Modal -->
-      <UModal v-model:open="isModalOpen">
-        <template #content>
-          <UCard
-            v-if="selectedImage"
-            class="overflow-hidden"
-            :ui="{ header: '!p-0', body: 'p-6' }"
-          >
-            <template #header>
-              <div class="relative aspect-square">
-                <img
-                  :src="selectedImage.src"
-                  :alt="selectedImage.alt"
-                  class="w-full h-full object-cover"
-                >
-                <UButton
-                  class="absolute top-2 right-2"
-                  color="neutral"
-                  variant="solid"
-                  icon="lucide:x"
-                  size="sm"
-                  @click="isModalOpen = false"
-                />
-              </div>
-            </template>
+    <!-- Modal -->
+    <UModal v-model:open="isModalOpen">
+      <template #content>
+        <UCard
+          v-if="selectedImage"
+          class="overflow-hidden"
+          :ui="{ header: '!p-0', body: 'p-6' }"
+        >
+          <template #header>
+            <div class="relative aspect-square">
+              <img
+                :src="selectedImage.src"
+                :alt="selectedImage.alt"
+                class="w-full h-full object-cover"
+              >
+              <UButton
+                class="absolute top-2 right-2"
+                color="neutral"
+                variant="solid"
+                icon="lucide:x"
+                size="sm"
+                @click="isModalOpen = false"
+              />
+            </div>
+          </template>
 
-            <template #default>
-              <p class="text-muted">
-                {{ selectedImage.alt }}
-              </p>
-            </template>
-          </UCard>
-        </template>
-      </UModal>
+          <template #default>
+            <p class="text-muted">
+              {{ selectedImage.alt }}
+            </p>
+          </template>
+        </UCard>
+      </template>
+    </UModal>
   </div>
 </template>
 
