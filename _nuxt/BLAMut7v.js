@@ -1,1 +1,0 @@
-import{x as c,Y as l,c as r,d as p,af as u,n as d,aF as s}from"./Bux1l1NO.js";const f={base:""},_={__name:"ProseTbody",props:{class:{type:null,required:!1}},setup(e){const a=e,o=c(),t=l(()=>s({extend:s(f),...o.ui?.prose?.tbody||{}}));return(n,i)=>(p(),r("tbody",{class:d(t.value({class:a.class}))},[u(n.$slots,"default")],2))}};export{_ as default};
