@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+
   modules: [
     '@nuxt/eslint',
     '@nuxt/image',
@@ -17,6 +18,10 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css'],
+  site: {
+    url: process.env.NUXT_SITE_URL || 'http://localhost:3000',
+    name: 'Soft Spoken Studios'
+  },
 
   content: {
     // Studio alpha configuration

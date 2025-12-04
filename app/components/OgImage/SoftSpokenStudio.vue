@@ -1,3 +1,4 @@
+<!-- eslint-disable-next-line -->
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useSiteConfig } from '#site-config/app/composables'
@@ -39,8 +40,6 @@ const pageDescription = computed(() => {
     <!-- Header section -->
     <div
       :style="{
-        position: 'relative',
-        zIndex: 10,
         padding: '80px 80px 0 80px'
       }"
     >
@@ -61,8 +60,6 @@ const pageDescription = computed(() => {
     <!-- Main content centered -->
     <div
       :style="{
-        position: 'relative',
-        zIndex: 10,
         padding: '0 80px',
         display: 'flex',
         flexDirection: 'column',
@@ -100,8 +97,6 @@ const pageDescription = computed(() => {
     <!-- Footer with branding -->
     <div
       :style="{
-        position: 'relative',
-        zIndex: 10,
         padding: '0 80px 80px 80px'
       }"
     >
