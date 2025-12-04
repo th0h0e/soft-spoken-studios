@@ -1,5 +1,12 @@
 <script setup lang="ts">
+import { ref, watch } from 'vue'
+
+const router = useRouter()
 const navOpen = ref(false)
+
+watch(() => router.currentRoute.value.path, () => {
+  navOpen.value = false
+})
 </script>
 
 <template>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
 const { data: page } = await useAsyncData('about', () => {
   return queryCollection('about').first()
 })
@@ -22,19 +24,31 @@ defineOgImageComponent('SoftSpokenStudio', {
   title: page.value?.seo?.title || page.value?.title,
   description: page.value?.seo?.description || page.value?.description
 })
+
+const sphereContainerSize = ref(400)
+
+onMounted(() => {
+  sphereContainerSize.value = window.innerWidth < 640 ? 320 : 400
+})
 </script>
 
 <template>
   <UPage v-if="page">
     <LandingHero :page="page" />
-    <UPageSection v-if="page.sphere">
-      <div class="flex justify-center">
-        <Sphere
-          :images="page.sphere.images"
-          :auto-rotate="page.sphere.autoRotate"
-          :auto-rotate-speed="page.sphere.autoRotateSpeed"
-        />
-      </div>
+    <USeparator
+      color="neutral"
+      type="solid"
+    />
+    <UPageSection
+      v-if="page.sphere"
+      :ui="{ container: 'py-8 px-0' }"
+    >
+      <Sphere
+        :images="page.sphere.images"
+        :auto-rotate="page.sphere.autoRotate"
+        :auto-rotate-speed="page.sphere.autoRotateSpeed"
+        :container-size="sphereContainerSize"
+      />
     </UPageSection>
     <div class="py-8">
       <USeparator
