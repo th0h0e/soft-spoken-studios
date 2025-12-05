@@ -47,6 +47,18 @@ export default defineNuxtConfig({
   },
 
   studio: {
+    // Studio admin login route
+    route: '/_studio',
+
+    // Git repository configuration (required for production)
+    repository: {
+      provider: 'github',
+      owner: 'th0h0e',
+      repo: 'soft-spoken-studios',
+      branch: 'main',
+      rootDir: ''
+    },
+
     development: {
       sync: true
     }
