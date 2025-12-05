@@ -1,8 +1,24 @@
 <script setup lang="ts">
+/**
+ * ProjectGallery Component - YAML Method MDC Version
+ *
+ * Displays a gallery with main image and thumbnail navigation.
+ *
+ * Usage in MDC markdown:
+ * ::project-gallery
+ * ---
+ * images:
+ *   - /path/to/image1.jpg
+ *   - /path/to/image2.jpg
+ *   - /path/to/image3.jpg
+ * ---
+ * ::
+ */
+
 import { ref } from 'vue'
 
-defineProps<{
-  images?: string[]
+const props = defineProps<{
+  images: string[]
 }>()
 
 const currentIndex = ref(0)

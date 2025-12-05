@@ -1,14 +1,35 @@
 <script setup lang="ts">
-import type { AboutCollectionItem } from '@nuxt/content'
+/**
+ * WorkExperience Component - Props-Based Format
+ *
+ * Displays a list of work experience with dates, positions, companies, and links.
+ *
+ * Usage:
+ * <WorkExperience :title="title" :items="experiences" />
+ */
+
+interface Company {
+  name: string
+  url: string
+  color: string
+  logo: string
+}
+
+interface ExperienceItem {
+  date: string
+  position: string
+  company: Company
+}
 
 defineProps<{
-  page: AboutCollectionItem
+  title: string
+  items: ExperienceItem[]
 }>()
 </script>
 
 <template>
   <UPageSection
-    :title="page.experience.title"
+    :title="title"
     :ui="{
       container: '!p-0 gap-4 sm:gap-4',
       title: 'text-left text-xl sm:text-xl lg:text-2xl font-medium',
@@ -18,7 +39,7 @@ defineProps<{
     <template #description>
       <div class="flex flex-col gap-2">
         <Motion
-          v-for="(experience, index) in page.experience.items"
+          v-for="(experience, index) in items"
           :key="index"
           :initial="{ opacity: 0, transform: 'translateY(20px)' }"
           :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
@@ -51,7 +72,3 @@ defineProps<{
     </template>
   </UPageSection>
 </template>
-
-<style scoped>
-
-</style>

@@ -1,7 +1,23 @@
 <script setup lang="ts">
+/**
+ * OneImage Component - YAML Method MDC Version
+ *
+ * Displays a single image with optional title and link.
+ *
+ * Usage in MDC markdown:
+ * ::one-image
+ * ---
+ * src: /path/to/image.jpg
+ * alt: Image description
+ * title: Optional image title
+ * link: /optional-link
+ * ---
+ * ::
+ */
+
 defineProps<{
-  src?: string
-  alt?: string
+  src: string
+  alt: string
   title?: string
   link?: string
 }>()
@@ -18,7 +34,7 @@ defineProps<{
       <div class="group overflow-hidden rounded-lg aspect-[16/10]">
         <NuxtImg
           :src="src"
-          :alt="alt || 'Image'"
+          :alt="alt"
           class="w-full h-full object-cover transition-transform group-hover:scale-105"
           fit="cover"
           width="800"
@@ -39,7 +55,7 @@ defineProps<{
       <div class="overflow-hidden rounded-lg aspect-[16/10]">
         <NuxtImg
           :src="src"
-          :alt="alt || 'Image'"
+          :alt="alt"
           class="w-full h-full object-cover"
           fit="cover"
           width="800"

@@ -37,50 +37,23 @@ export default defineContentConfig({
     // Homepage (/) - Main landing page
     index: defineCollection({
       type: 'page',
-      source: 'index.yml',
+      source: 'index.md',
       schema: z.object({
-        testimonials: z.array(createTestimonialSchema()),
         faq: z.object({
           title: z.string(),
           description: z.string(),
           categories: z.array(
             z.object({
-              title: z.string().nonempty(),
+              title: z.string(),
               questions: z.array(
                 z.object({
-                  label: z.string().nonempty(),
-                  content: z.string().nonempty()
+                  label: z.string(),
+                  content: z.string()
                 })
               )
             })
           )
-        }),
-        letter: z.object({
-          headerText: z.string(),
-          title: z.string(),
-          subtitle: z.string(),
-          paragraphs: z.array(z.object({
-            text: z.string(),
-            italic: z.boolean()
-          }))
-        }),
-        book: z.object({
-          author: z.string(),
-          title: z.string(),
-          subtitle: z.string(),
-          postscript: z.array(z.string()),
-          editor: z.string()
-        }),
-        twoimages: z.object({
-          links: z.object({
-            to: z.string()
-          }).optional(),
-          images: z.array(z.object({
-            src: z.string(),
-            alt: z.string(),
-            link: z.string().optional()
-          }))
-        })
+        }).optional()
       })
     }),
 

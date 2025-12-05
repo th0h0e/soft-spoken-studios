@@ -1,8 +1,29 @@
 <script setup lang="ts">
-import type { IndexCollectionItem } from '@nuxt/content'
+/**
+ * Testimonials Component - Props-Based Format
+ *
+ * Displays a carousel of testimonials with author information.
+ *
+ * Usage:
+ * <Testimonials :testimonials="testimonials" />
+ */
+
+interface Author {
+  name: string
+  description?: string
+  avatar?: {
+    src: string
+    alt: string
+  }
+}
+
+interface Testimonial {
+  quote: string
+  author: Author
+}
 
 defineProps<{
-  page: IndexCollectionItem
+  testimonials: Testimonial[]
 }>()
 </script>
 
@@ -14,7 +35,7 @@ defineProps<{
   >
     <UCarousel
       v-slot="{ item }"
-      :items="page.testimonials"
+      :items="testimonials"
       :autoplay="{ delay: 4000 }"
       loop
       dots

@@ -1,10 +1,18 @@
 <script setup lang="ts">
-import type { AboutCollectionItem } from '@nuxt/content'
+/**
+ * Hero Component - Props-Based Format
+ *
+ * Displays a hero section with title and description.
+ *
+ * Usage:
+ * <Hero :title="title" :description="description" />
+ */
 
 const { global } = useAppConfig()
 
 defineProps<{
-  page: AboutCollectionItem
+  title: string
+  description: string
 }>()
 </script>
 
@@ -59,7 +67,7 @@ defineProps<{
           delay: 0.1
         }"
       >
-        {{ page.title }}
+        {{ title }}
       </Motion>
     </template>
 
@@ -80,7 +88,7 @@ defineProps<{
           delay: 0.3
         }"
       >
-        {{ page.description }}
+        {{ description }}
       </Motion>
     </template>
 

@@ -29,7 +29,10 @@ onMounted(() => {
 
 <template>
   <UPage v-if="page">
-    <LandingHero :page="page" />
+    <Hero
+      :title="page.title || ''"
+      :description="page.description || ''"
+    />
     <USeparator
       color="neutral"
       type="solid"
@@ -63,11 +66,13 @@ onMounted(() => {
     </UPageSection>
     <UPageSection
       :ui="{
-        container: '!pt-0 lg:grid lg:grid-cols-2 lg:gap-8'
+        container: '!pt-0'
       }"
     >
-      <LandingAbout :page="page" />
-      <LandingWorkExperience :page="page" />
+      <WorkExperience
+        :title="page.experience?.title || ''"
+        :items="page.experience?.items || []"
+      />
     </UPageSection>
     <UPageSection>
       <ServiceCard

@@ -25,9 +25,24 @@ images:
 ---
 ::
 
-Creating successful digital products isn't about following a rigid formula—it's about developing a flexible framework that adapts to the unique challenges of each project. After refining my approach across dozens of products, I've developed a process that consistently delivers results while leaving room for creativity and iteration.
-
-In this article, I'll walk through my end-to-end design process, from initial discovery to developer handoff, using my recent work on the EcoTrack application as a case study.
+::letter
+---
+headerText: YYYG.
+title: SIGNAL TO NOISE RATIOS
+subtitle: Thomas Hibbert & Sons
+paragraphs:
+  - text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl metus, accumsan id eros id, vehicula tincidunt nisl. Nulla sit amet urna ut mi tempor euismod. Fusce elementum sapien eget elit sodales fringilla. Pellentesque et nulla vel velit malesuada fermentum vitae vitae justo. Nulla dignissim volutpat interdum. Pellentesque at molestie tortor. Proin magna ante, fermentum ac elementum at, lacinia et arcu.
+    italic: false
+  - text: Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent porttitor venenatis lacus sed mollis. Nulla varius leo nec porta tempus. Nunc orci enim, bibendum in gravida eu, pretium eu purus. Sed vestibulum quam
+    italic: true
+  - text: Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent porttitor venenatis lacus sed mollis. Nulla varius leo nec porta tempus. Nunc orci enim, bibendum in gravida eu, pretium eu purus. Sed vestibulum quam. Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent porttitor venenatis lacus sed mollis. Nulla varius leo nec porta tempus. Nunc orci enim, bibendum in gravida eu, pretium eu purus. Sed vestibulum quam Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent porttitor venenatis lacus sed mollis.
+    italic: false
+  - text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl metus, accumsan id eros id, vehicula tincidunt nisl. Nulla sit amet urna ut mi tempor euismod. Fusce elementum sapien eget elit sodales fringilla. Pellentesque et nulla vel velit malesuada fermentum vitae vitae justo. Nulla dignissim volutpat interdum. Pellentesque at molestie tortor. Proin magna ante, fermentum ac elementum at, lacinia et arcu.
+    italic: true
+  - text: go do that 
+    italic: false
+---
+::
 
 ## Phase 1: Discovery & Research
 
@@ -198,6 +213,107 @@ After launch, we established a regular cycle of analysis and iteration:
 - Weekly reviews of user feedback and behavior data
 - Bi-weekly design sprints to address emerging issues
 - Monthly feature planning based on usage patterns
+
+::book
+---
+author: Thomas G. Hibbert
+title: Soft Spoken Studio
+subtitle: Word on These Streets
+postscript:
+  - Six years without telling on em
+  - Copywriting & Video Production
+  - Seesh with No Accent
+editor: Published by Hibbert & Sons, Boston 2025
+---
+::
+
+::service-card
+---
+cards:
+  - image: /hero/3334f4a0741954580a818e303927dfcd.jpg
+    imageAlt: Video production
+    badge: Service
+    title: Video Production
+    icon: feather:play
+    iconLabel: Creative Storytelling
+    description: Stories that move. We create videos that capture authentic moments and communicate your message.
+  - image: /hero/3334f4a0741954580a818e303927dfcd.jpg
+    imageAlt: Copywriting
+    badge: Writing
+    title: Copywriting
+    icon: feather:pen-tool
+    iconLabel: Purposeful Communication
+    description: Words with purpose. Clear, compelling copy that connects with your audience.
+---
+::
+
+::work-experience
+---
+title: Professional Experience
+items:
+  - date: 2020-2023
+    position: Senior Designer
+    company:
+      name: Design Co.
+      url: https://example.com
+      color: "#3b82f6"
+      logo: feather:briefcase
+  - date: 2018-2020
+    position: Product Designer
+    company:
+      name: Tech Startup
+      url: https://example.com
+      color: "#10b981"
+      logo: feather:zap
+  - date: 2015-2018
+    position: UX/UI Designer
+    company:
+      name: Creative Agency
+      url: https://example.com
+      color: "#f59e0b"
+      logo: feather:palette
+---
+::
+
+::faq
+---
+title: Frequently Asked Questions
+description: Common questions about the design process
+categories:
+  - title: Process
+    questions:
+      - label: How long does a typical project take?
+        content: Projects typically take 8-12 weeks depending on complexity and scope.
+      - label: What's your approach to user research?
+        content: We conduct interviews, usability testing, and competitive analysis to inform our designs.
+  - title: Services
+    questions:
+      - label: Do you offer consulting?
+        content: Yes, we offer strategic consulting for product teams looking to improve their design process.
+      - label: Can you help with existing products?
+        content: Absolutely! We specialize in redesigning and improving existing products based on user feedback.
+---
+::
+
+::testimonials
+---
+testimonials:
+  - quote: Working with this team transformed our product. Their attention to detail and user-centric approach resulted in a 40% increase in user engagement.
+    author:
+      name: Sarah Chen
+      description: Product Director at Bloom Finance
+      avatar:
+        src: /download.jpg
+        alt: Sarah Chen
+  - quote: The design system they created is a game-changer. It enabled our team to move faster while maintaining consistency across all our products.
+    author:
+      name: Alex Rodriguez
+      description: Engineering Lead at TechCorp
+      avatar:
+        src: /download.jpg
+        alt: Alex Rodriguez
+---
+::
 
 ## Results & Learnings
 

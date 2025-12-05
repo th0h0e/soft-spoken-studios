@@ -150,10 +150,7 @@ interface ServiceCard {
   description: string
 }
 
-withDefaults(
-  defineProps<{
-    cards: ServiceCard[]
-  }>(),
-  {}
-)
+defineProps<{
+  cards: ServiceCard[]
+}>()
 </script>

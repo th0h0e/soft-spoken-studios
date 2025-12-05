@@ -1,32 +1,32 @@
 <script setup lang="ts">
 /**
- * TwoImages Component
+ * TwoImages Component - YAML Method MDC Version
  *
  * Displays exactly 2 images in a responsive 2-column grid with 4:5 aspect ratio.
  *
- * Can be used in two ways:
- * 1. With page object: <TwoImages :page="page" /> (uses page.twoimages.images)
- * 2. With direct images prop: <TwoImages :images="[...]" />
+ * Usage in MDC markdown:
+ * ::two-images
+ * ---
+ * images:
+ *   - src: /path/to/image1.jpg
+ *     alt: Image 1 description
+ *     link: /optional-link-1
+ *   - src: /path/to/image2.jpg
+ *     alt: Image 2 description
+ *     link: /optional-link-2
+ * ---
+ * ::
  */
 
 const props = defineProps<{
-  page?: {
-    twoimages?: {
-      images?: Array<{
-        src: string
-        alt: string
-        link?: string
-      }>
-    }
-  }
-  images?: Array<{
+  images: Array<{
     src: string
     alt: string
     link?: string
   }>
 }>()
 
-const displayImages = computed(() => props.page?.twoimages?.images || props.images)
+const displayImages = computed(() => props.images)
 </script>
 
 <template>

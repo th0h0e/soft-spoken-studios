@@ -21,24 +21,18 @@ useSeoMeta({
 
 <template>
   <UPage v-if="page">
-    <Book :page />
+    <!-- Render MDC components from markdown body -->
+    <ContentRenderer :value="page" />
 
-    <TwoImages
-      :images="[
-        {
-          src: '/hero/3334f4a0741954580a818e303927dfcd.jpg',
-          alt: 'Direct component usage',
-          link: '/projects'
-        },
-        {
-          src: '/hero/3334f4a0741954580a818e303927dfcd.jpg',
-          alt: 'No YAML needed',
-          link: '/about'
-        }
-      ]"
+    <!-- FAQ Component - Rendered directly with props to avoid MDC parsing issues -->
+    <FAQ
+      v-if="page.faq"
+      :title="page.faq.title"
+      :description="page.faq.description"
+      :categories="page.faq.categories"
     />
 
-    <LandingLetter :page />
+    <!-- Service Card Section -->
     <UPageSection>
       <ServiceCard
         :cards="[
@@ -63,7 +57,8 @@ useSeoMeta({
         ]"
       />
     </UPageSection>
-    <LandingFAQ :page />
+
+    <!-- Projects Section -->
     <ProjectIndex title="Recent Projects" />
   </UPage>
 </template>
