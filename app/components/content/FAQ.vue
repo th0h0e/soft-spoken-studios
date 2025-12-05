@@ -21,14 +21,21 @@ interface Category {
   questions: Question[]
 }
 
-const props = defineProps<{
-  title: string
-  description: string
-  categories: Category[]
-}>()
+const props = withDefaults(
+  defineProps<{
+    title?: string
+    description?: string
+    categories?: Category[]
+  }>(),
+  {
+    title: 'FAQ',
+    description: '',
+    categories: () => []
+  }
+)
 
 const activeCategory = ref(0)
-const activeTabKey = ref('')
+const activeTabKey = ref(0)
 
 const currentQuestions = computed(() => {
   return props.categories[activeCategory.value]?.questions || []
@@ -45,13 +52,6 @@ const tabItems = computed(() => {
 watch(activeTabKey, (newValue) => {
   activeCategory.value = Number(newValue)
 }, { immediate: false })
-
-// Initialize on mount
-onMounted(() => {
-  if (props.categories.length > 0) {
-    activeTabKey.value = 0
-  }
-})
 
 const tabUi = {
   root: 'flex items-center gap-4 w-full',
@@ -83,6 +83,6 @@ const tabUi = {
     </div>
 
     <!-- Accordion for Questions -->
-    <FAQAccordion :questions="currentQuestions" />
+    <FaqAccordion :questions="currentQuestions" />
   </UPageSection>
 </template>

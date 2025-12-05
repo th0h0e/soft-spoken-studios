@@ -38,23 +38,7 @@ export default defineContentConfig({
     index: defineCollection({
       type: 'page',
       source: 'index.md',
-      schema: z.object({
-        faq: z.object({
-          title: z.string(),
-          description: z.string(),
-          categories: z.array(
-            z.object({
-              title: z.string(),
-              questions: z.array(
-                z.object({
-                  label: z.string(),
-                  content: z.string()
-                })
-              )
-            })
-          )
-        }).optional()
-      })
+      schema: z.object({})
     }),
 
     // About Page (/about)

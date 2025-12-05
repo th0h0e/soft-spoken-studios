@@ -24,14 +24,6 @@ useSeoMeta({
     <!-- Render MDC components from markdown body -->
     <ContentRenderer :value="page" />
 
-    <!-- FAQ Component - Rendered directly with props to avoid MDC parsing issues -->
-    <FAQ
-      v-if="page.faq"
-      :title="page.faq.title"
-      :description="page.faq.description"
-      :categories="page.faq.categories"
-    />
-
     <!-- Service Card Section -->
     <UPageSection>
       <ServiceCard
