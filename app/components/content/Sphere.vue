@@ -172,7 +172,6 @@ interface MousePosition {
 
 interface Props {
   images?: ImageData[]
-  containerSize?: number
   sphereRadius?: number
   dragSensitivity?: number
   momentumDecay?: number
@@ -185,9 +184,10 @@ interface Props {
   className?: string
 }
 
+const containerSize = 400
+
 const props = withDefaults(defineProps<Props>(), {
   images: () => [],
-  containerSize: 400,
   sphereRadius: 200,
   dragSensitivity: 0.5,
   momentumDecay: 0.95,

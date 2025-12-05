@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-
 const { data: page } = await useAsyncData('about', () => {
   return queryCollection('about').first()
 })
@@ -19,61 +17,13 @@ useSeoMeta({
   description: page.value?.seo?.description || page.value?.description,
   ogDescription: page.value?.seo?.description || page.value?.description
 })
-
-const sphereContainerSize = ref(400)
-
-onMounted(() => {
-  sphereContainerSize.value = window.innerWidth < 640 ? 320 : 400
-})
 </script>
 
 <template>
   <UPage v-if="page">
-    <Hero
-      :title="page.title || ''"
-      :description="page.description || ''"
-    />
-    <USeparator
-      color="neutral"
-      type="solid"
-    />
-    <UPageSection
-      v-if="page.sphere"
-      :ui="{ container: 'py-8 px-0' }"
-    >
-      <Sphere
-        :images="page.sphere.images"
-        :auto-rotate="page.sphere.autoRotate"
-        :auto-rotate-speed="page.sphere.autoRotateSpeed"
-        :container-size="sphereContainerSize"
-      />
-    </UPageSection>
-    <div class="py-8">
-      <USeparator
-        color="neutral"
-        type="solid"
-      />
-    </div>
-    <UPageSection
-      :ui="{
-        container: '!pt-0'
-      }"
-    >
-      <MDC
-        :value="page.content"
-        unwrap="p"
-      />
-    </UPageSection>
-    <UPageSection
-      :ui="{
-        container: '!pt-0'
-      }"
-    >
-      <WorkExperience
-        :title="page.experience?.title || ''"
-        :items="page.experience?.items || []"
-      />
-    </UPageSection>
+    <!-- Hero, Sphere, Content, and Experience from Markdown -->
+    <ContentRenderer :value="page" />
+    <!-- Services Section -->
     <UPageSection>
       <ServiceCard
         :cards="[

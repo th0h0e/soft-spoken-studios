@@ -44,38 +44,8 @@ export default defineContentConfig({
     // About Page (/about)
     about: defineCollection({
       type: 'page',
-      source: 'about.yml',
-      schema: z.object({
-        hero: z.object({
-          images: z.array(createImageSchema()),
-          title: z.string().optional(),
-          description: z.string().optional()
-        }),
-        content: z.object({}),
-        images: z.array(createImageSchema()),
-        sphere: z.object({
-          images: z.array(z.object({
-            src: z.string(),
-            alt: z.string()
-          })),
-          autoRotate: z.boolean().optional(),
-          autoRotateSpeed: z.number().optional()
-        }),
-        experience: z.object({
-          title: z.string(),
-          description: z.string(),
-          items: z.array(z.object({
-            date: z.date(),
-            position: z.string(),
-            company: z.object({
-              name: z.string(),
-              url: z.string(),
-              logo: z.string().editor({ input: 'icon' }),
-              color: z.string()
-            })
-          }))
-        })
-      })
+      source: 'about.md',
+      schema: z.object({})
     }),
 
     // Individual Project Pages (/projects/[slug])
