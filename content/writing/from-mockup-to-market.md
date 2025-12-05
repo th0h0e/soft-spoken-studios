@@ -194,6 +194,16 @@ To ensure consistency and facilitate development, I created a comprehensive desi
 
 The final prototype brought together all elements into a cohesive experience, which we tested with a broader user group before moving to development.
 
+::project-gallery
+---
+images:
+  - /hero/3334f4a0741954580a818e303927dfcd.jpg
+  - /c7cb6ff8df2b3bcc233eda201420fb2a-2.jpg
+  - /hero/3334f4a0741954580a818e303927dfcd.jpg
+  - /c7cb6ff8df2b3bcc233eda201420fb2a-2.jpg
+---
+::
+
 ## Phase 5: Implementation & Iteration
 
 The design process doesn't end when development begins—it evolves.
