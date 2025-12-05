@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+// Nuxt Hub enabled with NuxtHub database for data persistence
 export default defineNuxtConfig({
 
   modules: [
