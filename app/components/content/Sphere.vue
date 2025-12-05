@@ -242,8 +242,8 @@ const animationFrame = ref<number | null>(null)
 // COMPUTED
 // ==========================================
 
-const actualSphereRadius = computed(() => props.sphereRadius || props.containerSize * 0.5)
-const baseImageSize = computed(() => props.containerSize * props.baseImageScale)
+const actualSphereRadius = computed(() => props.sphereRadius || containerSize * 0.5)
+const baseImageSize = computed(() => containerSize * props.baseImageScale)
 
 // ==========================================
 // UTILITY FUNCTIONS
