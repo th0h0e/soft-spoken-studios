@@ -96,7 +96,13 @@ images:
 ---
 ::
 
-<hr>
+
+
+
+
+::contentSection
+---
+---
 
 Hi, I'm **Thomas**, a Copywriter and Video Producer based right here in Boston. For the past six years, I've been immersed in the world of brand storytelling, focusing on creating content that doesn't just look good, but genuinely connects with audiences and drives meaningful results.
 
@@ -145,3 +151,8 @@ items:
       color: "#5E6AD2"
 ---
 ::
+
+::
+
+
+
