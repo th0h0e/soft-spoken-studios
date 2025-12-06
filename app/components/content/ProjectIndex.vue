@@ -32,7 +32,7 @@ const { data: projectsList } = await useAsyncData(
 </script>
 
 <template>
-  <div class="pb-24 sm:pb-32 lg:pb-48 px-4">
+  <div class="pb-24 sm:pb-32 lg:pb-48 px-12">
     <h2 class="mb-4 text-xl text-center font-semibold">
       <slot name="title">
         {{ props.title }}
@@ -47,7 +47,7 @@ const { data: projectsList } = await useAsyncData(
         v-for="(project, index) in projectsList"
         :key="project.path"
         :to="project.path"
-        class="hover:text-foreground transition-colors"
+        class="hover:text-default transition-colors"
       >
         {{ project.title }}<span v-if="index < projectsList.length - 1"> • </span>
       </NuxtLink>

@@ -106,6 +106,7 @@ cards:
     icon: feather:play
     iconLabel: Creative Storytelling
     description: Stories that move. We create videos that capture authentic moments and communicate your message.
+    link: /about
   - image: /hero/3334f4a0741954580a818e303927dfcd.jpg
     imageAlt: Copywriting
     badge: Writing
@@ -113,12 +114,14 @@ cards:
     icon: feather:pen-tool
     iconLabel: Purposeful Communication
     description: Words with purpose. Clear, compelling copy that connects with your audience.
+    link: /projects/bloom-finance
 ---
 ::
+
 <hr>
 
 ::projectIndex
 ---
-title: Recent Projects
+title: Project Index
 ---
 ::
