@@ -44,11 +44,11 @@ export default defineAppConfig({
       neutral: 'neutral'
     },
     pageBody: {
-      base: 'mt-8 pb-24 space-y-12 px-4'
+      base: 'pb-24 space-y-12 px-4'
     },
     pageHeader: {
       slots: {
-        root: 'relative border-none pt-18 pb-8 sm:pt-24 sm:pb-12 lg:pt-32 lg:pb-16 px-4',
+        root: 'relative border-none pt-12 pb-14 sm:pt-12 sm:pb-24 lg:pt-18 lg:pb-20 px-4',
         title: 'mx-0 text-left max-w-xl text-pretty text-3xl sm:text-4xl lg:text-5xl',
         description: 'mx-0 text-left text-sm text-muted max-w-2xl',
         links: 'justify-start'
@@ -63,7 +63,7 @@ export default defineAppConfig({
     },
     pageSection: {
       slots: {
-        container: 'py-18 sm:py-24 lg:py-32 px-4'
+        container: 'pt-0 pb-24 sm:pb-32 lg:pb-48 px-4'
       }
     },
     avatar: {

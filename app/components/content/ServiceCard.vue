@@ -1,19 +1,20 @@
 <template>
-  <Motion
-    initial="initial"
-    in-view="animate"
-    :variants="{
-      initial: { opacity: 0 },
-      animate: {
-        opacity: 1,
-        transition: {
-          when: 'beforeChildren',
-          delayChildren: stagger(0.12)
+  <UPageSection>
+    <Motion
+      initial="initial"
+      in-view="animate"
+      :variants="{
+        initial: { opacity: 0 },
+        animate: {
+          opacity: 1,
+          transition: {
+            when: 'beforeChildren',
+            delayChildren: stagger(0.12)
+          }
         }
-      }
-    }"
-  >
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+      }"
+    >
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
       <UCard
         v-for="card in cards"
         :key="card.title"
@@ -104,8 +105,9 @@
           </Motion>
         </template>
       </UCard>
-    </div>
-  </Motion>
+      </div>
+    </Motion>
+  </UPageSection>
 </template>
 
 <script setup lang="ts">

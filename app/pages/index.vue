@@ -21,36 +21,7 @@ useSeoMeta({
 
 <template>
   <UPage v-if="page">
-    <!-- Render MDC components from markdown body -->
+    <!-- Render all MDC components from markdown body -->
     <ContentRenderer :value="page" />
-
-    <!-- Service Card Section -->
-    <UPageSection>
-      <ServiceCard
-        :cards="[
-          {
-            image: '/hero/3334f4a0741954580a818e303927dfcd.jpg',
-            imageAlt: 'Video production',
-            badge: 'Service',
-            title: 'Video Production',
-            icon: 'feather:play',
-            iconLabel: 'Creative Storytelling',
-            description: 'Stories that move. We create videos that capture authentic moments and communicate your message.'
-          },
-          {
-            image: '/hero/3334f4a0741954580a818e303927dfcd.jpg',
-            imageAlt: 'Copywriting',
-            badge: 'Writing',
-            title: 'Copywriting',
-            icon: 'feather:pen-tool',
-            iconLabel: 'Purposeful Communication',
-            description: 'Words with purpose. Clear, compelling copy that connects with your audience.'
-          }
-        ]"
-      />
-    </UPageSection>
-
-    <!-- Projects Section -->
-    <ProjectIndex title="Recent Projects" />
   </UPage>
 </template>

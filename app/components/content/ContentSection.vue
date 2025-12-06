@@ -14,7 +14,7 @@ const props = withDefaults(
 <template>
   <div
     :id="props.id"
-    class="py-18 sm:py-24 lg:py-32 px-4"
+    class="pb-24 sm:pb-32 lg:pb-48 px-4"
     :class="props.class"
   >
     <slot />

@@ -31,8 +31,7 @@ const displayImages = computed(() => props.images)
 
 <template>
   <UPageSection>
-    <USeparator />
-    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 -mt-8">
+    <div class="grid grid-cols-2 gap-6 -mt-8">
       <!-- Loop through images (max 2) -->
       <template
         v-for="(image, index) in displayImages?.slice(0, 2)"
