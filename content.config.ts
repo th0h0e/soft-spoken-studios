@@ -10,18 +10,6 @@ const createImageSchema = () => z.object({
   alt: z.string()
 })
 
-const createTestimonialSchema = () => z.object({
-  quote: z.string(),
-  author: z.object({
-    name: z.string(),
-    description: z.string().optional(),
-    username: z.string().optional(),
-    twitter: z.string().optional(),
-    to: z.string().optional(),
-    avatar: createImageSchema().optional()
-  })
-})
-
 // ========================================================================
 // COLLECTIONS
 // Data sources and routes for the application

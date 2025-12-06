@@ -17,7 +17,7 @@
 
 import { ref } from 'vue'
 
-const props = defineProps<{
+defineProps<{
   images: string[]
 }>()
 
@@ -51,9 +51,13 @@ const currentIndex = ref(0)
         :key="index"
         :active="index === currentIndex"
         variant="soft"
-        :ui="{ base: 'overflow-hidden rounded transition-opacity hover:opacity-75 p-0 h-auto' }"
+        :ui="{ base: 'overflow-hidden rounded transition-opacity p-0 h-auto' }"
         class="overflow-hidden rounded aspect-16/10"
-        :class="{ 'ring-1 ring-primary': index === currentIndex }"
+        :class="{
+          'ring-1 ring-primary': index === currentIndex,
+          'opacity-50 hover:opacity-75': index !== currentIndex,
+          'hover:opacity-95': index === currentIndex
+        }"
         @click="currentIndex = index"
       >
         <NuxtImg

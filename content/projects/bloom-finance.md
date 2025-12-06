@@ -17,10 +17,8 @@ gallery:
   - /tumblr_b3ea4838bff77d1926c3c8c4a412c361_90fd311f_1280.jpg
   - /tumblr_4f7ee9971f08af76724d2bb7123ea3cb_a5744973_1280.jpg
   - /tumblr_5d36f28f4d2d7f414da50f8e53179f05_ad7b99ee_1280.jpg
-  - /tumblr_cb80e258f38e0f5941de505643f12790_4fd4fa54_1280.jpg
-  - /tumblr_o9e0sqIpWi1rpgpe2o1_1280.jpg
-  - /aca7dce603845cdd7cfa134bfba03060.jpg
 ---
+
 
 ## Project Overview
 

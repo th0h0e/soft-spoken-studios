@@ -73,17 +73,22 @@ useSeoMeta({
               {{ tag }}
             </UBadge>
           </div>
+          <div class="py-8">
+            <USeparator
+              color="neutral"
+              type="solid"
+            />
+          </div>
         </div>
         <UPageBody>
-          <ContentRenderer
-            v-if="page.body"
-            :value="page"
-          />
-
           <ProjectGallery
             v-if="page.gallery && page.gallery.length > 0"
             :images="page.gallery"
             class="my-8"
+          />
+          <ContentRenderer
+            v-if="page.body"
+            :value="page"
           />
 
           <UContentSurround :surround />
