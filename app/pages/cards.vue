@@ -1,5 +1,6 @@
 <template>
-  <UContainer>
+  <div>
     <Test />
-  </UContainer>
+    <div />
+  </div>
 </template>
