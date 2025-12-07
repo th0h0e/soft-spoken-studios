@@ -46,7 +46,6 @@ export default defineContentConfig({
         date: z.date(),
         client: z.string().optional(),
         role: z.string().optional(),
-        year: z.string().optional(),
         gallery: z.array(z.string()).optional()
       })
     }),
