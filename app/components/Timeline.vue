@@ -8,7 +8,7 @@ interface Project {
   title: string
   description: string
   gallery?: string[]
-  date: Date
+  date: string | Date
 }
 
 interface Props {
@@ -21,11 +21,11 @@ const formatDate = (date: string | Date) => useDateFormat(date, 'MMM. YYYY')
 
 // Measure header width to position beam through dot center
 const headerRef = useTemplateRef<HTMLElement>('header')
-const beamLeft = ref(8)
+const beamLeft = ref(7)
 
 useResizeObserver(headerRef, (entries) => {
   const entry = entries[0]
-  if (entry) beamLeft.value = entry.contentRect.width - 7
+  if (entry) beamLeft.value = entry.contentRect.width - 8
 })
 
 // Scroll-driven beam animation with spring physics
@@ -58,7 +58,7 @@ const beamHeight = useTransform(() => `${smoothProgress.get() * 100}%`)
         >
           <header
             :ref="index === 0 ? 'header' : undefined"
-            class="flex items-center gap-2"
+            class="flex items-center gap-2 justify-end w-4 sm:min-w-[88px]"
           >
             <time class="hidden sm:block text-xs text-muted text-right">{{ formatDate(project.date) }}</time>
             <div class="flex items-center justify-center size-4">

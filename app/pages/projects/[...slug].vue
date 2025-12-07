@@ -31,7 +31,7 @@ useSeoMeta({
           Projects
         </ULink>
         <div class="flex flex-col gap-3 mt-8">
-          <div class="flex text-xs text-muted items-center justify-center gap-2">
+          <div class="flex text-sm text-muted items-center justify-center gap-2">
             <span v-if="page.client">
               {{ page.client }}
             </span>

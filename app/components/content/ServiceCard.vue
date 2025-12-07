@@ -39,11 +39,11 @@
         }
       }"
     >
-      <div class="flex gap-8">
+      <div class="flex flex-col sm:flex-row gap-4">
         <div
           v-for="card in cards"
           :key="card.title"
-          class="w-1/2"
+          class="w-full sm:w-1/2"
         >
           <UCard
             variant="outline"
