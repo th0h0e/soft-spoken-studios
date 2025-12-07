@@ -11,9 +11,10 @@ defineProps<Props>()
 
 <template>
   <div class="max-w-[620px] pl-2 pb-12 sm:p-3 sm:pb-16 mx-auto">
-    <NuxtLink :to="to">
+    <NuxtLink :to="to" class="block cursor-pointer">
       <UCard
         :ui="{
+          root: 'cursor-pointer',
           header: '!p-0',
           body: 'bg-elevated/30 hover:bg-elevated/50 transition-colors'
         }"
@@ -22,6 +23,7 @@ defineProps<Props>()
           <Carousel
             v-if="gallery"
             :images="gallery"
+            class="pointer-events-none"
           />
         </template>
 

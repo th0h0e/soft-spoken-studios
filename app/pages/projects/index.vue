@@ -34,7 +34,7 @@ const { data: projects } = await useAsyncData('projects', () => {
         type="solid"
       />
     </div>
-    <Test
+    <Timeline
       v-if="projects"
       :projects="projects"
     />

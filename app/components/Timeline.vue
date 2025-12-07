@@ -4,7 +4,7 @@ import { Motion, useScroll, useSpring, useTransform } from 'motion-v'
 import { useDateFormat, useResizeObserver } from '@vueuse/core'
 
 interface Project {
-  to: string
+  path: string
   title: string
   description: string
   gallery?: string[]
@@ -12,48 +12,10 @@ interface Project {
 }
 
 interface Props {
-  projects?: Project[]
+  projects: Project[]
 }
 
-withDefaults(defineProps<Props>(), {
-  projects: () => [
-    {
-      date: new Date('2025-03-07'),
-      to: '/projects/project-1',
-      title: 'Project One',
-      description: 'A detailed breakdown of my iterative design methodology.',
-      gallery: ['/sss.png']
-    },
-    {
-      date: new Date('2025-02-15'),
-      to: '/projects/project-2',
-      title: 'Project Two',
-      description: 'Exploring how strategic color choices can influence user behavior.',
-      gallery: ['/sss.png']
-    },
-    {
-      date: new Date('2025-01-20'),
-      to: '/projects/project-3',
-      title: 'Project Three',
-      description: 'A practical guide to creating your own design system.',
-      gallery: ['/sss.png']
-    },
-    {
-      date: new Date('2024-12-24'),
-      to: '/projects/project-4',
-      title: 'Project Four',
-      description: 'Building modern web applications with Vue and Nuxt.',
-      gallery: ['/sss.png']
-    },
-    {
-      date: new Date('2024-11-10'),
-      to: '/projects/project-5',
-      title: 'Project Five',
-      description: 'Understanding motion design principles in web interfaces.',
-      gallery: ['/sss.png']
-    }
-  ]
-})
+defineProps<Props>()
 
 const formatDate = (date: string | Date) => useDateFormat(date, 'MMM. YYYY')
 
@@ -107,7 +69,7 @@ const beamHeight = useTransform(() => `${smoothProgress.get() * 100}%`)
           </header>
           <section class="ps-2">
             <ProjectCard
-              :to="project.to"
+              :to="project.path"
               :title="project.title"
               :description="project.description"
               :gallery="project.gallery"
