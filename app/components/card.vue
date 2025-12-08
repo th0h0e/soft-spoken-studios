@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Motion } from 'motion-v'
-
 const route = useRoute()
 const { isWritingArticle } = usePageType()
 const clipboard = useClipboard()
@@ -79,28 +77,22 @@ const shareMenuItems = [
     v-else
     class="flex flex-col gap-0"
   >
-    <Motion
+    <NuxtLink
       v-for="article in articles"
       :key="article.path"
-      :initial="{ opacity: 0 }"
-      :hover="{ opacity: 1 }"
-      :transition="{ type: 'spring', stiffness: 300, damping: 80 }"
-      class="relative"
+      :to="article.path"
+      class="block"
     >
-      <div class="absolute inset-0 bg-elevated/20 pointer-events-none" />
-      <UCard variant="outline">
-        <NuxtLink
-          :to="article.path"
-          class="group block"
-        >
-          <h3 class="text-sm font-medium mb-1">
-            {{ article.title }}
-          </h3>
-          <p class="text-sm text-muted line-clamp-2">
-            {{ article.description }}
-          </p>
-        </NuxtLink>
+      <UCard
+        variant="outline"
+      >
+        <h3 class="text-sm font-medium mb-1">
+          {{ article.title }}
+        </h3>
+        <p class="text-sm text-muted line-clamp-2">
+          {{ article.description }}
+        </p>
       </UCard>
-    </Motion>
+    </NuxtLink>
   </div>
 </template>
