@@ -204,6 +204,36 @@ images:
 ---
 ::
 
+::testimonials
+---
+testimonials:
+  - quote: Thomas's copywriting transformed our entire brand voice. He crafted
+      messaging that was both compelling and authentic, helping us connect with
+      our audience on a deeper level. After launching his new website copy and
+      campaign materials, we saw a 45% increase in qualified leads and our email
+      open rates jumped from 18% to 34%.
+    author:
+      name: Sarah Chen
+      description: Product Director at Bloom Finance
+      avatar:
+        src: /90d52ee25f93c3e7deaf019956a6089b.jpg
+        alt: Sarah Chen
+  - quote: Working with Thomas was a game-changer for our startup. His video
+      production skills brought our story to life in ways we never imagined, and
+      his scriptwriting made complex ideas feel accessible. The launch video he
+      produced became our most-shared piece of content, and the sales page copy
+      he wrote converted at 3x our previous rate.
+    author:
+      name: Alex Rodriguez
+      description: Engineering Lead at TechCorp
+      avatar:
+        src: /download.jpg
+        alt: Alex Rodriguez
+---
+
+::
+
+
 ## Phase 5: Implementation & Iteration
 
 The design process doesn't end when development begins—it evolves.
@@ -241,18 +271,14 @@ editor: Published by Hibbert & Sons, Boston 2025
 ---
 cards:
   - image: /hero/3334f4a0741954580a818e303927dfcd.jpg
-    imageAlt: Video production
     badge: Service
     title: Video Production
-    icon: feather:play
-    iconLabel: Creative Storytelling
+    icon: play
     description: Stories that move. We create videos that capture authentic moments and communicate your message.
   - image: /hero/3334f4a0741954580a818e303927dfcd.jpg
-    imageAlt: Copywriting
     badge: Writing
     title: Copywriting
-    icon: feather:pen-tool
-    iconLabel: Purposeful Communication
+    icon: pen-tool
     description: Words with purpose. Clear, compelling copy that connects with your audience.
 ---
 ::

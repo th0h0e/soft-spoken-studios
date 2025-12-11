@@ -19,7 +19,7 @@ const { data: currentArticle } = await useAsyncData(
 // Share functionality
 async function copyLink() {
   await clipboard.copy(window.location.href)
-  toast.add({ title: 'Copied to clipboard', icon: 'lucide:check-circle', color: 'success' })
+  toast.add({ title: 'Copied to clipboard', icon: 'i-feather-check-circle', color: 'success' })
 }
 
 async function share() {
@@ -29,7 +29,7 @@ async function share() {
 const shareMenuItems = [
   {
     label: 'Copy URL',
-    icon: 'lucide:link',
+    icon: 'i-feather-link',
     onSelect: copyLink
   }
 ]
@@ -43,8 +43,8 @@ const shareMenuItems = [
   >
     <UPageAnchors
       :links="[
-        { label: 'YouTube tutorial', icon: 'lucide:youtube', to: 'https://www.youtube.com/@matteo-beltrame', target: '_blank' },
-        { label: 'All posts', icon: 'lucide:newspaper', to: '/writing' }
+        { label: 'YouTube tutorial', icon: 'i-feather-youtube', to: 'https://www.youtube.com/@matteo-beltrame', target: '_blank' },
+        { label: 'All posts', icon: 'i-feather-file-text', to: '/writing' }
       ]"
     />
     <USeparator type="dotted" />
@@ -56,7 +56,7 @@ const shareMenuItems = [
     <UFieldGroup class="w-full">
       <UButton
         label="Share this article"
-        icon="lucide:share-2"
+        icon="i-feather-share-2"
         variant="subtle"
         color="neutral"
         class="grow"
@@ -64,7 +64,7 @@ const shareMenuItems = [
       />
       <UDropdownMenu :items="shareMenuItems">
         <UButton
-          icon="lucide:chevron-down"
+          icon="i-feather-chevron-down"
           variant="subtle"
           color="neutral"
         />

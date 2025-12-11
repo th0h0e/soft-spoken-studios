@@ -26,7 +26,7 @@ const tocOpen = ref(false)
         label="On this page"
         color="neutral"
         variant="ghost"
-        trailing-icon="lucide:chevron-down"
+        trailing-icon="i-feather-chevron-down"
         :ui="{
           trailingIcon: 'group-data-[state=open]:rotate-180 transition-transform duration-200'
         }"

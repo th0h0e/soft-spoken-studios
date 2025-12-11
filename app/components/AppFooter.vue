@@ -17,7 +17,7 @@ const { footer } = useAppConfig()
         :href="footer.creditsLink"
         target="_blank"
         rel="noopener"
-        class="hover:text-default transition-colors"
+        class="opacity-70 hover:opacity-100 hover:text-default transition-all"
       >
         {{ footer.credits }}
       </a>
@@ -25,7 +25,6 @@ const { footer } = useAppConfig()
 
     <template #right>
       <div class="flex items-center gap-2">
-        <span class="text-muted text-sm">Soft Spoken Studio</span>
         <template v-if="footer?.links">
           <UButton
             v-for="(link, index) of footer?.links"
@@ -33,6 +32,7 @@ const { footer } = useAppConfig()
             v-bind="{ size: 'xs', color: 'neutral', variant: 'ghost', ...link }"
           />
         </template>
+        <span class="text-sm">Soft Spoken Studio</span>
       </div>
     </template>
   </UFooter>
@@ -50,7 +50,7 @@ const { footer } = useAppConfig()
         :href="footer.creditsLink"
         target="_blank"
         rel="noopener"
-        class="hover:text-default transition-colors"
+        class="opacity-70 hover:opacity-100 hover:text-default transition-all"
       >
         {{ footer.credits }}
       </a>
@@ -58,7 +58,6 @@ const { footer } = useAppConfig()
 
     <template #right>
       <div class="flex items-center gap-2">
-        <span class="text-default">Soft Spoken Studio</span>
         <template v-if="footer?.links">
           <UButton
             v-for="(link, index) of footer?.links"
@@ -66,6 +65,7 @@ const { footer } = useAppConfig()
             v-bind="{ size: 'xs', color: 'neutral', variant: 'ghost', ...link }"
           />
         </template>
+        <span class="text-sm">Soft Spoken Studio</span>
       </div>
     </template>
   </UFooter>

@@ -12,7 +12,7 @@
       :color="copied ? 'success' : 'neutral'"
       size="sm"
       aria-label="copy content"
-      :icon="copied ? 'lucide:check-circle' : 'lucide:copy'"
+      :icon="copied ? 'i-feather-check-circle' : 'i-feather-copy'"
       @click="onClick"
     />
     <UDropdownMenu
@@ -22,7 +22,7 @@
       <UButton
         color="neutral"
         variant="subtle"
-        icon="i-lucide-chevron-down"
+        icon="i-feather-chevron-down"
         size="sm"
       />
     </UDropdownMenu>
