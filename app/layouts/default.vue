@@ -3,6 +3,7 @@ import { ref, watch } from 'vue'
 
 const router = useRouter()
 const navOpen = ref(false)
+const { isWritingArticle } = usePageType()
 
 watch(() => router.currentRoute.value.path, () => {
   navOpen.value = false
@@ -54,12 +55,17 @@ watch(() => router.currentRoute.value.path, () => {
           variant="outline"
           class="h-full"
           :ui="{
-            root: 'flex flex-col h-full',
-            body: 'flex-1 !p-0',
-            footer: 'bg-elevated/30 py-4'
+            root: 'flex flex-col h-full divide-y-0',
+            header: '!p-0',
+            body: 'flex-1 p-4',
+            footer: 'bg-elevated/30 py-4 border-t border-default'
           }"
         >
-          <ArticleSidebar />
+          <template #header>
+            <ArticleSidebar />
+          </template>
+
+          <ShareButton v-if="isWritingArticle" />
 
           <template #footer>
             <Copy content="info@softspokenstudio.com" />
