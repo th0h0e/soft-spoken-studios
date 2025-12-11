@@ -1,8 +1,34 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from '@nuxt/ui'
-import { navLinks } from '~/utils/links'
 
-const items = ref<NavigationMenuItem[][]>(navLinks)
+const items = ref<NavigationMenuItem[][]>([
+  [
+    {
+      label: 'Soft Spoken Studio',
+      type: 'label'
+    },
+    {
+      label: 'Home',
+      to: '/'
+    },
+    {
+      label: 'Projects',
+      to: '/projects'
+    },
+    {
+      label: 'Writing',
+      to: '/writing'
+    },
+    {
+      label: 'About',
+      to: '/about'
+    },
+    {
+      label: 'Gallery',
+      to: '/gallery'
+    }
+  ]
+])
 
 // Color mode toggle for mobile navigation
 const colorMode = useColorMode()
@@ -51,18 +77,18 @@ const startViewTransition = (event: Event) => {
 // Mobile items with color mode toggle appended to last group (no separator)
 // Filter out the "Soft Spoken Studio" label since it's shown in the collapsible trigger
 const mobileItems = computed<NavigationMenuItem[][]>(() => {
-  const items = navLinks.map(group =>
+  const mobileNavItems = items.value.map(group =>
     group.filter(item => !(item.type === 'label' && item.label === 'Soft Spoken Studio'))
   )
-  const lastGroupIndex = items.length - 1
-  items[lastGroupIndex] = [
-    ...(items[lastGroupIndex] ?? []),
+  const lastGroupIndex = mobileNavItems.length - 1
+  mobileNavItems[lastGroupIndex] = [
+    ...(mobileNavItems[lastGroupIndex] ?? []),
     {
       label: colorMode.value === 'dark' ? 'Light Mode' : 'Dark Mode',
       onSelect: startViewTransition
     }
   ]
-  return items
+  return mobileNavItems
 })
 </script>
 

@@ -34,6 +34,24 @@ export default defineAppConfig({
     available: true
   },
   ui: {
+    icons: {
+      search: 'i-feather-search',
+      close: 'i-feather-x',
+      check: 'i-feather-check',
+      loading: 'i-feather-loader',
+      chevronDown: 'i-feather-chevron-down',
+      chevronRight: 'i-feather-chevron-right',
+      chevronLeft: 'i-feather-chevron-left',
+      arrowLeft: 'i-feather-arrow-left',
+      arrowRight: 'i-feather-arrow-right',
+      external: 'i-feather-external-link',
+      file: 'i-feather-type',
+      hash: 'i-feather-layout',
+      folder: 'i-feather-folder',
+      sun: 'i-feather-sun',
+      moon: 'i-feather-moon',
+      monitor: 'i-feather-monitor'
+    },
     colors: {
       primary: 'zinc',
       secondary: 'slate',
@@ -175,6 +193,12 @@ export default defineAppConfig({
     },
     pageColumns: {
       base: 'relative column-1 md:columns-2 lg:columns-3 gap-4 space-y-8 *:break-inside-avoid-column *:will-change-transform'
+    },
+    contentSearch: {
+      slots: {
+        root: 'bg-white dark:bg-neutral-900',
+        itemLeadingIcon: 'size-4'
+      }
     }
   },
   footer: {

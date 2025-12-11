@@ -14,18 +14,20 @@ useHead({
 const [{ data: navigation }, { data: files }] = await Promise.all([
   useAsyncData('navigation', () => {
     return Promise.all([
-      queryCollectionNavigation('writing')
+      queryCollectionNavigation('writing'),
+      queryCollectionNavigation('projects')
     ])
   }, {
     transform: data => data.flat()
   }),
   useLazyAsyncData('search', () => {
     return Promise.all([
-      queryCollectionSearchSections('writing')
+      queryCollectionSearchSections('writing'),
+      queryCollectionSearchSections('projects')
     ])
   }, {
     server: false,
-    transform: data => data.flat()
+    transform: data => data.flat().filter(section => section.level >= 1 && section.level <= 6)
   })
 ])
 </script>
@@ -41,7 +43,7 @@ const [{ data: navigation }, { data: files }] = await Promise.all([
         :files="files"
         :navigation="navigation"
         shortcut="meta_k"
-        :links="navLinks"
+        :links="searchLinks"
         :fuse="{ resultLimit: 42 }"
       />
     </ClientOnly>
