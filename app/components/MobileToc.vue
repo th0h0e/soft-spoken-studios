@@ -24,24 +24,25 @@ const tocOpen = ref(false)
       <UButton
         class="group w-full justify-between"
         label="On this page"
-        color="neutral"
         variant="ghost"
-        trailing-icon="i-feather-chevron-down"
+        trailing-icon="i-feather-plus"
         :ui="{
-          trailingIcon: 'group-data-[state=open]:rotate-180 transition-transform duration-200'
+          trailingIcon: 'group-data-[state=open]:rotate-135 transition-transform duration-200'
         }"
       />
 
       <template #content>
-        <div class="pt-2 pb-4">
+        <div class="pt-0 pb-2">
           <UContentToc
             :links="currentArticle.body.toc.links"
             highlight
-            default-open
+            :open="true"
             :ui="{
-              root: 'bg-transparent',
+              root: 'bg-transparent static max-h-none',
               container: 'py-0 border-0',
               trigger: 'hidden',
+              title: 'hidden',
+              trailingIcon: 'hidden',
               content: ''
             }"
           />

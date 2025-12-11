@@ -42,9 +42,9 @@ useSeoMeta({
       <template #headline>
         <ULink
           to="/writing"
-          class="text-sm flex items-center gap-1"
+          class="text-sm font-normal flex items-center gap-1"
         >
-          <UIcon name="lucide:chevron-left" />
+          <UIcon name="i-feather-chevron-left" />
           Blog
         </ULink>
       </template>
@@ -75,7 +75,7 @@ useSeoMeta({
             variant="subtle"
             color="neutral"
             :label="formatDate(data.date)"
-            icon="lucide:calendar"
+            icon="i-feather-calendar"
           />
           <UBadge
             v-if="data?.minRead"
@@ -83,7 +83,7 @@ useSeoMeta({
             variant="subtle"
             color="neutral"
             :label="`${data.minRead} Min Read`"
-            icon="lucide:clock"
+            icon="i-feather-clock"
           />
         </div>
       </div>

@@ -204,7 +204,7 @@ images:
 ---
 ::
 
-::testimonials
+::slider
 ---
 testimonials:
   - quote: Thomas's copywriting transformed our entire brand voice. He crafted
@@ -331,7 +331,7 @@ categories:
 ---
 ::
 
-::testimonials
+::slider
 ---
 testimonials:
   - quote: Working with this team transformed our product. Their attention to detail and user-centric approach resulted in a 40% increase in user engagement.

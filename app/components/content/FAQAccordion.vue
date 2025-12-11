@@ -18,7 +18,7 @@ defineProps<{
 
 <template>
   <UAccordion
-    trailing-icon="lucide:plus"
+    trailing-icon="i-feather-plus"
     :items="questions"
     :unmount-on-hide="false"
     :ui="{

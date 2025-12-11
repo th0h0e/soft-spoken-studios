@@ -1,11 +1,11 @@
 <script setup lang="ts">
 /**
- * Testimonials Component - Props-Based Format
+ * Slider Component - Props-Based Format
  *
  * Displays a carousel of testimonials with author information.
  *
  * Usage:
- * <Testimonials :testimonials="testimonials" />
+ * <Slider :testimonials="testimonials" />
  */
 
 interface Author {

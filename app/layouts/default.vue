@@ -30,7 +30,7 @@ watch(() => router.currentRoute.value.path, () => {
               label="Soft Spoken Studio"
               color="neutral"
               variant="ghost"
-              trailing-icon="lucide:chevron-down"
+              trailing-icon="i-feather-chevron-down"
               :ui="{
                 trailingIcon: 'group-data-[state=open]:rotate-180 transition-transform duration-200'
               }"
@@ -59,7 +59,7 @@ watch(() => router.currentRoute.value.path, () => {
             footer: 'bg-elevated/30 py-4'
           }"
         >
-          <Card />
+          <ArticleSidebar />
 
           <template #footer>
             <Copy content="info@softspokenstudio.com" />
