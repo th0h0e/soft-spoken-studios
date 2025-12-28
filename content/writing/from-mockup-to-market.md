@@ -1,12 +1,12 @@
 ---
 title: "From Mockup to Market: My End-to-End Product Design Process"
-description: A detailed breakdown of my iterative design methodology, from initial research to final handoff, with practical tips for designers at every stage.
 author:
   name: Soft Spoken Studio
   avatar:
     src: /download.jpg
     alt: Soft Spoken Studio
 date: 2025-04-23T00:00:00.000Z
+description: A detailed breakdown of my iterative design methodology, from initial research to final handoff, with practical tips for designers at every stage.
 image:
   src: /download.jpg
   alt: Random Image 1
@@ -27,20 +27,40 @@ images:
 
 ::letter
 ---
-headerText: YYYG.
-title: SIGNAL TO NOISE RATIOS
-subtitle: Thomas Hibbert & Sons
 paragraphs:
-  - text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl metus, accumsan id eros id, vehicula tincidunt nisl. Nulla sit amet urna ut mi tempor euismod. Fusce elementum sapien eget elit sodales fringilla. Pellentesque et nulla vel velit malesuada fermentum vitae vitae justo. Nulla dignissim volutpat interdum. Pellentesque at molestie tortor. Proin magna ante, fermentum ac elementum at, lacinia et arcu.
+  - text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl metus,
+      accumsan id eros id, vehicula tincidunt nisl. Nulla sit amet urna ut mi
+      tempor euismod. Fusce elementum sapien eget elit sodales fringilla.
+      Pellentesque et nulla vel velit malesuada fermentum vitae vitae justo.
+      Nulla dignissim volutpat interdum. Pellentesque at molestie tortor. Proin
+      magna ante, fermentum ac elementum at, lacinia et arcu.
     italic: false
-  - text: Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent porttitor venenatis lacus sed mollis. Nulla varius leo nec porta tempus. Nunc orci enim, bibendum in gravida eu, pretium eu purus. Sed vestibulum quam
+  - text: Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent
+      porttitor venenatis lacus sed mollis. Nulla varius leo nec porta tempus.
+      Nunc orci enim, bibendum in gravida eu, pretium eu purus. Sed vestibulum
+      quam
     italic: true
-  - text: Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent porttitor venenatis lacus sed mollis. Nulla varius leo nec porta tempus. Nunc orci enim, bibendum in gravida eu, pretium eu purus. Sed vestibulum quam. Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent porttitor venenatis lacus sed mollis. Nulla varius leo nec porta tempus. Nunc orci enim, bibendum in gravida eu, pretium eu purus. Sed vestibulum quam Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent porttitor venenatis lacus sed mollis.
+  - text: Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent
+      porttitor venenatis lacus sed mollis. Nulla varius leo nec porta tempus.
+      Nunc orci enim, bibendum in gravida eu, pretium eu purus. Sed vestibulum
+      quam. Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent
+      porttitor venenatis lacus sed mollis. Nulla varius leo nec porta tempus.
+      Nunc orci enim, bibendum in gravida eu, pretium eu purus. Sed vestibulum
+      quam Ut volutpat pharetra orci, ac bibendum nunc vulputate in. Praesent
+      porttitor venenatis lacus sed mollis.
     italic: false
-  - text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl metus, accumsan id eros id, vehicula tincidunt nisl. Nulla sit amet urna ut mi tempor euismod. Fusce elementum sapien eget elit sodales fringilla. Pellentesque et nulla vel velit malesuada fermentum vitae vitae justo. Nulla dignissim volutpat interdum. Pellentesque at molestie tortor. Proin magna ante, fermentum ac elementum at, lacinia et arcu.
+  - text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl metus,
+      accumsan id eros id, vehicula tincidunt nisl. Nulla sit amet urna ut mi
+      tempor euismod. Fusce elementum sapien eget elit sodales fringilla.
+      Pellentesque et nulla vel velit malesuada fermentum vitae vitae justo.
+      Nulla dignissim volutpat interdum. Pellentesque at molestie tortor. Proin
+      magna ante, fermentum ac elementum at, lacinia et arcu.
     italic: true
-  - text: go do that 
+  - text: go do that
     italic: false
+headerText: YYYG.
+subtitle: Thomas Hibbert & Sons
+title: SIGNAL TO NOISE RATIOS
 ---
 ::
 
@@ -230,9 +250,7 @@ testimonials:
         src: /download.jpg
         alt: Alex Rodriguez
 ---
-
 ::
-
 
 ## Phase 5: Implementation & Iteration
 
@@ -256,14 +274,14 @@ After launch, we established a regular cycle of analysis and iteration:
 
 ::book
 ---
-author: Thomas G. Hibbert
-title: Soft Spoken Studio
-subtitle: Word on These Streets
 postscript:
   - Six years without telling on em
   - Copywriting & Video Production
   - Seesh with No Accent
+author: Thomas G. Hibbert
 editor: Published by Hibbert & Sons, Boston 2025
+subtitle: Word on These Streets
+title: Soft Spoken Studio
 ---
 ::
 
@@ -274,18 +292,19 @@ cards:
     badge: Service
     title: Video Production
     icon: play
-    description: Stories that move. We create videos that capture authentic moments and communicate your message.
+    description: Stories that move. We create videos that capture authentic moments
+      and communicate your message.
   - image: /hero/3334f4a0741954580a818e303927dfcd.jpg
     badge: Writing
     title: Copywriting
     icon: pen-tool
-    description: Words with purpose. Clear, compelling copy that connects with your audience.
+    description: Words with purpose. Clear, compelling copy that connects with your
+      audience.
 ---
 ::
 
 ::work-experience
 ---
-title: Professional Experience
 items:
   - date: 2020-2023
     position: Senior Designer
@@ -308,40 +327,46 @@ items:
       url: https://example.com
       color: "#f59e0b"
       logo: feather:palette
+title: Professional Experience
 ---
 ::
 
 ::faq
 ---
-title: Frequently Asked Questions
-description: Common questions about the design process
 categories:
   - title: Process
     questions:
       - label: How long does a typical project take?
         content: Projects typically take 8-12 weeks depending on complexity and scope.
       - label: What's your approach to user research?
-        content: We conduct interviews, usability testing, and competitive analysis to inform our designs.
+        content: We conduct interviews, usability testing, and competitive analysis to
+          inform our designs.
   - title: Services
     questions:
       - label: Do you offer consulting?
-        content: Yes, we offer strategic consulting for product teams looking to improve their design process.
+        content: Yes, we offer strategic consulting for product teams looking to improve
+          their design process.
       - label: Can you help with existing products?
-        content: Absolutely! We specialize in redesigning and improving existing products based on user feedback.
+        content: Absolutely! We specialize in redesigning and improving existing
+          products based on user feedback.
+description: Common questions about the design process
+title: Frequently Asked Questions
 ---
 ::
 
 ::slider
 ---
 testimonials:
-  - quote: Working with this team transformed our product. Their attention to detail and user-centric approach resulted in a 40% increase in user engagement.
+  - quote: Working with this team transformed our product. Their attention to detail
+      and user-centric approach resulted in a 40% increase in user engagement.
     author:
       name: Sarah Chen
       description: Product Director at Bloom Finance
       avatar:
         src: /download.jpg
         alt: Sarah Chen
-  - quote: The design system they created is a game-changer. It enabled our team to move faster while maintaining consistency across all our products.
+  - quote: The design system they created is a game-changer. It enabled our team to
+      move faster while maintaining consistency across all our products.
     author:
       name: Alex Rodriguez
       description: Engineering Lead at TechCorp

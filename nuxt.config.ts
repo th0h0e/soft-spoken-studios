@@ -1,5 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-// Nuxt Hub enabled with NuxtHub database for data persistence
 export default defineNuxtConfig({
 
   modules: [
@@ -10,8 +8,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'motion-v/nuxt',
     '@nuxt/hints',
-    'nuxt-studio',
-    '@nuxthub/core'
+    'nuxt-studio'
   ],
 
   devtools: {
@@ -32,10 +29,7 @@ export default defineNuxtConfig({
       openAPI: true
     }
   },
-
-  hub: {
-    database: true
-  },
+  debug: true,
 
   eslint: {
     config: {

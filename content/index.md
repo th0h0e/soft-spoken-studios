@@ -150,5 +150,4 @@ cards:
 
 ---
 
-::project-index{title="Project Index"}
-::
+:project-index{title="Project Index"}

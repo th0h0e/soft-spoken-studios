@@ -5,16 +5,18 @@ description: Learn more about my journey as a Boston-based Copywriter & Video Pr
 
 ::hero
 ---
-title: About Soft Spoken
-description: Learn more about my journey as a Boston-based Copywriter & Video Producer, my creative philosophy, and my passion for crafting compelling stories that connect and convert.
 links:
   - label: Reach Out
     to: null
     color: neutral
+description: Learn more about my journey as a Boston-based Copywriter & Video
+  Producer, my creative philosophy, and my passion for crafting compelling
+  stories that connect and convert.
+title: About Soft Spoken
 ---
 ::
 
-<hr>
+---
 
 ::sphere
 ---
@@ -96,14 +98,7 @@ images:
 ---
 ::
 
-
-
-
-
-::contentSection
----
----
-
+::content-section
 Hi, I'm **Thomas**, a Copywriter and Video Producer based right here in Boston. For the past six years, I've been immersed in the world of brand storytelling, focusing on creating content that doesn't just look good, but genuinely connects with audiences and drives meaningful results.
 
 My path started at **Boston University**, where I earned a degree in Film & Television. It was there I discovered my dual passion for the written word and visual storytelling. Since then, I've honed my skills in both areas, believing that the most powerful content is born from a deep understanding of both narrative craft and production technique.
@@ -124,34 +119,31 @@ When I'm not writing or filming, you might find me exploring Boston's independen
 
 Thanks for stopping by. Feel free to browse my [projects](/projects) or [get in touch](/#contact) if you'd like to collaborate!
 
-::workExperience
----
-title: Projects & Experience
-items:
-  - position: Lead Copywriter at
-    date: 2023 - Present
-    company:
-      name: Nuxt
-      logo: i-simple-icons-nuxtdotjs
-      url: https://nuxt.com
-      color: "#00DC82"
-  - position: Senior Content Strategist at
-    date: 2022 - 2023
-    company:
-      name: Raycast
-      logo: i-simple-icons-raycast
-      url: https://raycast.com
-      color: "#FF6363"
-  - position: Video Producer at
-    date: 2020 - 2021
-    company:
-      name: Linear
-      logo: i-simple-icons-linear
-      url: https://linear.app
-      color: "#5E6AD2"
----
+  :::work-experience
+  ---
+  items:
+    - position: Lead Copywriter at
+      date: 2023 - Present
+      company:
+        name: Nuxt
+        logo: i-simple-icons-nuxtdotjs
+        url: https://nuxt.com
+        color: "#00DC82"
+    - position: Senior Content Strategist at
+      date: 2022 - 2023
+      company:
+        name: Raycast
+        logo: i-simple-icons-raycast
+        url: https://raycast.com
+        color: "#FF6363"
+    - position: Video Producer at
+      date: 2020 - 2021
+      company:
+        name: Linear
+        logo: i-simple-icons-linear
+        url: https://linear.app
+        color: "#5E6AD2"
+  title: Projects & Experience
+  ---
+  :::
 ::
-
-
-
-

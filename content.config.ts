@@ -10,6 +10,12 @@ const createImageSchema = () => z.object({
   alt: z.string()
 })
 
+// Hidden SEO schema - hides the built-in SEO section in Nuxt Studio
+const hiddenSeoSchema = () => property(z.object({
+  title: z.string().optional(),
+  description: z.string().optional()
+}).optional()).editor({ hidden: true })
+
 // ========================================================================
 // COLLECTIONS
 // Data sources and routes for the application
@@ -26,14 +32,18 @@ export default defineContentConfig({
     index: defineCollection({
       type: 'page',
       source: 'index.md',
-      schema: z.object({})
+      schema: z.object({
+        seo: hiddenSeoSchema()
+      })
     }),
 
     // About Page (/about)
     about: defineCollection({
       type: 'page',
       source: 'about.md',
-      schema: z.object({})
+      schema: z.object({
+        seo: hiddenSeoSchema()
+      })
     }),
 
     // Individual Project Pages (/projects/[slug])
@@ -46,7 +56,8 @@ export default defineContentConfig({
         date: z.date(),
         client: z.string().optional(),
         role: z.string().optional(),
-        gallery: z.array(z.string()).optional()
+        gallery: z.array(z.string()).optional(),
+        seo: hiddenSeoSchema()
       })
     }),
 
@@ -66,7 +77,8 @@ export default defineContentConfig({
         author: z.object({
           name: z.string(),
           avatar: createImageSchema().optional()
-        })
+        }),
+        seo: hiddenSeoSchema()
       })
     }),
 
@@ -77,7 +89,9 @@ export default defineContentConfig({
         { include: 'projects.yml' },
         { include: 'writing.yml' }
       ],
-      schema: z.object({})
+      schema: z.object({
+        seo: hiddenSeoSchema()
+      })
     }),
 
     // ========================================================================

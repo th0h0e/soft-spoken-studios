@@ -11,7 +11,10 @@ defineProps<Props>()
 
 <template>
   <div class="max-w-[620px] pl-2 pb-12 sm:p-3 sm:pb-16 mx-auto">
-    <NuxtLink :to="to" class="block cursor-pointer">
+    <NuxtLink
+      :to="to"
+      class="block cursor-pointer"
+    >
       <UCard
         :ui="{
           root: 'cursor-pointer',
