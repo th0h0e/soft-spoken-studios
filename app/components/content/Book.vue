@@ -8,10 +8,6 @@
  * <Book :author="author" :title="title" :subtitle="subtitle" :postscript="[]" :editor="editor" />
  */
 
-defineOptions({
-  inheritAttrs: false
-})
-
 const props = defineProps<{
   author: string
   title: string

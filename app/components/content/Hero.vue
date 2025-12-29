@@ -2,17 +2,23 @@
 /**
  * Hero Component - Props-Based Format
  *
- * Displays a hero section with title and description.
+ * Displays a hero section with title, description, and optional links.
  *
  * Usage:
- * <Hero :title="title" :description="description" />
+ * <Hero :title="title" :description="description" :links="[{ label: 'Contact', to: '/contact' }]" />
  */
+
+interface HeroLink {
+  label: string
+  to: string
+}
 
 const { global } = useAppConfig()
 
 defineProps<{
   title: string
   description: string
+  links?: HeroLink[]
 }>()
 </script>
 
@@ -111,8 +117,10 @@ defineProps<{
       >
         <div class="flex items-center gap-2">
           <UButton
-            label="Reach Out"
-            to="https://github.com/nuxt-ui-templates/portfolio"
+            v-for="(link, index) in links"
+            :key="index"
+            :label="link.label"
+            :to="link.to"
             color="neutral"
           />
           <UButton

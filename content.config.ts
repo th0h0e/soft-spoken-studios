@@ -107,8 +107,7 @@ export default defineContentConfig({
         description: z.string(),
         items: z.array(z.object({
           image: z.string().editor({ input: 'media' }),
-          caption: z.string(),
-          quote: z.string()
+          caption: z.string()
         }))
       })
     })
