@@ -11,9 +11,8 @@ gallery:
 image: /8bfedd83aec8466a4708d60ec299d164.jpg
 role: Lead Designer & Front-end Developer
 tags:
-  - UX Design
-  - UI Design
-  - Front-end Development
+  - Copy
+  - Video
 year: "2024"
 ---
 
@@ -21,9 +20,7 @@ year: "2024"
 
 Bloom Finance approached me to redesign their personal finance platform, which was experiencing high user drop-off rates during onboarding and low engagement with core features. The challenge was to create an intuitive interface that made complex financial data accessible and actionable for everyday users.
 
-/
-
-:project-gallery-f-m
+:project-gallery
 
 ## Technologies Used
 

@@ -18,6 +18,15 @@ const { data: page } = await useAsyncData(`gallery-${route.path}`, () =>
 )
 
 const images = computed<string[]>(() => page.value?.gallery || [])
+const tags = computed<string[]>(() => page.value?.tags || [])
+const date = computed(() => page.value?.date)
+
+const formatDate = (dateString: string) => {
+  return new Date(dateString).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short'
+  })
+}
 
 const currentIndex = ref(0)
 </script>
@@ -25,8 +34,29 @@ const currentIndex = ref(0)
 <template>
   <div
     v-if="images && images.length > 0"
-    class="space-y-2"
+    class="space-y-4"
   >
+    <!-- Tags and Date -->
+    <div
+      v-if="tags.length > 0 || date"
+      class="flex flex-wrap gap-2"
+    >
+      <UBadge
+        v-if="date"
+        color="neutral"
+        variant="subtle"
+        :label="formatDate(date)"
+      />
+      <UBadge
+        v-for="tag in tags"
+        :key="tag"
+        color="neutral"
+        variant="subtle"
+      >
+        {{ tag }}
+      </UBadge>
+    </div>
+
     <!-- Main Image -->
     <div class="overflow-hidden rounded-lg aspect-16/10">
       <NuxtImg
