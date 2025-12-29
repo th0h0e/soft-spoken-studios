@@ -123,25 +123,19 @@ Thanks for stopping by. Feel free to browse my [projects](/projects) or [get in 
   items:
     - position: Lead Copywriter at
       date: 2023 - Present
-      company:
-        name: Nuxt
-        logo: i-simple-icons-nuxtdotjs
-        url: https://nuxt.com
-        color: "#00DC82"
+      projectName: Nuxt
+      projectLogo: /logos/sss.svg
+      link: /projects/bloom-finance
     - position: Senior Content Strategist at
       date: 2022 - 2023
-      company:
-        name: Raycast
-        logo: i-simple-icons-raycast
-        url: https://raycast.com
-        color: "#FF6363"
+      projectName: Raycast
+      projectLogo: /logos/sss.svg
+      link: /projects
     - position: Video Producer at
       date: 2020 - 2021
-      company:
-        name: Linear
-        logo: i-simple-icons-linear
-        url: https://linear.app
-        color: "#5E6AD2"
+      projectName: Linear
+      projectLogo: /logos/sss.svg
+      link: /projects
   title: Projects & Experience
   ---
   :::

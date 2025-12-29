@@ -2,23 +2,18 @@
 /**
  * WorkExperience Component - Props-Based Format
  *
- * Displays a list of work experience with dates, positions, companies, and links.
+ * Displays a list of work experience with dates, positions, projects, and links.
  *
  * Usage:
  * <WorkExperience :title="title" :items="experiences" />
  */
 
-interface Company {
-  name: string
-  url: string
-  color: string
-  logo: string
-}
-
 interface ExperienceItem {
   date: string
   position: string
-  company: Company
+  projectName: string
+  projectLogo: string
+  link: string
 }
 
 defineProps<{
@@ -53,18 +48,18 @@ defineProps<{
           <USeparator />
           <ULink
             class="flex items-center gap-1"
-            :to="experience.company.url"
-            target="_blank"
+            :to="experience.link"
           >
             <span class="text-sm">
               {{ experience.position }}
             </span>
-            <div
-              class="inline-flex items-center gap-1"
-              :style="{ color: experience.company.color }"
-            >
-              <span class="font-medium">{{ experience.company.name }}</span>
-              <UIcon :name="experience.company.logo" />
+            <div class="inline-flex items-center gap-1">
+              <span class="font-bold">{{ experience.projectName }}</span>
+              <NuxtImg
+                :src="experience.projectLogo"
+                :alt="experience.projectName"
+                class="size-4 object-contain"
+              />
             </div>
           </ULink>
         </Motion>
