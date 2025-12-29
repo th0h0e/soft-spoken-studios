@@ -19,7 +19,7 @@ gallery:
   - /tumblr_b3ea4838bff77d1926c3c8c4a412c361_90fd311f_1280.jpg
 ---
 
-::project-gallery-f-m
+::project-gallery
 ::
 
 ## Project Overview

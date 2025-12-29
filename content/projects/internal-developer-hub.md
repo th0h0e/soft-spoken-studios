@@ -21,7 +21,7 @@ gallery:
   - /tumblr_o9e0sqIpWi1rpgpe2o1_1280.jpg
 ---
 
-::project-gallery-f-m
+::project-gallery
 ::
 
 ::card

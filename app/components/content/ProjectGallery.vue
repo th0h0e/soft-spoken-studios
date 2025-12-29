@@ -1,25 +1,23 @@
 <script setup lang="ts">
 /**
- * ProjectGallery Component - YAML Method MDC Version
+ * ProjectGallery - Frontmatter Gallery Component
  *
- * Displays a gallery with main image and thumbnail navigation.
+ * Automatically displays the gallery images from the page's frontmatter.
+ * No props needed - it pulls from the `gallery` field in frontmatter.
  *
  * Usage in MDC markdown:
  * ::project-gallery
- * ---
- * images:
- *   - /path/to/image1.jpg
- *   - /path/to/image2.jpg
- *   - /path/to/image3.jpg
- * ---
  * ::
  */
 
-import { ref } from 'vue'
+const route = useRoute()
 
-defineProps<{
-  images: string[]
-}>()
+// Fetch the current project page data to get the gallery from frontmatter
+const { data: page } = await useAsyncData(`gallery-${route.path}`, () =>
+  queryCollection('projects').path(route.path).first()
+)
+
+const images = computed<string[]>(() => page.value?.gallery || [])
 
 const currentIndex = ref(0)
 </script>
