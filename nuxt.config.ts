@@ -30,9 +30,14 @@ export default defineNuxtConfig({
     // The new module handles preview automatically
   },
 
-  compatibilityDate: '2024-11-01',
+  compatibilityDate: '2025-12-29',
 
   nitro: {
+    preset: 'cloudflare_module',
+    cloudflare: {
+      deployConfig: true,
+      nodeCompat: true
+    },
     experimental: {
       openAPI: true
     }
