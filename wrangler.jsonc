@@ -16,15 +16,5 @@
       "database_id": "37a73a49-c5a5-41ab-99c4-002bf0c749df"
     }
   ],
-  "vars": {},
-  "env": {
-    "preview": {
-      "d1_databases": [
-        {
-          "binding": "DB",
-          "database_id": "0b151548-50f0-41e7-8c24-fe624f3199e0"
-        }
-      ]
-    }
-  }
+  "vars": {}
 }
