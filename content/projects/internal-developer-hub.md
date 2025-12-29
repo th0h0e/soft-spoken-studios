@@ -21,6 +21,9 @@ gallery:
   - /tumblr_o9e0sqIpWi1rpgpe2o1_1280.jpg
 ---
 
+::project-gallery-f-m
+::
+
 ::card
 :iframe{allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" frame-border="0" referrer-policy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/8o7gyUsoAw0?si=6B94hNvDRk0CVh-A" style="aspect-ratio: 16/9;" title="YouTube video player"}
 

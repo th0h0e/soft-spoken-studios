@@ -19,6 +19,9 @@ gallery:
   - /tumblr_b3ea4838bff77d1926c3c8c4a412c361_90fd311f_1280.jpg
 ---
 
+::project-gallery-f-m
+::
+
 ## Project Overview
 
 EcoTrack was born from a simple question: How do we make sustainability tracking engaging instead of guilt-inducing? Working with GreenTech Solutions, I designed a mobile-first application that transforms complex environmental metrics into an accessible, motivating experience that encourages positive behavioral change.

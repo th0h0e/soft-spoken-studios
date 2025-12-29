@@ -19,6 +19,9 @@ gallery:
   - /tumblr_b3ea4838bff77d1926c3c8c4a412c361_90fd311f_1280.jpg
 ---
 
+::project-gallery-f-m
+::
+
 ## Project Overview
 
 Wavelength Music wanted to stand out in the crowded music streaming market by focusing on indie artists and music discovery. I designed and built an interface that makes exploring new music feel like an adventure, with custom audio visualizations and an emphasis on artist stories.

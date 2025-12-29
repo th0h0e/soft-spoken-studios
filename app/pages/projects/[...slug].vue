@@ -1,10 +1,18 @@
 <script setup lang="ts">
 const route = useRoute()
 
+const formatDate = (dateString: string) => {
+  return new Date(dateString).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short'
+  })
+}
+
 const { data: page } = await useAsyncData(`projects-${route.path}`, () =>
   queryCollection('projects').path(route.path).first()
 )
 if (!page.value) throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+
 const { data: surround } = await useAsyncData(`projects-${route.path}-surround`, () =>
   queryCollectionItemSurroundings('projects', route.path, {
     fields: ['description']
@@ -20,74 +28,85 @@ useSeoMeta({
 </script>
 
 <template>
-  <UMain class="mt-20 px-2">
-    <UContainer class="relative min-h-screen">
-      <UPage v-if="page">
+  <div>
+    <UPageHeader
+      :ui="{
+        container: 'flex flex-col gap-3',
+        wrapper: 'flex flex-col',
+        headline: 'mb-8'
+      }"
+    >
+      <template #headline>
         <ULink
           to="/projects"
-          class="text-sm flex items-center gap-1"
+          class="text-sm font-normal flex items-center gap-1"
         >
           <UIcon name="i-feather-chevron-left" />
           Projects
         </ULink>
-        <div class="flex flex-col gap-3 mt-8">
-          <div class="flex text-sm text-muted items-center justify-center gap-2">
-            <span v-if="page.client">
-              {{ page.client }}
-            </span>
-            <span v-if="page.client && page.year">
-              •
-            </span>
-            <span v-if="page.year">
-              {{ page.year }}
-            </span>
-            <span v-if="page.role && (page.client || page.year)">
-              •
-            </span>
-            <span v-if="page.role">
-              {{ page.role }}
-            </span>
-          </div>
-          <NuxtImg
-            :src="page.image"
-            :alt="page.title"
-            class="rounded-lg w-full aspect-16/10 object-cover object-center"
-          />
-          <h1 class="text-4xl text-center font-medium max-w-3xl mx-auto mt-4">
-            {{ page.title }}
-          </h1>
-          <p class="text-muted text-center max-w-2xl mx-auto">
-            {{ page.description }}
-          </p>
-          <div
-            v-if="page.tags"
-            class="flex items-center justify-center gap-2 mt-2 flex-wrap"
-          >
-            <UBadge
-              v-for="tag in page.tags"
-              :key="tag"
-              color="neutral"
-              variant="subtle"
-              size="sm"
-            >
-              {{ tag }}
-            </UBadge>
-          </div>
-        </div>
-        <UPageBody>
-          <ProjectGallery
-            v-if="page.gallery && page.gallery.length > 0"
-            :images="page.gallery"
-            class="my-8"
-          />
-          <ContentRenderer
-            v-if="page.body"
-            :value="page"
-          />
+      </template>
 
-          <UContentSurround :surround />
-        </UPageBody>
-      </UPage>
-    </UContainer>
-  </UMain>
+      <template #default>
+        <!-- Metadata row -->
+        <div class="flex text-sm text-muted items-center justify-center gap-2">
+          <span v-if="page?.client">
+            {{ page.client }}
+          </span>
+          <span v-if="page?.client && page?.role">
+            •
+          </span>
+          <span v-if="page?.role">
+            {{ page.role }}
+          </span>
+        </div>
+
+        <!-- Hero image -->
+        <NuxtImg
+          v-if="page?.image"
+          :src="page.image"
+          :alt="page?.title"
+          class="rounded-lg w-full aspect-16/10 object-cover object-center"
+        />
+
+        <!-- Title -->
+        <h1 class="text-4xl text-center font-medium max-w-3xl mx-auto mt-4">
+          {{ page?.title }}
+        </h1>
+
+        <!-- Description -->
+        <p class="text-muted text-center max-w-2xl mx-auto">
+          {{ page?.description }}
+        </p>
+
+        <!-- Tags and Date -->
+        <div class="flex items-center justify-center gap-2 mt-2 flex-wrap">
+          <UBadge
+            v-if="page?.date"
+            variant="subtle"
+            color="neutral"
+            :label="formatDate(page.date)"
+          />
+          <UBadge
+            v-for="tag in page?.tags"
+            :key="tag"
+            color="neutral"
+            variant="subtle"
+          >
+            {{ tag }}
+          </UBadge>
+        </div>
+      </template>
+    </UPageHeader>
+
+    <UPageBody>
+      <!-- Markdown content (use ::project-gallery-f-m in markdown to render gallery) -->
+      <ContentRenderer
+        v-if="page?.body"
+        :value="page"
+        class="markdown-content"
+      />
+
+      <UContentSurround :surround />
+    </UPageBody>
+  </div>
 </template>
