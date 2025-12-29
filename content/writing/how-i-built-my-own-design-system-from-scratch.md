@@ -3,9 +3,7 @@ title: How I Built My Design System from Scratch
 description: A practical guide to creating your own design system, from initial
   audit to implementation, and the lessons learned along the way.
 date: 2025-03-05
-image:
-  src: /download.jpg
-  alt: Random Image 1
+previewImage: /download.jpg
 minRead: 8
 author:
   name: Soft Spoken Studio

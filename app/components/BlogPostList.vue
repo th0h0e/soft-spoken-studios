@@ -5,10 +5,7 @@ defineProps<{
     title: string
     description?: string
     date: string
-    image?: {
-      src: string
-      alt: string
-    }
+    previewImage?: string
   }>
 }>()
 
@@ -31,12 +28,12 @@ const formatDate = (dateString: string) => {
     >
       <!-- Image -->
       <div
-        v-if="post.image"
+        v-if="post.previewImage"
         class="w-1/3 shrink-0"
       >
         <NuxtImg
-          :src="post.image.src"
-          :alt="post.image.alt"
+          :src="post.previewImage"
+          :alt="post.title"
           class="w-full aspect-4/3 object-cover rounded-lg transition-opacity group-hover:opacity-90"
           width="400"
           height="300"

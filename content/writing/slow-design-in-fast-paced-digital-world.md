@@ -4,9 +4,7 @@ description: Why designing digital experiences that encourage users to slow down
   and engage deeply can lead to more meaningful interactions and better
   outcomes.
 date: 2025-01-28
-image:
-  src: /download.jpg
-  alt: Random Image 1
+previewImage: /download.jpg
 minRead: 8
 author:
   name: Soft Spoken Studio

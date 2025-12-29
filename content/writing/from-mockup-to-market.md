@@ -7,10 +7,8 @@ author:
     alt: Soft Spoken Studio
 date: 2025-04-23T00:00:00.000Z
 description: A detailed breakdown of my iterative design methodology, from initial research to final handoff, with practical tips for designers at every stage.
-image:
-  src: /download.jpg
-  alt: Random Image 1
 minRead: 8
+previewImage: /8bfedd83aec8466a4708d60ec299d164.jpg
 ---
 
 ::two-images

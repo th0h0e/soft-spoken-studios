@@ -73,12 +73,6 @@ useSeoMeta({
               {{ tag }}
             </UBadge>
           </div>
-          <div class="py-8">
-            <USeparator
-              color="neutral"
-              type="solid"
-            />
-          </div>
         </div>
         <UPageBody>
           <ProjectGallery

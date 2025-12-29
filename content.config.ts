@@ -16,6 +16,13 @@ const hiddenSeoSchema = () => property(z.object({
   description: z.string().optional()
 }).optional()).editor({ hidden: true })
 
+// Hidden Navigation schema - hides the built-in navigation section in Nuxt Studio
+const hiddenNavigationSchema = () => property(z.object({
+  title: z.string().optional(),
+  description: z.string().optional(),
+  icon: z.string().optional()
+}).optional()).editor({ hidden: true })
+
 // ========================================================================
 // COLLECTIONS
 // Data sources and routes for the application
@@ -33,7 +40,8 @@ export default defineContentConfig({
       type: 'page',
       source: 'index.md',
       schema: z.object({
-        seo: hiddenSeoSchema()
+        seo: hiddenSeoSchema(),
+        navigation: hiddenNavigationSchema()
       })
     }),
 
@@ -42,7 +50,8 @@ export default defineContentConfig({
       type: 'page',
       source: 'about.md',
       schema: z.object({
-        seo: hiddenSeoSchema()
+        seo: hiddenSeoSchema(),
+        navigation: hiddenNavigationSchema()
       })
     }),
 
@@ -57,7 +66,8 @@ export default defineContentConfig({
         client: z.string().optional(),
         role: z.string().optional(),
         gallery: z.array(z.string()).optional(),
-        seo: hiddenSeoSchema()
+        seo: hiddenSeoSchema(),
+        navigation: hiddenNavigationSchema()
       })
     }),
 
@@ -70,15 +80,13 @@ export default defineContentConfig({
         description: z.string(),
         minRead: z.number(),
         date: z.date(),
-        image: z.object({
-          src: property(z.string()).editor({ input: 'media' }),
-          alt: z.string()
-        }),
+        previewImage: property(z.string()).editor({ input: 'media' }),
         author: z.object({
           name: z.string(),
           avatar: createImageSchema().optional()
         }),
-        seo: hiddenSeoSchema()
+        seo: hiddenSeoSchema(),
+        navigation: hiddenNavigationSchema()
       })
     }),
 
@@ -90,7 +98,8 @@ export default defineContentConfig({
         { include: 'writing.yml' }
       ],
       schema: z.object({
-        seo: hiddenSeoSchema()
+        seo: hiddenSeoSchema(),
+        navigation: hiddenNavigationSchema()
       })
     }),
 
