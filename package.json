@@ -13,6 +13,10 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
+    "@oxc-minify/binding-linux-x64-gnu": "^0.99.0",
+    "@oxc-parser/binding-linux-x64-gnu": "^0.99.0",
+    "@oxc-resolver/binding-linux-x64-gnu": "^11.14.0",
+    "@oxc-transform/binding-linux-x64-gnu": "^0.99.0",
     "@iconify-json/lucide": "^1.2.78",
     "@iconify-json/simple-icons": "^1.2.61",
     "@nuxt/content": "^3.9.0",

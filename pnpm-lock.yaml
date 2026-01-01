@@ -29,6 +29,18 @@ importers:
       '@nuxthub/core':
         specifier: ^0.9.1
         version: 0.9.1(db0@0.3.4(better-sqlite3@12.5.0))(ioredis@5.8.2)(magicast@0.5.1)(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1)(yaml@2.8.2))
+      '@oxc-minify/binding-linux-x64-gnu':
+        specifier: ^0.99.0
+        version: 0.99.0
+      '@oxc-parser/binding-linux-x64-gnu':
+        specifier: ^0.99.0
+        version: 0.99.0
+      '@oxc-resolver/binding-linux-x64-gnu':
+        specifier: ^11.14.0
+        version: 11.16.2
+      '@oxc-transform/binding-linux-x64-gnu':
+        specifier: ^0.99.0
+        version: 0.99.0
       '@vueuse/nuxt':
         specifier: ^13.9.0
         version: 13.9.0(magicast@0.5.1)(nuxt@4.2.1(@parcel/watcher@2.5.1)(@types/node@24.10.1)(@vue/compiler-sfc@3.5.25)(better-sqlite3@12.5.0)(db0@0.3.4(better-sqlite3@12.5.0))(encoding@0.1.13)(eslint@9.39.1(jiti@2.6.1))(ioredis@5.8.2)(lightningcss@1.30.2)(magicast@0.5.1)(optionator@0.9.4)(rollup@4.53.3)(terser@5.44.1)(typescript@5.9.3)(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1)(yaml@2.8.2))(vue-tsc@3.1.5(typescript@5.9.3))(yaml@2.8.2))(vue@3.5.25(typescript@5.9.3))
@@ -1305,6 +1317,12 @@ packages:
     cpu: [x64]
     os: [linux]
 
+  '@oxc-minify/binding-linux-x64-gnu@0.99.0':
+    resolution: {integrity: sha512-2Iq4piS+6i96mTvvvGwhPa2BVfys7ChV2r7Do7lciZSniXwwhQNJ/6yvqsp3hgaVvXhPYfbn9dEGRb1T1wZ5ww==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [linux]
+
   '@oxc-minify/binding-linux-x64-musl@0.96.0':
     resolution: {integrity: sha512-8b1naiC7MdP7xeMi7cQ5tb9W1rZAP9Qz/jBRqp1Y5EOZ1yhSGnf1QWuZ/0pCc+XiB9vEHXEY3Aki/H+86m2eOg==}
     engines: {node: ^20.19.0 || >=22.12.0}
@@ -1394,6 +1412,12 @@ packages:
     cpu: [x64]
     os: [linux]
 
+  '@oxc-parser/binding-linux-x64-gnu@0.99.0':
+    resolution: {integrity: sha512-YVJMfk5cFWB8i2/nIrbk6n15bFkMHqWnMIWkVx7r2KwpTxHyFMfu2IpeVKo1ITDSmt5nBrGdLHD36QRlu2nDLg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [linux]
+
   '@oxc-parser/binding-linux-x64-musl@0.96.0':
     resolution: {integrity: sha512-IIVNtqhA0uxKkD8Y6aZinKO/sOD5O62VlduE54FnUU2rzZEszrZQLL8nMGVZhTdPaKW5M1aeLmjcdnOs6er1Jg==}
     engines: {node: ^20.19.0 || >=22.12.0}
@@ -1419,6 +1443,11 @@ packages:
 
   '@oxc-project/types@0.96.0':
     resolution: {integrity: sha512-r/xkmoXA0xEpU6UGtn18CNVjXH6erU3KCpCDbpLmbVxBFor1U9MqN5Z2uMmCHJuXjJzlnDR+hWY+yPoLo8oHDw==}
+
+  '@oxc-resolver/binding-linux-x64-gnu@11.16.2':
+    resolution: {integrity: sha512-m0WcK0j54tSwWa+hQaJMScZdWneqE7xixp/vpFqlkbhuKW9dRHykPAFvSYg1YJ3MJgu9ZzVNpYHhPKJiEQq57Q==}
+    cpu: [x64]
+    os: [linux]
 
   '@oxc-transform/binding-android-arm64@0.96.0':
     resolution: {integrity: sha512-wOm+ZsqFvyZ7B9RefUMsj0zcXw77Z2pXA51nbSQyPXqr+g0/pDGxriZWP8Sdpz/e4AEaKPA9DvrwyOZxu7GRDQ==}
@@ -1482,6 +1511,12 @@ packages:
 
   '@oxc-transform/binding-linux-x64-gnu@0.96.0':
     resolution: {integrity: sha512-f6pcWVz57Y8jXa2OS7cz3aRNuks34Q3j61+3nQ4xTE8H1KbalcEvHNmM92OEddaJ8QLs9YcE0kUC6eDTbY34+A==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [linux]
+
+  '@oxc-transform/binding-linux-x64-gnu@0.99.0':
+    resolution: {integrity: sha512-oF6MxCAmQBkgrgRJGlUtpYwUwAq9cOmTJ7hh9Ol27fyGM4NUGOPH2sjrUenlCJ3p3huYwkzUtg+WRqXoiyrc6Q==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [linux]
@@ -7748,6 +7783,8 @@ snapshots:
   '@oxc-minify/binding-linux-x64-gnu@0.96.0':
     optional: true
 
+  '@oxc-minify/binding-linux-x64-gnu@0.99.0': {}
+
   '@oxc-minify/binding-linux-x64-musl@0.96.0':
     optional: true
 
@@ -7795,6 +7832,8 @@ snapshots:
   '@oxc-parser/binding-linux-x64-gnu@0.96.0':
     optional: true
 
+  '@oxc-parser/binding-linux-x64-gnu@0.99.0': {}
+
   '@oxc-parser/binding-linux-x64-musl@0.96.0':
     optional: true
 
@@ -7810,6 +7849,8 @@ snapshots:
     optional: true
 
   '@oxc-project/types@0.96.0': {}
+
+  '@oxc-resolver/binding-linux-x64-gnu@11.16.2': {}
 
   '@oxc-transform/binding-android-arm64@0.96.0':
     optional: true
@@ -7843,6 +7884,8 @@ snapshots:
 
   '@oxc-transform/binding-linux-x64-gnu@0.96.0':
     optional: true
+
+  '@oxc-transform/binding-linux-x64-gnu@0.99.0': {}
 
   '@oxc-transform/binding-linux-x64-musl@0.96.0':
     optional: true

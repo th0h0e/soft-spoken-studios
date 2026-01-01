@@ -28,3 +28,7 @@ logs
 
 # Server
 server
+
+# Wrangler
+.wrangler
+wrangler.jsonc
