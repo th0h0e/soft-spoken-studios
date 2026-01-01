@@ -26,21 +26,16 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   content: {
-    // Studio alpha configuration
-    // The new module handles preview automatically
+    database: {
+      type: 'sqlite',
+      binding: 'content'
+    }
   },
 
   compatibilityDate: '2025-12-29',
 
   nitro: {
-    preset: 'cloudflare_module',
-    cloudflare: {
-      deployConfig: true,
-      nodeCompat: true
-    },
-    experimental: {
-      openAPI: true
-    }
+    preset: 'node-server'
   },
   debug: true,
 
