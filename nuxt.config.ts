@@ -4,6 +4,13 @@ export default defineNuxtConfig({
     head: {
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/sss.svg' }
+      ],
+      script: [
+        {
+          src: 'https://app.rybbit.io/api/script.js',
+          defer: true,
+          'data-site-id': 'c6500b7b0829'
+        }
       ]
     }
   },
