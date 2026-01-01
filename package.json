@@ -13,6 +13,7 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
+    "@img/sharp-linux-x64": "^0.33.5",
     "@oxc-minify/binding-linux-x64-gnu": "^0.96.0",
     "@oxc-parser/binding-linux-x64-gnu": "^0.96.0",
     "@oxc-resolver/binding-linux-x64-gnu": "^11.16.2",

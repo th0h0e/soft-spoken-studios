@@ -16,6 +16,7 @@ const [{ data: navigation }, { data: files }] = await Promise.all([
     return Promise.all([
       queryCollectionNavigation('writing'),
       queryCollectionNavigation('projects')
+      
     ])
   }, {
     transform: data => data.flat()
