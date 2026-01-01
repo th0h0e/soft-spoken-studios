@@ -31,7 +31,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-12-29',
 
   nitro: {
-    preset: 'node-server'
+    preset: 'node_cluster'
   },
 
   eslint: {
