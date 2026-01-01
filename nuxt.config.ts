@@ -19,10 +19,6 @@ export default defineNuxtConfig({
     'nuxt-studio'
   ],
 
-  devtools: {
-    enabled: true
-  },
-
   css: ['~/assets/css/main.css'],
 
   content: {
@@ -37,7 +33,6 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'node-server'
   },
-  debug: true,
 
   eslint: {
     config: {
@@ -49,20 +44,12 @@ export default defineNuxtConfig({
   },
 
   studio: {
-    // Studio admin login route
     route: '/_studio',
-
-    // Git repository configuration (required for production)
     repository: {
       provider: 'github',
       owner: 'th0h0e',
       repo: 'soft-spoken-studios',
-      branch: 'main',
-      rootDir: ''
-    },
-
-    development: {
-      sync: true
+      branch: 'main'
     }
   }
 })
