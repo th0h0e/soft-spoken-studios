@@ -25,8 +25,8 @@ html::-webkit-scrollbar {
   --ui-bg: var(--ui-color-neutral-250);
 
   ::selection {
-    color: #282a30;
-    background-color: #c8c8c8;
+    color: #fee2e2;
+    background-color: #450a0a;
   }
 }
 
@@ -34,7 +34,7 @@ html::-webkit-scrollbar {
   --ui-bg: var(--ui-color-neutral-950);
 
   ::selection {
-    color: #ffffff;
-    background-color: #474747;
+    color: #9f1239;
+    background-color: #d4d4d8;
   }
 }
