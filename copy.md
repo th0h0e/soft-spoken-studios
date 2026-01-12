@@ -20,6 +20,7 @@ const createImageSchema = () => z.object({
   alt: z.string()
 })
 
+
 const createAuthorSchema = () => z.object({
   name: z.string(),
   description: z.string().optional(),
