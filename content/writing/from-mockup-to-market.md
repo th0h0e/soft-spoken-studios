@@ -311,6 +311,7 @@ items:
       url: https://example.com
       color: "#3b82f6"
       logo: feather:briefcase
+    projectLogo: /logos/sss.svg
   - date: 2018-2020
     position: Product Designer
     company:
@@ -318,6 +319,7 @@ items:
       url: https://example.com
       color: "#10b981"
       logo: feather:zap
+    projectLogo: /logos/sss.svg
   - date: 2015-2018
     position: UX/UI Designer
     company:
@@ -325,6 +327,7 @@ items:
       url: https://example.com
       color: "#f59e0b"
       logo: feather:palette
+    projectLogo: /logos/sss.svg
 title: Professional Experience
 ---
 ::
