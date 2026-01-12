@@ -1,5 +1,5 @@
 ---
-title: Bloom Finance App Redesign
+title: Brighter Days, Solara Energy
 client: Bloom Finance
 date: 2024-01-15T00:00:00.000Z
 description: Led the complete UX/UI overhaul and front-end implementation for a personal finance platform, focusing on data visualization clarity and improving user onboarding flow. Resulted in a 32% increase in user retention.
@@ -10,6 +10,9 @@ gallery:
   - /tumblr_5d36f28f4d2d7f414da50f8e53179f05_ad7b99ee_1280.jpg
 image: /8bfedd83aec8466a4708d60ec299d164.jpg
 role: Lead Designer & Front-end Developer
+seo:
+  title: Bloom Finance App Redesign
+  description: Led the complete UX/UI overhaul and front-end implementation for a personal finance platform, focusing on data visualization clarity and improving user onboarding flow. Resulted in a 32% increase in user retention.
 tags:
   - Copy
   - Video
@@ -18,7 +21,7 @@ year: "2024"
 
 ## Project Overview
 
-Bloom Finance approached me to redesign their personal finance platform, which was experiencing high user drop-off rates during onboarding and low engagement with core features. The challenge was to create an intuitive interface that made complex financial data accessible and actionable for everyday users.
+A full brand launch campaign for a regional solar installer looking to stand apart in a crowded market. We produced a 60-second anthem spot capturing the emotional side of energy independence—families, sunlit homes, and a quieter kind of pride. Alongside the video, we developed website copy, taglines, and a brand voice guide that repositioned Solara from a technical contractor to a lifestyle brand.
 
 :project-gallery
 
