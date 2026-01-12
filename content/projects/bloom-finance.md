@@ -1,6 +1,6 @@
 ---
 title: Brighter Days, Solara Energy
-client: Bloom Finance
+client: Solara Energy
 date: 2024-01-15T00:00:00.000Z
 description: Led the complete UX/UI overhaul and front-end implementation for a personal finance platform, focusing on data visualization clarity and improving user onboarding flow. Resulted in a 32% increase in user retention.
 gallery:
