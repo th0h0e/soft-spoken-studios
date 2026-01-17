@@ -64,7 +64,9 @@ title: SIGNAL TO NOISE RATIOS
 
 ## Phase 1: Discovery & Research
 
-Every great product starts with understanding the problem it's trying to solve. For EcoTrack, our challenge was creating an engaging way for users to track their environmental impact without feeling overwhelmed by guilt or complex data.
+Every great product starts with understanding the problem it's trying to solve. For EcoTrack, our
+
+(some bs content) challenge was creating an engaging way for users to track their environmental impact without feeling overwhelmed by guilt or complex data.
 
 ::two-images
 ---
