@@ -66,6 +66,8 @@ title: SIGNAL TO NOISE RATIOS
 
 Every great product starts with understanding the problem it's trying to solve. For EcoTrack, our
 
+![sss](/sss.png)
+
 (some bs content) challenge was creating an engaging way for users to track their environmental impact without feeling overwhelmed by guilt or complex data.
 
 ::two-images
