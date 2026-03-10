@@ -16,7 +16,7 @@ previewImage: /8bfedd83aec8466a4708d60ec299d164.jpg
 images:
   - src: /hero/3334f4a0741954580a818e303927dfcd.jpg
     title: gg
-    alt: gg
+    alt: Comme des Garcons
   - src: /c7cb6ff8df2b3bcc233eda201420fb2a-2.jpg
     title: ghghg
     alt: ghghg
@@ -66,9 +66,21 @@ title: SIGNAL TO NOISE RATIOS
 
 Every great product starts with understanding the problem it's trying to solve. For EcoTrack, our
 
-![sss](/sss.png)
-
 (some bs content) challenge was creating an engaging way for users to track their environmental impact without feeling overwhelmed by guilt or complex data.
+
+::one-image
+---
+src: /tumblr_d41c22570f1c8a470f23b2bf1edf093e_843d6a29_1280 (1).jpg
+---
+::
+
+::two-images
+---
+images:
+  - src: /tumblr_d41c22570f1c8a470f23b2bf1edf093e_843d6a29_1280 (1).jpg
+  - src: /tumblr_d41c22570f1c8a470f23b2bf1edf093e_843d6a29_1280 (1).jpg
+---
+::
 
 ::two-images
 ---
@@ -88,6 +100,8 @@ That 3 PM energy crash isn't a mysterious phenomenon – it's your body staging 
 
 ::card{title="The Whole Foods Cheat Sheet"}
 If it has more than 5 ingredients, if you can't pronounce half of them, or if it promises to 'boost your energy with natural flavors' – it's probably not whole food. Real food doesn't need a marketing department.
+
+/
 ::
 
 ::u-table

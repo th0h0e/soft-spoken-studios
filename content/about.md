@@ -21,6 +21,7 @@ title: About Soft Spoken
 ---
 autoRotate: true
 autoRotateSpeed: 0.09
+hoverScale: 0
 images:
   - id: "1"
     src: /hero/3334f4a0741954580a818e303927dfcd.jpg
@@ -139,4 +140,17 @@ Thanks for stopping by. Feel free to browse my [projects](/projects) or [get in 
   title: Projects & Experience
   ---
   :::
+::
+
+::book
+---
+postscript:
+  - jhahjad
+  - nbqwgh
+author: Thomas Hibbert
+class: hjhjh
+editor: hghgg
+subtitle: hhhhh
+title: hhh
+---
 ::

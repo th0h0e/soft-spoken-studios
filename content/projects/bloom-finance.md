@@ -25,6 +25,8 @@ A full brand launch campaign for a regional solar installer looking to stand apa
 
 :project-gallery
 
+---
+
 ## Technologies Used
 
 - Figma for design and prototyping
