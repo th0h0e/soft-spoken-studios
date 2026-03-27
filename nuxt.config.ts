@@ -23,7 +23,8 @@ export default defineNuxtConfig({
       markdown: {
         highlight: {
           theme: 'github-dark',
-          langs: ['js', 'ts', 'html', 'css']
+          langs: ['js', 'html', 'css']
+        }
       }
     }
   },
