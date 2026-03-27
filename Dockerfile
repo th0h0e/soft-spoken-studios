@@ -26,11 +26,8 @@ FROM oven/bun:1-alpine AS production
 
 WORKDIR /app
 
-# Copy only the server output
-COPY --from=builder /app/.output/server ./server
-
-# Copy public assets if they exist
-COPY --from=builder /app/.output/public ./public 2>/dev/null || true
+# Copy the entire .output directory (includes server and public)
+COPY --from=builder /app/.output ./.output
 
 # Expose port
 EXPOSE 3000
@@ -41,4 +38,4 @@ ENV NUXT_HOST=0.0.0.0
 ENV NUXT_PORT=3000
 
 # Start with Bun
-CMD ["bun", "run", "server/index.mjs"]
+CMD ["bun", "run", ".output/server/index.mjs"]
