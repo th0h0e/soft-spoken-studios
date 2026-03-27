@@ -1,0 +1,43 @@
+# Nuxt dev/build outputs
+.output
+.nuxt
+.nitro
+.cache
+.data
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+
+# VSC
+.history
+
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Wrangler
+.wrangler
+wrangler.jsonc
+
+# IDE
+.vscode
+*.swp
+*.swo
