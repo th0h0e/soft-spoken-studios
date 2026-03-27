@@ -37,6 +37,7 @@
     "node-gyp": "^12.1.0",
     "nuxt-studio": "^1.5.1",
     "playwright": "^1.57.0",
+    "tailwindcss": "^4.1.0",
     "typescript": "^5.9.3",
     "vue-tsc": "^3.1.5"
   },
@@ -45,6 +46,6 @@
   },
   "packageManager": "pnpm@10.26.2",
   "pnpm": {
-    "onlyBuiltDependencies": ["sharp", "better-sqlite3"]
+    "onlyBuiltDependencies": ["sharp", "better-sqlite3", "esbuild", "@parcel/watcher", "unrs-resolver"]
   }
 }
