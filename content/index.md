@@ -7,7 +7,7 @@ postscript:
 author: Thomas Hibbert
 editor: Published by Hibbert & Sons, Boston 2025
 subtitle: Copy & Video Production
-title: Soft Spoken Studio
+title: Soft Spoken Studio.
 ---
 ::
 
