@@ -7,11 +7,8 @@ description: Learn more about my journey as a Boston-based Copywriter & Video Pr
 ---
 links:
   - label: Reach Out
-    to: mailto:your@email.com
-description: Learn more about my journey as a Boston-based Copywriter & Video
-  Producer, my creative philosophy, and my passion for crafting compelling
-  stories that connect and convert.
-title: About Soft Spoken
+    to: mailto:info@softspokenstudios.com
+title: About
 ---
 ::
 
