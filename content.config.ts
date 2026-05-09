@@ -1,27 +1,43 @@
-import { defineCollection, defineContentConfig, property, z } from '@nuxt/content'
+import {
+  defineCollection,
+  defineContentConfig,
+  property,
+  z
+} from '@nuxt/content'
 
 // ========================================================================
 // REUSABLE SCHEMA HELPERS
 // These are building blocks used across multiple collections
 // ========================================================================
 
-const createImageSchema = () => z.object({
-  src: z.string().editor({ input: 'media' }),
-  alt: z.string()
-})
+const createImageSchema = () =>
+  z.object({
+    src: z.string().editor({ input: 'media' }),
+    alt: z.string()
+  })
 
 // Hidden SEO schema - hides the built-in SEO section in Nuxt Studio
-const hiddenSeoSchema = () => property(z.object({
-  title: z.string().optional(),
-  description: z.string().optional()
-}).optional()).editor({ hidden: true })
+const hiddenSeoSchema = () =>
+  property(
+    z
+      .object({
+        title: z.string().optional(),
+        description: z.string().optional()
+      })
+      .optional()
+  ).editor({ hidden: true })
 
 // Hidden Navigation schema - hides the built-in navigation section in Nuxt Studio
-const hiddenNavigationSchema = () => property(z.object({
-  title: z.string().optional(),
-  description: z.string().optional(),
-  icon: z.string().optional()
-}).optional()).editor({ hidden: true })
+const hiddenNavigationSchema = () =>
+  property(
+    z
+      .object({
+        title: z.string().optional(),
+        description: z.string().optional(),
+        icon: z.string().optional()
+      })
+      .optional()
+  ).editor({ hidden: true })
 
 // ========================================================================
 // COLLECTIONS
@@ -40,6 +56,15 @@ export default defineContentConfig({
       type: 'page',
       source: 'index.md',
       schema: z.object({
+        book: z
+          .object({
+            title: z.string(),
+            subtitle: z.string(),
+            author: z.string().optional(),
+            editor: z.string().optional(),
+            postscript: z.array(z.string()).optional()
+          })
+          .optional(),
         seo: hiddenSeoSchema(),
         navigation: hiddenNavigationSchema()
       })
@@ -93,10 +118,7 @@ export default defineContentConfig({
     // Collection Pages - Metadata for /projects and /writing listing pages
     collectionPages: defineCollection({
       type: 'page',
-      source: [
-        { include: 'projects.yml' },
-        { include: 'writing.yml' }
-      ],
+      source: [{ include: 'projects.yml' }, { include: 'writing.yml' }],
       schema: z.object({
         seo: hiddenSeoSchema(),
         navigation: hiddenNavigationSchema()
@@ -114,10 +136,12 @@ export default defineContentConfig({
       schema: z.object({
         title: z.string(),
         description: z.string(),
-        items: z.array(z.object({
-          image: z.string().editor({ input: 'media' }),
-          caption: z.string()
-        }))
+        items: z.array(
+          z.object({
+            image: z.string().editor({ input: 'media' }),
+            caption: z.string()
+          })
+        )
       })
     })
   }
