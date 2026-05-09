@@ -1,29 +1,32 @@
-# Stage 1: Build with Bun (official Nuxt Content Bun Dockerfile)
-# see all versions at https://hub.docker.com/r/oven/bun/tags
-FROM oven/bun:1 AS build
+# Build Stage 1
+FROM node:22-alpine AS build
 WORKDIR /app
 
-# Copy package files
-COPY package.json bun.lock* pnpm-lock.yaml* ./
+RUN corepack enable
 
-# Use ignore-scripts to avoid building node modules like better-sqlite3
-RUN bun install --frozen-lockfile --ignore-scripts
+# Copy package.json and lockfile
+COPY package.json pnpm-lock.yaml .npmrc ./
+
+# Install dependencies
+RUN pnpm i
 
 # Copy the entire project
-COPY . .
+COPY . ./
 
-# Build the application
-RUN bun --bun run build
+# Build the project
+RUN pnpm run build
 
-# Stage 2: Production with Bun
-FROM oven/bun:1 AS production
+# Build Stage 2
+FROM node:22-alpine
 WORKDIR /app
 
-# Only .output folder is needed from the build stage
-COPY --from=build /app/.output /app
+# Only `.output` folder is needed from the build stage
+COPY --from=build /app/.output/ ./
 
-# Expose port
-EXPOSE 3000/tcp
+# Change the port and host
+ENV PORT=3000
+ENV HOST=0.0.0.0
 
-# Run the app
-ENTRYPOINT ["bun", "--bun", "run", "/app/server/index.mjs"]
+EXPOSE 3000
+
+CMD ["node", "/app/server/index.mjs"]
